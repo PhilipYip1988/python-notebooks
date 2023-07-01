@@ -1,3 +1,9 @@
+## Installation
+
 [Environment Test](./environmenttest)
 
-[Strings](./strings)
+## Builtins Module
+
+[Strings](./strings)[YouTube](https://www.youtube.com/watch?v=RbcmotjzMO)
+
+[Bytes]
