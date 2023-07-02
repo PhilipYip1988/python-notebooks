@@ -6,7 +6,7 @@ Install VSCode Individual.
 
 ## Install Python Extension
 
-VSCode is a general purpose code editor. Install the Python Extension in VSCode.
+VSCode is a general purpose code editor. Install the Python and Jupyter Extensions in VSCode.
 
 ## Install Mambaforge
 
