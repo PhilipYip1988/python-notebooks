@@ -236,12 +236,46 @@ def plot12():
                 xy=(angle-0.5, math.cos(angle)-0.02),  # theta, radius
                 xytext=(angle-0.5, math.cos(angle)-0.02),
                 color='cyan', rotation=90)
+    ax.annotate('hypotenuse',
+            xy=(angle-0.1, math.cos(angle)/2-0.01),  # theta, radius
+            xytext=(angle-0.1, math.cos(angle)/2-0.01),
+            color='red', rotation=45)
     ax.annotate(r'$\theta$',
                 xy=(0.3, 0.1),  # theta, radius
                 xytext=(0.3, 0.1),
                 color='black')
 #%% Figure13
 def plot13():
+    angle = 0*tau/16
+    theta = np.linspace(0, tau, 100)
+    r = np.ones(100)
+    theta2 = (0, angle)
+    r2 = (0, 1)
+    theta3 = (angle,)
+    r3 = (1,)
+    theta4 = (0, 0)
+    r4 = (0, math.cos(angle))
+    theta5 = (0, angle)
+    r5 = (math.cos(angle), 1)
+    fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+    ax.plot(theta, r, color='royalblue')
+    #ax.plot(theta2, r2, color='tomato') 
+    #ax.scatter(theta3, r3, s=50, color='tomato')
+    ax.plot(theta4, r4, color='magenta', lw=2, ls=':')
+    #ax.plot(theta5, r5, color='cyan', lw=2, ls=':')
+    xticks = np.linspace(0, 90, 5)
+    xticklabels = [r'$\frac{' + f'{num}' + '}{16}$' + r'$\tau$' for num in range(5)]
+    ax.set_thetagrids(xticks)
+    ax.set_xticklabels(xticklabels) 
+    ax.set_rticks([0, 0.5, 1])
+    ax.set_rlabel_position(45)
+    ax.set_thetamin(0)
+    ax.set_thetamax(90)
+    theta6 = 0
+    r6 = 0
+    return fig
+#%% Figure14
+def plot14():
     angle = 1*tau/16
     theta = np.linspace(0, tau, 100)
     r = np.ones(100)
@@ -277,6 +311,10 @@ def plot13():
                 xy=(angle-0.26, math.cos(angle)-0.06),  # theta, radius
                 xytext=(angle-0.26, math.cos(angle)-0.06),
                 color='cyan', rotation=90)
+    ax.annotate('hypotenuse',
+            xy=(angle-0.1, math.cos(angle)/2-0.01),  # theta, radius
+            xytext=(angle-0.1, math.cos(angle)/2-0.01),
+            color='red', rotation=22.5)
     ax.annotate(r'$\theta$',
                 xy=(0.1, 0.1),  # theta, radius
                 xytext=(0.1, 0.1),
