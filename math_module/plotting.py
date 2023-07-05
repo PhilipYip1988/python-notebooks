@@ -1,5 +1,6 @@
 #%% Imports
 import math
+import cmath
 import numpy as np 
 import pandas as pd 
 import matplotlib.pyplot as plt 
@@ -1036,4 +1037,192 @@ def plot36():
     ax[1].xaxis.set_ticks(xticks)
     ax[1].set_xticklabels(xticklabels) 
     return fig
-
+#%% Figure37
+def plot37():
+    fig, ax = plt.subplots()
+    theta = np.linspace(-4*tau/16, 4*tau/16, 100)
+    x = np.cosh(theta)
+    y = np.sinh(theta)
+    ax.plot(theta, y**2, color='cyan', label=r'$y^{2}$')
+    ax.plot(theta, x**2, color='magenta', label=r'$x^{2}$')
+    xticks = np.linspace(-4*tau/16, 4*tau/16, 5)
+    xticklabels = [r'$\frac{' + f'{num}' + '}{16}$' + r'$\tau$' for num in range(-4, 6, 2)]
+    ax.set_xlabel(r'$\theta$')
+    ax.xaxis.set_ticks(xticks)
+    ax.set_xticklabels(xticklabels)  
+    return fig
+#%% Figure38
+def plot38():
+    fig, ax = plt.subplots(2, 1)
+    theta = np.linspace(0, 4*tau/16, 100)
+    x1 = 0.5 * np.exp(theta)
+    x2 = 0.5 * np.exp(-theta)
+    ax[0].plot(theta, x1, color='sandybrown', label=r'$\frac{1}{2}$'+'exp'+r'$(\theta)$')
+    ax[1].plot(theta, x2, color='palegreen', label=r'$\frac{1}{2}$'+'exp'+r'$(-\theta)$')
+    xticks = np.linspace(0, 4*tau/16, 5)
+    xticklabels = [r'$\frac{' + f'{num}' + '}{16}$' + r'$\tau$' for num in range(0, 5, 1)]
+    ax[0].set_xlabel(r'$\theta$')
+    ax[1].set_xlabel(r'$\theta$')
+    ax[0].xaxis.set_ticks(xticks)
+    ax[0].set_xticklabels(xticklabels) 
+    ax[1].xaxis.set_ticks(xticks)
+    ax[1].set_xticklabels(xticklabels) 
+    ax[0].legend()
+    ax[1].legend()
+    return fig
+#%% Figure39
+def plot39():
+    fig, ax = plt.subplots(2, 1)
+    theta = np.linspace(0, 4*tau/16, 100)
+    x = np.cosh(theta)
+    y = np.sinh(theta)
+    ax[0].plot(theta, y, color='cyan', label=r'$y$'+' (sandybrown-palegreen)')
+    ax[1].plot(theta, x, color='magenta', label=r'$x$'+' (sandybrown+palegreen)')
+    xticks = np.linspace(0, 4*tau/16, 5)
+    xticklabels = [r'$\frac{' + f'{num}' + '}{16}$' + r'$\tau$' for num in range(0, 5, 1)]
+    ax[0].set_xlabel(r'$\theta$')
+    ax[1].set_xlabel(r'$\theta$')
+    ax[0].set_ylabel(r'$y$')
+    ax[1].set_ylabel(r'$x$')
+    ax[0].xaxis.set_ticks(xticks)
+    ax[0].set_xticklabels(xticklabels) 
+    ax[1].xaxis.set_ticks(xticks)
+    ax[1].set_xticklabels(xticklabels) 
+    ax[0].legend()
+    ax[1].legend()
+    return fig
+#%% Figure40
+def plot40():
+    fig, ax = plt.subplots(subplot_kw={'aspect': 'equal'})
+    ax.scatter(3, 2, s=50, color='tomato')
+    ax.spines['left'].set_position('center')
+    ax.spines['bottom'].set_position('center')
+    ax.spines['right'].set_visible(False)
+    ax.spines['top'].set_visible(False)
+    ax.set_xlim(left=-5, right=5)
+    ax.set_ylim(bottom=-5, top=5)
+    xticks = np.linspace(-5, 5, 11)
+    yticks = np.linspace(-5, 5, 11)
+    ax.xaxis.set_ticks(xticks)
+    ax.yaxis.set_ticks(yticks)
+    x1 = (0, 3)
+    y1 = (0, 0)
+    ax.plot(x1, y1, color='magenta', ls=':')
+    x2 = (3, 3)
+    y2 = (0, 2)
+    ax.plot(x2, y2, color='cyan', ls=':')
+    ax.set_xlabel('real')
+    ax.set_ylabel('imag')
+    return fig
+#%% Figure41
+def plot41():
+    fig, ax = plt.subplots(subplot_kw={'aspect': 'equal'})
+    ax.scatter(3, 2, s=50, color='lightgray')
+    ax.spines['left'].set_position('center')
+    ax.spines['bottom'].set_position('center')
+    ax.spines['right'].set_visible(False)
+    ax.spines['top'].set_visible(False)
+    ax.set_xlim(left=-5, right=5)
+    ax.set_ylim(bottom=-5, top=5)
+    xticks = np.linspace(-5, 5, 11)
+    yticks = np.linspace(-5, 5, 11)
+    ax.xaxis.set_ticks(xticks)
+    ax.yaxis.set_ticks(yticks)
+    x1 = (0, 3)
+    y1 = (0, 0)
+    ax.plot(x1, y1, color='magenta', ls=':')
+    x2 = (3, 3)
+    y2 = (0, 2)
+    ax.plot(x2, y2, color='cyan', ls=':')
+    ax.set_xlabel('real')
+    ax.set_ylabel('imag')
+    x3 = (3, 1)
+    y3 = (2, 2)
+    ax.plot(x3, y3, color='magenta', ls=':')
+    x4 = (1, 1)
+    y4 = (2, 3)
+    ax.plot(x4, y4, color='cyan', ls=':')
+    ax.scatter(1, 3, s=50, color='tomato')
+    return fig
+#%% Figure42
+def plot42():
+    angle = 2*tau/16
+    theta = np.linspace(0, tau, 100)
+    r = np.ones(100)
+    theta2 = (0, angle)
+    r2 = (0, 1)
+    theta3 = (angle,)
+    r3 = (1,)
+    theta4 = (0, 0)
+    r4 = (0, math.cos(angle))
+    theta5 = (0, angle)
+    r5 = (math.cos(angle), 1)
+    fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+    ax.plot(theta, r, color='royalblue')
+    ax.plot(theta2, r2, color='tomato') 
+    ax.scatter(theta3, r3, s=50, color='tomato')
+    ax.plot(theta4, r4, color='magenta', lw=2, ls=':')
+    ax.plot(theta5, r5, color='cyan', lw=2, ls=':')
+    xticks = np.linspace(0, 90, 5)
+    xticklabels = [r'$\frac{' + f'{num}' + '}{16}$' + r'$\tau$' for num in range(5)]
+    ax.set_thetagrids(xticks)
+    ax.set_xticklabels(xticklabels) 
+    ax.set_rticks([0, 0.5, 1])
+    ax.set_rlabel_position(45)
+    ax.set_thetamin(0)
+    ax.set_thetamax(90)
+    theta6 = 0
+    r6 = 0
+    ax.annotate('real component',
+                xy=(0.1, math.cos(angle)/2-0.02),  # theta, radius
+                xytext=(0.1, math.cos(angle)/2-0.02),
+                color='magenta')
+    ax.annotate('imaginary component',
+                xy=(angle-0.5, math.cos(angle)-0.02),  # theta, radius
+                xytext=(angle-0.5, math.cos(angle)-0.02),
+                color='cyan', rotation=90)
+    ax.annotate('radius',
+            xy=(angle-0.1, math.cos(angle)/2-0.01),  # theta, radius
+            xytext=(angle-0.1, math.cos(angle)/2-0.01),
+            color='red', rotation=45)
+    ax.annotate(r'$\varphi$',
+                xy=(0.3, 0.1),  # theta, radius
+                xytext=(0.3, 0.1),
+                color='black')
+#%% Figure43
+def plot43():
+    fig, ax = plt.subplots(subplot_kw={'aspect': 'equal'})
+    ax.scatter(3, 2, s=50, color='tomato')
+    ax.spines['left'].set_position('center')
+    ax.spines['bottom'].set_position('center')
+    ax.spines['right'].set_visible(False)
+    ax.spines['top'].set_visible(False)
+    ax.set_xlim(left=-5, right=5)
+    ax.set_ylim(bottom=-5, top=5)
+    xticks = np.linspace(-5, 5, 11)
+    yticks = np.linspace(-5, 5, 11)
+    ax.xaxis.set_ticks(xticks)
+    ax.yaxis.set_ticks(yticks)
+    x1 = (0, 3)
+    y1 = (0, 0)
+    ax.plot(x1, y1, color='magenta', ls=':')
+    x2 = (3, 3)
+    y2 = (0, 2)
+    ax.plot(x2, y2, color='cyan', ls=':')
+    ax.set_xlabel('real')
+    ax.set_ylabel('imag')
+    x3 = (0, 3)
+    y3 = (0, 2)
+    ax.plot(x3, y3, color='tomato', ls=':')
+    theta = np.linspace(0, tau, 100)
+    r4 = cmath.polar(3+2j)[0] * np.ones(100)
+    x4 = r4 * np.cos(theta)
+    y4 = r4 * np.sin(theta)
+    ax.plot(x4, y4, color='royalblue')
+    theta = np.linspace(0, tau, 17)
+    x5 = cmath.polar(3+2j)[0] * np.cos(theta)
+    y5 = cmath.polar(3+2j)[0] * np.sin(theta)
+    ax.scatter(x5, y5, color='gray', s=50)
+    ax.annotate(text=r'$\varphi$', xy=(0.5, 0.2), xytext=(0.5, 0.2))
+    ax.annotate(text=r'$r$', xy=(1.5, 1.2), xytext=(1.5, 1.2), color='tomato')
+    return fig

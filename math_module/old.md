@@ -1512,7 +1512,7 @@ cnum1 * cnum1.conjugate()
 
 ![img_178](./images/img_178.png)
 
-A complex number $z$ can be considered tohave the general form:
+A complex number $z$ can be considered toh ave the general form:
 
 $$z=x+iy$$
 
