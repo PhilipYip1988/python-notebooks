@@ -575,14 +575,14 @@ def plot18():
 def plot19():
     fig, ax = plt.subplots(1, 2)
     theta = np.linspace(0, 4*tau/16, 5)
-    x = np.sin(theta)
-    y = np.cos(theta)
+    y = np.sin(theta)
+    x = np.cos(theta)
     ax[0].scatter(theta, x, s=50, c='cyan')
     ax[0].set_xlabel(r'$\theta$')
-    ax[0].set_ylabel('x')
+    ax[0].set_ylabel('y')
     ax[1].scatter(theta, y, s=50, c='magenta')
     ax[1].set_xlabel(r'$\theta$')
-    ax[1].set_ylabel('y')
+    ax[1].set_ylabel('x')
     xticks = np.linspace(0, 4*tau/16, 5)
     xticklabels = [r'$\frac{' + f'{num}' + '}{16}$' + r'$\tau$' for num in range(5)]
     ax[0].xaxis.set_ticks(xticks)
@@ -697,14 +697,14 @@ def plot21():
 def plot22():
     fig, ax = plt.subplots(1, 2)
     theta = np.linspace(0, 16*tau/16, 17)
-    x = np.sin(theta)
-    y = np.cos(theta)
-    ax[0].scatter(theta, x, s=50, c='cyan')
+    y = np.sin(theta)
+    x = np.cos(theta)
+    ax[0].scatter(theta, y, s=50, c='cyan')
     ax[0].set_xlabel(r'$\theta$')
-    ax[0].set_ylabel('x')
-    ax[1].scatter(theta, y, s=50, c='magenta')
+    ax[0].set_ylabel('y')
+    ax[1].scatter(theta, x, s=50, c='magenta')
     ax[1].set_xlabel(r'$\theta$')
-    ax[1].set_ylabel('y')
+    ax[1].set_ylabel('x')
     xticks = np.linspace(0, 16*tau/16, 9)
     xticklabels = [r'$\frac{' + f'{num}' + '}{16}$' + r'$\tau$' for num in range(0, 17, 2)]
     ax[0].xaxis.set_ticks(xticks)
@@ -732,10 +732,10 @@ def plot23():
 def plot24():
     fig, ax = plt.subplots(2, 1)
     theta = np.linspace(0, 16*tau/16, 17)
-    x = np.sin(theta)
-    y = np.cos(theta)
-    ax[0].scatter(theta, x, s=50, c='cyan', label='x')
-    ax[0].scatter(theta, y, s=50, c='magenta', label='y')
+    y = np.sin(theta)
+    x = np.cos(theta)
+    ax[0].scatter(theta, y, s=50, c='cyan', label='y')
+    ax[0].scatter(theta, x, s=50, c='magenta', label='x')
     ax[0].set_xlabel(r'$\theta$')
     xticks = np.linspace(0, 16*tau/16, 9)
     xticklabels = [r'$\frac{' + f'{num}' + '}{16}$' + r'$\tau$' for num in range(0, 17, 2)]
@@ -757,10 +757,10 @@ def plot24():
 def plot25():
     fig, ax = plt.subplots(2, 1)
     theta = np.linspace(-8*tau/16, 8*tau/16, 17)
-    x = np.sin(theta)
-    y = np.cos(theta)
-    ax[0].scatter(theta, x, s=50, c='cyan', label='x')
-    ax[0].scatter(theta, y, s=50, c='magenta', label='y')
+    y = np.sin(theta)
+    x = np.cos(theta)
+    ax[0].scatter(theta, y, s=50, c='cyan', label='y')
+    ax[0].scatter(theta, x, s=50, c='magenta', label='x')
     ax[0].set_xlabel(r'$\theta$')
     xticks = np.linspace(-8*tau/16, 8*tau/16, 9)
     xticklabels = [r'$\frac{' + f'{num}' + '}{16}$' + r'$\tau$' for num in range(-8, 9, 2)]
@@ -782,10 +782,10 @@ def plot25():
 def plot26():
     fig, ax = plt.subplots(2, 1)
     theta = np.linspace(-8*tau/16, 8*tau/16, 17)
-    x = np.sin(theta) ** 2
-    y = np.cos(theta) ** 2
-    ax[0].scatter(theta, x, s=50, c='cyan', label=r'$x^{2}$')
-    ax[0].scatter(theta, y, s=50, c='magenta', label=r'$y^{2}$')
+    y = np.sin(theta) ** 2
+    x = np.cos(theta) ** 2
+    ax[0].scatter(theta, y, s=50, c='cyan', label=r'$y^{2}$')
+    ax[0].scatter(theta, x, s=50, c='magenta', label=r'$x^{2}$')
     ax[0].set_xlabel(r'$\theta$')
     xticks = np.linspace(-8*tau/16, 8*tau/16, 9)
     xticklabels = [r'$\frac{' + f'{num}' + '}{16}$' + r'$\tau$' for num in range(-8, 9, 2)]
@@ -807,10 +807,10 @@ def plot26():
 def plot27():
     fig, ax = plt.subplots(2, 1)
     theta = np.linspace(-4*tau/16, 4*tau/16, 9)
-    x = np.sin(theta)
-    y = np.cos(theta)
-    ax[0].plot(theta, x, color='cyan', label='x')
-    ax[0].plot(theta, y, color='magenta', label='y')
+    y = np.sin(theta)
+    x = np.cos(theta)
+    ax[0].plot(theta, y, color='cyan', label='y')
+    ax[0].plot(theta, x, color='magenta', label='x')
     ax[0].set_xlabel(r'$\theta$')
     xticks = np.linspace(-4*tau/16, 4*tau/16, 9)
     xticklabels = [r'$\frac{' + f'{num}' + '}{16}$' + r'$\tau$' for num in range(-4, 5, 1)]
@@ -832,10 +832,10 @@ def plot27():
 def plot28():
     fig, ax = plt.subplots(2, 1)
     theta = np.linspace(0*tau/16, 8*tau/16, 9)
-    x = np.sin(theta)
-    y = np.cos(theta)
-    ax[0].plot(theta, x, color='cyan', label='x')
-    ax[0].plot(theta, y, color='magenta', label='y')
+    y = np.sin(theta)
+    x = np.cos(theta)
+    ax[0].plot(theta, y, color='cyan', label='y')
+    ax[0].plot(theta, x, color='magenta', label='x')
     ax[0].set_xlabel(r'$\theta$')
     xticks = np.linspace(0*tau/16, 8*tau/16, 9)
     xticklabels = [r'$\frac{' + f'{num}' + '}{16}$' + r'$\tau$' for num in range(0, 9, 1)]
