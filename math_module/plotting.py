@@ -156,9 +156,9 @@ def plot9():
 #%% Figure 10
 def plot10():
     fig, ax = plt.subplots(subplot_kw={'projection':'3d', 'aspect':'equal'})
-    x1 = (3,)
-    y1 = (4,)
-    z1 = (7,)
+    x1 = (3, 1)
+    y1 = (4, 1)
+    z1 = (7, 1)
     x2 = (1, 3)
     y2 = (1, 1)
     z2 = (1, 1)
