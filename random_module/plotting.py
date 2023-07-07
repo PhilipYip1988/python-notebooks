@@ -5,6 +5,8 @@ import seaborn as sns
 sns.set_style('whitegrid')
 import random
 import math
+#%% Constants
+tau = math.tau
 #%% Plot1
 def plot1():
     nums = [random.uniform(a=0, b=10) 
@@ -299,9 +301,24 @@ def plot21():
     ax.set_ylabel('frequency')
     #ax.set_xlim(left=0, right=100)
     return fig
-
 #%% Plot22
 def plot22():
+    nums = [random.vonmisesvariate(mu=math.tau/4, kappa=0)
+            for 
+            num 
+            in 
+            range(100000)]
+    fig, ax = plt.subplots()
+    ax.hist(nums, bins=100, color='seagreen')
+    ax.set_xlabel('x')
+    ax.set_ylabel('frequency')
+    xticks = np.arange(0, tau+tau/16, tau/16)
+    xticklabels = [r'$\frac{' + f'{num}' + '}{16}$' + r'$\tau$' for num in range(17)]
+    ax.xaxis.set_ticks(xticks)
+    ax.set_xticklabels(xticklabels) 
+    return fig
+#%% Plot23
+def plot23():
     nums = [random.vonmisesvariate(mu=math.tau/4, kappa=0)
             for 
             num 
@@ -310,8 +327,38 @@ def plot22():
     counts, angles = np.histogram(nums, bins=100)
     fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
     ax.scatter(angles[1:], counts, color='seagreen')
-    xticks = np.linspace(0, 360, 22.5)
-    xticklabels = [r'$\frac{' + f'{num}' + '}{16}$' + r'$\tau$' for num in range(17)]
-    ax[1].set_thetagrids(xticks)
-    ax[1].set_xticklabels(xticklabels) 
+    xticks = np.arange(0, 360, 22.5)
+    xticklabels = [r'$\frac{' + f'{num}' + '}{16}$' + r'$\tau$' for num in range(16)]
+    ax.set_thetagrids(xticks)
+    ax.set_xticklabels(xticklabels) 
+    return fig
+#%% Plot24
+def plot24():
+    nums = [random.vonmisesvariate(mu=math.tau/4, kappa=1)
+            for 
+            num 
+            in 
+            range(100000)]
+    counts, angles = np.histogram(nums, bins=100)
+    fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+    ax.scatter(angles[1:], counts, color='seagreen')
+    xticks = np.arange(0, 360, 22.5)
+    xticklabels = [r'$\frac{' + f'{num}' + '}{16}$' + r'$\tau$' for num in range(16)]
+    ax.set_thetagrids(xticks)
+    ax.set_xticklabels(xticklabels) 
+    return fig
+#%% Plot25
+def plot25():
+    nums = [random.vonmisesvariate(mu=math.tau/4, kappa=2)
+            for 
+            num 
+            in 
+            range(100000)]
+    counts, angles = np.histogram(nums, bins=100)
+    fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+    ax.scatter(angles[1:], counts, color='seagreen')
+    xticks = np.arange(0, 360, 22.5)
+    xticklabels = [r'$\frac{' + f'{num}' + '}{16}$' + r'$\tau$' for num in range(16)]
+    ax.set_thetagrids(xticks)
+    ax.set_xticklabels(xticklabels) 
     return fig
