@@ -56,9 +56,24 @@
 
 ## Pickle Module
 
-* Pickle Module
+* Pickle Module Notebook
 
 ## Java Script Object Notation Module
 
 * Java Script Object Notation Notebook
 
+## The Numeric Python Library
+
+* NDArray Notebook
+
+## The Python and Data Analysis Library
+
+* Series and DataFrame Notebook
+
+## The Matrix Plotting Library
+
+* The Python Plot Module Notebook
+
+## The Data Visualisation Library
+
+* Data Visualisation Notebook
