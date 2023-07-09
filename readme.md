@@ -19,7 +19,7 @@
 
 ## Math and Complex Math Modules
 
-* [Math and Complex Math Modules Notebook](./math_module)
+* [Math and Complex Math Modules Notebook](./math_module) - [YouTube](https://www.youtube.com/watch?v=lUUWlRSQt9s)
 
 ## Random Module
 
