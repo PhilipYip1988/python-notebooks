@@ -2,7 +2,7 @@
 
 ## Installation
 
-* [Setup and Test Notebook](./installation_windows) - [YouTube](https://www.youtube.com/watch?v=5WSx5MCZ5w4)
+* [VSCode on Windows 11 Setup and Test Notebook](./installation_windows) - [YouTube](https://www.youtube.com/watch?v=5WSx5MCZ5w4)
 
 ## Builtins Module
 
