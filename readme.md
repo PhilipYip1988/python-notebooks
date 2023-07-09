@@ -2,14 +2,14 @@
 
 ## Installation
 
-* [VSCode on Windows 11 Setup and Test Notebook](./installation_windows) - [YouTube](https://www.youtube.com/watch?v=5WSx5MCZ5w4)
+* [VSCode on Windows 11 Setup and Test Notebook](./installation_windows/notebook.ipynb) - [YouTube](https://www.youtube.com/watch?v=5WSx5MCZ5w4)
 
 ## Builtins Module
 
-* [Immutable Strings Notebook](./builtins_module_str) - [YouTube](https://www.youtube.com/watch?v=RbcmotjzMO)
-* [Immutable Bytes Notebook](./builtins_module_bytes)
-* [Mutable ByteArray Notebook](./builtins_module_bytearray)
-* [Immutable Integer Notebook](./builtins_module_int)
+* [Immutable Strings Notebook](./builtins_module_str/notebook.ipynb) - [YouTube](https://www.youtube.com/watch?v=RbcmotjzMO)
+* [Immutable Bytes Notebook](./builtins_module_bytes/notebook.ipynb)
+* [Mutable ByteArray Notebook](./builtins_module_bytearray/notebook.ipynb)
+* [Immutable Integer Notebook](./builtins_module_int/notebook.ipynb)
 * Immutable Floating Point Notebook
 * Immutable Tuple Notebook
 * Mutable List Notebook
@@ -19,11 +19,11 @@
 
 ## Math and Complex Math Modules
 
-* [Math and Complex Math Modules Notebook](./math_module) - [YouTube](https://www.youtube.com/watch?v=lUUWlRSQt9s)
+* [Math and Complex Math Modules Notebook](./math_module/notebook.ipynb) - [YouTube](https://www.youtube.com/watch?v=lUUWlRSQt9s)
 
 ## Random Module
 
-* [Random Module Notebook](./random_module)
+* [Random Module Notebook](./random_module/notebook.ipynb)
 
 ## Datetime Module
 
