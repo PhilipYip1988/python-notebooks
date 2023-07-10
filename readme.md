@@ -10,6 +10,7 @@
 * [Immutable Bytes Notebook](./builtins_module_bytes/notebook.ipynb)
 * [Mutable ByteArray Notebook](./builtins_module_bytearray/notebook.ipynb)
 * [Immutable Integer Notebook](./builtins_module_int/notebook.ipynb)
+* [Immutable Boolean Notebook](./builtins_module_bool/notebook.ipynb)
 * Immutable Floating Point Notebook
 * Immutable Tuple Notebook
 * Mutable List Notebook
