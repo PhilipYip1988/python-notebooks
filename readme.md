@@ -7,7 +7,7 @@
 ## Builtins Module
 
 * [Immutable Strings Notebook](./builtins_module_str/notebook.ipynb) - [YouTube](https://www.youtube.com/watch?v=RbcmotjzMO)
-* [Immutable Bytes Notebook](./builtins_module_bytes/notebook.ipynb)
+* [Immutable Bytes Notebook](./builtins_module_bytes/notebook.ipynb) - [YouTube](https://www.youtube.com/watch?v=HiKV2X0LuHo)
 * [Mutable ByteArray Notebook](./builtins_module_bytearray/notebook.ipynb)
 * [Immutable Integer Notebook](./builtins_module_int/notebook.ipynb)
 * [Immutable Boolean Notebook](./builtins_module_bool/notebook.ipynb)
