@@ -13,7 +13,7 @@
 * [Immutable Boolean Notebook](./builtins_module_bool/notebook.ipynb)
 * [Immutable Floating Point Notebook](./builtins_module_float/notebook.ipynb)
 * [Immutable Tuple Notebook](./builtins_module_tuple/notebook.ipynb)
-* Mutable List Notebook
+* [Mutable List Notebook](./builtins_module_list/notebook.ipynb)
 * Immutable FrozenSet Notebook
 * Mutable Set Notebook
 * Dictionary Notebook
