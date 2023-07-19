@@ -1,5 +1,9 @@
 # Python Tutorials with VSCode
 
+These notebook files are designed to be opened with VSCode. Select code and download zip, then extract the zip and open the extracted folder in VSCode.
+
+Use VSCode to clear all outputs and run each cell as you examine the notebook.
+
 ## Installation
 
 * [VSCode on Windows 11 Setup and Test Notebook](./installation_windows/notebook.ipynb) - [YouTube](https://www.youtube.com/watch?v=5WSx5MCZ5w4)
@@ -15,7 +19,7 @@
 * [Immutable Tuple Notebook](./builtins_module_tuple/notebook.ipynb)
 * [Mutable List Notebook](./builtins_module_list/notebook.ipynb)
 * [Immutable FrozenSet Notebook](./builtins_module_frozenset/notebook.ipynb)
-* Mutable Set Notebook
+* [Mutable Set Notebook](./builtins_module_set/notebook.ipynb)
 * Dictionary Notebook
 
 ## Math and Complex Math Modules
