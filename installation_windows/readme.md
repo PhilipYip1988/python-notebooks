@@ -19,7 +19,7 @@ mamba update --all
 To create a new Python environment for VSCode use:
 
 ```
-mamba create -n vscode python=3.11 notebook cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy nodejs ipywidgets plotly ipympl pyqt
+mamba create -n vscode python=3.11 notebook cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly ipympl pyqt
 ```
 
 ## Select Python Interpretter
