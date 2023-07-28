@@ -6,7 +6,10 @@ Use VSCode to clear all outputs and run each cell as you examine the notebook.
 
 ## Installation
 
-* [VSCode on Windows 11 Setup and Test Notebook](./installation_windows/notebook.ipynb) - [YouTube](https://www.youtube.com/watch?v=5WSx5MCZ5w4)
+Windows 11 
+* [VSCode Setup ReadMe](./installation_windows/readme.md)
+* [VSCode on Windows 11 Setup and Test Notebook](./installation_windows/notebook.ipynb)
+* [YouTube](https://www.youtube.com/watch?v=5WSx5MCZ5w4)
 
 ## Builtins Module
 
@@ -73,7 +76,7 @@ Use VSCode to clear all outputs and run each cell as you examine the notebook.
 
 ## The Python and Data Analysis Library
 
-* Series and DataFrame Notebook
+* [Series and DataFrame Notebook](./pandas_library/notebook.ipynb)
 
 ## The Matrix Plotting Library
 
