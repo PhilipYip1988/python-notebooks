@@ -7,9 +7,10 @@ Use VSCode to clear all outputs and run each cell as you examine the notebook.
 ## Installation
 
 Windows 11 
-* [VSCode Setup ReadMe](./installation_windows/readme.md)
-* [VSCode on Windows 11 Setup and Test Notebook](./installation_windows/notebook.ipynb)
-* [YouTube](https://www.youtube.com/watch?v=5WSx5MCZ5w4)
+
+* [VSCode Setup on Windows 11 ReadMe](./installation_windows/readme.md)
+* [VSCode on Setup Windows 11 Test Notebook](./installation_windows/notebook.ipynb)
+* [VSCode Setup on Windows 11 YouTube](https://www.youtube.com/watch?v=5WSx5MCZ5w4)
 
 ## Builtins Module
 
