@@ -80,9 +80,7 @@ Note: only use the recommended package manager for the installation (Python.org 
 
 These guides will focus only on Mambaforge:
 
-* [Installation](./mambaforge.md)
-* Updating the base Python Environment
-* Python from Terminal
+* [Mambaforge Installation](./mambaforge.md)
 * IDLE
 * Python Environment and Visual Studio Code
 * Python Environment for JupyterLab

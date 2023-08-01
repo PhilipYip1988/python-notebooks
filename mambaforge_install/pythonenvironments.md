@@ -108,11 +108,19 @@ There is a legacy env command that is currently only available using conda (mamb
 conda env export -n ENVNAME > Documents\ENVNAME.yml
 ```
 
-And deleting the Python environment
+A Python environment can be created from this yml file using:
+
+```
+conda env create -n ENVNAME -f environment.yml
+```
+
+
+A Python environment can be removed using:
 
 ```
 conda env remove -n ENVNAME 
 ```
+
 
 ## Example Python Environment
 
@@ -325,14 +333,33 @@ And opened in Notepad:
 
 ## Deleting a Python Environment
 
-## Creating a Python Environment from a File
+The vscode Python environment can be removed using:
 
-
-
+```
+conda env remove -n vscode
+```
 
 <img src='images_vscode/img_033.png' alt='img_033' width='450'/>
+
+This effectively deleted the folder in envs:
+
 <img src='images_vscode/img_034.png' alt='img_034' width='450'/>
+
+## Creating a Python Environment from a File
+
+It can be recreated from the yml file using:
+
+```
+conda env create -n vscode -f Documents\vscode.yml
+```
+
 <img src='images_vscode/img_035.png' alt='img_035' width='450'/>
+
+Although this may be a bit slow to create as it is using the conda package manager opposed to the mamba package manager which takes a while to solve Python environments.
+
+
+
+
 <img src='images_vscode/img_036.png' alt='img_036' width='450'/>
 <img src='images_vscode/img_037.png' alt='img_037' width='450'/>
 <img src='images_vscode/img_038.png' alt='img_038' width='450'/>
