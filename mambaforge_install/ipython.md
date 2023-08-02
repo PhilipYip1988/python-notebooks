@@ -1,5 +1,13 @@
 # Interactive Python
 
+Previously Windows PowerShell and Python were used.
+
+Windows PowerShell is a scripting language
+
+Python is
+
+IPython combines both... and includes basic code-completion and the ability to look up document strings.
+
 IPython is an abbreviation for **i**nteractive **Python** and is an improved version of the Python shell. It is not included in the Mambaforge (base) environment and can be added using:
 
 ```
