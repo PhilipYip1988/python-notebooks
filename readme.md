@@ -1,21 +1,21 @@
-# Python Tutorials with VSCode
+# Python Tutorials
+
+## Python Installation
+
+Windows 11 
+
+* [Mambaforge and VSCode Setup on Windows 11](./mambaforge_install/readme.md)
+
+## Downloading and Opening the Notebooks
 
 These notebook files are designed to be opened with VSCode. Select code and download zip, then extract the zip and open the extracted folder in VSCode.
 
 Use VSCode to clear all outputs and run each cell as you examine the notebook.
 
-## Installation
-
-Windows 11 
-
-* [VSCode Setup on Windows 11 ReadMe](./installation_windows/readme.md)
-* [VSCode on Setup Windows 11 Test Notebook](./installation_windows/notebook.ipynb)
-* [VSCode Setup on Windows 11 YouTube](https://www.youtube.com/watch?v=5WSx5MCZ5w4)
-
 ## Builtins Module
 
-* [Immutable Strings Notebook](./builtins_module_str/notebook.ipynb) - [YouTube](https://www.youtube.com/watch?v=RbcmotjzMO)
-* [Immutable Bytes Notebook](./builtins_module_bytes/notebook.ipynb) - [YouTube](https://www.youtube.com/watch?v=HiKV2X0LuHo)
+* [Immutable Strings Notebook](./builtins_module_str/notebook.ipynb)
+* [Immutable Bytes Notebook](./builtins_module_bytes/notebook.ipynb)
 * [Mutable ByteArray Notebook](./builtins_module_bytearray/notebook.ipynb)
 * [Immutable Integer Notebook](./builtins_module_int/notebook.ipynb)
 * [Immutable Boolean Notebook](./builtins_module_bool/notebook.ipynb)

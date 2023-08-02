@@ -102,23 +102,27 @@ The create and install commands can be combined using:
 mamba create -n ENVNAME PACKAGENAME1 PACKAGENAME2 ...
 ```
 
-There is also a legacy env command that won't act upon the selected environment, instead -n ENVNAME needs to be provided when using the command. At current this command only works using conda and the following error displays when using Mamba ['Namespace' object has no attribute 'func' - GitHub Issue](https://github.com/conda-forge/miniforge/issues/475) 
+There is also a legacy env command that won't act upon the selected environment, instead -n ENVNAME needs to be provided when using the command. 
+
+At current this command has some issues when using the export or remove option from mamba although the create option works. Fortunately these two problematic options can instead be invoked from the conda package manager. The error for Mamba is submitted on GitHub ['Namespace' object has no attribute 'func' - GitHub Issue](https://github.com/conda-forge/miniforge/issues/475) 
 
 This includes exporting the Environment to a yml file: 
 
 ```
+mamba env export -n ENVNAME > Documents\ENVNAME.yml
 conda env export -n ENVNAME > Documents\ENVNAME.yml
 ```
 
 A Python environment can be created from this yml file using:
 
 ```
-conda env create -n ENVNAME -f environment.yml
+mamba env create -n ENVNAME -f environment.yml
 ```
 
 A Python environment can be removed using:
 
 ```
+mamba env remove -n ENVNAME 
 conda env remove -n ENVNAME 
 ```
 
@@ -350,18 +354,14 @@ This effectively deleted the folder in envs:
 It can be recreated from the yml file using:
 
 ```
-conda env create -n vscode -f Documents\vscode.yml
+mamba env create -n vscode -f Documents\vscode.yml
 ```
-
-<img src='images_environments/img_035.png' alt='img_035' width='450'/>
-
-Although this may be a bit slow to create as it is using the conda package manager opposed to the mamba package manager which takes a while to solve Python environments.
 
 <img src='images_environments/img_036.png' alt='img_036' width='450'/>
 
-<img src='images_environments/img_037.png' alt='img_037' width='450'/>
+This will download all the specified packages and their versions from the vscode.yml file creating a new Python environment:
 
-<img src='images_environments/img_038.png' alt='img_038' width='450'/>
+<img src='images_environments/img_037.png' alt='img_037' width='450'/>
 
 ## Cleaning
 
@@ -370,6 +370,12 @@ To remove old versions of downloaded packages and free up some disk space use:
 ```
 mamba clean --all
 ```
+
+<img src='images_environments/img_038.png' alt='img_038' width='450'/>
+
+Select y to proceed with removing the old tarballs and other packages:
+
+<img src='images_environments/img_039.png' alt='img_039' width='450'/>
 
 To continue to setup an IDE see:
 
