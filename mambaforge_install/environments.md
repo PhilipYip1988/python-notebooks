@@ -18,11 +18,11 @@ It is recommended to instead create a seperate Python, in essence a subinstallat
 
 In the (base) Python environment is an envs subfolder:
 
-<img src='images_vscode/img_001.png' alt='img_001' width='450'/>
+<img src='images_environments/img_001.png' alt='img_001' width='450'/>
 
 This is empty by default:
 
-<img src='images_vscode/img_002.png' alt='img_002' width='450'/>
+<img src='images_environments/img_002.png' alt='img_002' width='450'/>
 
 ## mamba Package Manager Overview
 
@@ -102,7 +102,9 @@ The create and install commands can be combined using:
 mamba create -n ENVNAME PACKAGENAME1 PACKAGENAME2 ...
 ```
 
-There is a legacy env command that is currently only available using conda (mamba is based upon conda) and won't act upon the selected environment, instead -n ENVNAME needs to be provided. This includes exporting the Environment to a yml file: 
+There is also a legacy env command that won't act upon the selected environment, instead -n ENVNAME needs to be provided when using the command. At current this command only works using conda and the following error displays when using Mamba ['Namespace' object has no attribute 'func' - GitHub Issue](https://github.com/conda-forge/miniforge/issues/475) 
+
+This includes exporting the Environment to a yml file: 
 
 ```
 conda env export -n ENVNAME > Documents\ENVNAME.yml
@@ -114,13 +116,11 @@ A Python environment can be created from this yml file using:
 conda env create -n ENVNAME -f environment.yml
 ```
 
-
 A Python environment can be removed using:
 
 ```
 conda env remove -n ENVNAME 
 ```
-
 
 ## Example Python Environment
 
@@ -142,15 +142,15 @@ Installing the data visualisation library seaborn will also install the numeric 
 
 openpyxl, xlrd, xlsxwriter, lxml, sqlalchemy and tabulate are prequisite libraries for reading and exporting data using pandas. pyqt and ipympl are used for the pyqt or ipympl backends of matplotlib plots.
 
-<img src='images_vscode/img_003.png' alt='img_003' width='450'/>
+<img src='images_environments/img_003.png' alt='img_003' width='450'/>
 
 The mamba package manager will search for all of these packages and their dependencies. Input ```y``` in order to proceed:
 
-<img src='images_vscode/img_004.png' alt='img_004' width='450'/>
+<img src='images_environments/img_004.png' alt='img_004' width='450'/>
 
 The packages will be downloaded and installed:
 
-<img src='images_vscode/img_005.png' alt='img_005' width='450'/>
+<img src='images_environments/img_005.png' alt='img_005' width='450'/>
 
 The Mambaforge Prompt can be cleared using:
 
@@ -158,53 +158,53 @@ The Mambaforge Prompt can be cleared using:
 cls
 ```
 
-<img src='images_vscode/img_006.png' alt='img_006' width='450'/>
+<img src='images_environments/img_006.png' alt='img_006' width='450'/>
 
 In Windows Explorer, there is now a vscode folder in the envs subfolder:
 
-<img src='images_vscode/img_007.png' alt='img_007' width='450'/>
+<img src='images_environments/img_007.png' alt='img_007' width='450'/>
 
 Notice it has its own python.exe:
 
-<img src='images_vscode/img_008.png' alt='img_008' width='450'/>
+<img src='images_environments/img_008.png' alt='img_008' width='450'/>
 
 Lib subfolder:
 
-<img src='images_vscode/img_009.png' alt='img_009' width='450'/>
+<img src='images_environments/img_009.png' alt='img_009' width='450'/>
 
 Standard Modules such as the package email:
 
-<img src='images_vscode/img_010.png' alt='img_010' width='450'/>
+<img src='images_environments/img_010.png' alt='img_010' width='450'/>
 
-<img src='images_vscode/img_011.png' alt='img_011' width='450'/>
+<img src='images_environments/img_011.png' alt='img_011' width='450'/>
 
 And the module datetime:
 
-<img src='images_vscode/img_012.png' alt='img_012' width='450'/>
+<img src='images_environments/img_012.png' alt='img_012' width='450'/>
 
 It also has its own site-packages folder which contains the third-party packages:
 
-<img src='images_vscode/img_013.png' alt='img_013' width='450'/>
+<img src='images_environments/img_013.png' alt='img_013' width='450'/>
 
 This includes numpy:
 
-<img src='images_vscode/img_014.png' alt='img_014' width='450'/>
+<img src='images_environments/img_014.png' alt='img_014' width='450'/>
 
-<img src='images_vscode/img_015.png' alt='img_015' width='450'/>
+<img src='images_environments/img_015.png' alt='img_015' width='450'/>
 
 And matplotlib:
 
-<img src='images_vscode/img_016.png' alt='img_016' width='450'/>
+<img src='images_environments/img_016.png' alt='img_016' width='450'/>
 
-<img src='images_vscode/img_017.png' alt='img_017' width='450'/>
+<img src='images_environments/img_017.png' alt='img_017' width='450'/>
 
-<img src='images_vscode/img_018.png' alt='img_018' width='450'/>
+<img src='images_environments/img_018.png' alt='img_018' width='450'/>
 
 Typically only the pyplot module is used in matplotlib.
 
 ## Activating Python Environments
 
-By default the base Python environment is selected and this can be seen by checking:
+When a new instance of the Mambaforge Prompt is opened the base Python environment is selected by default and this can be seen by checking:
 
 ```
 import email
@@ -221,7 +221,7 @@ import numpy as np
 
 there is a ModuleNotFoundError because there is no numpy folder in the (base) Python environment:
 
-<img src='images_vscode/img_019.png' alt='img_019' width='450'/>
+<img src='images_environments/img_019.png' alt='img_019' width='450'/>
 
 In other words packages are being searched for in:
 
@@ -229,7 +229,7 @@ In other words packages are being searched for in:
 %USERPROFILE%/Mambaforge/Lib
 ```
 
-<img src='images_vscode/img_020.png' alt='img_020' width='450'/>
+<img src='images_environments/img_020.png' alt='img_020' width='450'/>
 
 And not:
 
@@ -237,7 +237,7 @@ And not:
 %USERPROFILE%/Mambaforge/envs/vscode/Lib
 ```
 
-<img src='images_vscode/img_021.png' alt='img_021' width='450'/>
+<img src='images_environments/img_021.png' alt='img_021' width='450'/>
 
 If the following is input:
 
@@ -247,7 +247,7 @@ mamba list
 
 there is no mention of numpy:
 
-<img src='images_vscode/img_022.png' alt='img_022' width='450'/>
+<img src='images_environments/img_022.png' alt='img_022' width='450'/>
 
 If the following is input:
 
@@ -255,11 +255,11 @@ If the following is input:
 mamba activate vscode
 ```
 
-<img src='images_vscode/img_023.png' alt='img_023' width='450'/>
+<img src='images_environments/img_023.png' alt='img_023' width='450'/>
 
 Notice the (base) changes to (vscode) indicating a different Python environment is selected. **Pay attention to this as it indicates what Python environment is activated and is being changed**.
 
-<img src='images_vscode/img_024.png' alt='img_024' width='450'/>
+<img src='images_environments/img_024.png' alt='img_024' width='450'/>
 
 Notice the difference in Python version when the following is input:
 
@@ -282,7 +282,7 @@ import matplotlib.pyplot as plt
 plt.__file__
 ```
 
-<img src='images_vscode/img_025.png' alt='img_025' width='450'/>
+<img src='images_environments/img_025.png' alt='img_025' width='450'/>
 
 If the following is now input:
 
@@ -293,7 +293,7 @@ mamba list
 there is a much longer list and numpy is listed.
 
 
-<img src='images_vscode/img_026.png' alt='img_026' width='450'/>
+<img src='images_environments/img_026.png' alt='img_026' width='450'/>
 
 ## Updating Python Environments
 
@@ -303,11 +303,11 @@ The Python environment can periodically be checked for updates using:
 mamba update --all
 ```
 
-<img src='images_vscode/img_027.png' alt='img_027' width='450'/>
+<img src='images_environments/img_027.png' alt='img_027' width='450'/>
 
 Since this Python environment was just created, it will be up to date:
 
-<img src='images_vscode/img_028.png' alt='img_028' width='450'/>
+<img src='images_environments/img_028.png' alt='img_028' width='450'/>
 
 ## Exporting Python Environments
 
@@ -317,19 +317,19 @@ This Python environment can be exported to a file in Documents:
 conda env export -n vscode > Documents\vscode.yml
 ```
 
-<img src='images_vscode/img_029.png' alt='img_029' width='450'/>
+<img src='images_environments/img_029.png' alt='img_029' width='450'/>
 
 Once exported a new prompt displays:
 
-<img src='images_vscode/img_030.png' alt='img_030' width='450'/>
+<img src='images_environments/img_030.png' alt='img_030' width='450'/>
 
 The yml file can be viewed in File Explorer:
 
-<img src='images_vscode/img_031.png' alt='img_031' width='450'/>
+<img src='images_environments/img_031.png' alt='img_031' width='450'/>
 
 And opened in Notepad:
 
-<img src='images_vscode/img_032.png' alt='img_032' width='450'/>
+<img src='images_environments/img_032.png' alt='img_032' width='450'/>
 
 ## Deleting a Python Environment
 
@@ -339,11 +339,11 @@ The vscode Python environment can be removed using:
 conda env remove -n vscode
 ```
 
-<img src='images_vscode/img_033.png' alt='img_033' width='450'/>
+<img src='images_environments/img_033.png' alt='img_033' width='450'/>
 
 This effectively deleted the folder in envs:
 
-<img src='images_vscode/img_034.png' alt='img_034' width='450'/>
+<img src='images_environments/img_034.png' alt='img_034' width='450'/>
 
 ## Creating a Python Environment from a File
 
@@ -353,13 +353,25 @@ It can be recreated from the yml file using:
 conda env create -n vscode -f Documents\vscode.yml
 ```
 
-<img src='images_vscode/img_035.png' alt='img_035' width='450'/>
+<img src='images_environments/img_035.png' alt='img_035' width='450'/>
 
 Although this may be a bit slow to create as it is using the conda package manager opposed to the mamba package manager which takes a while to solve Python environments.
 
+<img src='images_environments/img_036.png' alt='img_036' width='450'/>
 
+<img src='images_environments/img_037.png' alt='img_037' width='450'/>
 
+<img src='images_environments/img_038.png' alt='img_038' width='450'/>
 
-<img src='images_vscode/img_036.png' alt='img_036' width='450'/>
-<img src='images_vscode/img_037.png' alt='img_037' width='450'/>
-<img src='images_vscode/img_038.png' alt='img_038' width='450'/>
+## Cleaning
+
+To remove old versions of downloaded packages and free up some disk space use:
+
+```
+mamba clean --all
+```
+
+To continue to setup an IDE see:
+
+* [readme](./readme.md)
+

@@ -119,7 +119,7 @@ The programming language used by the Mambaforge Prompt is Windows PowerShell whi
 python
 ```
 
-<img src='images_mambaforge/img_022.png' alt='img_022' width='350'/>
+<img src='images_mambaforge/img_022.png' alt='img_022' width='450'/>
 
 Details about the Python version in (base) will display. Notice the prompt change from ```>``` (PowerShell) to ```>>>``` (Python):
 
