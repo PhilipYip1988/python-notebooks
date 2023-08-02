@@ -104,8 +104,6 @@ mamba create -n ENVNAME PACKAGENAME1 PACKAGENAME2 ...
 
 There is also a legacy env command that won't act upon the selected environment, instead -n ENVNAME needs to be provided when using the command. 
 
-At current this command has some issues when using the export or remove option from mamba although the create option works. Fortunately these two problematic options can instead be invoked from the conda package manager. The error for Mamba is submitted on GitHub ['Namespace' object has no attribute 'func' - GitHub Issue](https://github.com/conda-forge/miniforge/issues/475) 
-
 This includes exporting the Environment to a yml file: 
 
 ```
@@ -125,6 +123,8 @@ A Python environment can be removed using:
 mamba env remove -n ENVNAME 
 conda env remove -n ENVNAME 
 ```
+
+At current the env command has some issues when using the export or remove option although the create option works. Fortunately these two problematic options can instead be invoked from the conda package manager. The error for mamba is submitted on GitHub and hopefully will be resovled in the next version ['Namespace' object has no attribute 'func' - GitHub Issue](https://github.com/conda-forge/miniforge/issues/475) 
 
 ## Example Python Environment
 

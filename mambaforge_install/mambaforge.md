@@ -50,14 +50,18 @@ The environmental variable %USERPROFILE% maps to the location of your User Profi
 
 <img src='images_mambaforge/img_010.png' alt='img_010' width='350'/>
 
-Installation options will display. Mambaforge can optionally be added to the Windows Path however it is not recommended by default. In this example, the options will be left at their defaults: 
+Installation options will display. In this example, the options shown are the defaults. 
 
 <img src='images_mambaforge/img_011.png' alt='img_011' width='350'/>
+
+A common option (although shown as not recommended) is to add Mambaforge to the Windows Environmental Variables Path. This makes the (base) Python environment available in the Windows Terminal. Note that leaving this option unchecked may cause a minor issue with VSCode. VSCode uses the Windows Terminal and shows an error message when launching a Python script if the (base) Python environment is not added to the path. If this option has not been checked, Mambaforge can be manually added to the Windows Environmental Variables path see:
+[Adding Mambaforge to the Windows Environmental Variables Path](./path.md). 
+
+The reason this option is not recommended by default is it can arise to conflicts when multiple Python distributions are installed/uninstalled. In general it is not recommended to install multiple Python distributions and a better practice to stick to only using Mambaforge.
 
 Select Next:
 
 <img src='images_mambaforge/img_012.png' alt='img_012' width='350'/>
-
 
 Select Finish:
 

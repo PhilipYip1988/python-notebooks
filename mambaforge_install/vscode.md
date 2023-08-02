@@ -148,7 +148,7 @@ The file can be saved using ```Ctrl``` + ```s``` and run by right clicking and s
 
 <img src='images_vscode/img_030.png' alt='img_030' width='450'/>
 
-In my case the following displays, this is because Mambaforge is not added to the Windows Environmental Variables Path and the (base) Python environment is not used. This message can be ignored:
+In my case the following displays, this is because Mambaforge is not added to the Windows Environmental Variables Path and the (base) Python environment is not used. 
 
 ```
 conda : The term 'conda' is not recognized as the name of a cmdlet, function, script 
@@ -162,7 +162,7 @@ At line:1 char:1
     + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
-The code otherwise runs as expected:
+This message can be ignored and the code otherwise runs as expected. To get rid of this error message, the (base) Python environment can be added to the Windows Environmental Variables path see [Adding Mambaforge to the Windows Environmental Variables Path](./path.md)
 
 <img src='images_vscode/img_031.png' alt='img_031' width='450'/>
 
