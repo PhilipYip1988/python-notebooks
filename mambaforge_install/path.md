@@ -57,3 +57,5 @@ Add the five entries if they are not present:
 Select OK. Any Terminals or IDEs will need to be closed and reopened to use the updated path. Notice that there is no error in VSCode:
 
 <img src='images_path/img_008.png' alt='img_008' width='450'/>
+
+[Return to Mambaforge Installation](./readme.md)

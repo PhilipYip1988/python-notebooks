@@ -2,7 +2,7 @@
 
 ## Download
 
-The download link for MambaForge can be found on the [Mambaforge](https://mamba.readthedocs.io/en/latest/installation.html) home page. It redirects to GitHub whic will give download links for each Operating System. Select the Windows-x86_64 link:
+The download link for MambaForge can be found on the [Mambaforge](https://mamba.readthedocs.io/en/latest/installation.html) home page. It redirects to GitHub which will give download links for each Operating System. Select the Windows-x86_64 link:
 
 <img src='images_mambaforge/img_001.png' alt='img_001' width='400'/>
 
@@ -379,4 +379,8 @@ The keyboard shortcut ```Ctrl``` + ```c``` is used to close an operation that is
 
 <img src='images_mambaforge/img_053.png' alt='img_053' width='450'/>
 
-To copy from the terminal the keyboard shortcut ```Ctrl``` + ```⇧``` + ```c``` is used. To paste to the terminal the keyboard shortcut ```Ctrl``` + ```⇧``` + ```p``` is used.
+To copy from the terminal the keyboard shortcut ```Ctrl``` + ```⇧``` + ```c``` is used. 
+
+To paste to the terminal the keyboard shortcut ```Ctrl``` + ```⇧``` + ```p``` is used.
+
+[Return to Mambaforge Installation](./readme.md)

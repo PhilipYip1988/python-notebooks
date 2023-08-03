@@ -220,3 +220,5 @@ plt.plot(df['x'], df['y'])
 ```
 
 <img src='images_vscode/img_038.png' alt='img_038' width='450'/>
+
+[Return to Mambaforge Installation](./readme.md)

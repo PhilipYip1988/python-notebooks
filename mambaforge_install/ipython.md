@@ -313,3 +313,5 @@ Close all open Mambaforge Prompts and relaunch to refresh the Environmental Vari
 <img src='images_ipython/img_053.png' alt='img_053' width='450'/>
 
 Notice that Notepad++ is now the default editor and has some syntax highlighting for Python code.
+
+[Return to Mambaforge Installation](./readme.md)

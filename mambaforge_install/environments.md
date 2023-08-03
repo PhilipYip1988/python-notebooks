@@ -377,7 +377,10 @@ Select y to proceed with removing the old tarballs and other packages:
 
 <img src='images_environments/img_039.png' alt='img_039' width='450'/>
 
-To continue to setup an IDE see:
+To continue setting up VSCode see:
 
-* [readme](./readme.md)
+[VSCode Setup](./vscode.md)
 
+Otherwise for other IDEs:
+
+[Return to Mambaforge Installation](./readme.md)
