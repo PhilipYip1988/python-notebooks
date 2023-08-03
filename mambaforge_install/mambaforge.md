@@ -334,3 +334,5 @@ The file can be ran in Python using:
 ```
 python script.py
 ```
+
+The keyboard shortcut ```Ctrl``` + ```c``` is used to close an operation that is running in terminal. To copy from the terminal the keyboard shortcut ```Ctrl``` + ```⇧``` + ```c``` is used. To paste to the terminal the keyboard shortcut ```Ctrl``` + ```⇧``` + ```p``` is used.

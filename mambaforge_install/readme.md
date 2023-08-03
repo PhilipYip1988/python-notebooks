@@ -7,6 +7,7 @@ This set of tutorials covers installation of Mambaforge on Windows 11 and using 
 * **[Mambaforge: Python Environments Overview](./environments.md)**
 * IDLE
 * [Interactive Python](./ipython.md)
-* **[VSCode](./vscode.md)**
 * JupyterLab
+* **[VSCode](./vscode.md)**
+* Markdown Tutorial
 * Spyder
