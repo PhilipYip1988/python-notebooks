@@ -1,10 +1,10 @@
 # Thonny
 
-The previous tutorial looked at ID**L**E which as the name suggests is a popular Learner IDE. Another popular learner IDE is Thonny.
+The previous tutorial looked at ID**L**E which as the name suggests is a popular Learner IDE. Another popular learner IDE is Thonny and is the Python IDE preinstalled on a Raspberry Pi for example.
 
 ## Installing Thonny
 
-Thonny is not installable using mamba and has its own standalone installer which can be downloaded on the Thonny website [Thonny](https://thonny.org/)
+Thonny is not installable using mamba as it has no package on conda-forge and therefore needs to be installed using its own standalone installer which can be downloaded on the Thonny website [Thonny](https://thonny.org/)
 
 <img src='images_thonny/img_001.png' alt='img_001' width='250'/>
 
