@@ -117,7 +117,23 @@ This opens a Terminal similar to the Windows Terminal.
 
 <img src='images_mambaforge/img_021.png' alt='img_021' width='450'/>
 
-The programming language used by the Mambaforge Prompt is Windows PowerShell which is inbuilt into Windows. It can be used to invoke Python from the (base) Python environment using:
+The programming language used by the Mambaforge Prompt by default is CMD. Unfortunately at the time of writing there is no MambaForge PowerShell Prompt. Windows PowerShell (Windows 10/11) and CMD (Legacy Windows 7) are scripting languages that are essentially terminal based equivalents of Windows Explorer. They are used essentially to navigate around the Operating System. In the Mambaforge Prompt, the commands mamba and python are added.
+
+CMD/PowerShell use a syntax of the form:
+
+```
+command option -p parametervalue1
+command option --parametername2 parametervalue2
+command option --parametername3
+```
+
+Whereas Python uses the following syntax:
+
+```
+function(value1, arg2=value2)
+```
+
+The Mambaforge Prompt can be used to invoke Python from the (base) Python environment using:
 
 ```
 python
@@ -125,7 +141,7 @@ python
 
 <img src='images_mambaforge/img_022.png' alt='img_022' width='450'/>
 
-Details about the Python version in (base) will display. Notice the prompt change from ```>``` (PowerShell) to ```>>>``` (Python):
+Details about the Python version in (base) will display. Notice the prompt change from ```>``` (CMD) to ```>>>``` (Python):
 
 <img src='images_mambaforge/img_023.png' alt='img_023' width='450'/>
 
@@ -157,7 +173,7 @@ can be used. Notice the prompt returns to ```>``` indicating PowerShell.
 
 <img src='images_mambaforge/img_026.png' alt='img_026' width='450'/>
 
-A PowerShell command such as:
+A CMD command such as:
 
 ```
 cls
@@ -183,13 +199,13 @@ Notice the subtle difference between the Python function call:
 exit()
 ```
 
-And the PowerShell command:
+And the CMD command:
 
 ```
 exit
 ```
 
-Python uses parenthesis to call functions and enclose any function input arguments. Powershell, instead uses a space between the command and its input arguments. Do not confuse the two programming languages!
+Python uses parenthesis to call functions and enclose any function input arguments. CMD, instead uses a space between the command and its input arguments. Do not confuse the two programming languages!
 
 Third-party packages are in the site-packages subfolder
 
@@ -205,7 +221,7 @@ This can be imported in Python and its initialisation file examined:
 
 ## Updating the (base) Python Distribution
 
-The PowerShell command:
+The CMD command mamba can be used with option and named parameter --all to update all packages:
 
 ```
 mamba update --all
@@ -215,7 +231,7 @@ can be used to update all packages in the base Python environment:
 
 <img src='images_mambaforge/img_032.png' alt='img_032' width='450'/>
 
-Notice this searchss for updates to all the preinstalled packages:
+Notice this searches for updates to all the preinstalled packages:
 
 <img src='images_mambaforge/img_033.png' alt='img_033' width='450'/>
 
@@ -234,3 +250,87 @@ They can be seen in the File Explorer:
 The Mambaforge Prompt should now have the correct name in the Start Menu:
 
 <img src='images_mambaforge/img_037.png' alt='img_037' width='450'/>
+
+## MambaForge Prompt
+
+If the command help is pressed a list of preinstalled CMD commands display. These are shown in upper case but are case insensitive. The most commonly preinstalled commands are:
+
+|command|command description|
+|---|---|
+|cd|Change Directory|
+|cls|Clears the Screen|
+|mkdir|Make a Directory|
+|rmdir|Removes a Directory|
+|type|Displays the contents of a text file|
+
+CMD can also be used to launch Windows Applications for example:
+
+|command|command description|
+|---|---|
+|notepad|launches notepad|
+|calc|launches calculator|
+|mspaint|launches paint|
+
+The Mambaforge (base) environment includes:
+
+|command|command description|
+|---|---|
+|mamba|Mamba package manager|
+|python|Python|
+|idle|Launches IDLE|
+
+If other IDEs are installed:
+
+|command|command description|
+|---|---|
+|jupyter lab|Launches JupyterLab (lab gives the option lab)|
+|jupyter|Launches Jupyter Notebook (legacy)|
+|spyder|Launches Spyder|
+|code|Launches VSCode|
+
+In PowerShell most of these commands act as an alias for equivalent an cmdlet.
+
+The Mambaforge Prompt opens in the environmental variable ```%USERPROFILE%``` by default which in my case is ```C:\Users\Philip```. 
+
+Documents is a subfolder and the directory can be changed to Documents using:
+
+```
+cd Documents
+```
+
+A new Python script file can be created in CMD using:
+
+```
+type NUL > script.py
+```
+
+In Powershell this is simplified using new item:
+
+```
+ni script.py
+```
+
+
+This can be opened in notepad using:
+
+```
+notepad script.py
+```
+
+The following Python code can be added to the script file using notepad:
+
+```
+print('Hello World!')
+```
+
+The contents of the file can be viewed using:
+
+```
+type script.py
+```
+
+The file can be ran in Python using:
+
+```
+python script.py
+```

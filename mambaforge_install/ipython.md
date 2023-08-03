@@ -276,3 +276,4 @@ Then notepad can be closed and the file is executed:
 
 <img src='images_ipython/img_045.png' alt='img_045' width='450'/>
 
+The default text editor can be changed by adding an environmental variable called EDITOR and assigning it to the programs .exe. To do this right click the Start Button and Select System. Select Advanced System Settings. Then Environmental Variables. Then New. Store the Variable Name as ```EDITOR``` and the Variable Value as ```"C:\Program Files\Notepad++\notepad++.exe"```.
