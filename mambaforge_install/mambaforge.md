@@ -362,4 +362,21 @@ python script.py
 
 <img src='images_mambaforge/img_050.png' alt='img_050' width='450'/>
 
-The keyboard shortcut ```Ctrl``` + ```c``` is used to close an operation that is running in terminal. To copy from the terminal the keyboard shortcut ```Ctrl``` + ```⇧``` + ```c``` is used. To paste to the terminal the keyboard shortcut ```Ctrl``` + ```⇧``` + ```p``` is used.
+If the code in the script file is changed to:
+
+```
+import time
+time.sleep(5000)
+```
+
+<img src='images_mambaforge/img_051.png' alt='img_051' width='450'/>
+
+The console will hang for 5000 seconds while running the script file:
+
+<img src='images_mambaforge/img_052.png' alt='img_052' width='450'/>
+
+The keyboard shortcut ```Ctrl``` + ```c``` is used to close an operation that is running in terminal. 
+
+<img src='images_mambaforge/img_053.png' alt='img_053' width='450'/>
+
+To copy from the terminal the keyboard shortcut ```Ctrl``` + ```⇧``` + ```c``` is used. To paste to the terminal the keyboard shortcut ```Ctrl``` + ```⇧``` + ```p``` is used.
