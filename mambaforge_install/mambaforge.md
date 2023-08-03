@@ -253,7 +253,11 @@ The Mambaforge Prompt should now have the correct name in the Start Menu:
 
 ## MambaForge Prompt
 
-If the command help is pressed a list of preinstalled CMD commands display. These are shown in upper case but are case insensitive. The most commonly preinstalled commands are:
+If the command ```help``` is used a list of preinstalled CMD commands display. 
+
+<img src='images_mambaforge/img_038.png' alt='img_038' width='450'/>
+
+These are shown in upper case but are case insensitive. The most commonly preinstalled commands are:
 
 |command|command description|
 |---|---|
@@ -292,16 +296,26 @@ In PowerShell most of these commands act as an alias for equivalent an cmdlet.
 
 The Mambaforge Prompt opens in the environmental variable ```%USERPROFILE%``` by default which in my case is ```C:\Users\Philip```. 
 
+<img src='images_mambaforge/img_039.png' alt='img_039' width='450'/>
+
+<img src='images_mambaforge/img_040.png' alt='img_040' width='450'/>
+
+<img src='images_mambaforge/img_041.png' alt='img_041' width='450'/>
+
 Documents is a subfolder and the directory can be changed to Documents using:
 
 ```
 cd Documents
 ```
 
+<img src='images_mambaforge/img_042.png' alt='img_042' width='450'/>
+
+<img src='images_mambaforge/img_043.png' alt='img_043' width='450'/>
+
 A new Python script file can be created in CMD using:
 
 ```
-type NUL > script.py
+type nul > script.py
 ```
 
 In Powershell this is simplified using new item:
@@ -310,6 +324,9 @@ In Powershell this is simplified using new item:
 ni script.py
 ```
 
+<img src='images_mambaforge/img_044.png' alt='img_044' width='450'/>
+
+<img src='images_mambaforge/img_045.png' alt='img_045' width='450'/>
 
 This can be opened in notepad using:
 
@@ -317,11 +334,17 @@ This can be opened in notepad using:
 notepad script.py
 ```
 
+<img src='images_mambaforge/img_046.png' alt='img_046' width='450'/>
+
+<img src='images_mambaforge/img_047.png' alt='img_047' width='450'/>
+
 The following Python code can be added to the script file using notepad:
 
 ```
 print('Hello World!')
 ```
+
+<img src='images_mambaforge/img_048.png' alt='img_048' width='450'/>
 
 The contents of the file can be viewed using:
 
@@ -329,10 +352,14 @@ The contents of the file can be viewed using:
 type script.py
 ```
 
+<img src='images_mambaforge/img_049.png' alt='img_049' width='450'/>
+
 The file can be ran in Python using:
 
 ```
 python script.py
 ```
+
+<img src='images_mambaforge/img_050.png' alt='img_050' width='450'/>
 
 The keyboard shortcut ```Ctrl``` + ```c``` is used to close an operation that is running in terminal. To copy from the terminal the keyboard shortcut ```Ctrl``` + ```⇧``` + ```c``` is used. To paste to the terminal the keyboard shortcut ```Ctrl``` + ```⇧``` + ```p``` is used.

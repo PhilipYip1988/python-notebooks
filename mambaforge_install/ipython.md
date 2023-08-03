@@ -280,4 +280,36 @@ Then notepad can be closed and the file is executed:
 
 <img src='images_ipython/img_045.png' alt='img_045' width='450'/>
 
-The default text editor can be changed by adding an environmental variable called EDITOR and assigning it to the programs .exe. To do this right click the Start Button and Select System. Select Advanced System Settings. Then Environmental Variables. Then New. Store the Variable Name as ```EDITOR``` and the Variable Value as ```"C:\Program Files\Notepad++\notepad++.exe"```.
+The default text editor can be changed to another program such as Notepad++
+
+<img src='images_ipython/img_046.png' alt='img_046' width='450'/>
+
+To do this an environmental variable EDITOR needs to be added. Right click the Start button and select System:
+
+<img src='images_ipython/img_047.png' alt='img_047' width='250'/>
+
+Select Advanced System Settings: 
+
+<img src='images_ipython/img_048.png' alt='img_048' width='400'/>
+
+Then Environmental Variables:
+
+<img src='images_ipython/img_049.png' alt='img_049' width='350'/>
+
+Then select New:
+
+<img src='images_ipython/img_050.png' alt='img_050' width='350'/>
+
+Store the Variable Name as ```EDITOR``` and the Variable Value as ```"C:\Program Files\Notepad++\notepad++.exe"```, note the quotations as there is a space in Program Files:
+
+<img src='images_ipython/img_051.png' alt='img_051' width='350'/>
+
+Select OK:
+
+<img src='images_ipython/img_052.png' alt='img_052' width='350'/>
+
+Close all open Mambaforge Prompts and relaunch to refresh the Environmental Variables:
+
+<img src='images_ipython/img_053.png' alt='img_053' width='450'/>
+
+Notice that Notepad++ is now the default editor and has some syntax highlighting for Python code.
