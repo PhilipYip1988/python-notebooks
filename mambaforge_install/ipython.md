@@ -1,10 +1,14 @@
 # Interactive Python
 
-Previously Windows PowerShell and Python were used. Windows PowerShell is a scripting language used to navigate throughout the operating system, essentially a Terminal based version of File Explorer and Python is scripting program for general purposes. The disadvantage of this setup is the Python program needs to be exited in order to return to the PowerShell Prompt:
+Previously CMD and Python were used. CMD is a legacy scripting language used to navigate throughout the operating system, essentially a Terminal based version of File Explorer. Unfortunately the Mambaforge Prompt at the time of writing hasn't been updated to PowerShell. Python is a scripting program for general purposes. 
+
+The disadvantage of this setup is the Python program needs to be exited in order to return to the CMD Prompt:
 
 <img src='images_ipython/img_001.png' alt='img_001' width=450/>
 
-ipython is an abbreviation for **i**nteractive **Python** and incorporates all the functionality of Python and has the commonly used system shell commands accessed from PowerShell. Unlike Python it also includes basic code-completion and the ability to look up document strings.
+In addition the IDLE shell was examined which was seen to be terminal like but included additional functionality like code completion and docstrings.
+
+ipython is an abbreviation for **i**nteractive **Python** and incorporates all the functionality of Python and has the commonly used system shell commands accessed from PowerShell albeit being more closely related to the open-source counterpart in Linux known as bash. It also includes similar code-completion to the IDLE shell although the docstrings do not display as popup balloons and have to be outputted to an ipython cell.
 
 ipython is not included in the Mambaforge (base) environment and can be added using:
 
