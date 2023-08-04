@@ -15,7 +15,7 @@ Python is available as a standalone installer from Python.org, this standalone i
 
 The Integrated Developer Learning Environment (IDLE) is written in tkinter, a basic inbuilt graphical user interface Python library. 
 
-This installer lacks the most commonly used third-party data science libraries such as the **num**eric **Py**thon library (numpy), the **P***ython **an**d **D**ata **A**naly**s**is Library (pandas) and the matrix plotting library (matplotlib). These libraries can be installed with Pythons package manager **P**ython **i**nstall **p**ackage (pip). Note however that pip is the most flexible package manager however it isn't very stringent when it comes to solving package dependencies. As a consequence new users are likely to install incompatible versions of Python libraries which can arise to issues.
+This installer lacks the most commonly used third-party data science libraries such as the **num**eric **Py**thon library (numpy), the **P**ython **an**d **D**ata **A**naly**s**is Library (pandas) and the matrix plotting library (matplotlib). These libraries can be installed with Pythons package manager **P**ython **i**nstall **p**ackage (pip). Note however that pip is the most flexible package manager however it isn't very stringent when it comes to solving package dependencies. As a consequence new users are likely to install incompatible versions of Python libraries which can arise to issues.
 
 ## Anaconda
 
