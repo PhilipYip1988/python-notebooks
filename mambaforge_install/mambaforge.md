@@ -1,5 +1,9 @@
 # MambaForge Install
 
+## Uninstall
+
+Mambaforge is an Anaconda based installer and may not work as intended when another Anaconda based Python distribution is installed such as Anaconda, Miniconda, Miniforge, Mambaforge. If you have an old Python installation follow the instructions to [Uninstall and Purge old Python Distributions](./uninstall.md). This will allow Mambaforge to be installed properly.
+
 ## Download
 
 The download link for MambaForge can be found on the [Mambaforge](https://mamba.readthedocs.io/en/latest/installation.html) home page. It redirects to GitHub which will give download links for each Operating System. Select the Windows-x86_64 link:

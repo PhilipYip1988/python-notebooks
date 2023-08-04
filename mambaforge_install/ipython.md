@@ -16,19 +16,25 @@ ipython is not included in the Mambaforge (base) environment and can be added us
 mamba install ipython
 ```
 
-A better practice is to leave the (base) Python environment unmodified and therefore create a new Python environment using:
+A better practice is to leave the (base) Python environment unmodified and therefore create a new Python environment.
+
+Mambaforge will be used to create a Python environment. To install Mambaforge see [Mambaforge: Install](./mambaforge.md)
+
+The following Python Environment can be created for ipython:
 
 ```
-mamba create -n ipython python=3.11 ipython
+mamba create -n ipython python=3.11 ipython cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy nodejs tabulate 
 ```
+
+This is covered in more detail in [Mambaforge: Python Environments Overview](./environments.md)
 
 <img src='images_ipython/img_002.png' alt='img_002' width=450/>
 
-The Python environment will be created and the packages can be downloaded and installed:
+The mamba package manager will search for all of these packages and their dependencies. Input ```y``` in order to proceed:
 
 <img src='images_ipython/img_003.png' alt='img_003' width=450/>
 
-This Python environment can be activated using:
+The packages will be downloaded and installed. This Python environment can be activated using:
 
 ```
 mamba activate ipython

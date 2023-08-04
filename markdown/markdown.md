@@ -4,15 +4,15 @@ A text file can only be used to store unformatted text.
 
 The markdown file is similar to a text file, however allows text to be formatted using very simple markdown syntax. The raw file itself is edited (left) using a text editor however typically read using the preview (right):
 
-![img_001](./images_markdown/img_001.png)
+![img_001](./images/img_001.png)
 
 This document itself for example is a Markdown file hosted on GitHub. When it is viewed on GitHub the preview is seen. When it is editted, the raw content of the file itself is displayed:
 
 The Markdown syntax is used for markdown cells in Interactive Python Notebooks. Markdown cells are used essentially to create documentation around code, in a similar form to a scientific paper:
 
-![img_002](./images_markdown/img_002.png)
+![img_002](./images/img_002.png)
 
-![img_003](./images_markdown/img_003.png)
+![img_003](./images/img_003.png)
 
 ## Formatted Text
 
@@ -347,12 +347,12 @@ If the image is in the same folder as the markdown file. The file name can be sp
 In the file path ```./``` can be used to specify a subfolder and ```../``` can be used to go up a level. The ```img_004.png``` in the subfolder ```images``` can be selected for example using the following markdown:
 
 ```
-![img_004](./images_markdown/img_004.png)
+![img_004](./images/img_004.png)
 ```
 
 Producing:
 
-![equation](./images_markdown/img_004.png)
+![equation](./images/img_004.png)
 
 It is recommended to enable file extensions for known file types and ensure all file extensions are lower case. GitHub for example seems to be sensitive regarding the case of the file extension and won't render properly if the file has a different case of file extension. Some programs will save to .PNG and others will save to .png by default. By enabling the file extension you will be able to see what case each file extension is using and can update them all to be lower case for the sake of being consistent. 
 
@@ -364,25 +364,25 @@ The markdown file supports LaTeX. Care needs to be taken as Python IDEs and webs
 
 Only Office Desktop Editors is a cross-platform free office suite. Its Document has a powerful Equation Editor, that can be used as a What You See Is What You Get WYSIWYG LaTeX editor. Create your equation:
 
-![img_004](./images_markdown/img_004.png)
+![img_004](./images/img_004.png)
 
-![img_005](./images_markdown/img_005.png)
+![img_005](./images/img_005.png)
 
-![img_006](./images_markdown/img_006.png)
+![img_006](./images/img_006.png)
 
-![img_007](./images_markdown/img_007.png)
+![img_007](./images/img_007.png)
 
 Select LaTeX:
 
-![img_008](./images_markdown/img_008.png)
+![img_008](./images/img_008.png)
 
 Select Current (Linear):
 
-![img_009](./images_markdown/img_009.png)
+![img_009](./images/img_009.png)
 
 The equation is now in LaTeX format which you can copy and paste into a set of single \$ for an inline equation or double \$\$  for a display equation:
 
-![img_010](./images_markdown/img_010.png)
+![img_010](./images/img_010.png)
 
 Only Office Desktop Editors seems to work well, with the exception of Column Vectors and Matrices due to some limitations in MathJaxs rendering. A Column Vector comes out as ```[\matrix{a\\b\\c}]``` and does not render properly. To render properly modifications need to be made to the prefix and suffix and spacing needs to be added, see below for more details.
 

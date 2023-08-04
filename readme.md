@@ -2,15 +2,21 @@
 
 ## Python Installation
 
-Windows 11 
+These tutorials look at using the Mambaforge which has the mamba package manager to install some of the most common Python IDEs reviewing the features and basic user interface of the IDEs. The rest of these tutorials will use the VSCode IDE:
 
-* [Mambaforge and VSCode Setup on Windows 11](./mambaforge_install/readme.md)
+* [Mambaforge and Python Setup on Windows 11](./mambaforge_install/readme.md)
+
+## Markdown
+
+The markdown syntax is used with interactive Python notebooks. Before looking at these it is worthwhile reviewing the basic syntax:
+
+* [Markdown](./markdown/readme.md)
 
 ## Downloading and Opening the Notebooks
 
-These notebook files are designed to be opened with VSCode. Select code and download zip, then extract the zip and open the extracted folder in VSCode.
+These notebook files are designed to be opened with VSCode although can also be opened with JupyterLab. Select code and download zip, then extract the zip and open the extracted folder in VSCode.
 
-Use VSCode to clear all outputs and run each cell as you examine the notebook.
+Use VSCode or JupyterLab to clear all outputs and run each cell as you examine the notebook.
 
 ## Builtins Module
 

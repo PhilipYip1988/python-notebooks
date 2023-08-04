@@ -102,19 +102,25 @@ This will run the Python Script File in the IDLE Shell:
 
 ## Third Party Libraries
 
-If third-party data science libraries are to be used IDLE needs to be installed in its own Python environment:
+If third-party data science libraries are to be used IDLE needs to be installed in its own Python environment.
+
+Mambaforge will be used to create a Python environment. To install Mambaforge see [Mambaforge: Install](./mambaforge.md)
+
+The following Python Environment can be created for the IDLE IDE:
 
 ```
 mamba create -n idle python=3.11 cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate
 ```
 
+This is covered in more detail in [Mambaforge: Python Environments Overview](./environments.md)
+
 <img src='images_idle/img_020.png' alt='img_020' width='450'/>
 
-Input ```y``` to proceed:
+The mamba package manager will search for all of these packages and their dependencies. Input ```y``` in order to proceed:
 
 <img src='images_idle/img_021.png' alt='img_021' width='450'/>
 
-the Python environment will be created and the packages downloaded:
+The packages will be downloaded and installed:
 
 <img src='images_idle/img_022.png' alt='img_022' width='450'/>
 
