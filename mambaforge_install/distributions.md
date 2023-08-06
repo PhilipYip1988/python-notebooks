@@ -32,7 +32,7 @@ The Anaconda Python Distribution attempts to package the most commonly used data
 
 A drawback of the Anaconda **base** environment has so many packages it becomes difficult to install additional packages without conflicts because of the large number of dependences required by the machine learning frameworks. As a consequence the base Python environment is supposed to be used "as is" and is updated by Anaconda using a standalone installer bi-annually. 
 
-When additional packages are used they should be installed in a seperate Python environment which can be made and activated using the conda package manager. The conda package manafer is more stringent than pip when it comes to dependencies. 
+When additional packages are used they should be installed in a seperate Python environment which can be made and activated using the conda package manager. The conda package manager is more stringent than pip when it comes to dependencies. 
 
 The conda package manager has two channels:
 
@@ -41,7 +41,39 @@ The conda package manager has two channels:
  
 The Anaconda channel conda is essentially a subset of packages from the community channel conda-forge, that have been tested further by the Anaconda company for use with their distribution that includes the machine learning frameworks. 
 
-Although these packages have been further tested for compatibility with the machine learning frameworks, a major drawback is that they are outdated and often lack some important bugfixes which is particularly prevalent in some of the IDEs. Another drawback is that less common packages from the conda-forge community channel are untested and not available in the conda channel. And finally installation of packages using mixed conda and conda-forge channels leads to an unstable Python environment.
+Although these packages have been further tested for compatibility with the machine learning frameworks, a major drawback is that they are outdated and often lack some important bugfixes which is particularly prevalent in some of the IDEs. Another drawback is that less common packages from the conda-forge community channel are untested and not available in the conda channel. 
+
+And finally installation of packages using mixed conda and conda-forge channels leads to an unstable Python environment...
+
+## Miniconda
+
+Having a busy base Python environment isn't necessarily desired when using the conda package manager to create custom Python environments. Miniconda is an installer made by Anaconda that has a minimal base Python environment. This minimal base Python environment contains the conda package manager and is defaulted to the conda channel.
+
+The default channel can be changed by creating a ```.condarc``` file in ```%USERPROFILE%``` and then updating the ```base``` Python environment. 
+
+To use the community conda-forge channel the ```.condarc``` file should contain:
+
+```
+channel_priority: strict
+channels:
+  - conda-forge
+  - defaults
+```
+
+To use the Anaconda conda channel the ```.condarc``` file should contain:
+
+```
+channels:
+  - defaults
+```
+
+The base Python environment can be updated using the channel specified in the ```.condarc``` file with the command:
+
+```
+conda update --all
+```
+
+There is a third-party (from Anaconda) version of Miniconda called Miniforge which is essentially a version of Miniconda that defaults to the community conda-forge channel however as Anaconda/Miniconda have recently been updated Miniconda is outdated. Also on Windows it lacks the PowerShell Prompt using only the legacy Prompt. Mambaforge is a version of Miniconda that includes mamba, an improved version of the conda package manager written for increase speed and reliability.
 
 ## Mambaforge
 

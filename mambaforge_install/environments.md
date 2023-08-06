@@ -102,13 +102,18 @@ The create and install commands can be combined using:
 mamba create -n ENVNAME PACKAGENAME1 PACKAGENAME2 ...
 ```
 
-There is also a legacy env command that won't act upon the selected environment, instead -n ENVNAME needs to be provided when using the command. 
+There is also an env command. To list Python environments use:
+
+```
+mamba env list
+conda env list
+```
 
 This includes exporting the Environment to a yml file: 
 
 ```
-mamba env export -n ENVNAME > Documents\ENVNAME.yml
-conda env export -n ENVNAME > Documents\ENVNAME.yml
+mamba env export > Documents\ENVNAME.yml
+conda env export > Documents\ENVNAME.yml
 ```
 
 A Python environment can be created from this yml file using:
@@ -124,7 +129,7 @@ mamba env remove -n ENVNAME
 conda env remove -n ENVNAME 
 ```
 
-At current the env command has some issues when using the export or remove option although the create option works. Fortunately these two problematic options can instead be invoked from the conda package manager. The error for mamba is submitted on GitHub and hopefully will be resovled in the next version ['Namespace' object has no attribute 'func' - GitHub Issue](https://github.com/conda-forge/miniforge/issues/475) 
+At current the env command has some issues when using the list, export or remove option although the create option works. Fortunately these three problematic options can instead be invoked from the conda package manager which mamba is based on. The error for mamba is submitted on GitHub and hopefully will be resovled in the next version ['Namespace' object has no attribute 'func' - GitHub Issue](https://github.com/conda-forge/miniforge/issues/475) 
 
 ## Example Python Environment
 

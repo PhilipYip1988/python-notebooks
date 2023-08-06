@@ -31,6 +31,22 @@ This sets the channel to defaults which is ```conda```. Having this file will ma
 
 <img src='images_uninstall/img_003.png' alt='img_003' width='450'/>
 
+The .condarc file created by the Anaconda installer which uses ```conda``` channel by default:
+
+```
+channels:
+  - defaults
+```
+
+A .condarc file modified to use the ```conda-forge``` channel:
+
+```
+channel_priority: strict
+channels:
+  - conda-forge
+  - defaults
+```
+
 ## Uninstall
 
 To Uninstall, right click the Start Button and select Installed Apps:
