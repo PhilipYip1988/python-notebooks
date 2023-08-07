@@ -2,21 +2,21 @@
 
 ## Python Installation
 
-These tutorials look at using the Mambaforge which has the mamba package manager to install some of the most common Python IDEs reviewing the features and basic user interface of the IDEs. The rest of these tutorials will use the VSCode IDE:
+These notebooks are designed to be open in VSCode or JupyterLab. A Python environment for these should be setup using MiniConda. For more details see:
 
-* [Mambaforge and Python Setup on Windows 11](./mambaforge_install/readme.md)
+* [Miniconda and Python Setup on Windows 11](https://github.com/PhilipYip1988/miniconda#readme)
+
+## Downloading and Opening the Notebooks
+
+Select code and download zip, then extract the zip and open the extracted folder in VSCode or JupyterLab.
+
+Use VSCode or JupyterLab to clear all outputs and run each cell as you examine the notebook.
 
 ## Markdown
 
 The markdown syntax is used with interactive Python notebooks. Before looking at these it is worthwhile reviewing the basic syntax:
 
 * [Markdown](./markdown/readme.md)
-
-## Downloading and Opening the Notebooks
-
-These notebook files are designed to be opened with VSCode although can also be opened with JupyterLab. Select code and download zip, then extract the zip and open the extracted folder in VSCode.
-
-Use VSCode or JupyterLab to clear all outputs and run each cell as you examine the notebook.
 
 ## Builtins Module
 
@@ -30,11 +30,11 @@ Use VSCode or JupyterLab to clear all outputs and run each cell as you examine t
 * [Mutable List Notebook](./builtins_module_list/notebook.ipynb)
 * [Immutable FrozenSet Notebook](./builtins_module_frozenset/notebook.ipynb)
 * [Mutable Set Notebook](./builtins_module_set/notebook.ipynb)
-* Dictionary Notebook
+* [Mutable Dictionary Notebook](./builtins_module_dict/notebook.ipynb)
 
 ## Math and Complex Math Modules
 
-* [Math and Complex Math Modules Notebook](./math_module/notebook.ipynb) - [YouTube](https://www.youtube.com/watch?v=lUUWlRSQt9s)
+* [Math and Complex Math Modules Notebook](./math_module/notebook.ipynb)
 
 ## Random Module
 
