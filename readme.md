@@ -46,7 +46,7 @@ The markdown syntax is used with interactive Python notebooks. Before looking at
 
 ## Statistics Module
 
-* Statistics Module Notebook
+* [Statistics Module Notebook](./statistics_module/notebook.ipynb)
 
 ## Collections Module
 
