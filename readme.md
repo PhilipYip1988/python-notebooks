@@ -87,7 +87,8 @@ The markdown syntax is used with interactive Python notebooks. Before looking at
 
 ## The Matrix Plotting Library
 
-* The Python Plot Module Notebook
+* [The Python Plot Module Introduction Notebook](./matplotlib_library/notebook_introduction.ipynb)
+* [The Python Plot Module Backends Notebook](./matplotlib_library/notebook_backends.ipynb)
 
 ## The Data Visualisation Library
 
