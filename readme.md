@@ -42,7 +42,7 @@ The markdown syntax is used with interactive Python notebooks. Before looking at
 
 ## Datetime Module
 
-* Datetime Module Notebook
+* [Datetime Module Notebook](./datetime_module/notebook.ipynb)
 
 ## Statistics Module
 
