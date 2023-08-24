@@ -2,7 +2,9 @@
 
 ## Python Installation
 
-These notebooks are designed to be open in VSCode or JupyterLab. A Python environment for these should be setup using MiniConda. For more details see:
+These notebooks are designed to be open in VSCode or JupyterLab. A Python environment for these should be setup using Anaconda or Miniconda. For more details see:
+
+* [Anaconda and Python Setup on Windows 11](https://github.com/PhilipYip1988/anaconda#readme)
 
 * [Miniconda and Python Setup on Windows 11](https://github.com/PhilipYip1988/miniconda#readme)
 

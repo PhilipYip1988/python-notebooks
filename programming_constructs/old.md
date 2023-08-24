@@ -1670,7 +1670,7 @@ This shows the expected input arguments. Once again, there is no docstring.
 
 ### Function docstring
 
-A docstring is included in triple double quotes. Triple double quotes are used even if it is a single line comment as docstrings are often written briefly during development and padded out later. having the triple quotations makes it easier to expand to a multi-line string and having triple double quotations makes it easier to include a string literal:
+A docstring is included in triple double quotes. Triple double quotes are used even if it is a single line comment as docstrings are often written briefly during development and padded out later. Having the triple quotations makes it easier to expand to a multi-line string and having triple double quotations makes it easier to include a string literal:
 
 ```
 def plural(word):
