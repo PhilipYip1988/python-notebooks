@@ -34,6 +34,10 @@ The markdown syntax is used with interactive Python notebooks. Before looking at
 * [Mutable Set Notebook](./builtins_module_set/notebook.ipynb)
 * [Mutable Dictionary Notebook](./builtins_module_dict/notebook.ipynb)
 
+## Programming Constructs
+
+* [Code Blocks](./programming_constructs/notebook.ipynb)
+
 ## Math and Complex Math Modules
 
 * [Math and Complex Math Modules Notebook](./math_module/notebook.ipynb)
