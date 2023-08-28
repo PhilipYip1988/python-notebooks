@@ -36,7 +36,15 @@ The markdown syntax is used with interactive Python notebooks. Before looking at
 
 ## Programming Constructs
 
-* [Code Blocks](./programming_constructs/notebook.ipynb)
+* [Code Blocks Notebook](./programming_constructs/notebook.ipynb)
+
+## Collections Module
+
+* [Collections Module Notebook](./collections_module/notebook.ipynb)
+
+## Itertools Module
+
+* Itertools Module Notebook
 
 ## Math and Complex Math Modules
 
@@ -53,15 +61,6 @@ The markdown syntax is used with interactive Python notebooks. Before looking at
 ## Statistics Module
 
 * [Statistics Module Notebook](./statistics_module/notebook.ipynb)
-
-## Collections Module
-
-* Collections Module Notebook
-* Collections Abstract Base Classes Notebook
-
-## Itertools Module
-
-* Itertools Module Notebook
 
 ## System Module
 
