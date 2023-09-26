@@ -738,5 +738,3 @@ $$\bigvee_{\text{lower}}^{\text{upper}} x$$
 $$\bigwedge_{\text{lower}}^{\text{upper}} x$$
 
 ---
-
-[Return to Mambaforge Installation](./readme.md)
