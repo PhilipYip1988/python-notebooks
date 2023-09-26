@@ -4,9 +4,7 @@
 
 These notebooks are designed to be open in VSCode or JupyterLab. A Python environment for these should be setup using Anaconda or Miniconda. For more details see:
 
-* [Anaconda and Python Setup on Windows 11](https://github.com/PhilipYip1988/anaconda#readme)
-
-* [Miniconda and Python Setup on Windows 11](https://github.com/PhilipYip1988/miniconda#readme)
+* [Anaconda and Python Setup](https://github.com/PhilipYip1988/anaconda#readme)
 
 ## Downloading and Opening the Notebooks
 
@@ -22,6 +20,7 @@ The markdown syntax is used with interactive Python notebooks. Before looking at
 
 ## Builtins Module
 
+* [Object Notebook](./builtins_module_object/notebook.ipynb)
 * [Immutable Strings Notebook](./builtins_module_str/notebook.ipynb)
 * [Immutable Bytes Notebook](./builtins_module_bytes/notebook.ipynb)
 * [Mutable ByteArray Notebook](./builtins_module_bytearray/notebook.ipynb)
