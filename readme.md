@@ -43,7 +43,7 @@ The markdown syntax is used with interactive Python notebooks. Before looking at
 
 ## Itertools Module
 
-* Itertools Module Notebook
+* [Itertools Module Notebook](./itertools_module/notebook.ipynb)
 
 ## Math and Complex Math Modules
 
