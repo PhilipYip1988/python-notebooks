@@ -73,6 +73,10 @@ The markdown syntax is used with interactive Python notebooks. Before looking at
 
 * [Operating System Module Notebook](./os_module/notebook.ipynb)
 
+## Path Library Module
+
+* [Path Library Module](./pathlib/notebook.ipynb)
+
 ## Comma Seperated Values Module
 
 * Comma Seperated Values Notebook
