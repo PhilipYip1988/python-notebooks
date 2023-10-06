@@ -65,9 +65,13 @@ The markdown syntax is used with interactive Python notebooks. Before looking at
 
 * System Module Notebook
 
+## Input Output Module
+
+* [Input and Output Module](./io_module/notebook.ipynb)
+
 ## Operating System Module
 
-* [Input and Output Module and Operating System Module Notebook](./os_module/notebook.ipynb)
+* [Operating System Module Notebook](./os_module/notebook.ipynb)
 
 ## Comma Seperated Values Module
 
