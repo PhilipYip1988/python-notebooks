@@ -21,4 +21,5 @@ import os
 import sys
 
 sys.sizeof(cycle)
-os.environ['USERPROFILE']    
+os.environ['USERPROFILE']
+num1 = 0xabb4ab8a

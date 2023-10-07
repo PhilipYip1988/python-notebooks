@@ -111,6 +111,18 @@ The Path Library Module is similar to the Operating System Module however uses a
 
 * [Path Library Module](./pathlib/notebook.ipynb)
 
+## IPython
+
+IPython can be used to run Powershell and bash commands in an IPython console or an interactive Python notebook. The basics of Powershell and bash were covered in the installation tutorials. This notebook looks at using IPython to launch commands from these other commands:
+
+* [IPython Module](./ipython/notebook.ipynb)
+
+## AutoPEP8, ISort and Black Modules
+
+The Automatic Python Enhanced Protocol 8 module is used to process a Python script or interactive Python notebook to autoformat a file to make sure its spacing is compliant with PEP8. The import sort module is an additional formatter used to make sure library imports are grouped by standard libraries, third party libraries and sorted alphabetically in these two categories. The black formatter is an opinionated formatter used to standardise other formatting such as string quotations and form of hexadecimal numbers. Unfortunately its opinionated choices deviate from the style used in the Python language itself:
+
+* [AutoPEP8, Import Sort and Black Modules](./autopep8/notebook.ipynb)
+
 ## Pickle Module
 
 * Pickle Module Notebook

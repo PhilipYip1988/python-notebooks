@@ -1,10 +1,12 @@
-import os
-import sys
-import itertools
 import collections
 import datetime
-import pandas as pd
+import itertools
+import os
+import sys
+
 import numpy as np
+import pandas as pd
+
 var1 = 'Hello'
 var2 = "World"
 x = np.array([0, 1, 2, 3, 4])
