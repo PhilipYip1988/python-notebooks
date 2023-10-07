@@ -1,22 +1,22 @@
 # Python Tutorials
 
+The Anaconda Data Science Python Distribution contains Python and Python Standard Modules, the conda package manager, relatively modern versions of the data science libraries such as numpy, pandas and matplotlib, python formatters such as autopep8 and black and Python IDEs such as Spyder and JupyterLab. These tutorials give a detailed overview of the above and are in markdown and notebook format. A notebook file essentially includes markdown content and Python code.
+
+## Viewing Markdown Files and Notebooks
+
+These set of tutorials are in markdown and notebook format and stored on GitHub. GitHub has some limitations for displaying notebooks and many of these limitations are addressed using [Notebook Viewer](https://nbviewer.org/). Markdown files and notebooks with lots of images may render better because a local version of each image is used.
+
+It is recommended to instead download this repository as a zip file. Select code and download zip, then extract the zip and open the extracted folder in VSCode or JupyterLab. For the markdown files open the markdown preview.
+
+For the notebook files it is recommended to clear all outputs and run each cell individually as you examine the notebook. 
+
 ## Python Installation
 
-The Anaconda Data Science Python Distribution contains Python and Python Standard Modules, the conda package manager, relatively modern versions of the data science libraries such as numpy, pandas and matplotlib, python formatters such as autopep8 and black and Python IDEs such as Spyder and JupyterLab.
-
-This markdown tutorial will instruct on the setup and installation of Anaconda on Windows and Linux/Mac in addition to use of Python via the Terminal. Python is often used alongside the PowerShell or bash shell based scripting languages to navigate around the Operating System and differences in these languages will be highlighted.
-
-This setup tutorial also discusses setting up VSCode and PyCharm with the Anaconda Python base environment.
-
-Advanced use of Anaconda to create custom Python environments for the latest version of the Spyder and JupyterLab IDEs is also discussed. These instructions can be used with the lightweight Anaconda counterpart Miniconda:
+These tutorials will instruct on the setup and installation of Anaconda on Windows and Linux/Mac and cover use of Python via the Terminal in each Operating System. Python is often used alongside PowerShell or bash which are shell based scripting languages used to navigate around the Operating System. The differences in Python and these languages will be highlighted to avoid confusion. The tutorial will also cover the commonly used IDEs included in the Anaconda base Python environment such as IPython, JupyterLab and Spyder. These tutorials also discuss setting up VSCode and PyCharm with the Anaconda Python base environment. FInally the tutorials cover use of the conda package manager to create custom Python environments for the latest version of the Spyder and JupyterLab IDEs:
 
 * [Anaconda and Python Setup Markdown File](./anaconda/readme.md)
 
-## Downloading from GitHub
-
-These set of tutorials are in markdown and notebook format and stored on GitHub. GitHub has some limitations for displaying notebooks and many of these limitations are addressed using [Notebook Viewer](https://nbviewer.org/).
-
-It is recommended to instead download this repository as a zip file. Select code and download zip, then extract the zip and open the extracted folder in VSCode or JupyterLab. Use VSCode or JupyterLab to clear all outputs and run each cell as you examine the notebook.
+These instructions can be used with the lightweight Anaconda counterpart Miniconda.
 
 ## Markdown
 
