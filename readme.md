@@ -2,15 +2,21 @@
 
 ## Python Installation
 
-These notebooks are designed to be open in VSCode or JupyterLab. A Python environment for these should be setup using Anaconda or Miniconda. For more details see:
+The Anaconda Data Science Python Distribution contains Python and Python Standard Modules, the conda package manager, relatively modern versions of the data science libraries such as numpy, pandas and matplotlib, python formatters such as autopep8 and black and Python IDEs such as Spyder and JupyterLab.
+
+This markdown tutorial will instruct on the setup and installation of Anaconda on Windows and Linux/Mac in addition to use of Python via the Terminal. Python is often used alongside the PowerShell or bash shell based scripting languages to navigate around the Operating System and differences in these languages will be highlighted.
+
+This setup tutorial also discusses setting up VSCode and PyCharm with the Anaconda Python base environment.
+
+Advanced use of Anaconda to create custom Python environments for the latest version of the Spyder and JupyterLab IDEs is also discussed. These instructions can be used with the lightweight Anaconda counterpart Miniconda:
 
 * [Anaconda and Python Setup Markdown File](./anaconda/readme.md)
 
-## Downloading and Opening the Notebooks
+## Downloading from GitHub
 
-Select code and download zip, then extract the zip and open the extracted folder in VSCode or JupyterLab.
+These set of tutorials are in markdown and notebook format and stored on GitHub. GitHub has some limitations for displaying notebooks and many of these limitations are addressed using [Notebook Viewer](https://nbviewer.org/).
 
-Use VSCode or JupyterLab to clear all outputs and run each cell as you examine the notebook.
+It is recommended to instead download this repository as a zip file. Select code and download zip, then extract the zip and open the extracted folder in VSCode or JupyterLab. Use VSCode or JupyterLab to clear all outputs and run each cell as you examine the notebook.
 
 ## Markdown
 
@@ -83,13 +89,15 @@ The statistics module is a functional module covering basic statistics normally 
 
 ## Input Output Module
 
-The Input and Output Module is used for reading and writing text files and binary files. It can also be used for a Python Script file or Markdown file as these are fundamentally text files with a different file extension:
+The Input and Output module is used for reading and writing text files .txt and binary files .bin. It can also be used for a Python Script file .py or Markdown file .py as these are fundamentally text files with a different file extension:
 
 * [Input and Output Module Notebook](./io_module/notebook.ipynb)
 
 ## Comma Seperated Values Module
 
-* Comma Seperated Values Notebook
+The Comma Seperated Values module expands the functionality of the io module allowing manipulation of files which have rows and columns opposed to just rows. It can be used with .csv, .txt and .prn files for example:
+
+* [Comma Seperated Values Notebook](./csv_module/notebook.ipynb)
 
 ## Operating System Module
 
