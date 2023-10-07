@@ -1,6 +1,6 @@
 # Python Tutorials
 
-The Anaconda Data Science Python Distribution contains Python and Python Standard Modules, the conda package manager, relatively modern versions of the data science libraries such as numpy, pandas and matplotlib, python formatters such as autopep8 and black and Python IDEs such as Spyder and JupyterLab. These tutorials give a detailed overview of the above and are in markdown and notebook format. A notebook file essentially includes markdown content and Python code.
+The Anaconda 2023-09 Data Science Python Distribution contains Python and Python Standard Modules, the conda package manager, relatively modern versions of the data science libraries such as numpy, pandas and matplotlib, python formatters such as autopep8 and black and Python IDEs such as Spyder and JupyterLab. These tutorials give a detailed overview of the above and are in markdown and notebook format. A notebook file essentially includes markdown content and Python code.
 
 ## Viewing Markdown Files and Notebooks
 
@@ -12,7 +12,7 @@ For the notebook files it is recommended to clear all outputs and run each cell 
 
 ## Python Installation
 
-These tutorials will instruct on the setup and installation of Anaconda on Windows and Linux/Mac and cover use of Python via the Terminal in each Operating System. Python is often used alongside PowerShell or bash which are shell based scripting languages used to navigate around the Operating System. The differences in Python and these languages will be highlighted to avoid confusion. The tutorial will also cover the commonly used IDEs included in the Anaconda base Python environment such as IPython, JupyterLab and Spyder. These tutorials also discuss setting up VSCode and PyCharm with the Anaconda Python base environment. FInally the tutorials cover use of the conda package manager to create custom Python environments for the latest version of the Spyder and JupyterLab IDEs:
+These tutorials will instruct on the setup and installation of Anaconda on Windows and Linux/Mac and cover use of Python via the Terminal in each Operating System. Python is often used alongside PowerShell or bash which are shell based scripting languages used to navigate around the Operating System. The differences in Python and these languages will be highlighted to avoid confusion. The tutorial will also cover the commonly used IDEs included in the Anaconda base Python environment such as IPython, JupyterLab and Spyder. These tutorials also discuss setting up VSCode and PyCharm with the Anaconda Python base environment. Finally the tutorials cover use of the conda package manager to create custom Python environments for the latest version of the Spyder and JupyterLab IDEs:
 
 * [Anaconda and Python Setup Markdown File](./anaconda/readme.md)
 
@@ -107,13 +107,13 @@ The Operating System module is a Python implementation of the bash or Powershell
 
 ## Path Library Module
 
-The Path Library Module is similar to the Operating System Module however uses an Object Orientated Programming (OOP) approach to file paths. File paths are returned as instances of the Path class which have a number of useful attributes and the datamodel method ```__truediv__``` (*dunder truediv*) is defined so the ```/``` operator can be used for folder and file concatenation:
+The Path and Library Module is similar to the Operating System Module however uses an Object Orientated Programming (OOP) approach to file paths and libraries within the user profile or home directory. File paths are returned as instances of the Path class which have a number of useful attributes and the datamodel method ```__truediv__``` (*dunder truediv*) is defined so the ```/``` operator can be used for folder and file concatenation:
 
-* [Path Library Module](./pathlib/notebook.ipynb)
+* [Path and Library Module](./pathlib/notebook.ipynb)
 
-## IPython
+## IPython Library
 
-IPython can be used to run Powershell and bash commands in an IPython console or an interactive Python notebook. The basics of Powershell and bash were covered in the installation tutorials. This notebook looks at using IPython to launch commands from these other commands:
+IPython can be used to run Powershell and bash commands in an IPython console or an interactive Python notebook. The basics of Powershell and bash were covered in the installation tutorials. This notebook looks at using IPython to launch commands from these other shells:
 
 * [IPython Module](./ipython/notebook.ipynb)
 
