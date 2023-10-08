@@ -137,9 +137,13 @@ The Automatic Python Enhanced Protocol 8 module is used to process a Python scri
 
 ## The Python and Data Analysis Library
 
+The Python and Data Analysis library builts upon the data structure of the NDarray, creating a Series which is a 1Darray with a column name and a DataFrame which is a grouping of Series analogous in form to an Excel SpreadSheet. The Python and Data analysis library can be used to programically manipulate the data stored in the DataFrame analogous to any data operations that would be carried out manually in Excel:
+
 * [Series and DataFrame Notebook](./pandas_library/notebook.ipynb)
 
 ## The Matrix Plotting Library
+
+The matrix plotting library encompasses a large group of modules compartmentalising objects used for visual elements in a plot. As a user generally only the Python Plot Module is used which allows manipulation of the above objects using a simplified functional and object-orientated programming syntax:
 
 * [The Python Plot Module Introduction Notebook](./matplotlib_library/notebook_introduction.ipynb)
 * [The Python Plot Module Backends Notebook](./matplotlib_library/notebook_backends.ipynb)
