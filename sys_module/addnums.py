@@ -6,6 +6,6 @@ if len(numbers) == 3:
         num2 = float(sys.argv[2])
         print(f'{num1} + {num2} = {num1 + num2}')
     except ValueError:
-        print('Invalid command line argument')
+        print('Invalid command line arguments')
 else:
     print('Wrong number of command line arguments')
