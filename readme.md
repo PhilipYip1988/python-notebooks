@@ -83,10 +83,6 @@ The statistics module is a functional module covering basic statistics normally 
 
 * [Statistics Module Notebook](./statistics_module/notebook.ipynb)
 
-## System Module
-
-* System Module Notebook
-
 ## Input Output Module
 
 The Input and Output module is used for reading and writing text files .txt and binary files .bin. It can also be used for a Python Script file .py or Markdown file .py as these are fundamentally text files with a different file extension:
@@ -107,7 +103,7 @@ The Operating System module is a Python implementation of the bash or Powershell
 
 ## Path Library Module
 
-The Path and Library Module is similar to the Operating System Module however uses an Object Orientated Programming (OOP) approach to file paths and libraries within the user profile or home directory. File paths are returned as instances of the Path class which have a number of useful attributes and the datamodel method ```__truediv__``` (*dunder truediv*) is defined so the ```/``` operator can be used for folder and file concatenation:
+The Path and Library module is similar to the Operating System Module however uses an Object Orientated Programming (OOP) approach to file paths and libraries within the user profile or home directory. File paths are returned as instances of the Path class which have a number of useful attributes and the datamodel method ```__truediv__``` (*dunder truediv*) is defined so the ```/``` operator can be used for folder and file concatenation:
 
 * [Path and Library Module](./pathlib/notebook.ipynb)
 
@@ -116,6 +112,12 @@ The Path and Library Module is similar to the Operating System Module however us
 IPython can be used to run Powershell and bash commands in an IPython console or an interactive Python notebook. The basics of Powershell and bash were covered in the installation tutorials:
 
 * [IPython Module](./ipython/notebook.ipynb)
+
+## System Module
+
+The System module provides access to some variables used or maintained by the Python interpreter and to functions that interact strongly with the interpreter:
+
+* [System Module Notebook](./sys_module/notebook.ipynb)
 
 ## AutoPEP8, ISort and Black Modules
 
@@ -151,3 +153,7 @@ The matrix plotting library encompasses a large group of modules compartmentalis
 ## The Data Visualisation Library
 
 * Data Visualisation Notebook
+
+## The Python Imaging Library
+
+* The Python Imaging Library
