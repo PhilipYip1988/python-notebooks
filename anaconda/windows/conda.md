@@ -621,7 +621,7 @@ Details about the tidyverse packages are available here[tidyverse](https://www.t
 ### VSCode Python Environment
 
 ```
-conda create -n vscode -c conda-forge python notebook cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly ipympl pyqt blue
+conda create -n vscode -c conda-forge python notebook cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly ipympl pyqt autopep8 black
 ```
 
 Installing seaborn will install numpy, pandas and matplotlib as these are dependencies for seaborn.
@@ -632,9 +632,16 @@ nodejs allows installation of JupyterLab extensions.ipywidgets and plotly can be
 
 pyqt and ipympl are required for an interactive matplotlib plotting backends. The Python interpretter needs to be selected in VSCode as seen before.
 
-### Using the Blue Document Formatter in VSCode
+### Using the Blue Code Formatter in VSCode (Optional)
 
-To change from black document formatter to the blue document formatter, the path settings of the black extension should be changed to the path of the blue.exe. 
+The ```blue``` code formatter is based on an older version of ```black```. Installing ```blue``` will downgrade ```black``` and ```black``` may not work properly. To install ```blue``` use:
+
+```
+conda activate vscode
+conda install -c conda-forge blue
+```
+
+There is no blue extension for VSCode. Install the black code formatter extension. Then configure the path settings of the black extension to the use the blue.exe. 
 
 Select the extensions tab and select the tools icon of the black extension:
 
@@ -662,14 +669,14 @@ Black Formatter is used:
 
 <img src='images_conda/img_070.png' alt='img_070' width='450'/>
 
-The Blue Formatter will be used instead and the quotations will be single:
+It will use the Blue Formatter instead and the quotations will be single:
 
 <img src='images_conda/img_071.png' alt='img_071' width='450'/>
 
 ### PyCharm Python Environment
 
 ```
-conda create -n pycharm -c conda-forge python cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate pyqt
+conda create -n pycharm -c conda-forge python cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate pyqt autopep8 black
 ```
 
 Installing seaborn will install numpy, pandas and matplotlib as these are dependencies for seaborn.

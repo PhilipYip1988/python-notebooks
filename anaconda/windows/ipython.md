@@ -346,7 +346,7 @@ Select OK:
 
 <img src='images_ipython/img_036.png' alt='img_036' width='450'/>
 
-To refresh the Environmental Variables used by the Anacond PowerShell Prompt close and relaunch the Anaconda PowerShell Prompt.
+To refresh the Environmental Variables used by the Anaconda PowerShell Prompt close and relaunch the Anaconda PowerShell Prompt.
 
 Change the directory to Documents:
 
