@@ -327,7 +327,7 @@ These can be viewed in a text editor for more details. Selecting a scrollable el
 
 ## Format Document
 
-autopep8, isort, and black are preinstalled in the conda base environment. These are used to format Python code. To use these in VSCode the autopep8, isort and black formatter extensions maintained by Microsoft need to be installed:
+autopep8, isort, and black are preinstalled in the conda base environment. These are used to format Python code. To use these in VSCode the autopep8, isort and black extensions maintained by Microsoft need to be installed:
 
 <img src='images_vscode/img_050.png' alt='img_050' width='450'/>
 
@@ -374,7 +374,9 @@ Notice that all the import statements are at the top with Python standard module
 
 <img src='images_vscode/img_057.png' alt='img_057' width='450'/>
 
-For an interactive Python Notebook, the analogous command Format Notebook can be used. With autopep8 the quotations are still inconsistent as pep8 doesn't explicitly state a preference for single quotations over double quotations. The imports are grouped by type: standard module and then third-party library but these categories aren't worted by category. Press ```Ctrl```, ```⇧``` and ```p``` to open the command palette and search for organize imports and this should use ```isort``` to properly sort the imports.
+For an interactive Python Notebook, the analogous command Format Notebook can be used. With autopep8 the quotations are still inconsistent as pep8 doesn't explicitly state a preference for single quotations over double quotations. 
+
+The imports are grouped by type: standard module and then third-party library but these categories aren't worted by category. Press ```Ctrl```, ```⇧``` and ```p``` to open the command palette and search for organize imports and this should use ```isort``` to properly sort the imports.
 
 Black is an opinioned formatter that will carry out additional opinionated formatting. Select Format Document With:
 
@@ -388,7 +390,7 @@ Notice the blank line added after all the import statements to further highlight
 
 <img src='images_vscode/img_060.png' alt='img_060' width='450'/>
 
-Black seems to work better after the script file is formatted with autopep8 and the imports have been sorted using isort, usign black directly may give improper results.
+Black seems to work better after the script file is formatted with autopep8 and the imports have been sorted using isort, using black directly may give improper results.
 
 Note also that some of the opinioned choices made in black are contentious. The most contenous choice is the enforcement of double quotes as the Python interpretter prefers single quotes as a result there is an offshoot of black known as blue which preferences single quotations. 
 
