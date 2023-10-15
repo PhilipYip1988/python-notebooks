@@ -57,7 +57,7 @@ A common installation is to add Anaconda to the Windows Environmental Variables 
 
 Notice however that when Add anaconda3 to the Windows Environmental Variables Path environmental variable is used; a red warning NOT recommended displays. 
 
-This practice is discouraged because it locks the Windows Terminal to a single Python environment and can also result in other issues.
+This practice is discouraged because it locks the Windows Terminal to a single Python environment and can also result in other issues. Do not select this option, this tutorial will discuss how to initialise Anaconda for PowerShell which is preferable.
 
 Select Next:
 
