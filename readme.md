@@ -156,4 +156,6 @@ The matrix plotting library encompasses a large group of modules compartmentalis
 
 ## The Python Imaging Library
 
-* The Python Imaging Library
+The Python Imaging Library contains the Image module which contains the Image data structure. This module is used for Image construction from an NDArray or an image file taken from another image manipulation program or camera. Note that the modern version of the Python Imaging Library is called PILLOW. PILLOW was originally a fork from PIL. PIL was Python 2 based and has been discontinued:
+
+* [The Python Imaging Library](./pillow_library/notebook.ipynb)
