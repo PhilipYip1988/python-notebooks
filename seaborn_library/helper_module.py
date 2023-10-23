@@ -1,3 +1,4 @@
+__version__ = '0.0.1'
 
 def identifier_group(obj, kind='all', second=object, show_unique_identifiers=False, show_only_intersection_identifiers=False):
     
@@ -165,7 +166,7 @@ def print_identifier_group(obj, kind='all', second=object, show_unique_identifie
         print(datamodel_method_grouping)
     elif (kind == 'datamodel_attribute'):   
         print(datamodel_attribute_grouping)
-    elif (kind == 'upper_class'):   
+    elif (kind == 'class'):   
         print(upper_case_class_grouping)
     elif (kind == 'lower_class'):   
         print(lower_case_class_grouping)
