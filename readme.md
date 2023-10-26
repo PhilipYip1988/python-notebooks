@@ -152,7 +152,7 @@ The matrix plotting library encompasses a large group of modules compartmentalis
 
 ## The Data Visualisation Library
 
-* Data Visualisation Notebook
+* [Data Visualisation Notebook](./seaborn_library/notebook_backends.ipynb)
 
 ## The Python Imaging Library
 
