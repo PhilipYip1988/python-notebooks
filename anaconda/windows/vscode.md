@@ -102,6 +102,8 @@ This will install other Notebook related extensions:
 
 <img src='images_vscode/img_015.png' alt='img_015' width='450'/>
 
+The autopep8, isort and black extensions by Microsoft allow use of code formatters from libraries included in the Anaconda base Python environment. 
+
 Close and relaunch VSCode after installing extensions.
 
 ## Selecting the Python Interpretter
@@ -376,7 +378,8 @@ Notice that all the import statements are at the top with Python standard module
 
 For an interactive Python Notebook, the analogous command Format Notebook can be used. With autopep8 the quotations are still inconsistent as pep8 doesn't explicitly state a preference for single quotations over double quotations. 
 
-The imports are grouped by type: standard module and then third-party library but these categories aren't worted by category. Press ```Ctrl```, ```⇧``` and ```p``` to open the command palette and search for organize imports and this should use ```isort``` to properly sort the imports.
+The imports are grouped by type: standard module and then third-party library but these categories aren't worted by category. Press ```Ctrl```, ```⇧``` and ```p``` to open the command palette and search for organize imports and this should use ```isort``` to properly sort the imports. Note using isort without previously formatting the code with autopep8 does not always work properly.
+
 
 Black is an opinioned formatter that will carry out additional opinionated formatting. Select Format Document With:
 
@@ -390,10 +393,6 @@ Notice the blank line added after all the import statements to further highlight
 
 <img src='images_vscode/img_060.png' alt='img_060' width='450'/>
 
-Black seems to work better after the script file is formatted with autopep8 and the imports have been sorted using isort, using black directly may give improper results.
-
-Note also that some of the opinioned choices made in black are contentious. The most contenous choice is the enforcement of double quotes as the Python interpretter prefers single quotes as a result there is an offshoot of black known as blue which preferences single quotations. 
-
-Unfortunately blue is not preinstalled in the conda base Python environment and there is no official blue extension. blue can be installed from the community channel conda-forge in a custom Python environment and the path of the black VSCode extension can be used to select blue instead of black. See the conda package manager tutorial for more details.
+Black does not sort imports and relies on isort to sort imports. Recall isort often does not work properly unless the code has previously been formatted by autopep8. If using black it is recommended to use autopep8, isort and then black. Note that some of the opinioned choices made in black are contentious. The most contentious choice is the enforcement of double quotes as the Python interpretter prefers single quotes. I personally do not use black because of this reason. An alternative formatter ruff is available which can be configured to use single quotes. This will be covered in a subsequent notebook.
 
 [Return to Anaconda Tutorial](./readme.md)
