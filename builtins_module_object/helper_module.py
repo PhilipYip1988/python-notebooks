@@ -1,4 +1,4 @@
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 def identifier_group(obj, kind='all', second=object, show_unique_identifiers=False, show_only_intersection_identifiers=False):
     
@@ -17,7 +17,14 @@ def identifier_group(obj, kind='all', second=object, show_unique_identifiers=Fal
     """
 
     identifiers = dir(obj)
-    second_identifiers = dir(second)
+
+    if type(second) == list:
+        second_identifiers = []
+        for identifier_group in second:
+            second_identifiers.extend(dir(identifier_group))
+        second_identifiers = list(set(second_identifiers))
+    else:
+        second_identifiers = dir(second)
     
     if ((show_unique_identifiers == False) and (show_only_intersection_identifiers == False)):
         identifiers_to_examine = identifiers
@@ -110,7 +117,13 @@ def print_identifier_group(obj, kind='all', second=object, show_unique_identifie
     """
 
     identifiers = dir(obj)
-    second_identifiers = dir(second)
+    if type(second) == list:
+        second_identifiers = []
+        for identifier_group in second:
+            second_identifiers.extend(dir(identifier_group))
+        second_identifiers = list(set(second_identifiers))
+    else:
+        second_identifiers = dir(second)
     
     if ((show_unique_identifiers == False) and (show_only_intersection_identifiers == False)):
         identifiers_to_examine = identifiers
