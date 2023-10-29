@@ -48,7 +48,7 @@ Select your Language and select Let's Go:
 
 <img src='images_thonny/img_011.png' alt='img_011' width='250'/>
 
-## Selcting a Python Environment
+## Selecting a Python Environment
 
 Thonny comes with its own preinstalled Python environment and has inbuilt utilities to download and install Python packages using pip:
 
