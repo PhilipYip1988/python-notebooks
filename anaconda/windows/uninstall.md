@@ -70,7 +70,7 @@ A semicolon can be added at the end:
 
 <img src='images_uninstall/img_013.png' alt='img_013' width='350'/>
 
-Once OK is seleced and Edit is pressed again, it should display as a list:
+Once OK is selected and Edit is pressed again, it should display as a list:
 
 <img src='images_uninstall/img_014.png' alt='img_014' width='350'/>
 
