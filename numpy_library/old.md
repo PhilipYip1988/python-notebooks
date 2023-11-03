@@ -1193,7 +1193,7 @@ The ```numpy``` library includes the more powerful array range function ```arang
 
 ![img_060](./images/img_060.png)
 
-The input arguments are similar to the ```range``` object hwoevder note inclusion of the optional keyword ```dtype```, indicating that this function can handle additional datatypes.The array created from the ```range``` object can be created with the array range function:
+The input arguments are similar to the ```range``` object hovever note inclusion of the optional keyword ```dtype```, indicating that this function can handle additional datatypes.The array created from the ```range``` object can be created with the array range function:
 
 ```
 array1 = np.arange(start=0, stop=10, step=1)
