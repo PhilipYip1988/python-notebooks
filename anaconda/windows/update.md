@@ -12,7 +12,7 @@ Miniconda is lightweight and because there are only a handful of packages in the
 
 The Anaconda base Python environment is a Python distribution and should be updated collectively using the standalone images put together by Anaconda.
 
-The following command should generally be **avoided** in the base Python environment:
+The following command should generally be **avoided** in the Anaconda base Python environment:
 
 ```
 conda update --all
@@ -34,7 +34,7 @@ By default it will open in %USERPROFILE%:
 
 <img src='images_update/img_003.png' alt='img_003' width='350'/>
 
-If a .condrc file is present, it should be deleted using:
+If a .condarc file is present, it should be deleted using:
 
 ```
 del .condarc
@@ -80,7 +80,7 @@ conda update conda
 
 <img src='images_update/img_010.png' alt='img_010' width='350'/>
 
-Notice that this will update the package manager and the entire base Anaconda Python distribution.
+Notice that this will update the package manager and the entire base Anaconda Python distribution. The newest version of conda will use the libmamba solver by default and does not need a solver setting in the .condarc file.
 
 Note when updating some packages may be downgraded, this happens when Anaconda deem a version of a package unsuitable and revert to an older version. Confer with [Anaconda Release Notes](https://docs.anaconda.com/free/anaconda/reference/release-notes/) for more details. 
 

@@ -135,11 +135,13 @@ The Automatic Python Enhanced Protocol 8 module is used to process a Python scri
 
 ## The Numeric Python Library
 
-* NDArray Notebook
+The Numeric Python library is based upon the data structure of the ndarray. This is a datastructure that is a collection however unlike ```builtins``` collections, all the datamodel methods are configured for numeric operations. numpy also scales the functions found in the math, datetime and random modules to ndarrays:
+
+* [NDArray Notebook](./numpy_library/notebook.ipynb)
 
 ## The Python and Data Analysis Library
 
-The Python and Data Analysis library builts upon the data structure of the NDarray, creating a Series which is a 1Darray with a column name and a DataFrame which is a grouping of Series analogous in form to an Excel SpreadSheet. The Python and Data analysis library can be used to programically manipulate the data stored in the DataFrame analogous to any data operations that would be carried out manually in Excel:
+The Python and Data Analysis library builts upon the data structure of the ndarray, creating a Series which is a 1Darray with a column name and a DataFrame which is a grouping of Series analogous in form to an Excel SpreadSheet. The Python and Data analysis library can be used to programically manipulate the data stored in the DataFrame analogous to any data operations that would be carried out manually in Excel:
 
 * [Series and DataFrame Notebook](./pandas_library/notebook.ipynb)
 
