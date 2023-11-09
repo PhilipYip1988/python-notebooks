@@ -201,7 +201,7 @@ Python formatters:
 * black
 * flake8
 
-These can be run using the Terminal but are more commonly run using an IDE:
+These can be executed on a Python script file using the Terminal but are typically incorporated into an IDE and executed via the IDE:
 
 <img src='images_install/img_024.png' alt='img_024' width='450'/>
 
@@ -224,11 +224,13 @@ The subtle difference is the ```(base)``` prefix in the Anaconda PowerShell Prom
 
 When there are multiple Python environments, the Anaconda Powershell Prompt can be used to switch between Python environments using the ```conda activate``` command. In contrast the Python environment accessible by the Windows Terminal is the one specified in the Windows Environmental Variables Path.
 
-Under the hood the Anaconda PowerShell Prompt essentially launches the Windows Terminal with a conda activation script. In order to run the script it bypasses a PowerShell Execution Policy:
+Under the hood the Anaconda PowerShell Prompt essentially launches the Windows Terminal with a conda activation script. Note in order to run the script it bypasses a PowerShell Execution Policy:
 
 ```
 %windir%\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy ByPass -NoExit -Command "& 'C:\Users\Phili\anaconda3\shell\condabin\conda-hook.ps1' ; conda activate 'C:\Users\Phili\anaconda3' "
 ```
+
+Generally the Anaconda PowerShell Prompt is preferred over the Windows Terminal when working with Python environments.
 
 ## Updating Anaconda
 
@@ -261,6 +263,12 @@ y
 in order to proceed:
 
 <img src='images_install/img_029.png' alt='img_029' width='350'/>
+
+The Anaconda Navigagtor can be checked for an update using:
+
+```
+conda update anaconda-navigator
+```
 
 Anaconda should now be updated:
 

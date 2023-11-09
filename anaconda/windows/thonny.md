@@ -2,7 +2,7 @@
 
 The previous tutorial looked at ID**L**E which as the name suggests is a popular Learner IDE. Another popular learner IDE is Thonny and is the Python IDE preinstalled on a Raspberry Pi for example.
 
-## Installing Thonny
+## WinGet
 
 Thonny is not preinstalled using conda as it has no package on the anaconda or conda-forge channels. It can be installed with WinGet using the command:
 

@@ -2,9 +2,9 @@
 
 Visual Studio Code is a general purpose code editor maintained by Microsoft. 
 
-## Installation
+## WinGet
 
-VSCode can be installed using the standalone user installer from Microsoft's website or using the Windows command line utility winget from the Anaconda PowerShell Prompt:
+VSCode can be installed with WinGet using the command:
 
 ```
 WinGet install Microsoft.VisualStudioCode

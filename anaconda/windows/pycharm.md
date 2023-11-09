@@ -2,7 +2,7 @@
 
 PyCharm is an advanced Python IDE used for Python script files (.py file extension). It does not have ipython magic commands or support interactive Python notebooks (.ipynb file extension). 
 
-## Installation
+## WinGet
 
 PyCharm can be installed using Winget using the command:
 
