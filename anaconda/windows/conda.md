@@ -120,68 +120,6 @@ Therefore popular packages in the community channel are usually more up to date 
 
 A Python environment is normally unstable if it uses mixed channels and most custom end-user Python environments will only use packages in the conda-forge channel.
 
-### Config and .condarc file
-
-The conda config command is used to create a .condarc file which can be used to change the solver used by the conda package manager and the channel and channel priority used by the conda package manager.
-
-Open the Anaconda PowerShell Prompt. Recall the default location the Anaconda PowerShell Prompt opens in is %USERPROFILE%. This is the location a .condarc file gets placed: 
-
-<img src='images_conda/img_011.png' alt='img_011' width='450'/>
-
-If an old .condarc file is present delete it using:
-
-```
-del .condarc
-```
-
-<img src='images_conda/img_012.png' alt='img_012' width='450'/>
-
-<img src='images_conda/img_013.png' alt='img_013' width='450'/>
-
-The conda package manager uses the legacy solver by default. The newer solver libmamba should be used instead:
-
-```
-conda config --set solver libmamba
-```
-
-The community conda-forge should be added:
-
-```
-conda config --add channels conda-forge
-```
-
-And the anaconda channel (defaults) can be removed:
-
-```
-conda config --remove channels defaults
-```
-
-Additional performance can be achieved by setting the channel priority to strict:
-
-```
-conda config --set channel_priority strict
-```
-
-<img src='images_conda/img_014.png' alt='img_014' width='450'/>
-
-This .condarc is optimised for creating new Python environments using packages from the community channel conda-forge. It should not be used to update Anaconda; which should only use the anaconda package from the anaconda channel.
-
-<img src='images_conda/img_015.png' alt='img_015' width='450'/>
-
-The .condarc looks like the following when opened in a text editor:
-
-<img src='images_conda/img_016.png' alt='img_016' width='450'/>
-
-```
-solver: libmamba
-channels:
-  - conda-forge
-  - defaults
-channel_priority: strict
-```
-
-Close the Anaconda PowerShell Prompt to refresh changes made by the .condarc.
-
 ### Create
 
 A Python environment can be created using the syntax:
@@ -199,6 +137,8 @@ Notice in envs, the notbase subfolder is created:
 <img src='images_conda/img_018.png' alt='img_018' width='450'/>
 
 ### Activate
+
+The ```conda activate``` command only works in the Anaconda PowerShell Prompt and will not work in the Windows Terminal which instead uses the Python environment specified in the Windows Environmental Variables Path.
 
 Once the Python environment is created it can be activated (selected) using:
 
@@ -620,6 +560,14 @@ Details about the tidyverse packages are available here[tidyverse](https://www.t
 
 ### VSCode Python Environment
 
+Install VSCode using WinGet:
+
+```
+WinGet install Microsoft.VisualStudioCode
+```
+
+Create a Python environment for VSCode:
+
 ```
 conda create -n vscode -c conda-forge python notebook cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly ipympl pyqt autopep8 black
 ```
@@ -630,50 +578,21 @@ openpyxl, xlrd, xlsxwriter, lxml, sqlalchemy and tabulate are file format conver
 
 nodejs allows installation of JupyterLab extensions.ipywidgets and plotly can be used to create widgets and plots using Python code, under the hood JavaScript is used to display these in VSCode which behaves like a browser. 
 
-pyqt and ipympl are required for an interactive matplotlib plotting backends. The Python interpretter needs to be selected in VSCode as seen before.
+pyqt and ipympl are required for an interactive matplotlib plotting backends. 
 
-### Using the Blue Code Formatter in VSCode (Optional)
+Install the Python, Jupyter, autopep8, isort and black extensions in VSCode.
 
-The ```blue``` code formatter is based on an older version of ```black```. Installing ```blue``` will downgrade ```black``` and ```black``` may not work properly. To install ```blue``` use:
-
-```
-conda activate vscode
-conda install -c conda-forge blue
-```
-
-There is no blue extension for VSCode. Install the black code formatter extension. Then configure the path settings of the black extension to the use the blue.exe. 
-
-Select the extensions tab and select the tools icon of the black extension:
-
-<img src='images_conda/img_066.png' alt='img_066' width='450'/>
-
-Select extension settings:
-
-<img src='images_conda/img_067.png' alt='img_067' width='450'/>
-
-Select the full path to the blue.exe:
-
-```
-C:\Users\Philip\anaconda3\envs\vscode\scripts\blue.exe
-```
-
-Note the environmental variable ```%USERPROFILE%``` does not seem to work here.
-
-<img src='images_conda/img_068.png' alt='img_068' width='450'/>
-
-Now when Format Document With...
-
-<img src='images_conda/img_069.png' alt='img_069' width='450'/>
-
-Black Formatter is used:
-
-<img src='images_conda/img_070.png' alt='img_070' width='450'/>
-
-It will use the Blue Formatter instead and the quotations will be single:
-
-<img src='images_conda/img_071.png' alt='img_071' width='450'/>
+The Python interpretter needs to be selected in VSCode.
 
 ### PyCharm Python Environment
+
+Install PyCharm using WinGet:
+
+```
+WinGet install JetBrains.PyCharm.Professional
+```
+
+Create a Python environment for PyCharm:
 
 ```
 conda create -n pycharm -c conda-forge python cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate pyqt autopep8 black
@@ -686,5 +605,101 @@ openpyxl, xlrd, xlsxwriter, lxml, sqlalchemy and tabulate are file format conver
 pyqt is required for an interactive matplotlib plotting backends.
 
 The Python interpretter needs to be selected in PyCharm.
+
+## Config and .condarc file (optional)
+
+The ```conda config``` command is used to create a ```.condarc``` file which can be used to change the settings used by the conda package manager... 
+
+When the ```conda``` package manager is used in Anaconda a ```.condarc``` file is created in ```%USERPROFILE%```:
+
+<img src='images_conda/img_072.png' alt='img_072' width='450'/>
+
+with the following content:
+
+```
+channels:
+  - defaults
+```
+
+<img src='images_conda/img_073.png' alt='img_073' width='450'/>
+
+For Anaconda or Miniconda ```defaults``` mean the ```anaconda``` channel is selected. This is the channel maintained by the Anaconda company.
+
+The community channel ```conda-forge``` is more commonly used for custom Python environments. To change the channel used to ```conda-forge``` the following commands can be used:
+
+```
+conda config --remove channels defaults
+conda config --add channels conda-forge
+```
+
+<img src='images_conda/img_074.png' alt='img_074' width='450'/>
+
+This updates the ```.condarc``` to the following:
+
+<img src='images_conda/img_075.png' alt='img_075' width='450'/>
+
+```
+channels:
+  - conda-forge
+```
+
+Note that a ```.condarc``` with a default channel of ```conda-forge``` should not be used when updating the Anaconda base Python environment as it will result in an unstable configuration. Miniconda does not have the same issue as there are a small number of packages in the Miniconda base Python environment.
+
+## Initialising the Windows Terminal (optional)
+
+The Windows Environmental Variable Path has the following 5 entries:
+
+```
+%USERPROFILE%\Anaconda3
+%USERPROFILE%\Anaconda3\Library\mingw-w64\bin
+%USERPROFILE%\Anaconda3\Libraryusr\bin
+%USERPROFILE%\Anaconda3\Library\bin
+%USERPROFILE%\Anaconda3\Scripts
+```
+
+This is the location which the Windows Terminal looks for the ```python.exe``` and other applications such as the ```spyder.exe``` and ```jupyter-lab.exe```.
+
+The Anaconda PowerShell Prompt is essentially the Windows Terminal that runs an additional conda activation script that allows change of Python environments:
+
+```
+%windir%\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy ByPass -NoExit -Command "& 'C:\Users\Phili\anaconda3\shell\condabin\conda-hook.ps1' ; conda activate 'C:\Users\Phili\anaconda3' "
+```
+
+Notice that this has to bypass ExecutionPolicy to allow the activation script to run. 
+
+The Windows Terminal can be initialised directly by using a modified PowerShell Profile that runs the conda activation script. Unfortunately to use this modified profile, the PowerShell Script Execution Policy needs to be set to Unrestricted and this therefore lowers the base security of the Windows OS making it more vulnerable to other malicious scripts. This security Execution Policy is the main reason there is a seperate Anaconda PowerShell Prompt on Windows instead of direct integration with the Windows Terminal.
+
+To initialise Anaconda in PowerShell open up the Windows Terminal and input:
+
+```
+Anaconda3\Scripts\conda.exe init powershell
+```
+
+Once this is done, there is an error message any time the Windows Terminal is opened stating the PowerShell Profile cannot be loaded because running scripts is disabled on this system:
+
+In order to use this PowerShell Profile, the Script Execution Policy needs to be set to Unrestricted, recall that this lowers the base security of your system leaving it open to other poptentially malicious scripts.
+
+To change this setting the Terminal (Admin) needs to be used. Input:
+
+```
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted
+```
+
+Close any Terminals. Now the Windows Terminal (User) can be used and the conda environment shows:
+
+The Windows Terminal can be used in an identical manner to the Anaconda PowerShell Prompt and any Python IDEs that use the Windows Terminal will use it with an activation script making it equivalent to using the Anaconda PowerShell Prompt.
+
+To undo the initialisation, the following command can be used:
+
+```
+Anaconda3\Scripts\conda.exe init powershell --reverse
+```
+
+To revert to the default Execution Policy, the following command can be used. Recall that administrative privileges
+ are required so use Windows Terminal (Admin):
+
+```
+Set-ExecutionPolicy -ExecutionPolicy Default
+```
 
 [Return to Anaconda Tutorial](./readme.md)
