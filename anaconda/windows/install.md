@@ -207,6 +207,8 @@ These can be executed on a Python script file using the Terminal but are typical
 
 ## Anaconda PowerShell Prompt
 
+Generally the Anaconda PowerShell Prompt is preferred over the Windows Terminal when working with Python environments.
+
 The Anaconda3 folder on the Start Menu has two Terminal Based Entries:
 
 * Anaconda PowerShell Prompt
@@ -229,8 +231,6 @@ Under the hood the Anaconda PowerShell Prompt essentially launches the Windows T
 ```
 %windir%\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy ByPass -NoExit -Command "& 'C:\Users\Phili\anaconda3\shell\condabin\conda-hook.ps1' ; conda activate 'C:\Users\Phili\anaconda3' "
 ```
-
-Generally the Anaconda PowerShell Prompt is preferred over the Windows Terminal when working with Python environments.
 
 ## Updating Anaconda
 
@@ -264,7 +264,7 @@ in order to proceed:
 
 <img src='images_install/img_029.png' alt='img_029' width='350'/>
 
-The Anaconda Navigagtor can be checked for an update using:
+The Anaconda Navigator can be checked for an update using:
 
 ```
 conda update anaconda-navigator

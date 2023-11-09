@@ -13,7 +13,7 @@ Uninstall:
 * Anaconda
 * Miniconda
 * Miniforge
-* Mambaconda 
+* Mambaforge
 * Python
 * PyCharm
 * Spyder
