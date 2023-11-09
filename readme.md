@@ -125,14 +125,6 @@ The Automatic Python Enhanced Protocol 8 module is used to process a Python scri
 
 * [AutoPEP8, Import Sort and Black Modules](./autopep8_module/notebook.ipynb)
 
-## Pickle Module
-
-* Pickle Module Notebook
-
-## Java Script Object Notation Module
-
-* Java Script Object Notation Notebook
-
 ## The Numeric Python Library
 
 The Numeric Python library is based upon the data structure of the ndarray. This is a datastructure that is a collection however unlike ```builtins``` collections, all the datamodel methods are configured for numeric operations. numpy also scales the functions found in the math, datetime and random modules to ndarrays:
