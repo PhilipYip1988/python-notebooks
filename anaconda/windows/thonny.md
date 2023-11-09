@@ -4,49 +4,11 @@ The previous tutorial looked at ID**L**E which as the name suggests is a popular
 
 ## Installing Thonny
 
-Thonny is not preinstalled using conda as it has no package on the anaconda or conda-forge channels. It therefore needs to be installed using its own standalone installer which can be downloaded on the Thonny website [Thonny](https://thonny.org/)
+Thonny is not preinstalled using conda as it has no package on the anaconda or conda-forge channels. It can be installed with WinGet using the command:
 
-<img src='images_thonny/img_001.png' alt='img_001' width='250'/>
-
-Launch the setup:
-
-<img src='images_thonny/img_002.png' alt='img_002' width='350'/>
-
-Select Install for me only (recommended):
-
-<img src='images_thonny/img_003.png' alt='img_003' width='250'/>
-
-Select next:
-
-<img src='images_thonny/img_004.png' alt='img_004' width='350'/>
-
-Select the license agreement and select next:
-
-<img src='images_thonny/img_005.png' alt='img_005' width='350'/>
-
-Select the default install location and select next:
-
-<img src='images_thonny/img_006.png' alt='img_006' width='350'/>
-
-Use the default start menu folder and select next:
-
-<img src='images_thonny/img_007.png' alt='img_007' width='350'/>
-
-Select next:
-
-<img src='images_thonny/img_008.png' alt='img_008' width='350'/>
-
-Select Install: 
-
-<img src='images_thonny/img_009.png' alt='img_009' width='350'/>
-
-Select Finish:
-
-<img src='images_thonny/img_010.png' alt='img_010' width='350'/>
-
-Select your Language and select Let's Go:
-
-<img src='images_thonny/img_011.png' alt='img_011' width='250'/>
+```
+WinGet install AivarAnnamaa.Thonny
+```
 
 ## Selecting a Python Environment
 

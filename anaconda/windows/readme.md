@@ -8,7 +8,6 @@ Written Tutorial:
 * [System Requirements](./systemrequirements.md)
 * [Uninstalling Anaconda and Purging Old Configuration Files](./uninstall.md)
 * [Installing Anaconda](./install.md)
-* [Updating Anaconda](./update.md)
 * [Importing Data Science Libraries](./imports.md)
 * [PowerShell Basics](./powershell.md)
 * [IDLE](./idle.md)

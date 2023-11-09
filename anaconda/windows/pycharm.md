@@ -2,53 +2,13 @@
 
 PyCharm is an advanced Python IDE used for Python script files (.py file extension). It does not have ipython magic commands or support interactive Python notebooks (.ipynb file extension). 
 
-## Downloading PyCharm
+## Installation
 
-The download link for PyCharm is here:
+PyCharm can be installed using Winget using the command:
 
-[PyCharm Community](https://www.jetbrains.com/pycharm/)
-
-There is a paid version and a free community version:
-
-<img src='images_pycharm/img_001.png' alt='img_001' width='450'/>
-
-Make sure to scroll down to the bottom of the page and select PyCharm community version:
-
-<img src='images_pycharm/img_002.png' alt='img_002' width='450'/>
-
-Download the .exe, it should contain the word community in the file name:
-
-<img src='images_pycharm/img_003.png' alt='img_003' width='450'/>
-
-## Installing PyCharm
-
-Launch the setup.exe:
-
-<img src='images_pycharm/img_004.png' alt='img_004' width='450'/>
-
-Accept the User Account Control Prompt:
-
-<img src='images_pycharm/img_005.png' alt='img_005' width='450'/>
-
-The setup will begin:
-
-<img src='images_pycharm/img_006.png' alt='img_006' width='450'/>
-
-Select the default install location:
-
-<img src='images_pycharm/img_007.png' alt='img_007' width='450'/>
-
-Select installation options:
-
-<img src='images_pycharm/img_008.png' alt='img_008' width='450'/>
-
-Select install:
-
-<img src='images_pycharm/img_009.png' alt='img_009' width='450'/>
-
-Select Finish:
-
-<img src='images_pycharm/img_010.png' alt='img_010' width='450'/>
+```
+WinGet install JetBrains.PyCharm.Community
+```
 
 ## Customising PyCharm
 

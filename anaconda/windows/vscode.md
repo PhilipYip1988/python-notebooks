@@ -7,48 +7,12 @@ Visual Studio Code is a general purpose code editor maintained by Microsoft.
 VSCode can be installed using the standalone user installer from Microsoft's website or using the Windows command line utility winget from the Anaconda PowerShell Prompt:
 
 ```
-winget install -e --id Microsoft.VisualStudioCode
+WinGet install Microsoft.VisualStudioCode
 ```
-
-When downloading the installer ensure the Windows x64 User Installer is selected:
-
-<img src='images_vscode/img_001.png' alt='img_001' width='250'/>
-
-Once the download is complete:
-
-<img src='images_vscode/img_002.png' alt='img_002' width='350'/>
-
-Go to the downloads folder and launch the setup:
-
-<img src='images_vscode/img_003.png' alt='img_003' width='450'/>
-
-Accept the license agreement and select next:
-
-<img src='images_vscode/img_004.png' alt='img_004' width='350'/>
-
-Select the default install location and select next:
-
-<img src='images_vscode/img_005.png' alt='img_005' width='350'/>
-
-Select the default Start Menu folder and select next:
-
-<img src='images_vscode/img_006.png' alt='img_006' width='350'/>
-
-Use the default additional tasks and select next:
-
-<img src='images_vscode/img_007.png' alt='img_007' width='350'/>
-
-Select install:
-
-<img src='images_vscode/img_008.png' alt='img_008' width='350'/>
-
-Select Finish:
-
-<img src='images_vscode/img_009.png' alt='img_009' width='350'/>
 
 ## conda Initialisation
 
-VSCode uses the Windows Terminal PowerShell and therefore requires conda initialisation in PowerShell. Otherwise the following error message will display when attempting to run a Python Script:
+VSCode uses the Windows Terminal PowerShell and therefore requires the Anaconda base environment to be added to the Windows Environmental Variable Path (this should be done automatically when Anaconda is installed using WinGet) or for the Windows Terminal to be initialised. Otherwise the following error message will display when attempting to run a Python Script:
 
 ```
 conda : The term 'conda' is not recognized as the name of a cmdlet, function, script 
@@ -62,7 +26,7 @@ At line:1 char:1
     + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
-If you encounter this error message, you can resolve this by initialising Anaconda in PowerShell see [Anaconda Installation](./installation.md). If there is an Environmental Variable EDITOR, it should be removed as additional text output may not open properly if this Environmental Variable Editor is set.
+If you encounter this error message, you can resolve this by modifying the path to match the default provided by the Anaconda installation see [Anaconda Installation](./installation.md) or by Initialising the Windows Terminal see [conda Package Manager: Initialising the Windows Terminal](./conda.md). 
 
 ## Launching VSCode
 
