@@ -275,4 +275,3 @@ Anaconda should now be updated:
 <img src='images_install/img_030.png' alt='img_030' width='350'/>
 
 [Return to Anaconda Tutorial](./readme.md)
-
