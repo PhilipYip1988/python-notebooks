@@ -111,7 +111,7 @@ The Path and Library module is similar to the Operating System Module however us
 
 IPython can be used to run Powershell and bash commands in an IPython console or an interactive Python notebook. The basics of Powershell and bash were covered in the installation tutorials:
 
-* [IPython Module](./ipython_magics/notebook.ipynb)
+* [IPython Module](./ipython_modle/notebook.ipynb)
 
 ## System Module
 
