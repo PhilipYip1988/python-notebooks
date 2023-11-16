@@ -105,13 +105,13 @@ The Operating System module is a Python implementation of the bash or Powershell
 
 The Path and Library module is similar to the Operating System Module however uses an Object Orientated Programming (OOP) approach to file paths and libraries within the user profile or home directory. File paths are returned as instances of the Path class which have a number of useful attributes and the datamodel method ```__truediv__``` (*dunder truediv*) is defined so the ```/``` operator can be used for folder and file concatenation:
 
-* [Path and Library Module](./pathlib/notebook.ipynb)
+* [Path and Library Module](./pathlib_module/notebook.ipynb)
 
 ## IPython Magics
 
 IPython can be used to run Powershell and bash commands in an IPython console or an interactive Python notebook. The basics of Powershell and bash were covered in the installation tutorials:
 
-* [IPython Module](./ipython/notebook.ipynb)
+* [IPython Module](./ipython_magics/notebook.ipynb)
 
 ## System Module
 
