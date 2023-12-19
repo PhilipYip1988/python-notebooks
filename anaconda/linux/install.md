@@ -22,7 +22,7 @@ Right click empty space in the folder and select Open in Terminal:
 
 To begin executing of the shell script input:
 
-```
+```bash
 bash Anaconda3-2023.09-0-Linux-x86_64.sh
 ```
 
@@ -119,29 +119,123 @@ The .bashrc can be seen in Text Editor:
 
 <img src='images_install/img_024.png' alt='img_024' width='450'/>
 
-Close any open any terminals. New terminals will look at the refreshed .bashrc file for commands. You will see a prefix (base) indicating the base Python environment is selected:
+Close any open any terminals. New terminals will look at the refreshed .bashrc file for additional commands. You will see the bash prompt now contains a prefix (base) indicating the base Python environment is selected:
 
 <img src='images_install/img_025.png' alt='img_025' width='450'/>
+
+## Updating Anaconda
+
+To update Anaconda, the (base) Python environment should be deactivated using:
+
+```
+conda deactivate
+```
+
+This displays a normal bash prompt. The conda package manager can be updated using:
+
+```
+conda update conda
+```
+
+This will look for updates to the conda package manager and in turn update the entire Anaconda Python distribution:
+
+
+
+Details about the number of packages to be installed will be listed:
+
+
+
+Details about packages to be removed will be listed. This should only be a small number of packages what are obsolete:
+
+
+
+Details about packages to be updated will be listed, this should be most the packages:
+
+
+A small number of packages will be downgraded, normally to a more stable version:
+
+
+To proceed with the changes input y and press ↵:
+
+
+The conda package manager will now be updated alongside most of the other packages in the (base) Python environment. A new prompt will display once the update has finished:
+
+
+The conda package manager can also be used to update the anaconda-navigator:
+
+```bash
+conda update anaconda-navigator
+```
+
+To proceed with the changes input y and press ↵:
+
+
+
+## The Bin Folder and Python Applications
+
+In the anaconda3 folder there is a bin subfolder:
+
+<img src='images_install/img_026.png' alt='img_026' width='450'/>
+
+This contains a number of applications:
+
+<img src='images_install/img_027.png' alt='img_027' width='450'/>
+
+If a search for python is made, notice that there is:
+
+* python
+* python3 (used previously to distinguish 2 and 3)
+* python3.1
+* python3.11 (used to specify the major.minor version)
+
+These are the same application.
+
+<img src='images_install/img_028.png' alt='img_028' width='450'/>
+
+Python can be launched using:
+
+```bash
+~/anaconda3/bin/python
+```
+
+Because the base Python environment is initialised when the bash command:
+
+```bash
+python
+```
+
+is input, the Linux Terminal will look in the ~/anaconda3/bin folder by default and find the python program.
+
+Using the other alias for the python program will work.
+
+<img src='images_install/img_029.png' alt='img_029' width='450'/>
+
+In the bin folder are a number of other applications such as:
+
+* anaconda-navigator
+* conda
+
+<img src='images_install/img_030.png' alt='img_030' width='450'/>
 
 ## Anaconda Navigator
 
 On Linux, no shortcuts for Anaconda or Python IDEs installed in the Anaconda base Python environment have Start Menu shortcuts. The Anaconda Navigator can be launched from the Terminal using the command:
 
-```
+```bash
 anaconda-navigator
 ```
 
-<img src='images_install/img_026.png' alt='img_026' width='450'/>
+<img src='images_install/img_031.png' alt='img_031' width='450'/>
 
 The terminal will remain busy when the Anaconda Navigator is launched:
 
-<img src='images_install/img_027.png' alt='img_027' width='450'/>
+<img src='images_install/img_032.png' alt='img_032' width='450'/>
 
 The most commonly used Python IDEs can be launched using their respective tiles in the Anaconda Navigator:
 
-<img src='images_install/img_028.png' alt='img_028' width='450'/>
+<img src='images_install/img_033.png' alt='img_033' width='450'/>
 
-Anaconda is now installed.
+
 
 ## LibGL Error
 
