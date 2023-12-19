@@ -252,7 +252,7 @@ The headings tab can be collapsed for more screen space:
 
 <img src='images_jupyter/img_034.png' alt='img_034' width='450'/>
 
-The notebook file previosly created can be opened. When a notebook file is opened, generally the Kernel should be reestarted by going to the Kernel tab and selecting Restart Kernel and Run All Cells or one of the other Restart Kernel options:
+The notebook file previously created can be opened. When a notebook file is opened, generally the Kernel should be reestarted by going to the Kernel tab and selecting Restart Kernel and Run All Cells or one of the other Restart Kernel options:
 
 <img src='images_jupyter/img_035.png' alt='img_035' width='450'/>
 
