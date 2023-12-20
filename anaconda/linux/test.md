@@ -1,7 +1,7 @@
 The code is:
 
 ```bash
-print('Hello World!')
+conda update --all
 ```
 
 
@@ -12,4 +12,8 @@ print('Hello World!')
 
 
 
+```python
+for number in range(0, 5, 1):
+    print(number)
+```
 

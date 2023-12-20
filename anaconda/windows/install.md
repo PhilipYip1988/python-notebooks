@@ -2,9 +2,9 @@
 
 ## Removing Old Installations
 
-Anaconda should be installed on a Windows 11 that has no previous Python installations. If these are present they should be Uninstalled and old configuration files should be purged, see:
+Anaconda should be installed on a Windows 11 PC that has no previous Python installations. 
 
-[Uninstall](./uninstall.md)
+If Python installations are present they should be uninstalled. Note that uninstallation leaves behind a large number of configuration files and often results in problematic settings persisting after a reinstall. For best results it is recommended to purge these configuration files. For more details see[Uninstall](./uninstall.md)
 
 ## WinGet
 
@@ -14,11 +14,20 @@ Before using WinGet, the Microsoft Store, App Installer and Windows Terminal sho
 
 <img src='images_install/img_001.png' alt='img_001' width='450'/>
 
-Right click the Start Menu and select Terminal:
+Note: When WinGet is used with Terminal (Non-Admin) it will install a Program for the Current User. When WinGet is used with Terminal (Admin) it will install a Program for All Users.
+
+Right click the Start Menu and select Terminal (Non-Admin):
 
 <img src='images_install/img_002.png' alt='img_002' width='200'/>
 
-When WinGet is used with Terminal (User) it will install a Program for the Current User. When WinGet is used with Terminal (Admin) it will install a Program for All Users:
+The Terminal uses the PowerShell programming language by default.
+
+
+
+
+
+
+
 
 <img src='images_install/img_003.png' alt='img_003' width='350'/>
 

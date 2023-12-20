@@ -740,11 +740,18 @@ On Linux, no shortcuts for Anaconda or Python IDEs installed in the Anaconda bas
 anaconda-navigator
 ```
 
-<img src='images_install/img_031.png' alt='img_031' width='450'/>
-
 The terminal will remain busy when the Anaconda Navigator is launched:
 
-<img src='images_install/img_032.png' alt='img_032' width='450'/>
+```
+2023-12-08 08:15:02,716 - WARNING linux_scaling.get_primary_monitor_name:61
+Can't detect primary monitor.
+
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+libGL error: MESA-LOADER: failed to open iris: /usr/lib/dri/iris_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib/x86_64-linux-gnu/dri:\$${ORIGIN}/dri:/usr/lib/dri, suffix _dri)
+libGL error: failed to load driver: iris
+libGL error: MESA-LOADER: failed to open swrast: /usr/lib/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib/x86_64-linux-gnu/dri:\$${ORIGIN}/dri:/usr/lib/dri, suffix _dri)
+libGL error: failed to load driver: swrast
+```
 
 The most commonly used Python IDEs can be launched using their respective tiles in the Anaconda Navigator:
 
@@ -756,14 +763,101 @@ There is a ```LibGL error: mesa iris driver error``` when Anaconda Navigator or 
 
 ### Spyder
 
+Spyder can be launched from its tab in the Anaconda Navigator. Or by using the
 
-### JupyterLab
+```
+spyder
+```
+
+### Jupyter
+
+Jupyter is an acronym for Julia, Python and R.
+
+```
+jupyter-console --kernel=python
+```
 
 
-### Python
+
+
+JupyterLab can be launched from its tab in the Anaconda Navigator. Or by using the
+
+```
+jupyter-lab
+```
+
+There is also the jupyter console application which is essentially identical to IPython but allows supports for other kernels such as the rkernel
+
+```
+jupyter-console --kernel=python
+```
 
 
 
+
+
+
+jupyter
+ipython
+jupyter console
+
+jupyter qtconsole
+jupyter-qtconsole
+jupyter notebook
+jupyter-notebook
+jupyter lab
+jupyter lab
+
+
+
+
+
+
+
+
+
+
+## Understanding Imports
+
+```
+In [1]: import datetime
+
+In [2]: datetime.__file__
+Out[2]: '/home/philip/anaconda3/lib/python3.11/datetime.py'
+
+In [3]: import collections
+
+In [4]: collections.__file__
+Out[4]: '/home/philip/anaconda3/lib/python3.11/collections/__init__.py'
+
+In [5]: import numpy as np
+
+In [6]: np.__file__
+Out[6]: '/home/philip/anaconda3/lib/python3.11/site-packages/numpy/__init__.py'
+
+In [7]: import numpy.random as random
+
+In [8]: random.__file__
+Out[8]: '/home/philip/anaconda3/lib/python3.11/site-packages/numpy/random/__init__.py'
+
+In [9]: import pandas as pd
+
+In [10]: pd.__file__
+Out[10]: '/home/philip/anaconda3/lib/python3.11/site-packages/pandas/__init__.py'
+
+In [11]: import matplotlib
+
+In [12]: matplotlib.__file__
+Out[12]: '/home/philip/anaconda3/lib/python3.11/site-packages/matplotlib/__init__.py'
+
+In [13]: import matplotlib.pyplot as plt
+
+In [14]: plt.__file__
+Out[14]: '/home/philip/anaconda3/lib/python3.11/site-packages/matplotlib/pyplot.py'
+
+In [15]: 
+
+```
 
 
 

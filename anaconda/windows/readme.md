@@ -4,9 +4,6 @@ These tutorials look at installation and use of the Anaconda Python distribution
 
 Written Tutorial:
 
-* [About Anaconda](./about.md)
-* [System Requirements](./systemrequirements.md)
-* [Uninstalling Anaconda and Purging Old Configuration Files](./uninstall.md)
 * [Installing Anaconda](./install.md)
 * [Importing Data Science Libraries](./imports.md)
 * [PowerShell Basics](./powershell.md)
