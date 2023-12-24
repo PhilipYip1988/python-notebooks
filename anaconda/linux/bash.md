@@ -18,7 +18,7 @@ The command **l**i**s**t:
 ls
 ```
 
-can be used to lsit all files and subdirectories:
+can be used to list all files and subdirectories:
 
 <img src='images_bash/img_003.png' alt='img_003' width='450'/>
 
@@ -50,7 +50,7 @@ To get from ```~/Documents``` to ```~/Downloads``` you can go up a level and the
 
 <img src='images_bash/img_007.png' alt='img_007' width='450'/>
 
-The command clear can be sued to clear the terminal:
+The command clear can be used to clear the terminal:
 
 ```
 clear
