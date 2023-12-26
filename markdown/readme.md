@@ -265,22 +265,19 @@ Produces the seperator line between the two arrows:
 To include code in a markdown file begin and end the code with 3 back-quotes ```` ``` ````. The following markdown:
 
 ```
-The code is ```print("Hello World!")```
+The code is ```print('Hello World!')```
 ```
 
 Produces:
 
-The code is ```print("Hello World!")```
+The code is ```print('Hello World!')```
 
 3 back quotes ```` ``` ```` on a new line can be used to begin and end a code-block. The following markdown:
 
 ````
 ```
-
-print("Hello World!")
-
-print("Goodbye World!")
-
+print('Hello World!')
+print('Goodbye World!')
 ```
 ````
 
@@ -288,8 +285,8 @@ print("Goodbye World!")
 Produces:
 
 ```
-print("Hello World!")
-print("Goodbye World!")
+print('Hello World!')
+print('Goodbye World!')
 ```
 
 To include the ```` ``` ```` themselves as part of the markdown text. Enclose the three back quotes ```` ``` ```` in four backquotes ````` ```` `````. To get 4 backquotes (enclose in 5 backquotes). The following markdown:
@@ -317,42 +314,45 @@ If the link is an image this may be prepended with an exclamation mark ```![]()`
 The following markdown:
 
 ```
-[Mamba](https://mamba.readthedocs.io/en/latest/installation.html)
+[Anaconda](https://upload.wikimedia.org/wikipedia/en/c/cd/Anaconda_Logo.png)
 ```
 
 Produces:
 
-[Mamba](https://mamba.readthedocs.io/en/latest/installation.html)
+[Anaconda](https://upload.wikimedia.org/wikipedia/en/c/cd/Anaconda_Logo.png)
 
 The following markdown:
 
 ```
-![Mambaforge](https://mamba.readthedocs.io/en/latest/_static/logo.png)
+![Anaconda](https://upload.wikimedia.org/wikipedia/en/c/cd/Anaconda_Logo.png)
 ```
 
 Produces:
 
-![Mambaforge](https://mamba.readthedocs.io/en/latest/_static/logo.png)
+![Anaconda](https://upload.wikimedia.org/wikipedia/en/c/cd/Anaconda_Logo.png)
 
 If the Image can't be found, the information provided in the square brackets displays:
 
 ```
-![Dont Exist](https://mamba.readthedocs.io/en/latest/_static/logo.png2)
+![This is supposed to be an Anaconda Logo Image](https://upload.wikimedia.org/wikipedia/en/c/cd/Anaconda_Logo2.png)
 ```
 
-![Dont Exist](https://mamba.readthedocs.io/en/latest/_static/logo.png2)
+![This is supposed to be an Anaconda Logo Image](https://upload.wikimedia.org/wikipedia/en/c/cd/Anaconda_Logo2.png)
 
 If the image is in the same folder as the markdown file. The file name can be specified directly.
 
-In the file path ```./``` can be used to specify a subfolder and ```../``` can be used to go up a level. The ```img_004.png``` in the subfolder ```images``` can be selected for example using the following markdown:
+In the file path ```./``` can be used to specify a subfolder and ```../``` can be used to go up a level. The ```img_001.png``` in the subfolder ```images``` can be selected for example using the following markdown:
 
 ```
-![img_004](./images/img_004.png)
+![img_001](./images/img_001.png)
+![img_001](./images/img_001a.png)
 ```
 
 Producing:
 
-![equation](./images/img_004.png)
+![Markdown File opened in VSCode](./images/img_001.png)
+
+![Markdown File opened in VSCode](./images/img_001a.png)
 
 It is recommended to enable file extensions for known file types and ensure all file extensions are lower case. GitHub for example seems to be sensitive regarding the case of the file extension and won't render properly if the file has a different case of file extension. Some programs will save to .PNG and others will save to .png by default. By enabling the file extension you will be able to see what case each file extension is using and can update them all to be lower case for the sake of being consistent. 
 
@@ -404,7 +404,7 @@ In LaTeX there are a number of reserved symbols:
 |\\\\ |used as a delimiter|
 |%|used to enclose comments|
 
-In LaTeX it is possible to insert some of these symbols in as escape characters, for example ```$\$$``` for $ and ```$\%$``` for %. These give $\$$ (3 dollar signs) and $\%$ (nothing) respectively. MathJax is not reliable for placing one of these reserved escape characters into the LaTeX equation.
+In LaTeX it is possible to insert some of these symbols in as escape characters, for example ```$\$$``` for ```$``` and ```$\%$``` for ```%```. These give $\$$ (3 dollar signs) and $\%$ (nothing) respectively. MathJax has some limitations when placing one of these reserved escape characters into the LaTeX equation.
 
 ### LaTeX Text (MathJax)
 
