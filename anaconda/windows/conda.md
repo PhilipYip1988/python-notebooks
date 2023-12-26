@@ -1,10 +1,19 @@
 # The conda Package Manager
 
-The purpose of the conda package manager is to maintain a Python environment. 
+The purpose of the conda package manager is to allow cross-platform installation of Python packages and non-Python dependences related to a datascience project in a Python environment. This can include other programming languages such as R.
+
+The conda package manager has two main channels:
+
+|channel name|channel description|
+|---|---|
+|conda-forge|community channel maintained by developers|
+|main|channel maintained by the Anaconda company|
+
+The main channel also known as conda or anaconda is the channel maintained by the Anaconda company. These packages are tested by the Anaconda company for compatability with the Anaconda Python distribution. As the Anaconda company only test commonly used datascience libraries and it takes time for testing, there are less packages available in the main channel and the package that they have may not be the latest version.
 
 ## The base Python Environment
 
-In Anaconda the base Python environment is a Python distribution and should not be modified outwith the standard conda images available from Anaconda covered in the Updating Anaconda tutorial. The reason for this is the Python distribution has a large number of packages and changing a package that is a dependency for the other packages will normally result in a number of these packages being removed leading to an unstable Python environment.
+In Anaconda the base Python environment is a Python distribution and should not be modified outwith the standard conda images available from Anaconda. The reason for this is the Python distribution has a large number of packages and changing a package that is a dependency for the other packages will normally result in a number of these packages being removed leading to an unstable Python environment.
 
 To recap the base Python environment is found in:
 
@@ -12,33 +21,80 @@ To recap the base Python environment is found in:
 %USERPROFILE%\Anaconda3
 ```
 
-This contains a python.exe which is the base Python environment:
+This contains its own python.exe:
 
 <img src='images_conda/img_001.png' alt='img_001' width='450'/>
 
-This base Python environment also has a Lib folder which contains the Python standard modules:
+The (base) Python environment has a Scripts folder which contains applications installed in the (base) Python environment. 
 
-<img src='images_conda/img_002.png' alt='img_002' width='450'/>
+```
+%USERPROFILE%/anaconda3/Scripts
+```
 
-Such as email (as a subfolder):
+On Linux, applications are called binaries and do not have a .exe file extension. The (base) Python environment also has a number of secondary bin folders that use a consistent file structure to Linux
 
-<img src='images_conda/img_003.png' alt='img_003' width='450'/>
+```
+%USERPROFILE%/anaconda3/Library/bin
+%USERPROFILE%/anaconda3/Library/usr/bin
+```
 
-datetime (as a module):
+There is also a bin folder associated with the ming-w64 compiler:
 
-<img src='images_conda/img_004.png' alt='img_004' width='450'/>
+```
+%USERPROFILE%/anaconda3/Library/ming-w64/bin
+```
 
-And the site-packages folder which contains the third-party libraries:
+The (base) Python environment has a Lib folder which contains Python modules:
 
-<img src='images_conda/img_005.png' alt='img_005' width='450'/>
+```
+%USERPROFILE%/anaconda3/Lib
+```
 
-such as numpy, pandas and matplotlib:
+The standard modules are either in the form of a single script files or a folder containing multiple script files. When the module is a single file the name of the file corresponds to the name of the module. When the module is a folder, the folder name corresponds to the name of the module and there is a datamodel initialisation script file called ```__init__.py``` which is imported.
 
-<img src='images_conda/img_006.png' alt='img_006' width='450'/>
+Within the Lib folder there is a site-packages folder:
+
+```
+%USERPROFILE%/anaconda3/Lib/site-packages
+```
+
+This folder contains third-party modules also known as libraries. Common libraries are numpy, pandas and matplotlib. 
+
+These modules can be imported and the datamodel attribute ```__file__``` can be printed to view the location of the file:
+
+```
+(base) PS ~> jupyter-console
+
+Python 3.11.5 | packaged by Anaconda, Inc. | (main, Sep 11 2023, 13:26:23) [MSC v.1916 64 bit (AMD64)]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 8.15.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: import datetime
+   ...: import email
+
+In [2]: print(datetime.__file__)
+   ...: print(email.__file__)
+~\anaconda3\Lib\datetime.py
+~\anaconda3\Lib\email\__init__.py
+
+In [3]: import numpy as np
+   ...: import pandas as pd
+   ...: import matplotlib.pyplot as plt
+
+In [4]: print(np.__file__)
+   ...: print(pd.__file__)
+   ...: print(plt.__file__)
+~\anaconda3\Lib\site-packages\numpy\__init__.py
+~\anaconda3\Lib\site-packages\pandas\__init__.py
+~\anaconda3\Lib\site-packages\matplotlib\pyplot.py
+
+In [5]:
+
+```
 
 ## The envs folder
 
-Additional Python environments are found in the environments folder envs:
+The (base) Python environment also contains an envs folder which is used for Python environments:
 
 ```
 %USERPROFILE%\Anaconda3\envs
@@ -50,9 +106,12 @@ By default there are no additional Python environments and this folder is empty:
 
 <img src='images_conda/img_008.png' alt='img_008' width='450'/>
 
-A Python environment is essentially a sub-installation of Python which is used to install Python alongside a number of third-party Python libraries. 
+A Python environment is essentially a sub-installation of Python. Each Python environment will therefore a substructure similar to the (base) Python environment and will have their own:
 
-The use of Python environments for example allows installation of the latest version of each IDE without breaking the functionality of the (base) Python environment.
+* python.exe
+* scripts folder
+* lib subfolder
+* site-packages subfolder within lib
 
 ## conda Package Manager
 
@@ -64,14 +123,31 @@ An overview about the conda package manager can be seen by opening up the Anacon
 conda
 ```
 
-<img src='images_conda/img_009.png' alt='img_009' width='450'/>
-
 This gives the following output:
 
-<img src='images_conda/img_010.png' alt='img_010' width='450'/>
+```
+(base) PS ~> conda
+usage: conda-script.py [-h] [-v] [--no-plugins] [-V] COMMAND ...
 
+conda is a tool for managing and deploying applications, environments and packages.
+
+options:
+```
+|flag or option|purpose|
+|---|---|
+|-h, --help|Show this help message and exit.|
+|-v, --verbose|Can be used multiple times. Once for detailed output, twice for INFO logging, thrice for DEBUG logging, four times for TRACE logging.|
+|--no-plugins|Disable all plugins that are not built into conda.|
+|-V, --version|Show the conda version number and exit.|
+
+```
+commands:
+  The following built-in and plugins subcommands are available.
+```
 |command|description|
 |---|---|
+|activate|Activate a conda environment.|
+|build|Build conda packages from a conda recipe.|
 |clean|Remove unused packages and caches.|
 |compare|Compare packages between conda environments.|
 |config|Modify configuration values in .condarc.|
@@ -104,21 +180,9 @@ This gives the following output:
 |skeleton|See conda skeleton --help.|
 |token|See conda token --help.|
 |verify|See conda verify --help.|
-
-### Conda Channels
-
-There are two main channels used by the conda package manager:
-
-|channel name|channel description|
-|---|---|
-|conda-forge|community channel maintained by developers|
-|anaconda|channel maintained by the Anaconda company|
-
-The community channel is maintained directly by Python developers. A subset of the packages from the community channel are further tested by the Anaconda company for use in the Anaconda Python distribution.
-
-Therefore popular packages in the community channel are usually more up to date with respect to packages in the conda channel. And less popular packages in the community channel are unlikely to be in the anaconda channel.
-
-A Python environment is normally unstable if it uses mixed channels and most custom end-user Python environments will only use packages in the conda-forge channel.
+```
+(base) PS ~>
+```
 
 ### Create
 
@@ -128,9 +192,44 @@ A Python environment can be created using the syntax:
 conda create -n notbase
 ```
 
-where "notbase" is the environment name. Input ```y``` to proceed:
+where "notbase" is the environment name. The longer ```--name``` can also be used in place of the ```-n```.
 
-<img src='images_conda/img_017.png' alt='img_017' width='450'/>
+The following will be output:
+
+```
+(base) PS ~> conda create -n notbase
+Channels:
+ - defaults
+Platform: win-64
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: ~\anaconda3\envs\notbase
+
+
+
+Proceed ([y]/n)?
+```
+
+Input ```y``` to proceed. The Python environment is now created:
+
+```
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate notbase
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+(base) PS ~>
+```
 
 Notice in envs, the notbase subfolder is created:
 
@@ -138,568 +237,1116 @@ Notice in envs, the notbase subfolder is created:
 
 ### Activate
 
-The ```conda activate``` command only works in the Anaconda PowerShell Prompt and will not work in the Windows Terminal which instead uses the Python environment specified in the Windows Environmental Variables Path.
+The ```activate``` subcommand is used to active a Python environment. When a Python environment is activated the:
 
-Once the Python environment is created it can be activated (selected) using:
+* python.exe
+* scripts folder
+* lib subfolder
+* site-packages subfolder within lib
+
+associated with the Python environment will preferentially be used over their respective locations in (base).
+
+Note activation will only work in the Anaconda PowerShell Prompt by default unless the Windows Terminal has been initialised. When the Windows Terminal is not initialised, the Windows Terminal will only look for applications in the folders specified in the Windows Environmental Variables path in the order specified in the Windows Environmental Variables path.
+
+The notbase Python environment can be activated using:
 
 ```
 conda activate notbase
 ```
 
-<img src='images_conda/img_019.png' alt='img_019' width='450'/>
+The output now looks like:
 
-Once activated, any changes made using the conda package manager in the Anaconda PowerShell Prompt will apply to this Python environment instead of base. The prompt now has the (notbase) prefix indicates the (notbase) Python is selected:
+```
+(base) PS ~> conda activate notbase
+(notbase) PS ~>
+```
 
-<img src='images_conda/img_020.png' alt='img_020' width='450'/>
+Notice that the prompt now has the (notbase) prefix indicating that the (notbase) Python is activated.
 
-If the Anaconda PowerShell Prompt is closed and reopened, the default Python environment base will be selected. The Python environment notbase will have to be activated.
-
-The conda activate comand does not change Python environment in the Windows Terminal because the Windows Terminal always uses the Python environment listed in the Windows Environmental Variables path.
+When the Anaconda PowerShell Prompt is closed and reopened, the default Python environment (base) will be activated. The Python environment notbase will have to be activated.
 
 ### Search
 
-The conda-forge community channel can be searched for a package in this case the package "python" using:
+A package can be searched for using the ```search``` subcommand followed by the package name:
+
+```
+conda search package_name
+```
+
+The channel to search for packages in can be specified using ```-c``` or the long form ```--channel``` followed by the name of the channel. The default channel is ```main``` but it is more common to use the ```conda-forge``` community channel when creating a custom Python environment. 
+
+```
+conda search -c conda-forge package_name
+```
+
+For example a search of the package python:
 
 ```
 conda search -c conda-forge python
 ```
 
-<img src='images_conda/img_021.png' alt='img_021' width='450'/>
+Outputs:
 
-Notice each Python has a version, a build number and a channel:
+```
+(notbase) PS ~> conda search -c conda-forge python
+Loading channels: done
+```
+|Name|Version|Build|Channel|
+|---|---|---|---|
+|python|3.12.0|h1d929f7_0|pkgs/main|
+|python|3.12.0|h2628c8c_0_cpython|conda-forge|
+|python|3.12.1|h2628c8c_0_cpython|conda-forge|
+|python|3.12.1|h2628c8c_1_cpython|conda-forge|
+```
+(notbase) PS ~>
+```
 
-<img src='images_conda/img_022.png' alt='img_022' width='450'/>
+Notice each Python has a version number of the format X.Y.Z where X is the major build, Y is the minor build and Z is the patch number. The build number consists of a hash followed by a revision. If prefixed with py it is a pure Python package.
 
-Specifying the channel is not necessary as the .condarc file already specifies use of the conda-forge channel however it is good practice to specify the channel. The package ipython can be searched for using:
+The package ipython can be searched for using:
 
 ```
 conda search -c conda-forge ipython
 ```
 
-<img src='images_conda/img_023.png' alt='img_023' width='450'/>
+This outputs:
 
-<img src='images_conda/img_024.png' alt='img_024' width='450'/>
+```
+(notbase) PS ~> conda search -c conda-forge ipython
+Loading channels: done
+```
+|Name|Version|Build|Channel|
+|---|---|---|---|
+|ipython|8.18.1|pyh31011fe_1|conda-forge|
+|ipython|8.18.1|pyh31011fe_2|conda-forge|
+|ipython|8.18.1|pyh5737063_1|conda-forge|
+|ipython|8.18.1|pyh5737063_2|conda-forge|
+|ipython|8.18.1|pyh707e725_3|conda-forge|
+|ipython|8.18.1|pyh7428d3b_3|conda-forge|
+|ipython|8.19.0|pyh707e725_0|conda-forge|
+|ipython|8.19.0|pyh7428d3b_0|conda-forge|
+```
+(notbase) PS ~>
+```
 
 ### Install
 
+The subcommand ```install``` can be used to install a package:
+
+```
+conda install package_name
+```
+
 Multiple packages can be installed using the syntax:
+
+```
+conda install package_name1 package_name2
+```
+
+Once again the channel to install from should be specified:
+
+```
+conda install -c conda-forge package_name1 package_name2
+```
+
+The packages python and ipython can be installed from the community channel using:
 
 ```
 conda install -c conda-forge python ipython
 ```
 
-<img src='images_conda/img_025.png' alt='img_025' width='450'/>
+This outputs:
 
-Details about the packages to be installed are listed:
+```
+(notbase) PS ~> conda install -c conda-forge python ipython
+Channels:
+ - conda-forge
+ - defaults
+Platform: win-64
+Collecting package metadata (repodata.json): done
+Solving environment: done
 
-<img src='images_conda/img_026.png' alt='img_026' width='450'/>
+## Package Plan ##
 
-Input ```y``` in order to proceed:
+  environment location: ~\anaconda3\envs\notbase
 
-<img src='images_conda/img_027.png' alt='img_027' width='450'/>
+  added / updated specs:
+    - ipython
+    - python
 
-<img src='images_conda/img_028.png' alt='img_028' width='450'/>
 
-Notice the Python environment notbase, now has its own python.exe:
+The following NEW packages will be INSTALLED:
+```
+|Package|Details|
+|---|---|
+|asttokens|conda-forge/noarch::asttokens-2.4.1-pyhd8ed1ab_0|
+|bzip2|conda-forge/win-64::bzip2-1.0.8-hcfcfb64_5|
+|ca-certificates|conda-forge/win-64::ca-certificates-2023.11.17-h56e8100_0|
+|colorama|conda-forge/noarch::colorama-0.4.6-pyhd8ed1ab_0|
+|decorator|conda-forge/noarch::decorator-5.1.1-pyhd8ed1ab_0|
+|exceptiongroup|conda-forge/noarch::exceptiongroup-1.2.0-pyhd8ed1ab_0|
+|executing|conda-forge/noarch::executing-2.0.1-pyhd8ed1ab_0|
+|ipython|conda-forge/noarch::ipython-8.19.0-pyh7428d3b_0|
+|jedi|conda-forge/noarch::jedi-0.19.1-pyhd8ed1ab_0|
+|libexpat|conda-forge/win-64::libexpat-2.5.0-h63175ca_1|
+|libffi|conda-forge/win-64::libffi-3.4.2-h8ffe710_5|
+|libsqlite|conda-forge/win-64::libsqlite-3.44.2-hcfcfb64_0|
+|libzlib|conda-forge/win-64::libzlib-1.2.13-hcfcfb64_5|
+|matplotlib-inline|conda-forge/noarch::matplotlib-inline-0.1.6-pyhd8ed1ab_0|
+|openssl|conda-forge/win-64::openssl-3.2.0-hcfcfb64_1|
+|parso|conda-forge/noarch::parso-0.8.3-pyhd8ed1ab_0|
+|pickleshare|conda-forge/noarch::pickleshare-0.7.5-py_1003|
+|pip|conda-forge/noarch::pip-23.3.2-pyhd8ed1ab_0|
+|prompt-toolkit|conda-forge/noarch::prompt-toolkit-3.0.42-pyha770c72_0|
+|pure_eval|conda-forge/noarch::pure_eval-0.2.2-pyhd8ed1ab_0|
+|pygments|conda-forge/noarch::pygments-2.17.2-pyhd8ed1ab_0|
+|python|conda-forge/win-64::python-3.12.1-h2628c8c_1_cpython|
+|setuptools|conda-forge/noarch::setuptools-68.2.2-pyhd8ed1ab_0|
+|six|conda-forge/noarch::six-1.16.0-pyh6c4a22f_0|
+|stack_data|conda-forge/noarch::stack_data-0.6.2-pyhd8ed1ab_0|
+|tk|conda-forge/win-64::tk-8.6.13-h5226925_1|
+|traitlets|conda-forge/noarch::traitlets-5.14.0-pyhd8ed1ab_0|
+|typing_extensions|conda-forge/noarch::typing_extensions-4.9.0-pyha770c72_0|
+|tzdata|conda-forge/noarch::tzdata-2023d-h0c530f3_0|
+|ucrt|conda-forge/win-64::ucrt-10.0.22621.0-h57928b3_0|
+|vc|conda-forge/win-64::vc-14.3-hcf57466_18|
+|vc14_runtime|conda-forge/win-64::vc14_runtime-14.38.33130-h82b7239_18|
+|vs2015_runtime|conda-forge/win-64::vs2015_runtime-14.38.33130-hcb4865c_18|
+|wcwidth|conda-forge/noarch::wcwidth-0.2.12-pyhd8ed1ab_0|
+|wheel|conda-forge/noarch::wheel-0.42.0-pyhd8ed1ab_0|
+|xz|conda-forge/win-64::xz-5.2.6-h8d14728_0|
 
-<img src='images_conda/img_029.png' alt='img_029' width='450'/>
+```
+Proceed ([y]/n)?
+```
 
-Its own Lib subfolder:
+Input ```y``` in order to proceed. This outputs:
 
-<img src='images_conda/img_030.png' alt='img_030' width='450'/>
+```
+Downloading and Extracting Packages:
 
-This has the standard modules such as email (which is a multi-file module in a folder):
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+(notbase) PS ~>
+```
 
-<img src='images_conda/img_031.png' alt='img_031' width='450'/>
+A new prompt is available when the operation is finished.
 
-datetime which is a single module:
+ipython can be used from this Python environment. Notice when the standard modules are imported, the modules from the perspective Python environment are used:
 
-<img src='images_conda/img_032.png' alt='img_032' width='450'/>
+```
+(notbase) PS ~> ipython
+Python 3.12.1 | packaged by conda-forge | (main, Dec 23 2023, 07:53:56) [MSC v.1937 64 bit (AMD64)]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 8.19.0 -- An enhanced Interactive Python. Type '?' for help.
 
-Third party libraries are in the site-packages subfolder:
+In [1]: import datetime
+   ...: import email
 
-<img src='images_conda/img_033.png' alt='img_033' width='450'/>
+In [2]: print(datetime.__file__)
+   ...: print(email.__file__)
+~\anaconda3\envs\notbase\Lib\datetime.py
+~\anaconda3\envs\notbase\Lib\email\__init__.py
 
-This has ipython and some of its dependencies such as the matplotlib backend matplotlib_inline:
+In [3]: import numpy as np
+   ...: import pandas as pd
+   ...: import matplotlib.pyplot as plt
+---------------------------------------------------------------------------
+ModuleNotFoundError                       Traceback (most recent call last)
+Cell In[3], line 1
+----> 1 import numpy as np
+      2 import pandas as pd
+      3 import matplotlib.pyplot as plt
 
-<img src='images_conda/img_034.png' alt='img_034' width='450'/>
+ModuleNotFoundError: No module named 'numpy'
 
-The data science libraries numpy, pandas and matplotlib (the full library) as they are not installed as they are not dependencies.
+In [4]:
+```
+
+Note attempting to import numpy, pandas and matplotlib gives a ```ModuleNotFoundError``` as they are not installed in this Python environment.
 
 ### Remove
 
-The command remove can be used to remove an installed package:
+The ```remove``` subcommand can be used to remove an installed package:
 
 ```
-conda remove python ipython
+conda remove package_name1 package_name2
 ```
 
-<img src='images_conda/img_035.png' alt='img_035' width='450'/>
-
-If other packages rely on the packages being removed as dependencies, they will be removed. Since Python itself is being removed, and all packages are in turn dependent on Python, they will all be removed:
-
-<img src='images_conda/img_036.png' alt='img_036' width='450'/>
-
-<img src='images_conda/img_037.png' alt='img_037' width='450'/>
-
-Input ```y``` to proceed with the changes. The changes will then be made:
-
-<img src='images_conda/img_038.png' alt='img_038' width='450'/>
-
-Notice the python.exe is gone alongside the Lib subfolder.
-
-### Install Specific Package Version
-
-During installation version numbers can be specified:
+For example the package python can be removed using:
 
 ```
-conda install -c conda-forge python=X.Y.Z
+conda remove python
 ```
 
-Where X is the major number, Y is the minor version number and Z is the patch number. For example:
+This outputs:
 
 ```
-conda install -c conda-forge python=3.11.3
+(notbase) PS ~> conda remove python
+Channels:
+ - defaults
+ - conda-forge
+Platform: win-64
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: ~\anaconda3\envs\notbase
+
+  removed specs:
+    - python
+
+
+The following packages will be REMOVED:
+```
+|Package|Details|
+|---|---|
+|asttokens|conda-forge/noarch::asttokens-2.4.1-pyhd8ed1ab_0|
+|bzip2|conda-forge/win-64::bzip2-1.0.8-hcfcfb64_5|
+|ca-certificates|conda-forge/win-64::ca-certificates-2023.11.17-h56e8100_0|
+|colorama|conda-forge/noarch::colorama-0.4.6-pyhd8ed1ab_0|
+|decorator|conda-forge/noarch::decorator-5.1.1-pyhd8ed1ab_0|
+|exceptiongroup|conda-forge/noarch::exceptiongroup-1.2.0-pyhd8ed1ab_0|
+|executing|conda-forge/noarch::executing-2.0.1-pyhd8ed1ab_0|
+|ipython|conda-forge/noarch::ipython-8.19.0-pyh7428d3b_0|
+|jedi|conda-forge/noarch::jedi-0.19.1-pyhd8ed1ab_0|
+|libexpat|conda-forge/win-64::libexpat-2.5.0-h63175ca_1|
+|libffi|conda-forge/win-64::libffi-3.4.2-h8ffe710_5|
+|libsqlite|conda-forge/win-64::libsqlite-3.44.2-hcfcfb64_0|
+|libzlib|conda-forge/win-64::libzlib-1.2.13-hcfcfb64_5|
+|matplotlib-inline|conda-forge/noarch::matplotlib-inline-0.1.6-pyhd8ed1ab_0|
+|openssl|conda-forge/win-64::openssl-3.2.0-hcfcfb64_1|
+|parso|conda-forge/noarch::parso-0.8.3-pyhd8ed1ab_0|
+|pickleshare|conda-forge/noarch::pickleshare-0.7.5-py_1003|
+|pip|conda-forge/noarch::pip-23.3.2-pyhd8ed1ab_0|
+|prompt-toolkit|conda-forge/noarch::prompt-toolkit-3.0.42-pyha770c72_0|
+|pure_eval|conda-forge/noarch::pure_eval-0.2.2-pyhd8ed1ab_0|
+|pygments|conda-forge/noarch::pygments-2.17.2-pyhd8ed1ab_0|
+|python|conda-forge/win-64::python-3.12.1-h2628c8c_1_cpython|
+|setuptools|conda-forge/noarch::setuptools-68.2.2-pyhd8ed1ab_0|
+|six|conda-forge/noarch::six-1.16.0-pyh6c4a22f_0|
+|stack_data|conda-forge/noarch::stack_data-0.6.2-pyhd8ed1ab_0|
+|tk|conda-forge/win-64::tk-8.6.13-h5226925_1|
+|traitlets|conda-forge/noarch::traitlets-5.14.0-pyhd8ed1ab_0|
+|typing_extensions|conda-forge/noarch::typing_extensions-4.9.0-pyha770c72_0|
+|tzdata|conda-forge/noarch::tzdata-2023d-h0c530f3_0|
+|ucrt|conda-forge/win-64::ucrt-10.0.22621.0-h57928b3_0|
+|vc|conda-forge/win-64::vc-14.3-hcf57466_18|
+|vc14_runtime|conda-forge/win-64::vc14_runtime-14.38.33130-h82b7239_18|
+|vs2015_runtime|conda-forge/win-64::vs2015_runtime-14.38.33130-hcb4865c_18|
+|wcwidth|conda-forge/noarch::wcwidth-0.2.12-pyhd8ed1ab_0|
+|wheel|conda-forge/noarch::wheel-0.42.0-pyhd8ed1ab_0|
+|xz|conda-forge/win-64::xz-5.2.6-h8d14728_0|
+```
+Proceed ([y]/n)? 
 ```
 
-In the previous output when conda search was used. Each Python version 3.11.1 onwards had a build number of h628c8c_0. This can also be speciifed during installation:
+Because Python is being removed which is a dependency for everything else, everything else is also removed. To proceed with the changes input ```y```. This outputs:
 
 ```
-conda install -c conda-forge python=3.11.3=h2628c8c_0_cpython
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+(notbase) PS ~>
 ```
 
-Some packages for example ipython have multiple variants that have the same version number, for example ipython has 3 variants that are at version 8.14.0 on the conda-forge channel. These each have unique build numbers pyh08f2357_0, py41d4057_0 and pyhd1c38e8_0 as seen in the previous output when conda search was used. Normally this is because there is a slightly seperate variant for different minor Python versions e.g. Python 3.11, 3.10 and 3.9.
+A new prompt is available when the operation is finished.
 
-A specific version of python and ipython can be installed:
+### Specifying Package Version and Build
+
+During installation version numbers can be specified using assignment:
 
 ```
-conda install -c conda-forge python=3.11.3=h2628c8c_0_cpython ipython=8.14.0=pyh08f2357_0
+conda install -c conda-forge package_name=X.Y.Z
 ```
 
-<img src='images_conda/img_040.png' alt='img_040' width='450'/>
+The build number can also be specified in some cases, although is more rare to specify this:
 
-Details about the other packages installed will display. Input ```y``` in order to install the packages:
+```
+conda install -c conda-forge package_name=X.Y.Z=build_number
+```
 
-<img src='images_conda/img_041.png' alt='img_041' width='450'/>
+For example a specific version of ipython can be installed:
 
-The changes will be made:
+```
+conda install -c conda-forge ipython=8.18.1=pyh7428d3b_3
+```
 
-<img src='images_conda/img_042.png' alt='img_042' width='450'/>
+```
+(notbase) PS ~> conda install -c conda-forge ipython=8.18.1=pyh7428d3b_3
+Channels:
+ - conda-forge
+ - defaults
+Platform: win-64
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: ~\anaconda3\envs\notbase
+
+  added / updated specs:
+    - ipython==8.18.1=pyh7428d3b_3
+
+
+The following NEW packages will be INSTALLED:
+```
+|Package|Details|
+|---|---|
+|asttokens|conda-forge/noarch::asttokens-2.4.1-pyhd8ed1ab_0|
+|bzip2|conda-forge/win-64::bzip2-1.0.8-hcfcfb64_5|
+|colorama|conda-forge/noarch::colorama-0.4.6-pyhd8ed1ab_0|
+|decorator|conda-forge/noarch::decorator-5.1.1-pyhd8ed1ab_0|
+|exceptiongroup|conda-forge/noarch::exceptiongroup-1.2.0-pyhd8ed1ab_0|
+|executing|conda-forge/noarch::executing-2.0.1-pyhd8ed1ab_0|
+|ipython|conda-forge/noarch::ipython-8.18.1-pyh7428d3b_3|
+|jedi|conda-forge/noarch::jedi-0.19.1-pyhd8ed1ab_0|
+|libexpat|conda-forge/win-64::libexpat-2.5.0-h63175ca_1|
+|libffi|conda-forge/win-64::libffi-3.4.2-h8ffe710_5|
+|libsqlite|conda-forge/win-64::libsqlite-3.44.2-hcfcfb64_0|
+|libzlib|conda-forge/win-64::libzlib-1.2.13-hcfcfb64_5|
+|matplotlib-inline|conda-forge/noarch::matplotlib-inline-0.1.6-pyhd8ed1ab_0|
+|parso|conda-forge/noarch::parso-0.8.3-pyhd8ed1ab_0|
+|pickleshare|conda-forge/noarch::pickleshare-0.7.5-py_1003|
+|pip|conda-forge/noarch::pip-23.3.2-pyhd8ed1ab_0|
+|prompt-toolkit|conda-forge/noarch::prompt-toolkit-3.0.42-pyha770c72_0|
+|pure_eval|conda-forge/noarch::pure_eval-0.2.2-pyhd8ed1ab_0|
+|pygments|conda-forge/noarch::pygments-2.17.2-pyhd8ed1ab_0|
+|python|conda-forge/win-64::python-3.12.1-h2628c8c_1_cpython|
+|setuptools|conda-forge/noarch::setuptools-68.2.2-pyhd8ed1ab_0|
+|six|conda-forge/noarch::six-1.16.0-pyh6c4a22f_0|
+|stack_data|conda-forge/noarch::stack_data-0.6.2-pyhd8ed1ab_0|
+|tk|conda-forge/win-64::tk-8.6.13-h5226925_1|
+|traitlets|conda-forge/noarch::traitlets-5.14.0-pyhd8ed1ab_0|
+|typing_extensions|conda-forge/noarch::typing_extensions-4.9.0-pyha770c72_0|
+|tzdata|conda-forge/noarch::tzdata-2023d-h0c530f3_0|
+|vs2015_runtime|conda-forge/win-64::vs2015_runtime-14.38.33130-hcb4865c_18|
+|wcwidth|conda-forge/noarch::wcwidth-0.2.12-pyhd8ed1ab_0|
+|wheel|conda-forge/noarch::wheel-0.42.0-pyhd8ed1ab_0|
+|xz|conda-forge/win-64::xz-5.2.6-h8d14728_0|
+```
+Proceed ([y]/n)?
+```
+
+Input ```y``` to proceed with the changes:
+
+```
+Downloading and Extracting Packages:
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+(notbase) PS ~>
+```
+
+A new prompt is available when the operation is finished.
 
 ### Update
 
-A package can be updated to the latest version using:
+The ```update``` subcommand can be used to update a package to the latest compatible version using the update subcommand:
 
 ```
-conda update -c conda-forge python
+conda update package_name
 ```
 
-<img src='images_conda/img_043.png' alt='img_043' width='450'/>
+Once again the channel to update the package from should be specified:
 
-Since an older version of Python was installed, the newer version 3.11.4 is available. To install it input ```y```:
+```
+conda update -c conda-forge package_name
+```
 
-<img src='images_conda/img_044.png' alt='img_044' width='450'/>
+The package ipython for example can be updated:
 
-Alternatively all packages in the environment can be updated using:
+```
+conda update -c conda-forge ipython
+```
+
+```
+(notbase) PS ~> conda update -c conda-forge ipython
+Channels:
+ - conda-forge
+ - defaults
+Platform: win-64
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: ~\anaconda3\envs\notbase
+
+  added / updated specs:
+    - ipython
+
+
+The following packages will be UPDATED:
+```
+|||||
+|---|---|---|---|
+|ipython|8.18.1-pyh7428d3b_3|-->|8.19.0-pyh7428d3b_0|
+```
+Proceed ([y]/n)?
+```
+
+Notice that this finds an updated version of ipython. Input ```n``` to cancel outputs:
+
+```
+CondaSystemExit: Exiting.
+
+(notbase) PS ~>
+```
+
+It is common to use the option ```--all``` instead of specifying a package, this will attempt to update all the packages in the Python environment to their latest versions:
 
 ```
 conda update -c conda-forge --all
 ```
 
-<img src='images_conda/img_045.png' alt='img_045' width='450'/>
+This command works well for small Python environments that have a small number of packages but the conda package manager often has difficulties solving large Python environments as a package that is a dependency for other packages gets updated to the latest version prompting from the removal of other packages that were dependent on the older version. Sometimes in such case deleting and recreating the Python environment leads to better results than updating. 
 
-Note sometimes some packages may be downgraded in order to upgrade some other packages. Sometimes packages require an older version of another package as a dependency. To install the updates input ```y```:
+The output shows:
 
-<img src='images_conda/img_046.png' alt='img_046' width='450'/>
+```
+(notbase) PS ~> conda update -c conda-forge --all
+Channels:
+ - conda-forge
+ - defaults
+Platform: win-64
+Collecting package metadata (repodata.json): done
+Solving environment: done
 
-The updates are now installed:
+## Package Plan ##
 
-<img src='images_conda/img_047.png' alt='img_047' width='450'/>
+  environment location: ~\anaconda3\envs\notbase
+
+
+The following packages will be UPDATED:
+```
+|||||
+|---|---|---|---|
+|ipython|8.18.1-pyh7428d3b_3|-->|8.19.0-pyh7428d3b_0|
+```
+Proceed ([y]/n)? 
+```
+
+To proceed input ```y```:
+
+```
+Downloading and Extracting Packages:
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+(notbase) PS ~>
+```
+
+A new prompt is available when the operation is finished.
+
+**The base Python environment is an example of a very large Python environment and using the above command should not be used in the base Python environment as it will result in an unstable base Python environment that will not work properly.** 
+
+Recall to update the base Python environment use:
+
+```
+conda activate base
+conda update conda
+conda update anaconda-navigator
+```
+
+This was seen when Anaconda was initially installed.
 
 ### List
 
-Packages can be listed in the Python environment using:
+The ```list``` subcommand can be used to list the packages in the Python environment:
 
 ```
 conda list
 ```
 
-<img src='images_conda/img_048.png' alt='img_048' width='450'/>
+This outputs:
 
-The conda list command can be used with the option --revisions:
+```
+# packages in environment at ~\anaconda3\envs\notbase:
+#
+```
+|Name|Version|Build|Channel|
+|---|---|---|---|
+|asttokens|2.4.1|pyhd8ed1ab_0|conda-forge|
+|bzip2|1.0.8|hcfcfb64_5|conda-forge|
+|ca-certificates|2023.11.17|h56e8100_0|conda-forge|
+|colorama|0.4.6|pyhd8ed1ab_0|conda-forge|
+|decorator|5.1.1|pyhd8ed1ab_0|conda-forge|
+|exceptiongroup|1.2.0|pyhd8ed1ab_0|conda-forge|
+|executing|2.0.1|pyhd8ed1ab_0|conda-forge|
+|ipython|8.19.0|pyh7428d3b_0|conda-forge|
+|jedi|0.19.1|pyhd8ed1ab_0|conda-forge|
+|libexpat|2.5.0|h63175ca_1|conda-forge|
+|libffi|3.4.2|h8ffe710_5|conda-forge|
+|libsqlite|3.44.2|hcfcfb64_0|conda-forge|
+|libzlib|1.2.13|hcfcfb64_5|conda-forge|
+|matplotlib-inline|0.1.6|pyhd8ed1ab_0|conda-forge|
+|openssl|3.2.0|hcfcfb64_1|conda-forge|
+|parso|0.8.3|pyhd8ed1ab_0|conda-forge|
+|pickleshare|0.7.5|py_1003|conda-forge|
+|pip|23.3.2|pyhd8ed1ab_0|conda-forge|
+|prompt-toolkit|3.0.42|pyha770c72_0|conda-forge|
+|pure_eval|0.2.2|pyhd8ed1ab_0|conda-forge|
+|pygments|2.17.2|pyhd8ed1ab_0|conda-forge|
+|python|3.12.1|h2628c8c_1_cpython|conda-forge|
+|setuptools|68.2.2|pyhd8ed1ab_0|conda-forge|
+|six|1.16.0|pyh6c4a22f_0|conda-forge|
+|stack_data|0.6.2|pyhd8ed1ab_0|conda-forge|
+|tk|8.6.13|h5226925_1|conda-forge|
+|traitlets|5.14.0|pyhd8ed1ab_0|conda-forge|
+|typing_extensions|4.9.0|pyha770c72_0|conda-forge|
+|tzdata|2023d|h0c530f3_0|conda-forge|
+|ucrt|10.0.22621.0|h57928b3_0|conda-forge|
+|vc|14.3|hcf57466_18|conda-forge|
+|vc14_runtime|14.38.33130|h82b7239_18|conda-forge|
+|vs2015_runtime|14.38.33130|hcb4865c_18|conda-forge|
+|wcwidth|0.2.12|pyhd8ed1ab_0|conda-forge|
+|wheel|0.42.0|pyhd8ed1ab_0|conda-forge|
+|xz|5.2.6|h8d14728_0|conda-forge|
+```
+(notbase) PS ~>
+```
+
+The subcommand option ```--revision``` can be used to list each revision of the Python environment:
 
 ```
 conda list --revision
 ```
 
-<img src='images_conda/img_049.png' alt='img_049' width='450'/>
+This outputs:
+
+```
+(notbase) PS ~> conda list --revision
+2023-12-25 13:52:05  (rev 0)
+
+2023-12-25 14:13:20  (rev 1)
+    +asttokens-2.4.1 (conda-forge/noarch)
+    +bzip2-1.0.8 (conda-forge/win-64)
+    +ca-certificates-2023.11.17 (conda-forge/win-64)
+    +colorama-0.4.6 (conda-forge/noarch)
+    +decorator-5.1.1 (conda-forge/noarch)
+    +exceptiongroup-1.2.0 (conda-forge/noarch)
+    +executing-2.0.1 (conda-forge/noarch)
+    +ipython-8.19.0 (conda-forge/noarch)
+    +jedi-0.19.1 (conda-forge/noarch)
+    +libexpat-2.5.0 (conda-forge/win-64)
+    +libffi-3.4.2 (conda-forge/win-64)
+    +libsqlite-3.44.2 (conda-forge/win-64)
+    +libzlib-1.2.13 (conda-forge/win-64)
+    +matplotlib-inline-0.1.6 (conda-forge/noarch)
+    +openssl-3.2.0 (conda-forge/win-64)
+    +parso-0.8.3 (conda-forge/noarch)
+    +pickleshare-0.7.5 (conda-forge/noarch)
+    +pip-23.3.2 (conda-forge/noarch)
+    +prompt-toolkit-3.0.42 (conda-forge/noarch)
+    +pure_eval-0.2.2 (conda-forge/noarch)
+    +pygments-2.17.2 (conda-forge/noarch)
+    +python-3.12.1 (conda-forge/win-64)
+    +setuptools-68.2.2 (conda-forge/noarch)
+    +six-1.16.0 (conda-forge/noarch)
+    +stack_data-0.6.2 (conda-forge/noarch)
+    +tk-8.6.13 (conda-forge/win-64)
+    +traitlets-5.14.0 (conda-forge/noarch)
+    +typing_extensions-4.9.0 (conda-forge/noarch)
+    +tzdata-2023d (conda-forge/noarch)
+    +ucrt-10.0.22621.0 (conda-forge/win-64)
+    +vc-14.3 (conda-forge/win-64)
+    +vc14_runtime-14.38.33130 (conda-forge/win-64)
+    +vs2015_runtime-14.38.33130 (conda-forge/win-64)
+    +wcwidth-0.2.12 (conda-forge/noarch)
+    +wheel-0.42.0 (conda-forge/noarch)
+    +xz-5.2.6 (conda-forge/win-64)
+
+2023-12-25 14:42:21  (rev 2)
+    -asttokens-2.4.1 (conda-forge/noarch)
+    -bzip2-1.0.8 (conda-forge/win-64)
+    -colorama-0.4.6 (conda-forge/noarch)
+    -decorator-5.1.1 (conda-forge/noarch)
+    -exceptiongroup-1.2.0 (conda-forge/noarch)
+    -executing-2.0.1 (conda-forge/noarch)
+    -ipython-8.19.0 (conda-forge/noarch)
+    -jedi-0.19.1 (conda-forge/noarch)
+    -libexpat-2.5.0 (conda-forge/win-64)
+    -libffi-3.4.2 (conda-forge/win-64)
+    -libsqlite-3.44.2 (conda-forge/win-64)
+    -libzlib-1.2.13 (conda-forge/win-64)
+    -matplotlib-inline-0.1.6 (conda-forge/noarch)
+    -parso-0.8.3 (conda-forge/noarch)
+    -pickleshare-0.7.5 (conda-forge/noarch)
+    -pip-23.3.2 (conda-forge/noarch)
+    -prompt-toolkit-3.0.42 (conda-forge/noarch)
+    -pure_eval-0.2.2 (conda-forge/noarch)
+    -pygments-2.17.2 (conda-forge/noarch)
+    -python-3.12.1 (conda-forge/win-64)
+    -setuptools-68.2.2 (conda-forge/noarch)
+    -six-1.16.0 (conda-forge/noarch)
+    -stack_data-0.6.2 (conda-forge/noarch)
+    -tk-8.6.13 (conda-forge/win-64)
+    -traitlets-5.14.0 (conda-forge/noarch)
+    -typing_extensions-4.9.0 (conda-forge/noarch)
+    -tzdata-2023d (conda-forge/noarch)
+    -vs2015_runtime-14.38.33130 (conda-forge/win-64)
+    -wcwidth-0.2.12 (conda-forge/noarch)
+    -wheel-0.42.0 (conda-forge/noarch)
+    -xz-5.2.6 (conda-forge/win-64)
+
+2023-12-26 11:27:56  (rev 3)
+    +asttokens-2.4.1 (conda-forge/noarch)
+    +bzip2-1.0.8 (conda-forge/win-64)
+    +colorama-0.4.6 (conda-forge/noarch)
+    +decorator-5.1.1 (conda-forge/noarch)
+    +exceptiongroup-1.2.0 (conda-forge/noarch)
+    +executing-2.0.1 (conda-forge/noarch)
+    +ipython-8.18.1 (conda-forge/noarch)
+    +jedi-0.19.1 (conda-forge/noarch)
+    +libexpat-2.5.0 (conda-forge/win-64)
+    +libffi-3.4.2 (conda-forge/win-64)
+    +libsqlite-3.44.2 (conda-forge/win-64)
+    +libzlib-1.2.13 (conda-forge/win-64)
+    +matplotlib-inline-0.1.6 (conda-forge/noarch)
+    +parso-0.8.3 (conda-forge/noarch)
+    +pickleshare-0.7.5 (conda-forge/noarch)
+    +pip-23.3.2 (conda-forge/noarch)
+    +prompt-toolkit-3.0.42 (conda-forge/noarch)
+    +pure_eval-0.2.2 (conda-forge/noarch)
+    +pygments-2.17.2 (conda-forge/noarch)
+    +python-3.12.1 (conda-forge/win-64)
+    +setuptools-68.2.2 (conda-forge/noarch)
+    +six-1.16.0 (conda-forge/noarch)
+    +stack_data-0.6.2 (conda-forge/noarch)
+    +tk-8.6.13 (conda-forge/win-64)
+    +traitlets-5.14.0 (conda-forge/noarch)
+    +typing_extensions-4.9.0 (conda-forge/noarch)
+    +tzdata-2023d (conda-forge/noarch)
+    +vs2015_runtime-14.38.33130 (conda-forge/win-64)
+    +wcwidth-0.2.12 (conda-forge/noarch)
+    +wheel-0.42.0 (conda-forge/noarch)
+    +xz-5.2.6 (conda-forge/win-64)
+
+2023-12-26 11:51:19  (rev 4)
+     ipython  {8.18.1 (conda-forge/noarch) -> 8.19.0 (conda-forge/noarch)}
+
+(notbase) PS ~>
+```
+
+Notice revision 0 has no packages in it. Revision 1 installs ipython, revision 2 removes ipython, revision 3 installs a specific version of ipython and revision 4 updates ipython.
+
 
 ### Install Revision
 
-The conda install command can be used with the option --revisions and assigned to a revision number. For example, the revision 3 before the update can be reverted to using:
+The ```install``` subcommand can be used with the option ```--revision``` that can be assigned to a revision number. For example a reversion to revision 3 can be made:
 
 ```
 conda install -c conda-forge --revision=3
 ```
 
-<img src='images_conda/img_050.png' alt='img_050' width='450'/>
+Note for some reason the conda package manager is inefficient here and it takes a while to solve the Python environment despite knowing all the previous package versions to install. Deleting the Python environment and recreating it with an exported yaml file is often faster.
 
-Details about the changes will be provided including the downgrades:
+Details about the changes will be output:
 
-<img src='images_conda/img_051.png' alt='img_051' width='450'/>
+```
+(notbase) PS ~> conda install -c conda-forge --revision=3
+
+## Package Plan ##
+
+  environment location: ~\anaconda3\envs\notbase
+
+  added / updated specs:
+    - ipython==8.19.0
+
+
+The following packages will be DOWNGRADED:
+
+  ipython                               8.19.0-pyh7428d3b_0 --> 8.18.1-pyh7428d3b_3
+
+
+Proceed ([y]/n)?
+```
 
 Input ```y``` in order to proceed and the proposed downgrade will be implemented:
 
-<img src='images_conda/img_052.png' alt='img_052' width='450'/>
+```
+Downloading and Extracting Packages:
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+(notbase) PS ~>
+```
 
 ### Env Export
 
-The currently activated Python environment can also be exported to a **y**et another **m**arkdown **l**anguage yml file:
+The currently activated Python environment can be exported to a **y**et another **m**arkdown **l**anguage yaml file using the ```env``` subcommand grouping followed by the subcommand ```export```. The Python environment can be exported to a yml file in the Documents folder using either:
 
 ```
+conda env export > OneDrive\Documents\notbase.yml
 conda env export > Documents\notbase.yml
 ```
 
-<img src='images_conda/img_053.png' alt='img_053' width='450'/>
+The top location is the default location for the Documents folder when Windows 11 is configured with A Microsoft Account and OneDrive integration and the bottom location is when Windows 11 is configured without OneDrive integration. This outputs:
+
+```
+(notbase) PS ~> conda env export > OneDrive\Documents\notbase.yml
+(notbase) PS ~>
+```
 
 This creates a notbase.yml file in Documents:
 
 <img src='images_conda/img_054.png' alt='img_054' width='450'/>
 
-This can be opened in notepad:
+This can be opened in a text editor such as notepad and looks as follows. Notice that the channels are specified and there is a version number and build number specified for each package:
 
-<img src='images_conda/img_055.png' alt='img_055' width='450'/>
+```
+name: notbase
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - asttokens=2.4.1=pyhd8ed1ab_0
+  - bzip2=1.0.8=hcfcfb64_5
+  - ca-certificates=2023.11.17=h56e8100_0
+  - colorama=0.4.6=pyhd8ed1ab_0
+  - decorator=5.1.1=pyhd8ed1ab_0
+  - exceptiongroup=1.2.0=pyhd8ed1ab_0
+  - executing=2.0.1=pyhd8ed1ab_0
+  - ipython=8.18.1=pyh7428d3b_3
+  - jedi=0.19.1=pyhd8ed1ab_0
+  - libexpat=2.5.0=h63175ca_1
+  - libffi=3.4.2=h8ffe710_5
+  - libsqlite=3.44.2=hcfcfb64_0
+  - libzlib=1.2.13=hcfcfb64_5
+  - matplotlib-inline=0.1.6=pyhd8ed1ab_0
+  - openssl=3.2.0=hcfcfb64_1
+  - parso=0.8.3=pyhd8ed1ab_0
+  - pickleshare=0.7.5=py_1003
+  - pip=23.3.2=pyhd8ed1ab_0
+  - prompt-toolkit=3.0.42=pyha770c72_0
+  - pure_eval=0.2.2=pyhd8ed1ab_0
+  - pygments=2.17.2=pyhd8ed1ab_0
+  - python=3.12.1=h2628c8c_1_cpython
+  - setuptools=68.2.2=pyhd8ed1ab_0
+  - six=1.16.0=pyh6c4a22f_0
+  - stack_data=0.6.2=pyhd8ed1ab_0
+  - tk=8.6.13=h5226925_1
+  - traitlets=5.14.0=pyhd8ed1ab_0
+  - typing_extensions=4.9.0=pyha770c72_0
+  - tzdata=2023d=h0c530f3_0
+  - ucrt=10.0.22621.0=h57928b3_0
+  - vc=14.3=hcf57466_18
+  - vc14_runtime=14.38.33130=h82b7239_18
+  - vs2015_runtime=14.38.33130=hcb4865c_18
+  - wcwidth=0.2.12=pyhd8ed1ab_0
+  - wheel=0.42.0=pyhd8ed1ab_0
+  - xz=5.2.6=h8d14728_0
+prefix: ~\envs\notbase
+
+```
 
 This is a very small file which can be shared on GitHub or emailed.
 
+### Rename
+
+The ```rename``` subcommand can be used to rename a Python environment. 
+
+```
+conda rename -n oldname newname
+```
+
+This effectively renames the folder:
+
+```
+~/anaconda3/envs/oldname
+```
+
+To:
+
+```
+~/anaconda3/envs/newname
+```
+
+The notbase Python environment can be renamed to reallynotbase using:
+
+```
+conda deactivate
+conda rename -n notbase reallynotbase
+```
+
+This outputs:
+
+```
+(notbase) PS ~> conda deactivate
+(base) PS ~> conda rename -n notbase reallynotbase
+Source:      ~\anaconda3\envs\notbase
+Destination: ~\anaconda3\envs\reallynotbase
+Packages: 36
+Files: 1
+
+Downloading and Extracting Packages:
+
+
+Downloading and Extracting Packages:
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+(base) PS ~>
+```
+
 ### Env Create
 
-An environment can be created from a yml file for example the notbase.yml in the Documents folder using:
+An environment can be created from a yml file using the ```env``` subcommand grouping followed by ```create```. Note that this differs from the ```create``` subcommand used directly by the ```conda``` package manager.
+
+For example the notbase.yml Python environment in the Documents folder can be recreated using:
 
 ```
-conda env create -n notbase2 -f Documents\notbase.yml
+conda env create -f OneDrive\Documents\notbase.yml
 ```
 
-Note this is done with the base Python environment activated.
-
-<img src='images_conda/img_056.png' alt='img_056' width='450'/>
-
-The environment is created and can later be activated:
-
-<img src='images_conda/img_057.png' alt='img_057' width='450'/>
-
-The name of the new environment notbase2 displays as a subfolder in envs:
-
-<img src='images_conda/img_058.png' alt='img_058' width='450'/>
-
-### Env Remove
-
-An environment can be removed using the command:
+Note that yml file specifies the channels used in addition to the version number and build number for each package so ```-c conda-forge``` is not necessary. The name of the Python environment is also specified so ```-n notbase``` is not necessary although can be used to change the name of the Python environment. This outputs:
 
 ```
-conda env remove -n notbase
+(base) PS ~> conda env create -f OneDrive\Documents\notbase.yml
+Channels:
+ - conda-forge
+ - defaults
+Platform: win-64
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+Downloading and Extracting Packages:
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate notbase
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+(base) PS ~>
 ```
-
-Note this is done with the base Python environment activated as a Python environment cannot be removed if it is activated:
-
-<img src='images_conda/img_059.png' alt='img_059' width='450'/>
-
-The operation will proceed:
-
-<img src='images_conda/img_060.png' alt='img_060' width='450'/>
-
-The folder notbase will be removed in envs:
-
-<img src='images_conda/img_061.png' alt='img_061' width='450'/>
-
-### rename
-
-A Python environment can be renamed by using the command:
-
-```
-conda rename -n notbase2 notbase
-```
-
-notbase2 is the original name and notbase is the new name. Note this is done with the base Python environment activated as a Python environment cannot be renamed if it is activated:
-
-<img src='images_conda/img_062.png' alt='img_062' width='450'/>
-
-The notbase folder in the envs folder is now renamed notbase2:
-
-<img src='images_conda/img_063.png' alt='img_063' width='450'/>
 
 ### Env List
 
-To list Python environments use:
+Python environments can be listed using the ```env``` subcommand grouping followed by the subcommand ```list```. Note that this differs from the subcommand ```list``` used directly from ```conda``` which lists Python environments instead.
 
 ```
 conda env list
 ```
 
-<img src='images_conda/img_064.png' alt='img_064' width='450'/>
+This outputs:
+
+```
+(base) PS ~> conda env list
+# conda environments:
+```
+|Environment Name|Location|
+|---|---|
+|base*|~\anaconda3|
+|notbase|~\anaconda3\envs\notbase|
+|reallynotbase|~\anaconda3\envs\reallynotbase|
+```
+(base) PS C:\Users\phili>
+```
+
+The * indicates that base is the currently activated Python environment.
+
+### Env Remove
+
+A Python environment can be removed using the ```env``` subcommand grouping and subcommand ```remove```. Once again this is different from the ```remove``` subcommand used directly by the ```conda``` package manager which instead removed Python packages:
+
+An environment can be removed using the command:
+
+```
+conda env remove -n envname
+```
+
+For example the Python environment notbase can be removed using:
+
+```
+conda deactivate
+conda env remove -n notbase
+```
+
+This outputs:
+
+```
+Remove all packages in environment ~\anaconda3\envs\notbase:
+
+(base) PS ~>
+```
 
 ### Clean
 
-A backup of all previously downloaded versions is available which can occupy a large amount of disk space. These can be cleaned using:
+Anaconda downloads a package in the form of a tarball and then extracts the tarball to a Python environment. After extraction the tarball is not deleted and is instead cached. If another Python environment is created using that package version, the tarball will be extracted instead of being redownloaded making creation of the second Python environment faster.
+
+When a Python environment is regularly updated, there will be multiple tarballs corresponding to the current release and all previous releases of a package and as a consequence this can occupy a large amount fo disk space.
+
+The ```clean``` subcommand can be used to clean these:
 
 ```
 conda clean --all
 ```
 
-<img src='images_conda/img_065.png' alt='img_065' width='450'/>
+Input ```y``` to remove the tarballs, index cache and packages:
+
+```
+Will remove 183 (687.3 MB) tarball(s).
+Proceed ([y]/n)? y
+
+Will remove 1 index cache(s).
+Proceed ([y]/n)? y
+
+Will remove 34 (184.5 MB) package(s).
+Proceed ([y]/n)? y
+
+There are no tempfile(s) to remove.
+There are no logfile(s) to remove.
+(base) PS ~>
+```
 
 ## Python Environments for IDEs
 
 Previously the commands create and install were used seperately and when the list of revision was examined revision 0 had no packages. The conda create command can be used to list a series of packages to be installed when creating a Python Environment. This command will be used to create a Python Environment suitable for the latest version of each Python IDE discussed.
 
-### IDLE Python Environment
+### Jupyter
+
+For Jupyter it is recommended to create a Python environment called jupyter-env with the following packages:
 
 ```
-conda create -n idle -c conda-forge python cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate
-```
-
-Installing seaborn will install numpy, pandas and matplotlib as these are dependencies for seaborn.
-
-openpyxl, xlrd, xlsxwriter, lxml, sqlalchemy and tabulate are file format convertors used for pandas.
-
-IDLE should be launched from its own Python environment using the Anaconda PowerShell Prompt.
-
-### Thonny Python Environment
-
-```
-conda create -n thonny -c conda-forge python cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate
+conda create -n jupyter-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly jupyterlab-variableinspector ipympl pyqt ruff
 ```
 
 Installing seaborn will install numpy, pandas and matplotlib as these are dependencies for seaborn.
 
 openpyxl, xlrd, xlsxwriter, lxml, sqlalchemy and tabulate are file format convertors used for pandas.
 
-The Python interpretter needs to be selected in Thonny.
-
-### Spyder Python Environment
-
-#### Spyder 5
-
-```
-conda create -n spyder -c conda-forge python spyder cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate pyqt
-```
-
-#### Spyder 6 pre-release:
-
-Spyder 6 pre-release can be installed in a new conda environment.
-
-Create a new Python environment with Python 3.11:
-
-```
-conda create -n spyder -c conda-forge python=3.11
-```
-
-Activate it:
-
-```
-conda activate spyder
-```
-
-Install Spyder using the conda-forge, spyder_dev and spyder_kernels_rc channels see latest Advance Installation instructions. Since this is undergoing rapid development, see [Spyder Releases: Advanced Installation](https://github.com/spyder-ide/spyder/releases) for more details and the latest version numbers:
-
-```
-conda install -c conda-forge/label/spyder_dev -c conda-forge/label/spyder_kernels_rc -c conda-forge spyder=6.0.0a2
-```
-
-Install the data science libraries:
-
-```
-conda install -c conda-forge cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate pyqt
-```
-
-Installing seaborn will install numpy, pandas and matplotlib as these are dependencies for seaborn.
-
-openpyxl, xlrd, xlsxwriter, lxml, sqlalchemy and tabulate are file format convertors used for pandas.
-
-pyqt is required for an interactive matplotlib plotting backend.
-
-Spyder should be launched from its own Python environment using the Anaconda PowerShell Prompt or its own Start Menu Shortcut.
-
-### JupyterLab Python Environment
-
-```
-conda create -n jupyterlab -c conda-forge python jupyterlab cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly jupyterlab-variableinspector ipympl pyqt
-```
-
-Installing seaborn will install numpy, pandas and matplotlib as these are dependencies for seaborn.
-
-openpyxl, xlrd, xlsxwriter, lxml, sqlalchemy and tabulate are file format convertors used for pandas.
-
-nodejs allows installaiton of JupyterLab extensions.ipywidgets and plotly can be used to create widgets and plots using Python code, under the hood JavaScript is used to display these in the browser. The variableinspector gives a variable inspector, similar in functionality to variables in Thonny.
+nodejs allows installaiton of JupyterLab extensions.ipywidgets and plotly can be used to create widgets and plots using Python code, under the hood JavaScript is used to display these in the browser. The variableinspector gives a variable inspector.
 
 pyqt and ipympl are required for an interactive matplotlib plotting backends.
 
-JupyterLab should be launched from its own Python environment using the Anaconda PowerShell Prompt.
+Once the Python environment is created it can be activated using:
+
+```
+conda activate jupyter-env
+```
+
+And one of the jupyter applications can be launched using:
+
+```
+jupyter-console
+jupyter-qtconsole
+jupyter-notebook
+jupyter-lab
+```
+
+### Spyder
+
+For Spyder it is recommended to create a Python environment called spyder-env with the following packages:
+
+```
+conda create -n spyder-env -c conda-forge python spyder cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate pyqt ruff
+```
+
+Once the Python environment is created it can be activated using:
+
+```
+conda activate spyder-env
+```
+
+And spyder can be launched using:
+
+```
+spyder
+```
 
 ### JupyterLab with R
 
-Recall that Jupyter is a loose acronym for Julia Python and R. To install R activate the jupyterlab Python environment created above using:
+R can be used with JupyterLab. It is recommended to create a Python environment called r-env with the following packages:
 
 ```
-conda activate jupyterlab
+conda create -n r-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly jupyterlab-variableinspector ipympl pyqt ruff r-irkernel jupyter-lsp-r r-tidyverse r-ggthemes r-palmerpenguins r-writexl
 ```
 
-The R Kernel (r-irkernel) and R language server protocol for JupyterLab (jupyter-lsp-r) required for R code completions can be installed from conda-forge alongside other common R libraries such as the Tidyverse packages for Data Science (r-tidyverse) can be installed using:
+This Python environment has the same packages as the jupyter-env but has the addition of the R Jernel and R Jupyter Language Server Protocol in addition to commonly used R packages.
+
+Once the Python environment is created it can be activated using:
 
 ```
-conda install -c conda-forge r-irkernel jupyter-lsp-r r-tidyverse r-ggthemes r-palmerpenguins r-writexl
+conda activate r-env
 ```
 
-This will set it up for use with R. An R option will display under Notebook and Console allowing the R programming language to be ran in an interactive notebook or console instead of Python.
-
-Details about all R packages are available on the CRAN website, for example the readxl package [writexl cran](https://cran.r-project.org/web/packages/writexl/index.html). 
-
-Because the conda package manager is used, the package should be installed using conda. The package is normally found on conda-forge with a r- prefix. For example [r-writexl conda-forge](https://anaconda.org/conda-forge/r-writexl)
-
-Details about the tidyverse packages are available here[tidyverse](https://www.tidyverse.org/)
-
-### VSCode Python Environment
-
-Install VSCode using WinGet:
+The kernels for the r-env Python environment can be listed using:
 
 ```
-WinGet install Microsoft.VisualStudioCode
+jupyter kernelspec list
 ```
 
-Create a Python environment for VSCode:
+This outputs:
 
 ```
-conda create -n vscode -c conda-forge python notebook cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly ipympl pyqt autopep8 black
+(r-env) username@pc:~$ jupyter kernelspec list                                                                                                  
+Available kernels:                                                                                                                                        
+  ir         /home/username/anaconda3/envs/r-env/share/jupyter/kernels/ir                                                                                       
+  python3    /home/username/anaconda3/envs/r-env/share/jupyter/kernels/python3                                                                                  
+(r-env) username@pc:~$  
 ```
 
-Installing seaborn will install numpy, pandas and matplotlib as these are dependencies for seaborn.
-
-openpyxl, xlrd, xlsxwriter, lxml, sqlalchemy and tabulate are file format convertors used for pandas.
-
-nodejs allows installation of JupyterLab extensions.ipywidgets and plotly can be used to create widgets and plots using Python code, under the hood JavaScript is used to display these in VSCode which behaves like a browser. 
-
-pyqt and ipympl are required for an interactive matplotlib plotting backends. 
-
-Install the Python, Jupyter, autopep8, isort and black extensions in VSCode.
-
-The Python interpretter needs to be selected in VSCode.
-
-### PyCharm Python Environment
-
-Install PyCharm using WinGet:
+One of the jupyter applications can be launched using the R kernel:
 
 ```
-WinGet install JetBrains.PyCharm.Professional
+jupyter-console --kernel=ir
+jupyter-qtconsole --kernel=ir
+jupyter-notebook --kernel=ir
+jupyter-lab --kernel=ir
 ```
 
-Create a Python environment for PyCharm:
+### Spyder RC
+
+Spyder is available as an alpha version. A Python environment with Python 3.11 from the conda-forge channel should be used:
 
 ```
-conda create -n pycharm -c conda-forge python cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate pyqt autopep8 black
+conda create -n spyder-rc-env -c conda-forge python=3.11
 ```
 
-Installing seaborn will install numpy, pandas and matplotlib as these are dependencies for seaborn.
-
-openpyxl, xlrd, xlsxwriter, lxml, sqlalchemy and tabulate are file format convertors used for pandas.
-
-pyqt is required for an interactive matplotlib plotting backends.
-
-The Python interpretter needs to be selected in PyCharm.
-
-## Config and .condarc file (optional)
-
-The ```conda config``` command is used to create a ```.condarc``` file which can be used to change the settings used by the conda package manager... 
-
-When the ```conda``` package manager is used in Anaconda a ```.condarc``` file is created in ```%USERPROFILE%```:
-
-<img src='images_conda/img_072.png' alt='img_072' width='450'/>
-
-with the following content:
+This Python environment should be activated:
 
 ```
-channels:
-  - defaults
+conda activate spyder-rc-env
 ```
 
-<img src='images_conda/img_073.png' alt='img_073' width='450'/>
-
-For Anaconda or Miniconda ```defaults``` mean the ```anaconda``` channel is selected. This is the channel maintained by the Anaconda company.
-
-The community channel ```conda-forge``` is more commonly used for custom Python environments. To change the channel used to ```conda-forge``` the following commands can be used:
+Spyder 6 RC should then be installed from its own channel:
 
 ```
-conda config --remove channels defaults
-conda config --add channels conda-forge
+conda install -c conda-forge/label/spyder_dev -c conda-forge/label/spyder_kernels_rc -c conda-forge spyder=6.0.0a3
 ```
 
-<img src='images_conda/img_074.png' alt='img_074' width='450'/>
-
-This updates the ```.condarc``` to the following:
-
-<img src='images_conda/img_075.png' alt='img_075' width='450'/>
+The data science libraries commonly used with Spyder should be installed:
 
 ```
-channels:
-  - conda-forge
+conda install -c conda-forge cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate pyqt ruff
 ```
 
-Note that a ```.condarc``` with a default channel of ```conda-forge``` should not be used when updating the Anaconda base Python environment as it will result in an unstable configuration. Miniconda does not have the same issue as there are a small number of packages in the Miniconda base Python environment.
-
-## Initialising the Windows Terminal (optional)
-
-The Windows Environmental Variable Path has the following 5 entries:
+Once the Python environment is created it can be activated using:
 
 ```
-%USERPROFILE%\Anaconda3
-%USERPROFILE%\Anaconda3\Library\mingw-w64\bin
-%USERPROFILE%\Anaconda3\Libraryusr\bin
-%USERPROFILE%\Anaconda3\Library\bin
-%USERPROFILE%\Anaconda3\Scripts
+conda activate spyder-rc-env
 ```
 
-This is the location which the Windows Terminal looks for the ```python.exe``` and other applications such as the ```spyder.exe``` and ```jupyter-lab.exe```.
-
-The Anaconda PowerShell Prompt is essentially the Windows Terminal that runs an additional conda activation script that allows change of Python environments:
+And spyder can be launched using:
 
 ```
-%windir%\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy ByPass -NoExit -Command "& 'C:\Users\Phili\anaconda3\shell\condabin\conda-hook.ps1' ; conda activate 'C:\Users\Phili\anaconda3' "
+spyder
 ```
 
-Notice that this has to bypass ExecutionPolicy to allow the activation script to run. 
-
-The Windows Terminal can be initialised directly by using a modified PowerShell Profile that runs the conda activation script. Unfortunately to use this modified profile, the PowerShell Script Execution Policy needs to be set to Unrestricted and this therefore lowers the base security of the Windows OS making it more vulnerable to other malicious scripts. This security Execution Policy is the main reason there is a seperate Anaconda PowerShell Prompt on Windows instead of direct integration with the Windows Terminal.
-
-To initialise Anaconda in PowerShell open up the Windows Terminal and input:
-
-```
-Anaconda3\Scripts\conda.exe init powershell
-```
-
-Once this is done, there is an error message any time the Windows Terminal is opened stating the PowerShell Profile cannot be loaded because running scripts is disabled on this system:
-
-In order to use this PowerShell Profile, the Script Execution Policy needs to be set to Unrestricted, recall that this lowers the base security of your system leaving it open to other poptentially malicious scripts.
-
-To change this setting the Terminal (Admin) needs to be used. Input:
-
-```
-Set-ExecutionPolicy -ExecutionPolicy Unrestricted
-```
-
-Close any Terminals. Now the Windows Terminal (User) can be used and the conda environment shows:
-
-The Windows Terminal can be used in an identical manner to the Anaconda PowerShell Prompt and any Python IDEs that use the Windows Terminal will use it with an activation script making it equivalent to using the Anaconda PowerShell Prompt.
-
-To undo the initialisation, the following command can be used:
-
-```
-Anaconda3\Scripts\conda.exe init powershell --reverse
-```
-
-To revert to the default Execution Policy, the following command can be used. Recall that administrative privileges
- are required so use Windows Terminal (Admin):
-
-```
-Set-ExecutionPolicy -ExecutionPolicy Default
-```
+Details about the latest Spyder version is outlined in [Spyders release notes](https://github.com/spyder-ide/spyder/releases). It is recommended to remove the old environment and create a new Python environment with the latest version of Spyder when a new pre-release is issued as updating packages using mixed channels may be problematic.
 
 [Return to Anaconda Tutorial](./readme.md)

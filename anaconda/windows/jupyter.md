@@ -1,7 +1,8 @@
 # Jupyter
 
-Previously interactive Python ipython was examined and seen to contain Python code in addition to the bash based ipython magics. In addition ipython was seen to carry out syntax highlighting for Python code. The Jupyter project is a loose acronym for three programming languages **Ju**lia, **Pyt**on and **R**, although this guide will only focus on Python where it is most commonly used. For Python, Jupyter essentially is an ecosystem around ipython. There are three versions:
+Previously interactive Python ipython was examined and seen to contain Python code in addition to the bash based ipython magics. In addition ipython was seen to carry out syntax highlighting for Python code. The Jupyter project is a loose acronym for three programming languages **Ju**lia, **Pyt**hon and **R**, although this guide will only focus on Python where it is most commonly used. For Python, Jupyter essentially is an ecosystem around ipython. There are four versions:
 
+* Jupyter Console
 * Jupyter QTConsole
 * Jupyter Notebook
 * JupyterLab
@@ -11,7 +12,7 @@ Previously interactive Python ipython was examined and seen to contain Python co
 Jupyter QTConsole is very similar to ipython and is Shell based. It can be launched from its tile in the Anaconda Navigator or from the Anaconda PowerShell Prompt using the PowerShell command:
 
 ```
-jupyter qtconsole
+jupyter-qtconsole
 ```
 
 <img src='images_jupyter/img_001.png' alt='img_001' width='450'/>

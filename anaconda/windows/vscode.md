@@ -12,7 +12,7 @@ WinGet install Microsoft.VisualStudioCode
 
 ## conda Initialisation
 
-VSCode uses the Windows Terminal PowerShell and therefore requires the Anaconda base environment to be added to the Windows Environmental Variable Path (this should be done automatically when Anaconda is installed using WinGet) or for the Windows Terminal to be initialised. Otherwise the following error message will display when attempting to run a Python Script:
+VSCode uses the Windows Terminal PowerShell and therefore requires the Anaconda base environment to be initialised or added to the Windows Environmental Variable Path otherwise the following error message will display when attempting to run a Python Script:
 
 ```
 conda : The term 'conda' is not recognized as the name of a cmdlet, function, script 
@@ -26,7 +26,29 @@ At line:1 char:1
     + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
-If you encounter this error message, you can resolve this by modifying the path to match the default provided by the Anaconda installation see [Anaconda Installation](./installation.md) or by Initialising the Windows Terminal see [conda Package Manager: Initialising the Windows Terminal](./conda.md). 
+To initialise Anaconda in PowerShell right click the Windows 11 Start Button and open up the Windows Terminal (Admin) and change the execution policy:
+
+```
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+```
+
+Then initialise Anaconda:
+
+```
+Anaconda3\Scripts\conda init powershell
+```
+
+Close the Windows Terminal and close VSCode and relaunch to refresh the changes.
+
+## conda Environment
+
+The Anaconda base Python environment can be used with VSCode.
+
+Alternatively a Python environment should be setup using the latest packages from the community channel conda-forge by opening up the Anaconda PowerShell Prompt and inputting:
+
+```
+conda create -n vscode-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly ipympl pyqt autopep8 isort black pylint flake8 ruff
+```
 
 ## Launching VSCode
 
@@ -66,7 +88,13 @@ This will install other Notebook related extensions:
 
 <img src='images_vscode/img_015.png' alt='img_015' width='450'/>
 
+The intellicode extension by Microsoft will add commonly used snippets above the identifiers shown by the pylance extension in response to the current line of code being input.
+
 The autopep8, isort and black extensions by Microsoft allow use of code formatters from libraries included in the Anaconda base Python environment. 
+
+The pylint and flake8 extensions by Microsoft will apply additional Python linting.
+
+The ruff extension by Astral software will allow use of the ruff formatter.
 
 Close and relaunch VSCode after installing extensions.
 
@@ -112,7 +140,7 @@ VSCode uses Microsoft's Intellisense which will display a list of identifiers in
 
 <img src='images_vscode/img_024.png' alt='img_024' width='450'/>
 
-It will also display docstrigns for functions when they are typed with open parenthesis:
+It will also display docstrings for functions when they are typed with open parenthesis:
 
 <img src='images_vscode/img_025.png' alt='img_025' width='450'/>
 
@@ -287,11 +315,9 @@ If they are too long only part of them will display:
 
 <img src='images_vscode/img_048.png' alt='img_048' width='450'/>
 
-These can be viewed in a text editor for more details. Selecting a scrollable element does not work with this version of VSCode and this version of Notebook extension:
+These can be viewed in a text editor or a scrollable element for more details.
 
-<img src='images_vscode/img_049.png' alt='img_049' width='450'/>
-
-## Format Document
+## Formatters
 
 autopep8, isort, and black are preinstalled in the conda base environment. These are used to format Python code. To use these in VSCode the autopep8, isort and black extensions maintained by Microsoft need to be installed:
 
@@ -343,7 +369,6 @@ Notice that all the import statements are at the top with Python standard module
 For an interactive Python Notebook, the analogous command Format Notebook can be used. With autopep8 the quotations are still inconsistent as pep8 doesn't explicitly state a preference for single quotations over double quotations. 
 
 The imports are grouped by type: standard module and then third-party library but these categories aren't worted by category. Press ```Ctrl```, ```⇧``` and ```p``` to open the command palette and search for organize imports and this should use ```isort``` to properly sort the imports. Note using isort without previously formatting the code with autopep8 does not always work properly.
-
 
 Black is an opinioned formatter that will carry out additional opinionated formatting. Select Format Document With:
 

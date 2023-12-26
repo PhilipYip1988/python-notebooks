@@ -40,7 +40,7 @@ Select Apply and restart Spyder when prompted:
 
 To the left is the script editor. To save the current script select File → Save As... navigate to Documents and save the script file with a .py file extension:
 
-<img src='images_spyder/img_007.png' alt='img_007' width='350'/>
+<img src='images_spyder/img_007.png' alt='img_007' width='450'/>
 
 ## Code Completion and Help Pane
 

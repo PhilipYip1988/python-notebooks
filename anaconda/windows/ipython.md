@@ -109,8 +109,6 @@ y = np.array([0, 2, 4, 6, 8])
 df = pd.DataFrame({'x': x, 'y': y})
 plt.plot(df['x'], df['y'])
 plt.show()
-
-
 ```
 
 <img src='images_ipython/img_014.png' alt='img_014' width='450'/>

@@ -164,14 +164,14 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 Then initialise Anaconda:
 
 ```
-Anaconda3\Scripts\conda.exe init powershell
+Anaconda3\Scripts\conda init powershell
 ```
 
 This will output:
 
 ```
 (base) PS ~> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
-(base) PS ~> Anaconda3\Scripts\conda.exe init powershell
+(base) PS ~> Anaconda3\Scripts\conda init powershell
 no change     ~\Anaconda3\Scripts\conda.exe
 no change     ~\Anaconda3\Scripts\conda-env.exe
 no change     ~\Anaconda3\Scripts\conda-script.py

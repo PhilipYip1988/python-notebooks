@@ -1,6 +1,6 @@
 # Python Tutorials
 
-The Anaconda 2023-09 Data Science Python Distribution contains Python and Python Standard Modules, the conda package manager, relatively modern versions of the datascience libraries such as numpy, pandas and matplotlib, Python IDEs such as Spyder and JupyterLab and Python formatters such as autopep8, isort and black. 
+The Anaconda 2023-09 Data Science Python Distribution contains Python and Python Standard Modules, the conda package manager, relatively modern versions of the datascience libraries such as numpy, pandas and matplotlib, Python IDEs such as Spyder and JupyterLab. It also includes Python formatters such as autopep8, isort and black and Python linters such as pylint, flake8 and pyflakes. 
 
 ## Python Installation
 
