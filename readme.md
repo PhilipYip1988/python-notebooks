@@ -115,11 +115,11 @@ The System module provides access to some variables used or maintained by the Py
 
 * [System Module Notebook](./sys_module/notebook.ipynb)
 
-## AutoPEP8, ISort and Black Modules
+## AutoPEP8, ISort, Black and Ruff Modules
 
 The Automatic Python Enhanced Protocol 8 module is used to process a Python script or interactive Python notebook to autoformat a file to make sure its spacing is compliant with PEP8. The import sort module is an additional formatter used to make sure library imports are grouped by standard libraries, third party libraries and sorted alphabetically in these two categories. The black formatter is an opinionated formatter used to standardise other formatting such as string quotations and form of hexadecimal numbers. Unfortunately its opinionated choices deviate from the style used in the Python language itself:
 
-* [AutoPEP8, Import Sort and Black Modules](./autopep8_module/notebook.ipynb)
+* [AutoPEP8, Import Sort and Black Modules](./formatters/notebook.ipynb)
 
 ## The Numeric Python Library
 
