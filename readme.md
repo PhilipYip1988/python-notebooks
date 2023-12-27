@@ -16,9 +16,27 @@ Markdown uses simple syntax to format text and is commonly used on GitHub and wi
 
 ## Viewing Markdown Files and Notebooks
 
-It is recommended to download this repository as a zip file. Select code and download zip, then extract the zip and open the extracted folder in VSCode or JupyterLab. For the notebook files it is recommended to clear all outputs and run each cell individually as you examine the notebook. 
+It is recommended to download this repository as a zip file. Select Code and download zip, then extract the zip and open the extracted folder in VSCode or JupyterLab. For the notebook files, it is recommended to clear all outputs and run each cell individually as you examine the notebook. 
 
-The notebooks can also be viewed from GitHub in the browser however GitHub has some limitations for displaying some of the content in the notebook. Many of these limitations are addressed using [Notebook Viewer](https://nbviewer.org/). Markdown files and notebooks with lots of images may render better because a local version of each image is used. The browser may time out and not load images properly on slow connections.
+The notebooks can also be viewed from GitHub in the browser however GitHub has some limitations for displaying some of the content in the notebook. Markdown files and notebooks with lots of images may render better because a local version of each image is used. The browser may time out and not load images properly on slow connections.
+
+## IPython Magics
+
+Interactive Python has a number of enhancements over Python. It can be used to run Python code and commonly used Shell commands that have been reimplemented as IPython magics. IPython magics are prefixed with a %. Shell commands that haven't been reimplemented as IPython magics can be run directly by prefixing with a !. The Shell used for these commands will depend on the Operating System, Windows will use PowerShell or CMD and Linux/Mac will use bash.
+
+* [IPython Module](./ipython_magics/notebook.ipynb)
+
+## AutoPEP8, ISort, Black and Ruff Modules
+
+The Automatic Python Enhanced Protocol 8 module is used to process a Python script or interactive Python notebook to autoformat a file to make sure its spacing is compliant with PEP8. 
+
+The import sort module is an additional formatter used to make sure library imports are grouped by standard libraries, third-party libraries and sorted alphabetically in these two categories. 
+
+The black formatter is an opinionated formatter used to standardise other formatting such as string quotations style. Unfortunately its opinionated choices deviate from the style used in the Python language itself. 
+
+The Rust Fast Formatter is similar to black but can be easily configured for a single quotation option. Ruff is in the early stages of development and is not yet preinstalled with Anaconda.
+
+* [AutoPEP8, Import Sort, Black and Rust Fast Formatter Modules](./formatters/notebook.ipynb)
 
 ## Builtins Module
 
@@ -85,11 +103,11 @@ The Input and Output module is used for reading and writing text files .txt and 
 
 * [Input and Output Module Notebook](./io_module/notebook.ipynb)
 
-## Comma Seperated Values Module
+## Comma Separated Values Module
 
-The Comma Seperated Values module expands the functionality of the io module allowing manipulation of files which have rows and columns opposed to just rows. It can be used with .csv, .txt and .prn files for example:
+The Comma Separated Values module expands the functionality of the io module allowing manipulation of files which have rows and columns opposed to just rows. It can be used with .csv, .txt and .prn files for example:
 
-* [Comma Seperated Values Notebook](./csv_module/notebook.ipynb)
+* [Comma Separated Values Notebook](./csv_module/notebook.ipynb)
 
 ## Operating System Module
 
@@ -103,33 +121,21 @@ The Path and Library module is similar to the Operating System Module however us
 
 * [Path and Library Module](./pathlib_module/notebook.ipynb)
 
-## IPython Magics
-
-IPython can be used to run Powershell and bash commands in an IPython console or an interactive Python notebook. The basics of Powershell and bash were covered in the installation tutorials:
-
-* [IPython Module](./ipython_magics/notebook.ipynb)
-
 ## System Module
 
 The System module provides access to some variables used or maintained by the Python interpreter and to functions that interact strongly with the interpreter:
 
 * [System Module Notebook](./sys_module/notebook.ipynb)
 
-## AutoPEP8, ISort, Black and Ruff Modules
-
-The Automatic Python Enhanced Protocol 8 module is used to process a Python script or interactive Python notebook to autoformat a file to make sure its spacing is compliant with PEP8. The import sort module is an additional formatter used to make sure library imports are grouped by standard libraries, third party libraries and sorted alphabetically in these two categories. The black formatter is an opinionated formatter used to standardise other formatting such as string quotations style. Unfortunately its opinionated choices deviate from the style used in the Python language itself. The Rust Fast Formatter is similar to black but can be easily configured for a single quotation option:
-
-* [AutoPEP8, Import Sort, Black and Rust Fast Formatter Modules](./formatters/notebook.ipynb)
-
 ## The Numeric Python Library
 
-The Numeric Python library is based upon the data structure of the ndarray. This is a datastructure that is a collection however unlike ```builtins``` collections, all the datamodel methods are configured for numeric operations. numpy also scales the functions found in the math, datetime and random modules to ndarrays:
+The Numeric Python library is based upon the data structure of the NDArray. This is a datastructure that is a collection however unlike ```builtins``` collections, all the datamodel methods are configured for numeric operations. numpy also scales the functions found in the math, datetime and random modules to ndarrays:
 
 * [NDArray Notebook](./numpy_library/notebook.ipynb)
 
 ## The Python and Data Analysis Library
 
-The Python and Data Analysis library builts upon the data structure of the ndarray, creating a Series which is a 1Darray with a column name and a DataFrame which is a grouping of Series analogous in form to an Excel SpreadSheet. The Python and Data analysis library can be used to programically manipulate the data stored in the DataFrame analogous to any data operations that would be carried out manually in Excel:
+The Python and Data Analysis library builts upon the data structure of the ndarray, creating a Series which is a NDArray (1D) with a column name and a DataFrame which is a grouping of Series analogous in form to an Excel SpreadSheet. The Python and Data analysis library can be used to programically manipulate the data stored in the DataFrame analogous to any data operations that would be carried out manually in Excel:
 
 * [Series and DataFrame Notebook](./pandas_library/notebook.ipynb)
 
