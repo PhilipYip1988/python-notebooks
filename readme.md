@@ -32,7 +32,7 @@ The Automatic Python Enhanced Protocol 8 module is used to process a Python scri
 
 The import sort module is an additional formatter used to make sure library imports are grouped by standard libraries, third-party libraries and sorted alphabetically in these two categories. 
 
-The black formatter is an opinionated formatter used to standardise other formatting such as string quotations style. Unfortunately its opinionated choices deviate from the style used in the Python language itself. 
+The black formatter is an opinionated formatter used to standardise other formatting such as string quotations style. Unfortunately, its opinionated choices deviate from the style used in the Python language itself. 
 
 The Rust Fast Formatter is similar to black but can be easily configured for a single quotation option. Ruff is in the early stages of development and is not yet preinstalled with Anaconda.
 
