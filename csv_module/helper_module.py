@@ -1,8 +1,11 @@
+import inspect
+__version__ = '0.1.3'
 
-def identifier_group(obj, kind='all', second=object, show_unique_identifiers=False, show_only_intersection_identifiers=False):
+
+def identifier_group(obj, kind='all', second=object, show_unique_identifiers=False, show_only_intersection_identifiers=False, has_parameter=''):
     
     """ Group identifiers from an obj into categories defined by the parameter kind. kind can have the possible values: 
-    'all', 'datamodel_method, 'datamodel_attribute', 'class', 'lower_class', 'function', 'constant', 'attribute', 'internal_attribute' or 'internal_method'.
+    'all', 'datamodel_method, 'datamodel_attribute', 'upper_class', 'lower_class', 'function', 'constant', 'attribute', 'internal_attribute' or 'internal_method'.
 
     second class is an optional second class for comparison, normally a parent class. 
     
@@ -16,7 +19,15 @@ def identifier_group(obj, kind='all', second=object, show_unique_identifiers=Fal
     """
 
     identifiers = dir(obj)
-    second_identifiers = dir(second)
+
+    if isinstance(second, list):
+        second_identifiers = []
+        for identifier in second:
+            second_identifiers.extend(dir(identifier))
+        second_identifiers = list(set(second_identifiers))
+        second_identifiers.sort()
+    else:
+        second_identifiers = dir(second)
     
     if ((show_unique_identifiers == False) and (show_only_intersection_identifiers == False)):
         identifiers_to_examine = identifiers
@@ -66,6 +77,13 @@ def identifier_group(obj, kind='all', second=object, show_unique_identifiers=Fal
         if (not is_method and is_internal):
             internal_attribute_grouping.append(identifier)
 
+    if (has_parameter != ''):
+        function_with_parameter = []
+        for identifier in function_grouping:
+            if (has_parameter in inspect.signature(getattr(obj, identifier)).parameters):
+                function_with_parameter.append(identifier)
+        function_grouping = function_with_parameter
+
     if (kind == 'all'):    
         return all_grouping
     elif (kind == 'datamodel_method'):   
@@ -92,10 +110,10 @@ def identifier_group(obj, kind='all', second=object, show_unique_identifiers=Fal
         raise(ValueError, "Invalid value for kind. Possible values are 'all', 'datamodel_method, 'datamodel_attribute', 'class', 'lower_class', 'function', 'constant', 'attribute', 'internal_attribute' or 'internal_method'.")
     
 
-def print_identifier_group(obj, kind='all', second=object, show_unique_identifiers=False, show_only_intersection_identifiers=False):
+def print_identifier_group(obj, kind='all', second=object, show_unique_identifiers=False, show_only_intersection_identifiers=False, has_parameter=''):
     
     """Group identifiers from an obj into categories defined by the parameter kind and print. kind can have the possible values: 
-    'all', 'datamodel_method, 'datamodel_attribute', 'class', 'lower_class', 'function', 'constant', 'attribute', 'internal_attribute' or 'internal_method'.
+    'all', 'datamodel_method, 'datamodel_attribute', 'upper_class', 'lower_class', 'function', 'constant', 'attribute', 'internal_attribute' or 'internal_method'.
 
     second class is an optional second class for comparison, normally a parent class. 
     
@@ -109,7 +127,15 @@ def print_identifier_group(obj, kind='all', second=object, show_unique_identifie
     """
 
     identifiers = dir(obj)
-    second_identifiers = dir(second)
+
+    if isinstance(second, list):
+        second_identifiers = []
+        for identifier in second:
+            second_identifiers.extend(dir(identifier))
+        second_identifiers = list(set(second_identifiers))
+        second_identifiers.sort()
+    else:
+        second_identifiers = dir(second)
     
     if ((show_unique_identifiers == False) and (show_only_intersection_identifiers == False)):
         identifiers_to_examine = identifiers
@@ -159,8 +185,28 @@ def print_identifier_group(obj, kind='all', second=object, show_unique_identifie
         if (not is_method and is_internal):
             internal_attribute_grouping.append(identifier)
 
+    if (has_parameter != ''):
+        function_with_parameter = []
+        for identifier in function_grouping:
+            if (has_parameter in inspect.signature(getattr(obj, identifier)).parameters):
+                function_with_parameter.append(identifier)
+        function_grouping = function_with_parameter
+
     if (kind == 'all'):    
-        print(all_grouping)
+        print('datamodel attribute:', end=' ')
+        print(datamodel_attribute_grouping)
+        print('datamodel method:', end=' ')
+        print(datamodel_method_grouping)
+        print('constant:', end=' ')
+        print(constant_grouping)
+        print('attribute:', end=' ')
+        print(attribute_grouping)
+        print('method/function:', end=' ')
+        print(function_grouping)
+        print('upper class:', end=' ')
+        print(upper_case_class_grouping)
+        print('lower class:', end=' ')
+        print(lower_case_class_grouping)
     elif (kind == 'datamodel_method'):   
         print(datamodel_method_grouping)
     elif (kind == 'datamodel_attribute'):   
