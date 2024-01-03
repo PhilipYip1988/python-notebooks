@@ -77,7 +77,7 @@ In the .cache folder the following can be deleted:
 * matplotlib
 * pip
 * scikit-image
-* SPyder
+* Spyder
 
 <img src='images_uninstall/img_010.png' alt='img_010' width='350'/>
 
