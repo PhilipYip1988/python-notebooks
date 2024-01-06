@@ -5,6 +5,5 @@ These tutorials look at installation of the Anaconda Python distribution on Wind
 * [Installing Anaconda](./install.md)
 * [Conda Package Manager and Python Environments](./conda.md)
 * [Installing VSCode](./vscode.md)
-* [Installing PyCharm](./pycharm.md)
 
 [Return to Python Notes](../../readme.md)

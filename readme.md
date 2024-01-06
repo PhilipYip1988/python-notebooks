@@ -1,6 +1,6 @@
 # Python Tutorials
 
-The Anaconda 2023-09 Data Science Python Distribution contains Python and Python Standard Modules, the conda package manager, relatively modern versions of the datascience libraries such as numpy, pandas and matplotlib, Python IDEs such as Spyder and JupyterLab. It also includes Python formatters such as autopep8, isort and black and Python linters such as pylint, flake8 and pyflakes. 
+The Anaconda 2023-09 Data Science Python Distribution contains Python and Python Standard Modules, the conda package manager, relatively modern versions of the datascience libraries such as numpy, pandas and matplotlib, Python IDEs such as Spyder and JupyterLab. It also includes Python linters such as pylint, flake8 and pyflakes and Python formatters such as autopep8, isort and black which can greatly help improve code quality. 
 
 ## Python Installation
 
@@ -26,7 +26,9 @@ Interactive Python has a number of enhancements over Python. It can be used to r
 
 * [IPython Module](./ipython_magics/notebook.ipynb)
 
-## AutoPEP8, ISort, Black and Ruff Modules
+## Python Formatters
+
+This tutorial gives an example of using the Python formatters using IPython magic commands. The VSCode installation tutorial instead demonstrates how to use these via VSCode extensions.
 
 The Automatic Python Enhanced Protocol 8 module is used to process a Python script or interactive Python notebook to autoformat a file to make sure its spacing is compliant with PEP8. 
 
@@ -160,6 +162,6 @@ plotly is a Python plotting library that creates plots using nodejs. This allows
 
 ## The Python Imaging Library
 
-The Python Imaging Library contains the Image module which contains the Image data structure. This module is used for Image construction from an NDArray or an image file taken from another image manipulation program or camera. Note that the modern version of the Python Imaging Library is called PILLOW. PILLOW was originally a fork from PIL. PIL was Python 2 based and has been discontinued:
+The Python Imaging Library contains the Image module which contains the Image data structure. This module is used for Image construction from an ndarray or an image file taken from another image manipulation program or camera. Note that the modern version of the Python Imaging Library is called PILLOW. PILLOW was originally a fork from PIL. PIL was Python 2 based and has been discontinued:
 
 * [The Python Imaging Library](./pillow_library/notebook.ipynb)
