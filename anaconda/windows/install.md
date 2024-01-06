@@ -15,7 +15,7 @@ The Anaconda Python distribution comes with its own base (otherwise known as an 
 * JupyterLab
 * Formatters such as autopep8, isort and black
 
-Python has its own package manager Python Install Package (pip) which is strictly for Python packages. For data science projects the more powerful conda package manager is prefered as it can be used to install the Python packages used for datascience projects in addition to their non-Python dependencies. These include example codecs, LaTeX as well as dependencies for hardware acceleration. conda can also be used to install packages from other programming languages which are often user in conjunction with Python. The popular Jupyter project for example is an abbreviation for Julia Python et (Latin for and) R.
+Python has its own package manager Python Install Package (pip) which is strictly for Python packages. For datascience projects the more powerful conda package manager is prefered as it can be used to install the Python packages used for datascience projects in addition to their non-Python dependencies. These include example codecs, LaTeX as well as dependencies for hardware acceleration. conda can also be used to install packages from other programming languages which are often user in conjunction with Python. The popular Jupyter project for example is an abbreviation for Julia Python et (Latin for and) R.
 
 ```conda install package``` should be used instead of ```pip install package``` where possible.
 
@@ -28,7 +28,7 @@ The main channel is maintained by the Anaconda company and the conda-forge chann
 
 Miniconda is a stripped down version of Anaconda which has an empty base Python environment with only the dependencies required for the conda package manager.
 
-Note WinGet and conda should not be confused with one another. Both are package managers however WinGet is a general purpose Windows Package Manager that is Windows only. conda is a cross-platform package manager specialised for data science packages.
+Note WinGet and conda should not be confused with one another. Both are package managers however WinGet is a general purpose Windows Package Manager that is Windows only. conda is a cross-platform package manager specialised for datascience packages.
 
 ## Removing Old Installations
 
@@ -449,7 +449,7 @@ The commands to create the Python environments are listed below. Use of the cond
 For Jupyter it is recommended to create a Python environment called jupyter-env with the following packages:
 
 ```
-conda create -n jupyter-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly jupyterlab-variableinspector ipympl pyqt ruff
+conda create -n jupyter-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly jupyterlab-variableinspector ipympl pyqt ruff miktex
 ```
 
 Once the Python environment is created it can be activated using:
@@ -506,7 +506,7 @@ This will launch the spyder binary from either:
 R can be used with JupyterLab. It is recommended to create a Python environment called r-env with the following packages:
 
 ```
-conda create -n r-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly jupyterlab-variableinspector ipympl pyqt ruff r-irkernel jupyter-lsp-r r-tidyverse r-ggthemes r-palmerpenguins r-writexl
+conda create -n r-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly jupyterlab-variableinspector ipympl pyqt ruff miktex r-irkernel jupyter-lsp-r r-tidyverse r-ggthemes r-palmerpenguins r-writexl
 ```
 
 Once the Python environment is created it can be activated using:
@@ -567,7 +567,7 @@ Spyder 6 RC should then be installed from its own channel:
 conda install -c conda-forge/label/spyder_dev -c conda-forge/label/spyder_kernels_rc -c conda-forge spyder=6.0.0a3
 ```
 
-The data science libraries commonly used with Spyder should be installed:
+The datascience libraries commonly used with Spyder should be installed:
 
 ```
 conda install -c conda-forge cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate pyqt ruff
@@ -591,7 +591,5 @@ This will launch the spyder binary from either:
 ~/anaconda3/envs/spyder-rc-env/bin
 ~/miniconda3/envs/spyder-rc-env/bin
 ```
-
-
 
 [Return to Anaconda Tutorial](./readme.md)

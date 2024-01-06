@@ -135,7 +135,7 @@ The Numeric Python library is based upon the data structure of the NDArray. This
 
 ## The Python and Data Analysis Library
 
-The Python and Data Analysis library builts upon the data structure of the ndarray, creating a Series which is a NDArray (1D) with a column name and a DataFrame which is a grouping of Series analogous in form to an Excel SpreadSheet. The Python and Data analysis library can be used to programically manipulate the data stored in the DataFrame analogous to any data operations that would be carried out manually in Excel:
+The Python and Data Analysis library builds upon the data structure of the ndarray, creating a Series which is a NDArray (1D) with a column name and a DataFrame which is a grouping of Series analogous in form to an Excel SpreadSheet. The Python and Data analysis library can be used to programically manipulate the data stored in the DataFrame analogous to any data operations that would be carried out manually in Excel:
 
 * [Series and DataFrame Notebook](./pandas_library/notebook.ipynb)
 
@@ -148,7 +148,15 @@ The matrix plotting library encompasses a large group of modules compartmentalis
 
 ## The Data Visualisation Library
 
-* [Data Visualisation Notebook](./seaborn_library/notebook_backends.ipynb)
+seaborn is a wrapper library for matplotlib which greatly simplifies the code required to create plots that are commonly used for data visualisation of data stored in a DataFrame:
+
+* [Data Visualisation Notebook](./seaborn_library/notebook.ipynb)
+
+## The Plotly Library
+
+plotly is a Python plotting library that creates plots using nodejs. This allows plots to be displayed interactively in the cell output of an interactive Python notebook. The plotly express module use syntax similar to seaborn:
+
+* [Plotly Notebook](./plotly_library/notebook.ipynb)
 
 ## The Python Imaging Library
 
