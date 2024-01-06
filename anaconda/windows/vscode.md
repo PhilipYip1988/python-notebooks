@@ -359,17 +359,34 @@ Code completion using Pylance and IntelliSense should work as before. Other IPyt
 
 For formatting, the command Format Document With... can be used with autopep8. The command Ruff: Format Imports and command Ruff: Format Documents can also be used. Formatting imports in a notebook will sort the imports in a single code cell out but will not move the code cells with imports to the top of the notebook.
 
-Markdown cells and code cells can be run using the run button which displays to the left hand side of a cell, when the cell is selected. All the code can be run using the button RUn All at the top. The Kernel can also be restarted and the outputs can be cleared using Restart and Clear All Outputs respectively.
+Markdown cells and code cells can be run using the run button which displays to the left hand side of a cell, when the cell is selected. VSCode uses Jupyter shortcuts so ```Ctrl```+```↵``` can be used to run the currently selected cell and ```Alt``` + ```↵``` can be used to run the currently selected cell and insert a blank one after it.
 
-VSCOde uses Jupyter shortcuts so
+All the code can be run using the button Run All at the top. The Kernel can also be restarted and the outputs can be cleared using Restart and Clear All Outputs respectively:
 
 <img src='images_vscode/img_053.png' alt='img_053' width='450'/>
+
+The outputs of an Interactive Python Notebook are similar to the IPython interactive window seen previously however it is far easier to work with the notebook:
+
 <img src='images_vscode/img_054.png' alt='img_054' width='450'/>
 
+There are some other options such as Export:
+
 <img src='images_vscode/img_055.png' alt='img_055' width='450'/>
+
+Which can be used to export to a Python Script:
+
 <img src='images_vscode/img_056.png' alt='img_056' width='450'/>
+
+Notice the Python Script file concerts all Markdown cells to cells that have comments. The Python script can be run in an IPython shell by selecting Run Cell or a Python shell by selecting run. Care should be taken in the later case because IPython code such as IPython magics and use of the ```?``` operator do not work in a Python shell:
+
 <img src='images_vscode/img_057.png' alt='img_057' width='450'/>
+
+The notebook can also be exported to HTML and viewed as a static document in a web browser:
+
 <img src='images_vscode/img_058.png' alt='img_058' width='450'/>
 
+The notebook can also be exported to pdf so it can later be printed:
+
+<img src='images_vscode/img_059.png' alt='img_059' width='450'/>
 
 [Return to Anaconda Tutorial](./readme.md)
