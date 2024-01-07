@@ -10,9 +10,17 @@ VSCode can be installed with WinGet using the command:
 WinGet install Microsoft.VisualStudioCode
 ```
 
+Anaconda should have previously been installed using the command:
+
+```ps
+WinGet install Anaconda.Anaconda3
+```
+
+See the [previous tutorials](../readme.md) which cover installation of Anaconda and use of the conda package manager in more detail.
+
 ## conda Environment
 
-In order to use VSCode with Python a Python environment needs to be setup. 
+In order to use VSCode with Python a Python environment needs to be setup.
 
 The Anaconda (base) Python environment can be used. Alternatively a Python environment can be setup for VSCode using the latest packages from the community channel conda-forge by opening up the Anaconda PowerShell Prompt and inputting:
 
