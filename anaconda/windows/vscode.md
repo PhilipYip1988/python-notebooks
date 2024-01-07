@@ -109,6 +109,7 @@ For Python development the following extensions are commonly installed.
 |isort|Microsoft|Formatter: import organizer|Formats code to organize imports into standard and non-standard modules at the top of a script file and groups these alphabetically.|
 |black|Microsoft|Formatter: opinionated|Formats code further with black opinionated formatting preferring double quotations for str instances.|
 |ruff|Astral Software|Formatter and Linter: Rust Enhanced Fast Formatter and Linter|Formats code further with black opinionated formatting (default). A ruff.toml file can be used to specify preferences such as single quotations for str instances. Applies linting using pyflakes.|
+|indent-rainbow|oderwat|Highlights Indention Levels|This makes it easier to visualise the indentation levels in code blocks.|
 
 The installed extensions in my setup look as follows:
 
