@@ -131,72 +131,6 @@ Therefore popular packages in the community channel are usually more up to date 
 
 A Python environment is normally unstable if it uses mixed channels and most custom end-user Python environments will only use packages in the conda-forge channel.
 
-### Config and .condarc file
-
-The conda config command is used to create a .condarc file which can be used to change the solver used by the conda package manager and the channel and channel priority used by the conda package manager.
-
-Open the Linux Terminal. Recall the default location the Linux Terminal opens in is ```~``` This is the location a ```.condarc``` file gets placed.
-
-Note that this file is hidden. To view it in files, Show Hidden Files needs to be enabled:
-
-<img src='images_conda/img_013.png' alt='img_013' width='450'/>
-
-If an old .condarc file is present delete it using:
-
-```
-rm .condarc
-```
-
-<img src='images_conda/img_014.png' alt='img_014' width='450'/>
-
-<img src='images_conda/img_015.png' alt='img_015' width='450'/>
-
-The conda package manager uses the legacy solver by default. The newer solver libmamba should be used instead:
-
-```
-conda config --set solver libmamba
-```
-
-The community conda-forge should be added:
-
-```
-conda config --add channels conda-forge
-```
-
-And the anaconda channel (defaults) can be removed:
-
-```
-conda config --remove channels defaults
-```
-
-Additional performance can be achieved by setting the channel priority to strict:
-
-```
-conda config --set channel_priority strict
-```
-
-<img src='images_conda/img_016.png' alt='img_016' width='450'/>
-
-This .condarc is optimised for creating new Python environments using packages from the community channel conda-forge. It should not be used to update Anaconda; which should only use the anaconda package from the anaconda channel.
-
-The contents of the ```.condarc``` file can be viewed in the Terminal using the command:
-
-```
-nano .condarc
-```
-
-<img src='images_conda/img_017.png' alt='img_017' width='450'/>
-
-```
-solver: libmamba
-channels:
-  - conda-forge
-  - defaults
-channel_priority: strict
-```
-
-<img src='images_conda/img_018.png' alt='img_018' width='450'/>
-
 ### Create
 
 A Python environment can be created using the syntax:
@@ -692,5 +626,65 @@ openpyxl, xlrd, xlsxwriter, lxml, sqlalchemy and tabulate are file format conver
 pyqt is required for an interactive matplotlib plotting backends.
 
 The Python interpretter needs to be selected in PyCharm.
+
+### Config and .condarc file
+
+The conda config command is used to create a .condarc file which can be used to change the solver used by the conda package manager and the channel and channel priority used by the conda package manager. This is normally not recommended.
+
+Open the Linux Terminal. Recall the default location the Linux Terminal opens in is ```~``` This is the location a ```.condarc``` file gets placed.
+
+Note that this file is hidden. To view it in files, Show Hidden Files needs to be enabled:
+
+<img src='images_conda/img_013.png' alt='img_013' width='450'/>
+
+If an old .condarc file is present delete it using:
+
+```
+rm .condarc
+```
+
+<img src='images_conda/img_014.png' alt='img_014' width='450'/>
+
+<img src='images_conda/img_015.png' alt='img_015' width='450'/>
+
+
+The community conda-forge can be added:
+
+```
+conda config --add channels conda-forge
+```
+
+And the anaconda channel (defaults) can be removed:
+
+```
+conda config --remove channels defaults
+```
+
+Additional performance can be achieved by setting the channel priority to strict:
+
+```
+conda config --set channel_priority strict
+```
+
+<img src='images_conda/img_016.png' alt='img_016' width='450'/>
+
+This .condarc is optimised for creating new Python environments using packages from the community channel conda-forge. It should not be used to update Anaconda; which should only use the anaconda package from the anaconda channel.
+
+The contents of the ```.condarc``` file can be viewed in the Terminal using the command:
+
+```
+nano .condarc
+```
+
+<img src='images_conda/img_017.png' alt='img_017' width='450'/>
+
+```
+channels:
+  - conda-forge
+  - defaults
+channel_priority: strict
+```
+
+<img src='images_conda/img_018.png' alt='img_018' width='450'/>
 
 [Return to Anaconda Tutorial](./readme.md)
