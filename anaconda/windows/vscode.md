@@ -182,7 +182,7 @@ print('Hello World!')
 The code can be run using the run button. This shows a new Terminal:
 
 ```ps
-(vscode-env) PS ~\OneDrive\Documents\project> & ~/Anaconda3/envs/vscode-env/python.exe ~/OneDrive/Documents/project/script.py
+(vscode-env) PS ~\OneDrive\Documents\project> & ~\Anaconda3\envs\vscode-env\python.exe ~\OneDrive\Documents\project\script.py
 Hello World!
 (vscode-env) PS ~\OneDrive\Documents\project> 
 ```
@@ -192,8 +192,8 @@ In the Terminal the following shows:
 * ```(vscode-env)``` means the ```vscode-env``` Python environment is selected. 
 * ```PS``` means the Terminal is using PowerShell as a programming language.
 * ```~\OneDrive\Documents\project``` is the current working directory. Note the default current working directory in VSCode is the project folder opened and not necessarily the folder of the Python script file itself. 
-* ```~/Anaconda3/envs/vscode-env/python.exe``` is the location of the ```python.exe``` being executed.
-* ```~/OneDrive/Documents/project/script.py``` is the full file path of the Python script file.
+* ```~\Anaconda3\envs\vscode-env\python.exe``` is the location of the ```python.exe``` being executed.
+* ```~\OneDrive\Documents\project\script.py``` is the full file path of the Python script file.
 
 The print statement then displays and then a new PS prompt:
 
