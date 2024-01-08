@@ -222,7 +222,7 @@ print('Hello World!')
 
 <img src='images_vscode/img_024.png' alt='img_024' width='450'/>
 
-In order for IntelliSense to work correctly some settings need to be changed. Select the Settings option and then select Settings:
+In order for Intellicode to work correctly some settings need to be changed. Select the Settings option and then select Settings:
 
 <img src='images_vscode/img_026.png' alt='img_026' width='450'/>
 
@@ -364,7 +364,7 @@ Then select the ```vscode-env``` or ```base``` Python environment:
 
 <img src='images_vscode/img_052.png' alt='img_052' width='450'/>
 
-Code completion using Pylance and IntelliSense should work as before. Other IPython features such as Variables are available. 
+Code completion using Pylance and Intellicode should work as before. Other IPython features such as Variables are available. 
 
 For formatting, the command Format Document With... can be used with autopep8. The command Ruff: Format Imports and command Ruff: Format Documents can also be used. Formatting imports in a notebook will sort the imports in a single code cell out but will not move the code cells with imports to the top of the notebook.
 

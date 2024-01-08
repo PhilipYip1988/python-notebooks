@@ -1,234 +1,388 @@
 # VSCode
 
-Visual Studio Code is a general purpose code editor maintained by Microsoft.
+Visual Studio Code (VSCode) is a general purpose code editor maintained by Microsoft.
 
 ## Installation
 
-VSCode can be installed in Ubuntu from Software using the snap package. Open up softwaree and search for vscode:
+In Ubuntu VSCode can be installed as a snap application from Ubuntu software. Search for VSCode and install either VSCode or VSCode Insiders:
 
-<img src='images_vscode/img_001.png' alt='img_001' width='350'/>
+<img src='images_vscode/img_001.png' alt='img_001' width='450'/>
 
-Select install:
+## conda Environment
 
-<img src='images_vscode/img_002.png' alt='img_002' width='350'/>
+Anaconda should have previously been installed. For more details see the [previous tutorials](../readme.md) which covered installation of Anaconda and use of the conda package manager in more detail.
 
-VSCode is now installed:
+In order to use VSCode with Python a Python environment needs to be setup.
 
-<img src='images_vscode/img_003.png' alt='img_003' width='350'/>
+The Anaconda (base) Python environment can be used. Alternatively a Python environment can be setup for VSCode using the latest packages from the community channel conda-forge by opening up the Terminal and inputting:
+
+```bash
+conda create -n vscode-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly ipympl pyqt autopep8 isort black pylint flake8 ruff
+```
+
+For notebook convert to work properly, LaTeX needs to be installed in the Operating System:
+
+```bash
+sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-plain-generic
+```
 
 ## Launching VSCode
 
-VSCode can be launched from its Start Screen shortcut or by using the bash command:
+VSCode can be launched using its Start Menu shortcut or using the PowerShell command in the Anaconda PowerShell Prompt:
 
-```
+```ps
 code
 ```
 
-<img src='images_vscode/img_004.png' alt='img_004' width='350'/>
+## Selecting the Color Theme
 
-## Selecting Syntax Highlighting Theme
+The VSCode welcome screen will allow you to change the color scheme from Dark Modern (default):
 
-The welcome screen will give you the option to select the syntax highlighting scheme. Dark Modern is the default theme and can be changed to Light Modern:
+<img src='images_vscode/img_002.png' alt='img_002' width='450'/>
 
-<img src='images_vscode/img_005.png' alt='img_005' width='350'/>
+To Light Modern:
 
-<img src='images_vscode/img_006.png' alt='img_006' width='350'/>
+<img src='images_vscode/img_003.png' alt='img_003' width='450'/>
 
-## Installing Python Extensions
+This setting can be changed later using File → Preferences → Theme → Color Theme and then selecting Dark Modern or Light Modern.
 
-Visual Studio code is a general purpose code editor and appropriate extensions need to be installed for each programming language.
+## Python Extensions
 
-VSCode is a general purpose code editor. For Python development, the Python extension needs to be installed. This enables the ability to work with Python Script Files:
+VSCode is a general purpose code editor and appropriate extensions need to be installed for each programming language. Select the extension tab, search for Python, select the Python extension and install it. If extensions do not show or fail to install press the refresh button and try again:
 
-<img src='images_vscode/img_007.png' alt='img_007' width='350'/>
+Installing the Python Extension:
 
-For Interactive Python Notebooks, the Jupyter extension should also be installed:
+<img src='images_vscode/img_004.png' alt='img_004' width='450'/>
 
-<img src='images_vscode/img_008.png' alt='img_008' width='350'/>
+Will also install Pylance:
 
-A welcome tab will display for each extension:
+<img src='images_vscode/img_005.png' alt='img_005' width='450'/>
 
-<img src='images_vscode/img_009.png' alt='img_009' width='350'/>
+For Python development the following extensions are commonly installed.
 
-Installation of the Python extension will install Pylance which is used for Python code completion. The Jupyter extension will install other Notebook related extensions:
+|Extension Name|Developer|Purpose|Details|
+|---|---|---|---|
+|Python|Microsoft|Python|Support for Python Script files .py|
+|*Pylance*|Microsoft|Code Completion|Installed with the Python extension|
+|Jupyter|Microsoft|Python Notebooks|Support for Python Notebook files .ipynb|
+|*Jupyter Cell Tags*|Microsoft|Notebook cell tags|Installed with the Jupyter extension|
+|*Jupyter Keymap*|Microsoft|Jupyter Shortcut Keys|Installed with the Jupyter extension|
+|*Jupyter Notebook Renderer*|Microsoft|Renders a Notebook File|Installed with the Jupyter extension|
+|*Jupyter Slide Show*|Microsoft|Switch Slide Type Notebook Cell Option|Installed with the Jupyter extension|
+|IntelliCode|Microsoft|Intelligent Code Suggestions||
+|Code Spell Checker|Street Side Software|Code Spell Checker|English spell checker.|
+|pylint|Microsoft|Linter: code is linted using pylint|Through but slow linter.|
+|flake8|Microsoft|Linter: code is linted using flake8|Relatively fast but less through linter.|
+|autopep8|Microsoft|Formatter: PEP8|Formats code spacing to make the code PEP8 compliant for a Script and Notebook file. Additionally moves imports to the top of a Script file but does not sort them alphabetically.|
+|isort|Microsoft|Formatter: import organizer|Formats code to organize imports into standard and non-standard modules at the top of a script file and groups these alphabetically.|
+|black|Microsoft|Formatter: opinionated|Formats code further with black opinionated formatting preferring double quotations for str instances.|
+|ruff|Astral Software|Formatter and Linter: Rust Enhanced Fast Formatter and Linter|Formats code further with black opinionated formatting (default). A ruff.toml file can be used to specify preferences such as single quotations for str instances. Applies linting using pyflakes.|
+|indent-rainbow|oderwat|Highlights Indention Levels|This makes it easier to visualise the indentation levels in code blocks.|
 
-<img src='images_vscode/img_010.png' alt='img_010' width='350'/>
+The installed extensions in my setup look as follows:
 
-## VSCode Project
+<img src='images_vscode/img_006.png' alt='img_006' width='450'/>
+<img src='images_vscode/img_007.png' alt='img_007' width='450'/>
+<img src='images_vscode/img_008.png' alt='img_008' width='450'/>
 
-VSCode is project based; a project is essentially a folder which contains a number of code files.
+## Project
 
-The Files Tab can be used to open a folder:
+In the File Explorer tab, select Open Folder:
 
-<img src='images_vscode/img_011.png' alt='img_011' width='350'/>
+<img src='images_vscode/img_009.png' alt='img_009' width='450'/>
 
-A new folder can be created in file explorer:
+Navigate to Documents:
 
-<img src='images_vscode/img_012.png' alt='img_012' width='350'/>
+<img src='images_vscode/img_010.png' alt='img_010' width='450'/>
 
-It can be called ```project1```:
+Create a new folder called project:
 
-<img src='images_vscode/img_013.png' alt='img_013' width='350'/>
+<img src='images_vscode/img_011.png' alt='img_011' width='450'/>
 
-And the code files can be moved to it:
+Then select Open:
 
-<img src='images_vscode/img_014.png' alt='img_014' width='350'/>
+<img src='images_vscode/img_012.png' alt='img_012' width='450'/>
 
+To have the ability to execute code, select Yes I trust the authors:
 
-This folder ```project1``` can be opened in VSCode by using Open Folder:
+<img src='images_vscode/img_013.png' alt='img_013' width='450'/>
 
-<img src='images_vscode/img_015.png' alt='img_015' width='350'/>
+A project consists of markdown and code files. Select New File in the File Explorer:
 
-Then selecting ```project1``` and selecting Open:
+<img src='images_vscode/img_014.png' alt='img_014' width='450'/>
 
-<img src='images_vscode/img_016.png' alt='img_016' width='350'/>
+A markdown file has the file extension ```.md```. A project should have a ```readme.md``` which can be created by selecting the new file icon. ```readme.md``` is a markdown file which contains details about the project:
 
-There will be a security prompt, select Yes I trust the authors:
+<img src='images_vscode/img_015.png' alt='img_015' width='450'/>
 
-<img src='images_vscode/img_017.png' alt='img_017' width='250'/>
+A markdown file is essentially a text file which can be formatted like a Word Document using a simple markdown language:
 
-## Markdown
+<img src='images_vscode/img_016.png' alt='img_016' width='450'/>
 
-VSCode is a general purpose code editor and has inbuilt support for markdown files. Normally a project has a ```readme.md``` file, which is used to give an overview of the project. The ```markdown.md``` file can be renamed to ```readme.md```:
+The formatted output can be viewed by right clicking the ```readme.md``` and selecting Open Preview:
 
-<img src='images_vscode/img_018.png' alt='img_018' width='350'/>
+<img src='images_vscode/img_017.png' alt='img_017' width='450'/>
 
-<img src='images_vscode/img_019.png' alt='img_019' width='350'/>
+The Markdown Preview tab can be snapped to the right. The Markdown and Markdown Preview panes are linked. Therefore scrolling down using the left scrollbar will also scroll the content on the right and clicking a heading from the table of contents on the left will move to the heading on both panes:
 
-The formatted markdown file can also be be viewed by right clicking it and selecting Open Preview:
+<img src='images_vscode/img_018.png' alt='img_018' width='450'/>
 
-<img src='images_vscode/img_020.png' alt='img_020' width='350'/>
+A Python script file can be created and has the file extension ```.py```. In order for code completion to work properly, a Python interpreter (Python environment) should be selected. Press ```Ctrl``` + ```⇧``` + ```p``` to open the command palette:
 
-Both views are linked and this allows editing in real time.The markdown file alongside its preview can be viewed side by side. The markdown headings can be selected in the files navigation pane:
+<img src='images_vscode/img_019.png' alt='img_019' width='450'/>
 
-<img src='images_vscode/img_021.png' alt='img_021' width='350'/>
+Search for Python: Select Interpreter:
 
-## Selecting the Python Interpretter
+<img src='images_vscode/img_020.png' alt='img_020' width='450'/>
 
-To use Python, the Python Interpretter (Python environment) needs to be selected. This can be done using the command palette.
+Select the ```vscode-env``` or ```base``` Python environments:
 
-Press ```Ctrl```, ```⇧``` and ```p`` to open the command palette and search for Python. Use Python Select Interpretter:
+<img src='images_vscode/img_021.png' alt='img_021' width='450'/>
 
-<img src='images_vscode/img_022.png' alt='img_022' width='350'/>
+In order for Intellicode to work correctly some settings need to be changed. Select the Settings option and then select Settings:
 
-Change the Python Environment to (base):
+<img src='images_vscode/img_022.png' alt='img_022' width='450'/>
 
-<img src='images_vscode/img_023.png' alt='img_023' width='350'/>
+VSCode settings can be viewed using the categories on the left:
 
-## Microsoft IntelliSense
+<img src='images_vscode/img_023.png' alt='img_023' width='450'/>
 
-VSCode uses Microsoft's Intellisense which will display a list of identifiers in response to a prefix:
+Search for Python Language Server:
 
-<img src='images_vscode/img_024.png' alt='img_024' width='350'/>
+<img src='images_vscode/img_024.png' alt='img_024' width='450'/>
 
-It will also display docstrings for functions when they are typed with open parenthesis:
+Change the Python Language Server to Pylance. Then close the Settings tab:
 
-<img src='images_vscode/img_025.png' alt='img_025' width='350'/>
+<img src='images_vscode/img_025.png' alt='img_025' width='450'/>
 
-## bash Terminal
+Notice now that identifiers display in response to the prefix ```p```:
 
-A script file can be run in the Terminal by selecting run to the top right. This script file creates a plot which displays interactively in a seperate window:
+<img src='images_vscode/img_026.png' alt='img_026' width='450'/>
 
-<img src='images_vscode/img_026.png' alt='img_026' width='350'/>
+And the docstring for the ```print``` function displays when ```print()``` is input:
 
-## Interactive Python Terminal
+<img src='images_vscode/img_027.png' alt='img_027' width='450'/>
 
-Cells can be added in a Python script file using ```#%%```. When a cell is run, it is executed in an Ipython console opposed to a bash terminal:
+If the following is input:
 
-<img src='images_vscode/img_027.png' alt='img_027' width='350'/>
+```python
+print('Hwllo World!')
+```
 
-Plots display in an IPython kernel.
+Notice that multiple parts of the code are underlined:
 
-Jupyter: Variables will display Variables only from Ipython console. No Variables will display when the script is run using a bash terminal:
+<img src='images_vscode/img_028.png' alt='img_028' width='450'/>
 
-<img src='images_vscode/img_028.png' alt='img_028' width='350'/>
+The word Hwllo when highlighted displays a typo:
 
-Jupyter: Variables is basic, similar to Variables in Thonny:
+<img src='images_vscode/img_029.png' alt='img_029' width='450'/>
 
-<img src='images_vscode/img_029.png' alt='img_029' width='350'/>
+It can be right clicked to view Spelling Suggestions...
 
-There is some additional functionality and a small number of the Variables can be opened in a new tab to view them in more detail. At present the number of supported datatypes are limited:
+<img src='images_vscode/img_030.png' alt='img_030' width='450'/>
 
-<img src='images_vscode/img_030.png' alt='img_030' width='350'/>
+And corrected to be Hello:
 
-## Notebook
+<img src='images_vscode/img_031.png' alt='img_031' width='450'/>
 
-With the Jupyter extension installed, VSCode has support for interactive Python notebooks. To run the code in these a kernel should be selected, select Select Kernel to the right:
+The underlining is now removed. The first word print is also underlined:
 
-<img src='images_vscode/img_031.png' alt='img_031' width='350'/>
+<img src='images_vscode/img_032.png' alt='img_032' width='450'/>
 
-Select Python environments:
+If it is highlighted this is because there is a missing module docstring and no blank line at the end of the script file:
 
-<img src='images_vscode/img_032.png' alt='img_032' width='350'/>
+<img src='images_vscode/img_033.png' alt='img_033' width='450'/>
 
-Then select the base Python environment:
+If these are added, nothing is underlined and the Python script file can be run:
 
-<img src='images_vscode/img_033.png' alt='img_033' width='350'/>
+<img src='images_vscode/img_034.png' alt='img_034' width='450'/>
 
-Use Clear All Outputs and Restart the Kernel:
+This shows a new Terminal:
 
-<img src='images_vscode/img_034.png' alt='img_034' width='350'/>
+```ps
+(vscode-env) (base) username@pc ~/Documents/project$ ~/anaconda3/envs/vscode-env/bin/python ~/Documents/project/script.py
+Hello World!
+(vscode-env) (base) PS ~/Documents/project$ 
+```
 
-Select Restart:
+In the Terminal the following shows:
 
-<img src='images_vscode/img_035.png' alt='img_035' width='200'/>
+* ```(vscode-env)``` means the ```vscode-env``` Python environment is selected. 
+* ```username@pc``` means the Terminal is using bash as a programming language.
+* ```~/Documents/project``` is the current working directory. Note the default current working directory in VSCode is the project folder opened and not necessarily the folder of the Python script file itself. 
+* ```~/Anaconda3/envs/vscode-env/bin/python``` is the location of the ```python``` binary (application) being executed.
+* ```~/Documents/project/script.py``` is the full file path of the Python script file.
 
-Jupyter based shortcut keys are available. A cell can be toggled between from Code (default) to Markdown using the shortcut keys ```Esc```+```m```. A cell can be toggled between from Markdown to Code using the shortcut keys ```Esc```+```y```. The keyboard shortcut ```⇧```+```↵``` will run a cell. The keyboard shortcut ```Alt```+```↵``` will run a cell and insert an empty cell below it. The cells can be run individually by selecting each cell and pressing run.
+<img src='images_vscode/img_035.png' alt='img_035' width='450'/>
 
-All cells can be run by using the Run All button:
+If the following is input:
 
-<img src='images_vscode/img_036.png' alt='img_036' width='350'/>
+```python
+print('Hello World!')
+import numpy as np
+x = np.array([0, 1, 2, 3, 4])
+y = np.a
+```
 
-Once again a variable or docstring can be viewed using the cell output:
+Pylance shows a list of identifiers in response to the ```np.a``` prefix. IntelliSense shows a combination of previously used identifiers or popularly used identifiers above the list of identifiers ★. The top identifier can be selected with a ```↹``` key. Other identifiers can be viewed using the ```↓``` and ```↑``` arrows and pressing ```↵```:
 
-<img src='images_vscode/img_037.png' alt='img_037' width='350'/>
+<img src='images_vscode/img_036.png' alt='img_036' width='450'/>
 
-<img src='images_vscode/img_038.png' alt='img_038' width='350'/>
+If the following sloppy Python code that does not follow the [Python Style Guide PEP8](https://peps.python.org/pep-0008/) is input:
 
-Long output is truncated and can be viewed in a text editor tab:
+```python
+'''This creates a simple plot.'''
+print('Hello','World','!',sep='\t', end='\n\n\n')
+import numpy as np
+x =np.array([0, 1,2, 3,4])
+y= np.array([0, 2,4, 6,8])
+import pandas as pd
+df = pd.DataFrame({'x':x, "y":y})
+import matplotlib.pyplot as plt
+plt.plot(df['x'], df["y"])
+import collections
+mapping = collections.Counter([0, 1, 1, 1, 2, 2, 3, 3, 3, 4, 5, 5])
+import datetime
+current_time = datetime.datetime.now()
+```
 
-<img src='images_vscode/img_039.png' alt='img_039' width='350'/>
+Notice that the linters find multiple problems:
 
-Clicking View as Scrollable Element does not work. [GitHub: View as Scrollable Element Does Not Work](https://github.com/microsoft/vscode/issues/189699):
+<img src='images_vscode/img_037.png' alt='img_037' width='450'/>
 
-<img src='images_vscode/img_040.png' alt='img_040' width='350'/>
+Press ```Ctrl``` + ```⇧``` + ```p``` to open the command palette and search for Format Document With...
 
-Plots are plotted by default as inline:
+<img src='images_vscode/img_038.png' alt='img_038' width='450'/>
 
-<img src='images_vscode/img_041.png' alt='img_041' width='350'/>
+Then select autopep8:
 
-The IPython notebook uses Microsoft's intellisense which lists identifiers:
+<img src='images_vscode/img_039.png' alt='img_039' width='450'/>
 
-<img src='images_vscode/img_042.png' alt='img_042' width='350'/>
+Notice that all the modules imported are placed at the top of the file grouped by standard modules and then third-party modules. Notice that all the spacing is now PEP8 compliant:
 
-And displays docstrings:
+<img src='images_vscode/img_040.png' alt='img_040' width='450'/>
 
-<img src='images_vscode/img_043.png' alt='img_043' width='350'/>
+The Imports can be organized alphabetically. Press ```Ctrl``` + ```⇧``` + ```p``` to open the command palette and search for Organize Imports:
 
-## AutoFormat
+<img src='images_vscode/img_041.png' alt='img_041' width='450'/>
 
-Notice the poor formatting in the script file below particularly on line 6 and 7:
+Then select Ruff: Organize Imports:
 
-<img src='images_vscode/img_044.png' alt='img_044' width='350'/>
+<img src='images_vscode/img_042.png' alt='img_042' width='450'/>
 
-A Python Script file can be formatted using the format command. Press ```Ctrl```, ```⇧``` and ```p``` to open the command palette and search for Format Document. Select Format Document with and then in the dropdown select Configure Default Formatter and select AutoPEP8. 
+There is now spacing around the two import groups (standard and third-party) and the imports in these groups are sorted alphabetically:
 
-The command Format Document can now be used which will use this specified default formatter. The command Format Document with can also be used to format the document with another formatter or to change the default:
+<img src='images_vscode/img_043.png' alt='img_043' width='450'/>
 
-<img src='images_vscode/img_045.png' alt='img_045' width='350'/>
+Press ```Ctrl``` + ```⇧``` + ```p``` to open the command palette and search for Format Document and select Ruff Format Document:
 
-This will correct the spacing in accordance to AutoPEP8:
+<img src='images_vscode/img_044.png' alt='img_044' width='450'/>
 
-<img src='images_vscode/img_046.png' alt='img_046' width='350'/>
+Notice that the docstring now has triple double quotes and all the str instances have double quotations:
 
-Notice the poor formatting in some of the notebook cells:
+<img src='images_vscode/img_045.png' alt='img_045' width='450'/>
 
-<img src='images_vscode/img_047.png' alt='img_047' width='350'/>
+The [Python Style Guide PEP8](https://peps.python.org/pep-0008/) does not implicitly state a preference for str quotations, stating that single and double quotations are seen as equivalent. However the Python Style Guide itself is written with a preference for single quotations. Moreover the Python interpreter also prefers single quotations, using double quotations only for str instances that contain str literals. As the docstring commonly includes str literals, it normally is provided using triple quotations. Triple quotations are used for the docstring even when the docstring doesn't contain str literals as the docstring normally gets expanded when working on a new Python module.
 
-The command Format Notebook can be used with an Interactive Python Notebook:
+The ```ruff.toml``` file is a configuration file for ruff and the following option can be added:
 
-<img src='images_vscode/img_048.png' alt='img_048' width='350'/>
+```
+[format]
+quote-style = "single"
+```
 
-It is also possible to use an opinionated formatter such as black, which is preinstalled in the Anaconda base Python environment. To use black in VSCode, the black formatter extension needs to be installed in VSCode. Once installed select Format Document with and then in the dropdown select Configure Default Formatter and select Black.
+<img src='images_vscode/img_046.png' alt='img_046' width='450'/>
+
+Press ```Ctrl``` + ```⇧``` + ```p``` to open the command palette and search for Format Document and select Ruff Format Document:
+
+<img src='images_vscode/img_047.png' alt='img_047' width='450'/>
+
+Notice that all quotations have single quotations because they contain no str literals. The docstring however uses triple double quotations:
+
+<img src='images_vscode/img_048.png' alt='img_048' width='450'/>
+
+If the script is run:
+
+<img src='images_vscode/img_049.png' alt='img_049' width='450'/>
+
+Notice that the first print statement shows in the Terminal but the Terminal is busy while the plot is open in a separate window:
+
+<img src='images_vscode/img_050.png' alt='img_050' width='450'/>
+
+Closing the plot will continue the Python script showing the next print statement. When the script is finished a new bash prompt will display:
+
+<img src='images_vscode/img_051.png' alt='img_051' width='450'/>
+
+If a Python script a line beginning with a ```#``` is a comment. A line beginning with ```#%%``` is recognised as a command for a new IPython cell. Selecting Run Cell will run the cell using an IPython Shell (instead of running the entire script using a Python Shell):
+
+<img src='images_vscode/img_052.png' alt='img_052' width='450'/>
+
+The cells in the script file can be run and the outputs of each cell are shown in the Interactive IPython window:
+
+<img src='images_vscode/img_053.png' alt='img_053' width='450'/>
+
+When IPython is used, the Variables can be viewed:
+
+<img src='images_vscode/img_054.png' alt='img_054' width='450'/>
+
+Commonly used instances of datastructures such as ```list```, ```ndarray``` and ```DataFrame``` can be expanded:
+
+<img src='images_vscode/img_055.png' alt='img_055' width='450'/>
+
+An Interactive Python Notebook has the ```.ipynb``` file extension and consists of code and markdown cells. For code completion to work, a Python Kernel (Python Environment with IPython) must be selected using Select Kernel:
+
+<img src='images_vscode/img_056.png' alt='img_056' width='450'/>
+
+Select Python Environments:
+
+<img src='images_vscode/img_057.png' alt='img_057' width='450'/>
+
+Then select the ```vscode-env``` or ```base``` Python environment:
+
+<img src='images_vscode/img_058.png' alt='img_058' width='450'/>
+
+Code completion using Pylance and Intellicode should work as before. Other IPython features such as Variables are available. 
+
+For formatting, the command Format Document With... can be used with autopep8. The command Ruff: Format Imports and command Ruff: Format Documents can also be used. Formatting imports in a notebook will sort the imports in a single code cell out but will not move the code cells with imports to the top of the notebook.
+
+Markdown cells and code cells can be run using the run button which displays to the left hand side of a cell, when the cell is selected. VSCode uses Jupyter shortcuts so ```Ctrl```+```↵``` can be used to run the currently selected cell and ```Alt``` + ```↵``` can be used to run the currently selected cell and insert a blank one after it.
+
+<img src='images_vscode/img_059.png' alt='img_059' width='450'/>
+
+The All the code can be run using the button Run All at the top. The Kernel can also be restarted and the outputs can be cleared using Restart and Clear All Outputs respectively:
+
+<img src='images_vscode/img_060.png' alt='img_060' width='450'/>
+
+The outputs of an Interactive Python Notebook are similar to the IPython interactive window seen previously however it is far easier to work with the notebook:
+
+<img src='images_vscode/img_061.png' alt='img_061' width='450'/>
+
+<img src='images_vscode/img_062.png' alt='img_062' width='450'/>
+
+
+There are some other options such as Export:
+
+<img src='images_vscode/img_063.png' alt='img_063' width='450'/>
+
+Which can be used to export to a Python Script:
+
+<img src='images_vscode/img_064.png' alt='img_064' width='450'/>
+
+Notice the Python Script file concerts all Markdown cells to cells that have comments. The Python script can be run in an IPython shell by selecting Run Cell or a Python shell by selecting run. Care should be taken in the later case because IPython code such as IPython magics and use of the ```?``` operator do not work in a Python shell:
+
+<img src='images_vscode/img_065.png' alt='img_065' width='450'/>
+
+The notebook can also be exported to HTML and viewed as a static document in a web browser:
+
+<img src='images_vscode/img_066.png' alt='img_066' width='450'/>
+
+<img src='images_vscode/img_067.png' alt='img_067' width='450'/>
+
+The notebook can also be exported to pdf so it can later be printed:
+
+<img src='images_vscode/img_068.png' alt='img_068' width='450'/>
+<img src='images_vscode/img_069.png' alt='img_069' width='450'/>
 
 [Return to Anaconda Tutorial](./readme.md)
+
+
