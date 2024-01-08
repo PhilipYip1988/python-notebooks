@@ -2,7 +2,7 @@ import inspect
 __version__ = '0.1.3'
 
 
-def identifier_group(obj, kind='all', second=object, show_unique_identifiers=False, show_only_intersection_identifiers=False, has_parameter=''):
+def identifier_group(obj, kind='all', second=object, show_unique_identifiers=False, show_only_intersection_identifiers=False, has_parameter='', exclude_std=False):
     
     """ Group identifiers from an obj into categories defined by the parameter kind. kind can have the possible values: 
     'all', 'datamodel_method, 'datamodel_attribute', 'upper_class', 'lower_class', 'function', 'constant', 'attribute', 'internal_attribute' or 'internal_method'.
@@ -19,6 +19,14 @@ def identifier_group(obj, kind='all', second=object, show_unique_identifiers=Fal
     """
 
     identifiers = dir(obj)
+    
+    if exclude_std == True:
+        import sys
+        standard_identifiers = sys.stdlib_module_names
+        for identifier in identifiers:
+            if identifier in sys.stdlib_module_names:
+                if 'site-packages' not in obj.identifier.__file__:
+                    identifiers.remove(identifier)
 
     if isinstance(second, list):
         second_identifiers = []
@@ -110,7 +118,7 @@ def identifier_group(obj, kind='all', second=object, show_unique_identifiers=Fal
         raise(ValueError, "Invalid value for kind. Possible values are 'all', 'datamodel_method, 'datamodel_attribute', 'class', 'lower_class', 'function', 'constant', 'attribute', 'internal_attribute' or 'internal_method'.")
     
 
-def print_identifier_group(obj, kind='all', second=object, show_unique_identifiers=False, show_only_intersection_identifiers=False, has_parameter=''):
+def print_identifier_group(obj, kind='all', second=object, show_unique_identifiers=False, show_only_intersection_identifiers=False, has_parameter='', exclude_std=False):
     
     """Group identifiers from an obj into categories defined by the parameter kind and print. kind can have the possible values: 
     'all', 'datamodel_method, 'datamodel_attribute', 'upper_class', 'lower_class', 'function', 'constant', 'attribute', 'internal_attribute' or 'internal_method'.
@@ -127,7 +135,18 @@ def print_identifier_group(obj, kind='all', second=object, show_unique_identifie
     """
 
     identifiers = dir(obj)
-
+    
+    if exclude_std == True:
+        import sys
+        standard_identifiers = sys.stdlib_module_names
+        for identifier in identifiers:
+            if identifier in sys.stdlib_module_names:
+                try:
+                    if 'site-packages' not in getattr(obj, identifier).__file__:
+                        identifiers.remove(identifier)
+                except:
+                    identifiers.remove(identifier)    
+                    
     if isinstance(second, list):
         second_identifiers = []
         for identifier in second:
