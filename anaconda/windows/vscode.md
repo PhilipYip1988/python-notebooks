@@ -25,7 +25,7 @@ In order to use VSCode with Python a Python environment needs to be setup.
 The Anaconda (base) Python environment can be used. Alternatively a Python environment can be setup for VSCode using the latest packages from the community channel conda-forge by opening up the Anaconda PowerShell Prompt and inputting:
 
 ```ps
-conda create -n vscode-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly ipympl pyqt autopep8 isort black pylint flake8 ruff miktex
+conda create -n vscode-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly ipympl pyqt autopep8 isort black pylint flake8 ruff miktex postscript
 ```
 
 ## conda Initialisation
@@ -397,5 +397,39 @@ The notebook can also be exported to HTML and viewed as a static document in a w
 The notebook can also be exported to pdf so it can later be printed:
 
 <img src='images_vscode/img_059.png' alt='img_059' width='450'/>
+
+## LaTeX
+
+MikTeX was installed in the vs-code Python environment and is essentially the LaTeX package manager for Windows. To update MikTeX launch the MikTex console by opening up the Anaconda PowerShell Prompt and activating the vscode-env Python environment:
+
+```ps
+conda activate vscode-env
+```
+
+Then launching:
+
+```
+miktex-console
+```
+
+Select the Updates tab to the left, then select Check for Updates and Update Now.
+
+Create a new notebook file and add the three cells:
+
+```python
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+%matplotlib qt5
+
+x = np.array([0, 1, 2, 3, 4, 5])
+y = np.array([0.001, 2.001, 3.999, 5.999, 8.002, 10.001])
+
+fig, ax = plt.subplots(num=1)
+ax.plot(x, y, color='tomato')
+ax.set_xlabel(r'$\dot{\alpha}$', usetex=True)
+ax.set_ylabel(r'$\ddot{\beta}$', usetex=True)
+ax.set_title(r'$\ddot{\beta}$=f$(\frac{\dot{\alpha}}{1})$', usetex=True);
+```
 
 [Return to Anaconda Tutorial](./readme.md)
