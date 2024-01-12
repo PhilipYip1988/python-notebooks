@@ -1,10 +1,19 @@
 # The conda Package Manager
 
-The purpose of the conda package manager is to maintain a Python environment. 
+The purpose of the conda package manager is to allow cross-platform installation of Python packages and non-Python dependences related to a datascience project in a Python environment. This can include other programming languages such as R.
+
+The conda package manager has two main channels:
+
+|channel name|channel description|
+|---|---|
+|conda-forge|community channel maintained by developers|
+|main|channel maintained by the Anaconda company|
+
+The main channel also known as conda or anaconda is the channel maintained by the Anaconda company. These packages are tested by the Anaconda company for compatibility with the Anaconda Python distribution. As the Anaconda company only test commonly used datascience libraries and it takes time for testing, there are less packages available in the main channel and the package that they have may not be the latest version.
 
 ## The base Python Environment
 
-In Anaconda the base Python environment is a Python distribution and should not be modified outwith the standard conda images available from Anaconda covered in the Updating Anaconda tutorial. The reason for this is the Python distribution has a large number of packages and changing a package that is a dependency for the other packages will normally result in a number of these packages being removed leading to an unstable Python environment.
+In Anaconda the base Python environment is a Python distribution and should not be modified outwith the standard conda images available from Anaconda. The reason for this is the Python distribution has a large number of packages and changing a package that is a dependency for the other packages will normally result in a number of these packages being removed leading to an unstable Python environment.
 
 To recap the base Python environment is found in:
 
@@ -23,23 +32,25 @@ There is a bin subfolder and a lib subfolder:
 
 <img src='images_conda/img_002.png' alt='img_002' width='450'/>
 
-The bin folder contains the python3.11 program which has a python and python3 alias:
+The bin subfolder which contains binary applications installed in the (base) Python environment. This includes python which has the alias python3.11 and python3 alias:
 
 <img src='images_conda/img_003.png' alt='img_003' width='450'/>
 
-The lib folder contains a python3.11 which contains the Python standard modules:
+The lib subfolder contains a python3.11 subfolder which contains the Python standard modules:
 
 <img src='images_conda/img_004.png' alt='img_004' width='450'/>
 
-For example the ```email``` module which is a folder of multiple Python script files:
+When the module is a single file the name of the file corresponds to the name of the module. When the module is a folder, the folder name corresponds to the name of the module and there is a datamodel initialisation script file called ```__init__.py``` which is imported.
 
-<img src='images_conda/img_005.png' alt='img_005' width='450'/>
-
-And the ```datetime``` module which is an individual script file:
+For example the ```datetime``` module is an individual script file:
 
 <img src='images_conda/img_006.png' alt='img_006' width='450'/>
 
-There is also the ```site-packages``` subfolder which contains the third-party libraries:
+And the ```email``` module which is a folder of multiple Python script files:
+
+<img src='images_conda/img_005.png' alt='img_005' width='450'/>
+
+This folder contains third-party modules also known as libraries. Common libraries are numpy, pandas and matplotlib. 
 
 <img src='images_conda/img_007.png' alt='img_007' width='450'/>
 
@@ -47,9 +58,41 @@ For example ```numpy```:
 
 <img src='images_conda/img_008.png' alt='img_008' width='450'/>
 
+These modules can be imported and the datamodel attribute ```__file__``` can be printed to view the location of the file:
+
+```bash
+(base) username@pc:~$ jupyter-console
+Jupyter console 6.6.3
+
+Python 3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 8.15.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: import datetime
+   ...: import email
+
+In [2]: print(datetime.__file__)
+   ...: print(email.__file__)
+~/anaconda3/lib/python3.11/datetime.py
+~/anaconda3/lib/python3.11/email/__init__.py
+
+In [3]: import numpy as np
+   ...: import pandas as pd
+   ...: import matplotlib.pyplot as plt
+
+In [4]: print(np.__file__)
+   ...: print(pd.__file__)
+   ...: print(plt.__file__)
+~/anaconda3/lib/python3.11/site-packages/numpy/__init__.py
+~/anaconda3/lib/python3.11/site-packages/pandas/__init__.py
+~/anaconda3/lib/python3.11/site-packages/matplotlib/pyplot.py
+
+In [5]:
+```
+
 ## The envs folder
 
-Additional Python environments are found in the environments folder envs:
+The (base) Python environment also contains an envs folder which is used for Python environments:
 
 ```
 ~\anaconda3\envs
@@ -61,7 +104,12 @@ By default there are no additional Python environments and this folder is empty:
 
 <img src='images_conda/img_010.png' alt='img_010' width='450'/>
 
-A Python environment is essentially a sub-installation of Python which is used to install Python alongside a number of third-party Python libraries.
+A Python environment is essentially a sub-installation of Python. Each Python environment will therefore a substructure similar to the (base) Python environment and will have their own:
+
+* python binary in bin folder
+* bin folder
+* lib folder
+* site-packages subfolder within lib
 
 The use of Python environments for example allows installation of the latest version of each IDE without breaking the functionality of the (base) Python environment.
 
@@ -75,14 +123,30 @@ An overview about the conda package manager can be seen by opening up the Termin
 conda
 ```
 
-<img src='images_conda/img_011.png' alt='img_011' width='450'/>
-
 This gives the following output:
 
-<img src='images_conda/img_012.png' alt='img_012' width='450'/>
+```conda
+(base) username@pc:~$ conda
+usage: conda [-h] [-v] [--no-plugins] [-V] COMMAND ...
 
+conda is a tool for managing and deploying applications, environments and packages.
+
+options
+```
+|flag or option|purpose|
+|---|---|
+|-h, --help|Show this help message and exit.|
+|-v, --verbose|Can be used multiple times. Once for detailed output, twice for INFO logging, thrice for DEBUG logging, four times for TRACE logging.|
+|--no-plugins|Disable all plugins that are not built into conda.|
+|-V, --version|Show the conda version number and exit.|
+```
+commands:
+  The following built-in and plugins subcommands are available.
+```
 |command|description|
 |---|---|
+|activate|Activate a conda environment.|
+|build|Build conda packages from a conda recipe.|
 |clean|Remove unused packages and caches.|
 |compare|Compare packages between conda environments.|
 |config|Modify configuration values in .condarc.|
@@ -115,21 +179,9 @@ This gives the following output:
 |skeleton|See conda skeleton --help.|
 |token|See conda token --help.|
 |verify|See conda verify --help.|
-
-### Conda Channels
-
-There are two main channels used by the conda package manager:
-
-|channel name|channel description|
-|---|---|
-|conda-forge|community channel maintained by developers|
-|anaconda|channel maintained by the Anaconda company|
-
-The community channel is maintained directly by Python developers. A subset of the packages from the community channel are further tested by the Anaconda company for use in the Anaconda Python distribution.
-
-Therefore popular packages in the community channel are usually more up to date with respect to packages in the conda channel. And less popular packages in the community channel are unlikely to be in the anaconda channel.
-
-A Python environment is normally unstable if it uses mixed channels and most custom end-user Python environments will only use packages in the conda-forge channel.
+```bash
+(base) username@pc:~$
+```
 
 ### Create
 
@@ -139,15 +191,44 @@ A Python environment can be created using the syntax:
 conda create -n notbase
 ```
 
-where "notbase" is the environment name. 
+where "notbase" is the environment name. The longer ```--name``` can also be used in place of the ```-n```.
 
-<img src='images_conda/img_019.png' alt='img_019' width='450'/>
+The following will be output:
 
-Input ```y``` to proceed:
+```bash
+(base) username@pc:~$ conda create -n notbase
+Channels:
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): done
+Solving environment: done
 
-<img src='images_conda/img_020.png' alt='img_020' width='450'/>
+## Package Plan ##
 
-<img src='images_conda/img_021.png' alt='img_021' width='450'/>
+  environment location: ~/anaconda3/envs/notbase
+
+
+
+Proceed ([y]/n)?
+```
+
+Input ```y``` to proceed. The Python environment is now created:
+
+```bash
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate notbase
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+(base) username@pc:~$
+```
 
 Notice in envs, the notbase subfolder is created:
 
@@ -157,53 +238,150 @@ Notice in envs, the notbase subfolder is created:
 
 ### Activate
 
-Once the Python environment is created it can be activated (selected) using:
+The ```activate``` subcommand is used to active a Python environment. When a Python environment is activated the:
 
-```
+* python binary in bin folder
+* bin folder
+* lib folder
+* site-packages subfolder within lib
+
+associated with the Python environment will preferentially be used over their respective locations in (base).
+
+The notbase Python environment can be activated using:
+
+```bash
 conda activate notbase
 ```
 
-<img src='images_conda/img_024.png' alt='img_024' width='450'/>
+The output now looks like:
 
-Once activated, any changes made using the conda package manager in the Linux Terminal will apply to this Python environment instead of base. The prompt now has the (notbase) prefix indicating that the (notbase) Python is selected:
-
-<img src='images_conda/img_025.png' alt='img_025' width='450'/>
-
-If the Linux Terminal is closed and reopened, the default Python environment base will be selected. The Python environment notbase will have to be activated.
-
-The command option ```list``` will list all the packages in the currently selected Python environmment, this Python environment notbase is empty:
-
-```
-conda list
+```bash
+(base) username@pc:~$ conda activate notbase
+(notbase) username@pc:~$
 ```
 
-<img src='images_conda/img_026.png' alt='img_026' width='450'/>
+Notice that the prompt now has the (notbase) prefix indicating that the (notbase) Python is activated.
+
+When the Terminal is closed and reopened, the default Python environment (base) will be activated. The Python environment notbase will have to be activated.
 
 ### Search
 
-The conda-forge community channel can be searched for a package in this case the package "python" using:
+A package can be searched for using the ```search``` subcommand followed by the package name:
 
+```bash
+conda search package_name
 ```
+
+The channel to search for packages in can be specified using ```-c``` or the long form ```--channel``` followed by the name of the channel. The default channel is ```main``` but it is more common to use the ```conda-forge``` community channel when creating a custom Python environment. 
+
+```bash
+conda search -c conda-forge package_name
+```
+
+or example a search of the package python:
+
+```bash
+conda search python
+```
+
+Outputs:
+
+```bash
+(notbase) username@pc:~$ conda search python
+Loading channels: done
+```
+|Name|Version|Build|Channel|
+|---|---|---|---|
+|python|3.11.5|h7a1cb2a_0|pkgs/main|
+|python|3.11.5|h955ad1f_0|pkgs/main|
+|python|3.11.7|h955ad1f_0|pkgs/main|
+|python|3.12.0|h996f2a0_0|pkgs/main|
+```bash
+(notbase) username@pc:~$
+```
+
+And if the channel is change to conda-forge:
+
+```bash
 conda search -c conda-forge python
 ```
 
-<img src='images_conda/img_027.png' alt='img_027' width='450'/>
+Outputs:
 
-Notice each Python has a version, a build number and a channel:
-
-<img src='images_conda/img_028.png' alt='img_028' width='450'/>
-
-Specifying the channel is not necessary as the .condarc file already specifies use of the conda-forge channel however it is good practice when using the conda package manager to specify the channel in order to prevent confusion. The package ipython can be searched for using:
-
+```bash
+(notbase) username@pc:~$ conda search -c conda-forge python
+Loading channels: done
 ```
+|Name|Version|Build|Channel|
+|---|---|---|---|
+|python|3.11.7|h955ad1f_0|pkgs/main|
+|python|3.11.7|hab00c5b_0_cpython|conda-forge|
+|python|3.11.7|hab00c5b_1_cpython|conda-forge|
+|python|3.12.0rc3|rc3_hab00c5b_1_cpython|conda-forge|
+|python|3.12.0|h996f2a0_0|pkgs/main|
+|python|3.12.0|hab00c5b_0_cpython|conda-forge|
+|python|3.12.1|hab00c5b_0_cpython|conda-forge|
+|python|3.12.1|hab00c5b_1_cpython|conda-forge|
+```bash
+(notbase) username@pc:~$
+```
+
+Notice each Python has a version number of the format X.Y.Z where X is the major build, Y is the minor build and Z is the patch number. The build number consists of a hash followed by a revision. If prefixed with py it is a pure Python package.
+
+The package ipython can be searched for using:
+
+```bash
 conda search -c conda-forge ipython
 ```
 
-<img src='images_conda/img_029.png' alt='img_029' width='450'/>
+This outputs:
 
-<img src='images_conda/img_030.png' alt='img_030' width='450'/>
+```bash
+(notbase) username@pc:~$ conda search -c conda-forge ipython
+Loading channels: done
+```
+|Name|Version|Build|Channel|
+|---|---|---|---|
+|ipython|8.19.0|pyh707e725_0|conda-forge|
+|ipython|8.19.0|pyh7428d3b_0|conda-forge|
+|ipython|8.20.0|py310h06a4308_0pyh707e725_0|pkgs/main|
+|ipython|8.20.0|py311h06a4308_0|pkgs/main|
+|ipython|8.20.0|py312h06a4308_0|pkgs/main|
+|ipython|8.20.0|pyh707e725_0|conda-forge|
+|ipython|8.20.0|pyh7428d3b_0|conda-forge|
+```bash
+(notbase) username@pc:~$
+```
 
 ### Install
+
+The subcommand ```install``` can be used to install a package:
+
+```bash
+conda install package_name
+```
+
+Multiple packages can be installed using the syntax:
+
+```bash
+conda install package_name1 package_name2
+```
+
+Once again the channel to install from should be specified:
+
+```bash
+conda install -c conda-forge package_name1 package_name2
+```
+
+The packages python and ipython can be installed from the community channel using:
+
+```bash
+conda install -c conda-forge python ipython
+```
+
+
+
+
 
 Multiple packages can be installed using the syntax:
 
