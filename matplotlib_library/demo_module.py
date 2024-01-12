@@ -27,4 +27,4 @@ def plot():
     ax.set_ylabel('y', color='red');
     ax.set_title('y = f(x)', color='red');
     ax.scatter(x=np.array([1, 2, 3, 4, 5]), 
-            y=np.array([2, 4, 6, 8, 10]), color='blueviolet', s=100);
+               y=np.array([2, 4, 6, 8, 10]), color='blueviolet', s=100);

@@ -272,7 +272,9 @@ Produces:
 
 The code is ```print('Hello World!')```
 
-3 back quotes ```` ``` ```` on a new line can be used to begin and end a code-block. The following markdown:
+3 back quotes ```` ``` ```` on a new line can be used to begin and end a code-block. 
+
+The following markdown:
 
 ````
 ```
@@ -280,13 +282,66 @@ print('Hello World!')
 print('Goodbye World!')
 ```
 ````
-
 
 Produces:
 
 ```
 print('Hello World!')
 print('Goodbye World!')
+```
+
+To apply the correct syntax highlighting for the programming language, the programming language should be specified after the opening ```` ``` ````
+
+The following markdown:
+
+````
+```python
+print('Hello World!')
+print('Goodbye World!')
+```
+````
+
+Produces:
+
+```python
+print('Hello World!')
+print('Goodbye World!')
+```
+
+Other programming languages can be specified using cmd:
+
+````
+```cmd
+cd "C:\Windows\System32"
+```
+````
+
+```cmd
+cd "C:\Windows\System32"
+```
+
+powershell (note ps is postscript, ps1 is powershell):
+
+````
+```ps1
+cd "~\Anaconda3"
+```
+````
+
+```ps1
+cd "~\Anaconda3"
+```
+
+Or bash:
+
+````
+```bash
+cd "~/Anaconda3"
+```
+````
+
+```bash
+cd "~/Anaconda3"
 ```
 
 To include the ```` ``` ```` themselves as part of the markdown text. Enclose the three back quotes ```` ``` ```` in four backquotes ````` ```` `````. To get 4 backquotes (enclose in 5 backquotes). The following markdown:
