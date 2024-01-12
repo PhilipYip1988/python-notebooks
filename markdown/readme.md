@@ -320,15 +320,15 @@ cd "C:\Windows\System32"
 cd "C:\Windows\System32"
 ```
 
-powershell (note ps is postscript, ps1 is powershell):
+powershell (note ps is postscript, ps1 is powershell but this doesn't work in all cases):
 
 ````
-```ps1
+```powershell
 cd "~\Anaconda3"
 ```
 ````
 
-```ps1
+```powershell
 cd "~\Anaconda3"
 ```
 
