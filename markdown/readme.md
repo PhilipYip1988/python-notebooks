@@ -424,9 +424,13 @@ Producing:
 
 ![Markdown File opened in VSCode](./images/img_001a.png)
 
-It is recommended to enable file extensions for known file types and ensure all file extensions are lower case. GitHub for example seems to be sensitive regarding the case of the file extension and won't render properly if the file has a different case of file extension. Some programs will save to .PNG and others will save to .png by default. By enabling the file extension you will be able to see what case each file extension is using and can update them all to be lower case for the sake of being consistent. 
+**Note some programs will save to ```.PNG``` and others will save to ```.png``` by default.**
 
-Note JupyterLab and VSCode are insenitive regarding extension case, so all may seem to be well until the folder with the markdown file and images are uploaded to GitHub and the markdown preview on GitHub therefore does not render the images properly.
+**It is recommended to enable file extensions for known file types and ensure all file extensions are in lower case.** 
+
+GitHub for example seems to be sensitive regarding the case of the file extension and won't render properly if the file has a file extension that uses a different case. By enabling the file extension you will be able to see what case each file extension is using and can update them all to be lower case for the sake of being consistent. 
+
+JupyterLab and VSCode on the other hand are insensitive regarding the case of the file extension therefore an image may display in these IDEs and fail to render properly when a repository is uploaded to GitHub. 
 
 ## TeX
 
