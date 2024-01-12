@@ -239,7 +239,7 @@ Produces:
 
 ---
 
-## Seperators
+## Separators
 
 An empty line with ```---``` will produce a seperator.
 
