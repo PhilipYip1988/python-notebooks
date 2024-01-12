@@ -9,7 +9,7 @@ The conda package manager has two main channels:
 |conda-forge|community channel maintained by developers|
 |main|channel maintained by the Anaconda company|
 
-The main channel also known as conda or anaconda is the channel maintained by the Anaconda company. These packages are tested by the Anaconda company for compatability with the Anaconda Python distribution. As the Anaconda company only test commonly used datascience libraries and it takes time for testing, there are less packages available in the main channel and the package that they have may not be the latest version.
+The main channel also known as conda or anaconda is the channel maintained by the Anaconda company. These packages are tested by the Anaconda company for compatibility with the Anaconda Python distribution. As the Anaconda company only test commonly used datascience libraries and it takes time for testing, there are less packages available in the main channel and the package that they have may not be the latest version.
 
 ## The base Python Environment
 
@@ -62,7 +62,7 @@ This folder contains third-party modules also known as libraries. Common librari
 
 These modules can be imported and the datamodel attribute ```__file__``` can be printed to view the location of the file:
 
-```
+```ps
 (base) PS ~> jupyter-console
 
 Python 3.11.5 | packaged by Anaconda, Inc. | (main, Sep 11 2023, 13:26:23) [MSC v.1916 64 bit (AMD64)]
@@ -113,33 +113,34 @@ A Python environment is essentially a sub-installation of Python. Each Python en
 * lib subfolder
 * site-packages subfolder within lib
 
+The use of Python environments for example allows installation of the latest version of each IDE without breaking the functionality of the (base) Python environment.
+
 ## conda Package Manager
 
 ### Overview
 
 An overview about the conda package manager can be seen by opening up the Anaconda PowerShell Prompt and inputting the PowerShell command:
 
-```
+```ps
 conda
 ```
 
 This gives the following output:
 
-```
+```ps
 (base) PS ~> conda
 usage: conda-script.py [-h] [-v] [--no-plugins] [-V] COMMAND ...
 
 conda is a tool for managing and deploying applications, environments and packages.
 
 options:
-```
+```ps
 |flag or option|purpose|
 |---|---|
 |-h, --help|Show this help message and exit.|
 |-v, --verbose|Can be used multiple times. Once for detailed output, twice for INFO logging, thrice for DEBUG logging, four times for TRACE logging.|
 |--no-plugins|Disable all plugins that are not built into conda.|
 |-V, --version|Show the conda version number and exit.|
-
 ```
 commands:
   The following built-in and plugins subcommands are available.
@@ -180,7 +181,7 @@ commands:
 |skeleton|See conda skeleton --help.|
 |token|See conda token --help.|
 |verify|See conda verify --help.|
-```
+```ps
 (base) PS ~>
 ```
 
@@ -188,7 +189,7 @@ commands:
 
 A Python environment can be created using the syntax:
 
-```
+```ps
 conda create -n notbase
 ```
 
@@ -196,7 +197,7 @@ where "notbase" is the environment name. The longer ```--name``` can also be use
 
 The following will be output:
 
-```
+```ps
 (base) PS ~> conda create -n notbase
 Channels:
  - defaults
@@ -215,7 +216,7 @@ Proceed ([y]/n)?
 
 Input ```y``` to proceed. The Python environment is now created:
 
-```
+```ps
 Preparing transaction: done
 Verifying transaction: done
 Executing transaction: done
@@ -250,13 +251,13 @@ Note activation will only work in the Anaconda PowerShell Prompt by default unle
 
 The notbase Python environment can be activated using:
 
-```
+```ps
 conda activate notbase
 ```
 
 The output now looks like:
 
-```
+```ps
 (base) PS ~> conda activate notbase
 (notbase) PS ~>
 ```
@@ -269,7 +270,7 @@ When the Anaconda PowerShell Prompt is closed and reopened, the default Python e
 
 A package can be searched for using the ```search``` subcommand followed by the package name:
 
-```
+```ps
 conda search package_name
 ```
 
@@ -297,7 +298,7 @@ Loading channels: done
 |python|3.12.0|h2628c8c_0_cpython|conda-forge|
 |python|3.12.1|h2628c8c_0_cpython|conda-forge|
 |python|3.12.1|h2628c8c_1_cpython|conda-forge|
-```
+```ps
 (notbase) PS ~>
 ```
 
@@ -305,13 +306,13 @@ Notice each Python has a version number of the format X.Y.Z where X is the major
 
 The package ipython can be searched for using:
 
-```
+```ps
 conda search -c conda-forge ipython
 ```
 
 This outputs:
 
-```
+```ps
 (notbase) PS ~> conda search -c conda-forge ipython
 Loading channels: done
 ```
