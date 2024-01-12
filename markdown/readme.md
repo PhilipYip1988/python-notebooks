@@ -580,9 +580,25 @@ Sometimes the formatting characters need to be incorporated into the equation. T
 |hash|```$\#$```|$\#$|
 |ampersand|```$\&$```|$\&$|
 
-However these don't render well on GitHub and
+However there are often slightly different results depending on the TeX renderer. On GitHub for example escaping the dollar sign does not process it in TeX. Escaping the percentage sign doesn't display a symbol and there are complaints about an escaped hash and ampersand character.
 
-|verbatim text|```$\verb\|$%#&\|$```|$\verb\|$%#&\|$|
+Using verbose works better however doesn't work with the dollar sign itself:
+
+```tex
+$\verb|%|$
+$\verb|#|$
+$\verb|&|$
+```
+
+$\verb|%|$
+
+$\verb|#|$
+
+$\verb|&|$
+
+$\verb|$2|$
+
+${\$}$
 
 Some of the other formatting characters can be inserted using the following syntax:
 
