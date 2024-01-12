@@ -178,8 +178,15 @@ def print_identifier_group(obj, kind='all', second=object, show_unique_identifie
     internal_attribute_grouping = []
 
     for identifier in identifiers_to_examine:
-        is_method = callable(getattr(obj, identifier))
-        is_class = type(getattr(obj, identifier)) == type
+        try:
+            is_method = callable(getattr(obj, identifier))
+        except:
+            is_method = False
+        try:
+            is_class = type(getattr(obj, identifier)) == type
+        except:
+            is_class = False
+
         is_upper = identifier[0].isupper()
         is_datamodel = identifier[0:2] == '__'
         is_internal = ((identifier[0:1] == '_') and not is_datamodel)
