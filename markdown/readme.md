@@ -320,7 +320,7 @@ cd "C:\Windows\System32"
 cd "C:\Windows\System32"
 ```
 
-powershell (note ps is postscript, ps1 is powershell but this doesn't work in all cases):
+powershell:
 
 ````
 ```powershell
@@ -331,6 +331,9 @@ cd "~\Anaconda3"
 ```powershell
 cd "~\Anaconda3"
 ```
+
+There is the abbreviation ps1 (ps is another programming language postscript) however ps1 is not as widely recognised as powershell by markdown renderers.
+
 
 Or bash:
 
@@ -342,6 +345,18 @@ cd "~/Anaconda3"
 
 ```bash
 cd "~/Anaconda3"
+```
+
+Or tex:
+
+````
+```tex
+$\sin{\alpha}\pm\sin{\beta}=2\sin{\frac{1}{2}\left(\alpha\pm\beta\right)}\cos{\frac{1}{2}\left(\alpha\mp\beta\right)}$
+```
+````
+
+```tex
+$\sin{\alpha}\pm\sin{\beta}=2\sin{\frac{1}{2}\left(\alpha\pm\beta\right)}\cos{\frac{1}{2}\left(\alpha\mp\beta\right)}$
 ```
 
 To include the ```` ``` ```` themselves as part of the markdown text. Enclose the three back quotes ```` ``` ```` in four backquotes ````` ```` `````. To get 4 backquotes (enclose in 5 backquotes). The following markdown:
@@ -413,11 +428,29 @@ It is recommended to enable file extensions for known file types and ensure all 
 
 Note JupyterLab and VSCode are insenitive regarding extension case, so all may seem to be well until the folder with the markdown file and images are uploaded to GitHub and the markdown preview on GitHub therefore does not render the images properly.
 
-## LaTeX (MathJax)
+## TeX
 
-The markdown file supports LaTeX. Care needs to be taken as Python IDEs and webservers may use slightly different engines to render LaTeX. JupyterLab and GitHub use MathJax but the MathJax on GitHub is a bit more selective and equations may render properly on JupyterLab but not in GitHub. In Visual Studio Code the extensions Markdown All in One and Markdown+Math use KaTeX. MathJax is more limited than KaTeX and is more prone to rendering issues. Markdown files uploaded to GitHub with LaTeX should be rechecked on GitHub to see if equations render properly. [MathJax GitHub](https://github.com/mathjax/MathJax/issues) can be used to discuss rendering issues.
+The markdown file supports TeX and this can be used for both Inline and Display Equations. 
 
-Only Office Desktop Editors is a cross-platform free office suite. Its Document has a powerful Equation Editor, that can be used as a What You See Is What You Get WYSIWYG LaTeX editor. Create your equation:
+Inline Equation:
+
+```tex
+$\sin{\alpha}\pm\sin{\beta}=2\sin{\frac{1}{2}\left(\alpha\pm\beta\right)}\cos{\frac{1}{2}\left(\alpha\mp\beta\right)}$
+```
+
+$\sin{\alpha}\pm\sin{\beta}=2\sin{\frac{1}{2}\left(\alpha\pm\beta\right)}\cos{\frac{1}{2}\left(\alpha\mp\beta\right)}$
+
+Display Equation:
+
+```tex
+$$\sin{\alpha}\pm\sin{\beta}=2\sin{\frac{1}{2}\left(\alpha\pm\beta\right)}\cos{\frac{1}{2}\left(\alpha\mp\beta\right)}$$
+```
+
+$$\sin{\alpha}\pm\sin{\beta}=2\sin{\frac{1}{2}\left(\alpha\pm\beta\right)}\cos{\frac{1}{2}\left(\alpha\mp\beta\right)}$$
+
+Microsoft Word and the free cross-platform Only Office Desktops Editor have a WYSIWYG equation editor. An equation can be constructed using the visual aspects of the equation editor, converted to linear TeX format and copied between a set of ```$``` or double ```$$```.
+
+The visual elements can be used to create an equation:
 
 ![img_004](./images/img_004.png)
 
@@ -435,15 +468,121 @@ Select Current (Linear):
 
 ![img_009](./images/img_009.png)
 
-The equation is now in LaTeX format which you can copy and paste into a set of single \$ for an inline equation or double \$\$  for a display equation:
+The equation is now in LaTeX format which you can be copied and pasted into a set of single \$ for an inline equation or double \$\$  for a display equation:
 
 ![img_010](./images/img_010.png)
 
-Only Office Desktop Editors seems to work well, with the exception of Column Vectors and Matrices due to some limitations in MathJaxs rendering. A Column Vector comes out as ```[\matrix{a\\b\\c}]``` and does not render properly. To render properly modifications need to be made to the prefix and suffix and spacing needs to be added, see below for more details.
+There is a subtle difference between TeX and LaTeX. LaTeX is essentially an extension of TeX which is the underlying typeset and LateX can be extended with packages. 
 
-Microsoft Word also has an Equation Editor with a similar user interface. Once again Column Vectors and Matrices don't render correctly although the output is closer to what MathJaxs accepts. A Column Vector comes out as ```\left[\begin{matrix}a\\b\\c\\\end{matrix}\right]``` but spacing needs to be added for MathJax to render it. Similar changes need to be made to a matrix. The LaTeX output for many trigonmetic functions has a ```\funcapply``` prefix that does not render properly and should be removed.
+For the purpose of inserting an equation TeX and LaTeX are usually equivalent... However there are sometimes some issues when the equation editor outputs code in LaTeX that is not recognised by TeX and therefore fails to render. For example the following column vector:
 
-### Reserved Symbols (MathJax)
+$$\left[\begin{matrix}a\\b\\c\end{matrix}\right]$$
+
+In Only Office Desktop Editors is output using LaTeX:
+
+```tex
+$$\left[\matrix{a&b&c}\right$$
+```
+
+And is output in Word using TeX:
+
+```tex
+$$\left[\begin{matrix}a\\b\\c\end{matrix}\right]$$
+```
+
+The same issue occurs with matrices.
+
+$$\begin{bmatrix}a&b&c\\d&e&f\\g&h&i\end{bmatrix}$$
+
+```tex
+$$\begin{bmatrix}a&b&c\\d&e&f\\g&h&i\end{bmatrix}$$
+```
+
+$$ \begin{bmatrix} 
+   a & b & c \\
+   d & e & f \\
+   g & h & i \\
+   \end{bmatrix} $$
+
+```tex
+$$ \begin{bmatrix} 
+   a & b & c \\
+   d & e & f \\
+   g & h & i \\
+   \end{bmatrix} $$
+```
+
+
+
+In Microsoft Word, the trigonometric identities use additional LaTeX syntax which needs to be simplified into TeX in order to render properly:
+
+$$\sin(x)$$
+
+```tex
+$$\sin\funcapply(x)$$
+```
+
+```tex
+$$\sin(x)$$
+```
+
+### Reserved Symbols
+
+The following characters are reserved symbols as they are used as formatting characters in TeX:
+
+|Symbol Name|Symbol|Meaning|
+|---|---|---|
+|dollar sign|```$```|enclosure for math mode; single enclosure=inline equation, double enclosure=display equation|
+|single quotes|```'```|used for str|
+|double quotes|```"```|used for str|
+|backslash|```\```|inserts an escape character or command|
+|braces|```{}```|enclose command arguments|
+|ampersand|```&```|group command arguments|
+|hash|```#```|used for a reference|
+|percentage sign|```%```|comment|
+|pipe|```\|```|column divider|
+|hyphen|```-```|minus symbol|
+|caret|```^```|superscript|
+|underscore|```_```|subscript|
+|tilde|```~```|non-breaking space|
+
+Sometimes the formatting characters need to be incorporated into the equation. This can be done using the escape characters:
+
+|description|TeX|output|
+|---|---|---|
+|dollar sign|```$\$$```|$\$$|
+|percentage sign|```$\%$```|$\%$|
+|hash|```$\#$```|$\#$|
+|ampersand|```$\&$```|$\&$|
+
+The following commands can be used to change the text type:
+
+|description|TeX|output|
+|---|---|---|
+|math text|```$Hello World! 1-2$```|$Hello World! 1-2$|
+|math roman|```$\mathrm{Hello World! 1-2}$```|$\mathrm{Hello World! 1-2}$|
+|bold text|```$\textbf{Hello World! 1-2}$```|$\textbf{Hello World! 1-2}$|
+|normal text|```$\text{Hello World! 1-2}$```|$\text{Hello World! 1-2}$|
+|verbatim text|```$\verb\|{"Hello World!" 1-2 ~^\}\|$```|$\verb\|{"Hello World!" 1-2 ~^\}\|$|
+
+Notice a command is of the form:
+
+```
+\command{arg}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 In LaTeX there are a number of reserved symbols:
 
