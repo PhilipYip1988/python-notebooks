@@ -498,12 +498,14 @@ $$ \begin{bmatrix}
    g & h & i \\
    \end{bmatrix} $$
 
-$$\begin{bmatrix} a&b&c \\ d&e&f \\ g&h&i \\ \end{bmatrix}$$
 
+Note GitHub does not render matrices properly provided in linear format:
 
 ```tex
-$$\begin{bmatrix} a&b&c \\ d&e&f \\ g&h&i \\ \end{bmatrix}$$
+$$\begin{bmatrix}a&b&c\\d&e&f\\g&h&i\\\end{bmatrix}$$
 ```
+
+However if the separate commands are provided over multiple lines it renders properly:
 
 ```tex
 $$ \begin{bmatrix} 
@@ -512,8 +514,6 @@ $$ \begin{bmatrix}
    g & h & i \\
    \end{bmatrix} $$
 ```
-
-
 
 In Microsoft Word, the trigonometric identities use additional LaTeX syntax which needs to be simplified into TeX in order to render properly:
 
@@ -547,14 +547,7 @@ The following characters are reserved symbols as they are used as formatting cha
 |underscore|```_```|subscript|
 |tilde|```~```|non-breaking space|
 
-Sometimes the formatting characters need to be incorporated into the equation. This can be done using the escape characters:
-
-|description|TeX|output|
-|---|---|---|
-|dollar sign|```$\$$```|$\$$|
-|percentage sign|```$\%$```|$\%$|
-|hash|```$\#$```|$\#$|
-|ampersand|```$\&$```|$\&$|
+### Commands
 
 The following commands can be used to change the text type:
 
@@ -568,87 +561,48 @@ The following commands can be used to change the text type:
 
 Notice a command is of the form:
 
-```
+```tex
 \command{arg}
 ```
 
+### Escape Characters
 
+Sometimes the formatting characters need to be incorporated into the equation. This can be done using the escape characters:
 
-
-
-
-
-
-
-
-
-
-
-
-In LaTeX there are a number of reserved symbols:
-
-|symbol|use|
-|---|---|
-|$|a single set are used to enclose LaTex denoting an inline equation|
-|$$|a double set are used to enclose LaTex denoting a display equation|
-|\\ |this is used to insert an escape character|
-|{}|used to enclose arguments|
-|\_|used for subscript|
-|^|used for superscript|
-|&|used as a delimiter|
-|\\\\ |used as a delimiter|
-|%|used to enclose comments|
-
-In LaTeX it is possible to insert some of these symbols in as escape characters, for example ```$\$$``` for ```$``` and ```$\%$``` for ```%```. These give $\$$ (3 dollar signs) and $\%$ (nothing) respectively. MathJax has some limitations when placing one of these reserved escape characters into the LaTeX equation.
-
-### LaTeX Text (MathJax)
-
-|description|LaTeX|output|
+|description|TeX|output|
 |---|---|---|
-|math text|```$x$```|$x$|
-|normal text|```$\text{x}$```|$\text{x}$|
-|bold text|```$\textbf{x}$```|$\textbf{x}$|
-|math text with dot|```$\dot{x}$```|$\dot{x}$|
-|math text with double dot|```$\ddot{x}$```|$\ddot{x}$|
-|math text with triple dot|```$\dddot{x}$```|$\dddot{x}$|
-|math text with bar|```$\bar{x}$```|$\bar{x}$|
-|math text with hat|```$\hat{x}$```|$\hat{x}$|
-|math text with arrow vector|```$\vec{x}$```|$\vec{x}$|
-|math text with tilde|```$\tilde{x}$```|$\tilde{x}$|
-|math text with wide tilde|```$\widetilde{xx}$```|$\widetilde{xx}$|
-|math text with check|```$\check{x}$```|$\check{x}$|
-|math text with acute|```$\acute{x}$```|$\acute{x}$|
-|math text with grave|```$\grave{x}$```|$\grave{x}$|
-|math text with breve|```$\breve{x}$```|$\breve{x}$|
-|subscript|```$x_{2}$```|$x_{2}$|
-|superscript|```$x^{3}$```|$x^{3}$|
-|subscript and superscript|```$x_{2}^{3}$```|$x_{2}^{3}$|
-|square root|```$\sqrt{x}$```|$\sqrt{x}$|
-|sin|```$\sin{x}$```|$\sin{x}$|
-|cos|```$\cos{x}$```|$\cos{x}$|
-|tan|```$\tan{x}$```|$\tan{x}$|
-|log|```$\log{x}$```|$\log{x}$|
-|exp|```$\exp{x}$```|$\exp{x}$|
+|dollar sign|```$\$$```|$\$$|
+|percentage sign|```$\%$```|$\%$|
+|hash|```$\#$```|$\#$|
+|ampersand|```$\&$```|$\&$|
 
-### LaTeX Mathematical Symbols (MathJax)
+Some of the other formatting characters can be inserted using the following syntax:
 
-|description|LaTeX|output|
+|description|TeX|output|
+|---|---|---|
+|backslash|```$\backslash$```|$\backslash$|
+|pipe|```$\vert$```|$\vert$|
+|left brace|```$\lbrace$```|$\lbrace$|
+|right brace|```$\rbrace$```|$\rbrace$|
+
+### Mathematical Symbols
+
+This syntax is also available for commonly used mathematical symbols:
+
+|description|TeX|output|
 |---|---|---|
 |equal to|```$=$```|$=$|
 |equivalent to|```$\equiv$```|$\equiv$|
 |not equal to|```$\ne$```|$\ne$|
 |similar to|```$\sim$```|$\sim$|
 |approximate to|```$\approx$```|$\approx$|
-|tilde|```$\textasciitilde$```|$\textasciitilde$|
+|tilde|```$\sim$```|$\sim$|
 |approximately equal to|```$\cong$```|$\cong$|
 |plus|```$+$```|$+$|
 |minus|```$-$```|$-$|
 |plus minus|```$\pm$```|$\pm$|
 |minus plus|```$\mp$```|$\mp$|
-|dash|```$\text{-}$```|$\text{-}$|
-|circumflex|```$\textasciicircum$```|$\textasciicircum$|
 |asterisk|```$\ast$```|$\ast$|
-|star|```$\text{\*}$```|$\text{\*}$|
 |times|```$\times$```|$\times$|
 |centre dot|```$\cdot$```|$\cdot$|
 |period|```$.$```|$.$|
@@ -683,9 +637,11 @@ In LaTeX it is possible to insert some of these symbols in as escape characters,
 |down arrow|```$\uparrow$```|$\downarrow$|
 |up down arrow|```$\updownarrow$```|$\updownarrow$|
 
-### LaTeX Greek Letters (MathJax)
+### Greek Letters
 
-|description|LaTeX|output|
+The Greek letters are commonly used in physics:
+
+|description|TeX|output|
 |---|---|---|
 |alpha|```$\alpha$```|$\alpha$|
 |beta|```$\beta$```|$\beta$|
@@ -722,16 +678,43 @@ In LaTeX it is possible to insert some of these symbols in as escape characters,
 
 Note the Greek letters A, B, E, Z, H, I, i, K, M, N, O, o and P that are the same as Latin letters are therefore just represented using the Latin letters.
 
-### LaTeX Fractions (MathJax)
+### Applying Accents
+
+The following commands can be used to apply an accent or trigonometric identity:
+
+|description|TeX|output|
+|---|---|---|
+|math text with dot|```$\dot{x}$```|$\dot{x}$|
+|math text with double dot|```$\ddot{x}$```|$\ddot{x}$|
+|math text with bar|```$\bar{x}$```|$\bar{x}$|
+|math text with hat|```$\hat{x}$```|$\hat{x}$|
+|math text with arrow vector|```$\vec{x}$```|$\vec{x}$|
+|math text with tilde|```$\tilde{x}$```|$\tilde{x}$|
+|math text with wide tilde|```$\widetilde{xx}$```|$\widetilde{xx}$|
+|math text with check|```$\check{x}$```|$\check{x}$|
+|math text with acute|```$\acute{x}$```|$\acute{x}$|
+|math text with grave|```$\grave{x}$```|$\grave{x}$|
+|math text with breve|```$\breve{x}$```|$\breve{x}$|
+|subscript|```$x_{2}$```|$x_{2}$|
+|superscript|```$x^{3}$```|$x^{3}$|
+|subscript and superscript|```$x_{2}^{3}$```|$x_{2}^{3}$|
+|square root|```$\sqrt{x}$```|$\sqrt{x}$|
+|sin|```$\sin{x}$```|$\sin{x}$|
+|cos|```$\cos{x}$```|$\cos{x}$|
+|tan|```$\tan{x}$```|$\tan{x}$|
+|log|```$\log{x}$```|$\log{x}$|
+|exp|```$\exp{x}$```|$\exp{x}$|
+
+Fractions can be added using:
 
 |description|LaTeX|output|
 |---|---|---|
 |inline fraction|```$\frac{a}{b}$```|$\frac{a}{b}$|
 |display fraction|```$$\frac{a}{b}$$```|$$\frac{a}{b}$$|
 
-### LaTeX Brackets (MathJax)
+### Brackets
 
-|description|LaTeX|output|
+|description|TeX|output|
 |---|---|---|
 |inline fraction parenthesis|```$(\frac{a}{b})$```|$(\frac{a}{b})$|
 |display fraction parenthesis|```$$(\frac{a}{b})$$```|$$(\frac{a}{b})$$|
@@ -745,39 +728,56 @@ Note the Greek letters A, B, E, Z, H, I, i, K, M, N, O, o and P that are the sam
 
 Prefixing ```\left``` and ```\right``` to a set of brackets will automatically resize the brackets.
 
-The ```{``` and ```}``` are reserved so ```\lbrace``` and ```\rbrace``` need to be used.
+### Vectors and Matrices
 
-### LaTeX Vectors and Matrices (MathJax)
+Vectors and matrices only work as display equations. The ```\begin``` and ```\end``` commands are used to enclose the matrix:
 
-Vectors and matrices only work as display equations. The ```\begin{}``` and ```\end{}``` are used to enclose the matrix with the braces containing the type of matrix, a ```bmatrix``` is used in this example.
+```tex
+$$ \begin
+   \end $$
+```
+
+The type of matrix is supplied as an input argument for both commands, recall that the ```{}``` is used to enclose input arguments:
+
+```tex
+$$ \begin{bmatrix}
+   \end{bmatrix} $$
+```
+
+$$ \begin{bmatrix}
+   \end{bmatrix} $$
 
 Row Vectors use ```&``` as a delimiter to move onto the new column and are typically input on a single line:
 
-```
-$$\begin{bmatrix}a&b&c\end{bmatrix}$$
+```tex
+$$ \begin{bmatrix}
+   a&b&c
+   \end{bmatrix} $$
 ```
 
-$$\begin{bmatrix}a&b&c\end{bmatrix}$$
+$$ \begin{bmatrix}
+   a&b&c
+   \end{bmatrix} $$
 
-Column Vectors use ```\\``` as a delimiter to move onto the next row and are input over multiple lines:
+Column Vectors use the symbol ```\``` as a delimiter to move onto the next row. However in TeX ```\``` is an instruction to insert an escape character, therefore to insert the escape character ```\``` itself ```\\``` must be used:
 
+```tex
+$$ \begin{bmatrix}
+   a\\
+   b\\
+   c\\
+   \end{bmatrix} $$
 ```
-$$  \begin{bmatrix}
-    a \\
-    b \\
-    c \\
-    \end{bmatrix} $$ 
-```
-    
-$$  \begin{bmatrix}
-    a \\
-    b \\
-    c \\
-    \end{bmatrix} $$    
 
-Matrices use  ```&``` as a delimiter to move onto the new column and ```\\``` as a delimiter to move onto the next row and are input over multiple lines:
+$$ \begin{bmatrix}
+   a\\
+   b\\
+   c\\
+   \end{bmatrix}$$
 
-```
+Matrices use  ```&``` as a delimiter to move onto the new column and ```\``` as a delimiter to move onto the next row and are input over multiple lines:
+
+```tex
 $$ \begin{bmatrix} 
    a & b & c \\
    c & d & d \\
@@ -791,12 +791,15 @@ $$ \begin{bmatrix}
    e & f & g \\
    \end{bmatrix} $$
 
-There are four types of matrix, the:
+The matrix kind ```matrix``` has no brackets:
 
-* ```matrix``` [no enclosing brackets]
-* ```bmatrix``` [square brackets]
-* ```pmatrix``` (parenthesis)
-* ```pvmatrix``` |vertical bars|
+```tex
+$$ \begin{matrix} 
+   a & b & c \\
+   c & d & d \\
+   e & f & g \\
+   \end{matrix} $$
+```
 
 $$ \begin{matrix} 
    a & b & c \\
@@ -804,11 +807,31 @@ $$ \begin{matrix}
    e & f & g \\
    \end{matrix} $$
 
+The matrix kind ```bmatrix``` has square brackets:
+
+```tex
 $$ \begin{bmatrix} 
    a & b & c \\
    c & d & d \\
    e & f & g \\
    \end{bmatrix} $$
+```
+
+$$ \begin{bmatrix} 
+   a & b & c \\
+   c & d & d \\
+   e & f & g \\
+   \end{bmatrix} $$
+
+The matrix kind ```pmatrix``` has parenthesis:
+
+```tex
+$$ \begin{pmatrix} 
+   a & b & c \\
+   c & d & d \\
+   e & f & g \\
+   \end{pmatrix} $$
+```
 
 $$ \begin{pmatrix} 
    a & b & c \\
@@ -816,57 +839,83 @@ $$ \begin{pmatrix}
    e & f & g \\
    \end{pmatrix} $$
 
+The matrix kind ```vmatrix``` has vertical brackets
+
+```tex
+$$ \begin{vmatrix} 
+   a & b & c \\
+   c & d & d \\
+   e & f & g \\
+   \end{vmatrix} $$
+```
+
 $$ \begin{vmatrix} 
    a & b & c \\
    c & d & d \\
    e & f & g \\
    \end{vmatrix} $$
 
-### LaTeX Sum, Integral, Product and Union (MathJax)
+### Sum, Integral, Product and Union
 
-To make a sum use ```\sum```:
+To make a sum use:
 
-```
-$\sum x$
-```
-
-$\sum x$
-
-An underscore can be used to add a subscript enclosed in braces:
-
-```
-$\sum_{\text{lower}} x$
+```tex
+$\sum{x}$
 ```
 
-$\sum_{\text{lower}} x$
+$\sum{x}$
 
-A hat can be used to add a subscript enclosed in braces:
+An underscore ```_``` can be used to add a subscript to the sum:
 
-```
-$\sum^{\text{upper}} x$
-```
-
-$\sum^{\text{upper}} x$
-
-Use of both a subscript and superscript doesn't render well for inline equations. 
-
-```
-$\sum_{\text{lower}}^{\text{upper}} x$
+```tex
+$\sum_{l}{x}$
 ```
 
-$\sum_{\text{lower}}^{\text{upper}} x$
+$\sum_{l}{x}$
 
-A display equation should be used:
+Notice that the order here matters:
 
+```tex
+$\sum{x}_{l}}$
 ```
-$$\sum_{\text{lower}}^{\text{upper}} x$$
+
+$\sum{x}_{l}$
+
+Quite often text will be provided as an subscript. Notice that two commands are stacked i.e. ```\text{lower}``` is the input argument for the command ```_```
+
+```tex
+$\sum_{\text{lower}}{x}$
 ```
 
-$$\sum_{\text{lower}}^{\text{upper}} x$$
+$\sum_{\text{lower}}{x}$
 
-To make an integral use ```\int```:
+A hat ```^``` can be used to add a subscript enclosed in braces:
 
+```tex
+$\sum^{\text{upper}}{x}$
 ```
+
+$\sum^{\text{upper}}{x}$
+
+Use of both a subscript and superscript often doesn't render well for inline equations. 
+
+```tex
+$\sum_{\text{lower}}^{\text{upper}}{x}$
+```
+
+$\sum_{\text{lower}}^{\text{upper}}{x}$
+
+And therefore a display equation can be used:
+
+```tex
+$$\sum_{\text{lower}}^{\text{upper}}{x}$$
+```
+
+$$\sum_{\text{lower}}^{\text{upper}}{x}$$
+
+To make an integral use:
+
+```tex
 $\int$
 ```
 
@@ -874,63 +923,59 @@ $\int$
 
 A display equation should be used for an integral, if limits are added:
 
-```
-$$\int_{\text{lower}}^{\text{upper}} x$$
+```tex
+$$\int_{\text{lower}}^{\text{upper}}{x}$$
 ```
 
-$$\int_{\text{lower}}^{\text{upper}} x$$
+$$\int_{\text{lower}}^{\text{upper}}{x}$$
 
-For a double integral, use ```\iint``` and for a triple integral use ```\iiint```:
+For a double integral, triple integral and integral over a close lined use:
 
+```tex
+$$\iint_{\text{lower}}^{\text{upper}}{x}$$
+$$\iiint_{\text{lower}}^{\text{upper}}{x}$$
+$$\oint_{\text{lower}}^{\text{upper}}{x}$$
 ```
+
 $$\iint_{\text{lower}}^{\text{upper}} x$$
-$$\iiint_{\text{lower}}^{\text{upper}} x$$
-```
-
-$$\iint_{\text{lower}}^{\text{upper}} x$$
 
 $$\iiint_{\text{lower}}^{\text{upper}} x$$
 
-For an integral over a closed line use ```\oint```:
+$$\oint_{\text{lower}}^{\text{upper}}{x}$$
 
-```
-$$\oint_{\text{lower}}^{\text{upper}} x$$
-```
 
-$$\oint_{\text{lower}}^{\text{upper}} x$$
+To make an product or coproduct use:
 
-To make an product or coproduct use ```\prod``` or ```\amalg```:
-
-```
-$$\prod_{\text{lower}}^{\text{upper}} x$$
-$$\amalg_{\text{lower}}^{\text{upper}} x$$
+```tex
+$$\prod_{\text{lower}}^{\text{upper}}{x}$$
+$$\amalg_{\text{lower}}^{\text{upper}}{x}$$
 ```
 
-$$\prod_{\text{lower}}^{\text{upper}} x$$
+$$\prod_{\text{lower}}^{\text{upper}}{x}$$
 
-$$\amalg_{\text{lower}}^{\text{upper}} x$$
+$$\amalg_{\text{lower}}^{\text{upper}}{x}$$
 
-To make a Union or Intersection use ```\bigcup``` and ```\bigcap```:
+To make a Union or Intersection use:
 
-```
-$$\bigcup_{\text{lower}}^{\text{upper}} x$$
-$$\bigcap_{\text{lower}}^{\text{upper}} x$$
-```
-
-$$\bigcup_{\text{lower}}^{\text{upper}} x$$
-
-$$\bigcap_{\text{lower}}^{\text{upper}} x$$
-
-For a logical or and logical and use ```\bigvee``` and ```\bigwedge```:
-
-```
-$$\bigvee_{\text{lower}}^{\text{upper}} x$$
-$$\bigwedge_{\text{lower}}^{\text{upper}} x$$
+```tex
+$$\bigcup_{\text{lower}}^{\text{upper}}{x}$$
+$$\bigcap_{\text{lower}}^{\text{upper}}{x}$$
 ```
 
-$$\bigvee_{\text{lower}}^{\text{upper}} x$$
+$$\bigcup_{\text{lower}}^{\text{upper}}{x}$$
 
-$$\bigwedge_{\text{lower}}^{\text{upper}} x$$
+$$\bigcap_{\text{lower}}^{\text{upper}}{x}$$
+
+To make a "logical or" and "logical and" use:
+
+```tex
+$$\bigvee_{\text{lower}}^{\text{upper}}{x}$$
+$$\bigwedge_{\text{lower}}^{\text{upper}}{x}$$
+```
+
+$$\bigvee_{\text{lower}}^{\text{upper}}{x}$$
+
+$$\bigwedge_{\text{lower}}^{\text{upper}}{x}$$
 
 ---
 

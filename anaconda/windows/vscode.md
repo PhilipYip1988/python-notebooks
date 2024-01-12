@@ -6,13 +6,13 @@ Visual Studio Code (VSCode) is a general purpose code editor maintained by Micro
 
 VSCode can be installed with WinGet using the command:
 
-```ps
+```powershell
 WinGet install Microsoft.VisualStudioCode
 ```
 
 Anaconda should have previously been installed using the command:
 
-```ps
+```powershell
 WinGet install Anaconda.Anaconda3
 ```
 
@@ -24,7 +24,7 @@ In order to use VSCode with Python a Python environment needs to be setup.
 
 The Anaconda (base) Python environment can be used. Alternatively a Python environment can be setup for VSCode using the latest packages from the community channel conda-forge by opening up the Anaconda PowerShell Prompt and inputting:
 
-```ps
+```powershell
 conda create -n vscode-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly ipympl pyqt autopep8 isort black pylint flake8 ruff miktex postscript
 ```
 
@@ -32,7 +32,7 @@ conda create -n vscode-env -c conda-forge python jupyterlab jupyter cython seabo
 
 VSCode uses the Windows Terminal PowerShell and therefore requires the Anaconda base environment to be initialised or added to the Windows Environmental Variable Path otherwise the following error message will display when attempting to run a Python Script:
 
-```ps
+```powershell
 conda : The term 'conda' is not recognized as the name of a cmdlet, function, script 
 file, or operable program. Check the spelling of the name, or if a path was included, 
 verify that the path is correct and try again.
@@ -46,13 +46,13 @@ At line:1 char:1
 
 To initialise Anaconda in PowerShell right click the Windows 11 Start Button and open up the Windows Terminal (Admin) and change the execution policy:
 
-```ps
+```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 ```
 
 Then initialise Anaconda:
 
-```ps
+```powershell
 Anaconda3\Scripts\conda init powershell
 ```
 
@@ -62,7 +62,7 @@ Close the Windows Terminal and close VSCode and relaunch to refresh the changes.
 
 VSCode can be launched using its Start Menu shortcut or using the PowerShell command in the Anaconda PowerShell Prompt:
 
-```ps
+```powershell
 code
 ```
 
@@ -181,7 +181,7 @@ print('Hello World!')
 
 The code can be run using the run button. This shows a new Terminal:
 
-```ps
+```powershell
 (vscode-env) PS ~\OneDrive\Documents\project> & ~\Anaconda3\envs\vscode-env\python.exe ~\OneDrive\Documents\project\script.py
 Hello World!
 (vscode-env) PS ~\OneDrive\Documents\project> 
@@ -190,7 +190,7 @@ Hello World!
 In the Terminal the following shows:
 
 * ```(vscode-env)``` means the ```vscode-env``` Python environment is selected. 
-* ```PS``` means the Terminal is using PowerShell as a programming language.
+* ```ps``` means the Terminal is using PowerShell as a programming language.
 * ```~\OneDrive\Documents\project``` is the current working directory. Note the default current working directory in VSCode is the project folder opened and not necessarily the folder of the Python script file itself. 
 * ```~\Anaconda3\envs\vscode-env\python.exe``` is the location of the ```python.exe``` being executed.
 * ```~\OneDrive\Documents\project\script.py``` is the full file path of the Python script file.
@@ -398,11 +398,11 @@ The notebook can also be exported to pdf so it can later be printed:
 
 <img src='images_vscode/img_059.png' alt='img_059' width='450'/>
 
-## LaTeX
+## TeX
 
-MikTeX was installed in the vs-code Python environment and is essentially the LaTeX package manager for Windows. To update MikTeX launch the MikTex console by opening up the Anaconda PowerShell Prompt and activating the vscode-env Python environment:
+MikTeX was installed in the vs-code Python environment and is essentially the TeX package manager for Windows. To update MikTeX launch the MikTex console by opening up the Anaconda PowerShell Prompt and activating the vscode-env Python environment:
 
-```ps
+```powershell
 conda activate vscode-env
 ```
 
@@ -431,5 +431,14 @@ ax.set_xlabel(r'$\dot{\alpha}$', usetex=True)
 ax.set_ylabel(r'$\ddot{\beta}$', usetex=True)
 ax.set_title(r'$\ddot{\beta}$=f$(\frac{\dot{\alpha}}{1})$', usetex=True);
 ```
+
+The first TeX plot will take a while to create and the window will display not responding.
+
+Behind the scenes a number of cached text files will be copied to:
+
+```powershell
+%USERPROFILE%\.matplotlib
+```
+
 
 [Return to Anaconda Tutorial](./readme.md)
