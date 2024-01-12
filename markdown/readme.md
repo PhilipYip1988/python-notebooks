@@ -492,17 +492,22 @@ $$\left[\begin{matrix}a\\b\\c\end{matrix}\right]$$
 
 The same issue occurs with matrices.
 
-$$\begin{bmatrix}a&b&c\\d&e&f\\g&h&i\end{bmatrix}$$
-
-```tex
-$$\begin{bmatrix}a&b&c\\d&e&f\\g&h&i\end{bmatrix}$$
-```
-
 $$ \begin{bmatrix} 
    a & b & c \\
    d & e & f \\
    g & h & i \\
    \end{bmatrix} $$
+
+$$\begin{bmatrix}a&b&c\\ d&e&f\\ g&h&i \end{bmatrix}$$
+
+$$\begin{bmatrix}a&b&c\\d&e&f\\g&h&i\end{bmatrix}$$
+
+
+```tex
+$$\begin{bmatrix}a&b&c\\ d&e&f\\ g&h&i\\ \end{bmatrix}$$
+```
+
+
 
 ```tex
 $$ \begin{bmatrix} 
