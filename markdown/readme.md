@@ -580,9 +580,9 @@ Sometimes the formatting characters need to be incorporated into the equation. T
 |hash|```$\#$```|$\#$|
 |ampersand|```$\&$```|$\&$|
 
-However there are often slightly different results depending on the TeX renderer. On GitHub for example escaping the dollar sign does not process it in TeX. Escaping the percentage sign doesn't display a symbol and there are complaints about an escaped hash and ampersand character.
+However there are often slightly different results depending on the TeX renderer. On GitHub for example escaping the above formatting characters does not work well. 
 
-Using verbose works better however verbose does not allow use of the dollar sign itself:
+Using verbose works better however cannot be used for the dollar sign itself:
 
 ```tex
 $\verb|%|$
@@ -595,12 +595,6 @@ $\verb|%|$
 $\verb|#|$
 
 $\verb|&|$
-
-```tex
-$&dollar;$
-```
-
-$&dollar;$
 
 Some of the other formatting characters can be inserted using the following syntax:
 
@@ -785,20 +779,42 @@ $$ \begin{bmatrix}
    a&b&c
    \end{bmatrix} $$
 
-Column Vectors use the symbol ```\``` as a delimiter to move onto the next row. However in TeX ```\``` is an instruction to insert an escape character, therefore to insert the escape character ```\``` itself ```\\``` must be used:
+Note that spacing can be used for readability and is not processed in math mode so the above can be written using the following and displays identically:
 
 ```tex
 $$ \begin{bmatrix}
-   a\\
-   b\\
-   c\\
+   a & b & c
    \end{bmatrix} $$
 ```
 
 $$ \begin{bmatrix}
-   a\\
-   b\\
-   c\\
+   a & b & c
+   \end{bmatrix} $$
+
+```tex
+$$ \begin{bmatrix}
+   a & b &      c
+   \end{bmatrix} $$
+```
+
+$$ \begin{bmatrix}
+   a & b &       c
+   \end{bmatrix} $$
+
+Column Vectors use the symbol ```\``` as a delimiter to move onto the next row. However in TeX ```\``` is an instruction to insert an escape character, therefore to insert the escape character ```\``` itself ```\\``` must be used:
+
+```tex
+$$ \begin{bmatrix}
+   a \\
+   b \\
+   c \\
+   \end{bmatrix} $$
+```
+
+$$ \begin{bmatrix}
+   a \\
+   b \\
+   c \\
    \end{bmatrix}$$
 
 Matrices use  ```&``` as a delimiter to move onto the new column and ```\``` as a delimiter to move onto the next row and are input over multiple lines:
