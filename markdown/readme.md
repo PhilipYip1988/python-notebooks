@@ -580,6 +580,10 @@ Sometimes the formatting characters need to be incorporated into the equation. T
 |hash|```$\#$```|$\#$|
 |ampersand|```$\&$```|$\&$|
 
+However these don't render well on GitHub and
+
+|verbatim text|```$\verb\|$%#&\|$```|$\verb\|$%#&\|$|
+
 Some of the other formatting characters can be inserted using the following syntax:
 
 |description|TeX|output|
