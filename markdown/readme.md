@@ -241,15 +241,15 @@ Produces:
 
 ## Separators
 
-An empty line with ```---``` will produce a seperator.
+An empty line with ```---``` will produce a separator.
 
-The folowing code:
+The following code:
 
 ```
 ---
 ```
 
-Produces the seperator line between the two arrows:
+Produces the separator line between the two arrows:
 
 ↓
 
