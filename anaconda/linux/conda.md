@@ -60,7 +60,7 @@ For example ```numpy```:
 
 These modules can be imported and the datamodel attribute ```__file__``` can be printed to view the location of the file:
 
-```bash
+```
 (base) username@pc:~$ jupyter-console
 Jupyter console 6.6.3
 
@@ -119,13 +119,13 @@ The use of Python environments for example allows installation of the latest ver
 
 An overview about the conda package manager can be seen by opening up the Terminal and inputting the bash command:
 
-```
+```bash
 conda
 ```
 
 This gives the following output:
 
-```conda
+```
 (base) username@pc:~$ conda
 usage: conda [-h] [-v] [--no-plugins] [-V] COMMAND ...
 
@@ -187,7 +187,7 @@ commands:
 
 A Python environment can be created using the syntax:
 
-```
+```bash
 conda create -n notbase
 ```
 
@@ -195,7 +195,7 @@ where "notbase" is the environment name. The longer ```--name``` can also be use
 
 The following will be output:
 
-```bash
+```
 (base) username@pc:~$ conda create -n notbase
 Channels:
  - defaults
@@ -214,7 +214,7 @@ Proceed ([y]/n)?
 
 Input ```y``` to proceed. The Python environment is now created:
 
-```bash
+```
 Preparing transaction: done
 Verifying transaction: done
 Executing transaction: done
@@ -255,7 +255,7 @@ conda activate notbase
 
 The output now looks like:
 
-```bash
+```
 (base) username@pc:~$ conda activate notbase
 (notbase) username@pc:~$
 ```
@@ -286,7 +286,7 @@ conda search python
 
 Outputs:
 
-```bash
+```
 (notbase) username@pc:~$ conda search python
 Loading channels: done
 ```
@@ -296,7 +296,7 @@ Loading channels: done
 |python|3.11.5|h955ad1f_0|pkgs/main|
 |python|3.11.7|h955ad1f_0|pkgs/main|
 |python|3.12.0|h996f2a0_0|pkgs/main|
-```bash
+```
 (notbase) username@pc:~$
 ```
 
@@ -308,7 +308,7 @@ conda search -c conda-forge python
 
 Outputs:
 
-```bash
+```
 (notbase) username@pc:~$ conda search -c conda-forge python
 Loading channels: done
 ```
@@ -322,7 +322,7 @@ Loading channels: done
 |python|3.12.0|hab00c5b_0_cpython|conda-forge|
 |python|3.12.1|hab00c5b_0_cpython|conda-forge|
 |python|3.12.1|hab00c5b_1_cpython|conda-forge|
-```bash
+```
 (notbase) username@pc:~$
 ```
 
@@ -336,7 +336,7 @@ conda search -c conda-forge ipython
 
 This outputs:
 
-```bash
+```
 (notbase) username@pc:~$ conda search -c conda-forge ipython
 Loading channels: done
 ```
@@ -349,7 +349,7 @@ Loading channels: done
 |ipython|8.20.0|py312h06a4308_0|pkgs/main|
 |ipython|8.20.0|pyh707e725_0|conda-forge|
 |ipython|8.20.0|pyh7428d3b_0|conda-forge|
-```bash
+```
 (notbase) username@pc:~$
 ```
 
@@ -379,46 +379,254 @@ The packages python and ipython can be installed from the community channel usin
 conda install -c conda-forge python ipython
 ```
 
-
-
-
-
-Multiple packages can be installed using the syntax:
+This outputs:
 
 ```
-conda install -c conda-forge python ipython
+(notbase) username@pc:~$ conda install -c conda-forge python ipython
+Channels:
+ - conda-forge
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: ~/anaconda3/envs/notbase
+
+  added / updated specs:
+    - ipython
+    - python
+
+
+The following packages will be downloaded:
+```
+|package|build|size|channel|
+|---|---|---|---|
+|exceptiongroup-1.2.0|pyhd8ed1ab_2|20 KB|conda-forge|
+|ipython-8.20.0|pyh707e725_0|577 KB|conda-forge|
+|setuptools-69.0.3|pyhd8ed1ab_0|460 KB|conda-forge|
+|traitlets-5.14.1|pyhd8ed1ab_0|108 KB|conda-forge|
+|wcwidth-0.2.13|pyhd8ed1ab_0|32 KB|conda-forge|
+```
+Total: 1.2 MB
+The following NEW packages will be INSTALLED:
+```
+|package|details|
+|---|---|
+|_libgcc_mutex|conda-forge/linux-64::_libgcc_mutex-0.1-conda_forge|
+|_openmp_mutex|conda-forge/linux-64::_openmp_mutex-4.5-2_gnu|
+|asttokens|conda-forge/noarch::asttokens-2.4.1-pyhd8ed1ab_0|
+|bzip2|conda-forge/linux-64::bzip2-1.0.8-hd590300_5|
+|ca-certificates|conda-forge/linux-64::ca-certificates-2023.11.17-hbcca054_0|
+|decorator|conda-forge/noarch::decorator-5.1.1-pyhd8ed1ab_0|
+|exceptiongroup|conda-forge/noarch::exceptiongroup-1.2.0-pyhd8ed1ab_2|
+|executing|conda-forge/noarch::executing-2.0.1-pyhd8ed1ab_0|
+|ipython|conda-forge/noarch::ipython-8.20.0-pyh707e725_0|
+|jedi|conda-forge/noarch::jedi-0.19.1-pyhd8ed1ab_0|
+|ld_impl_linux-64|conda-forge/linux-64::ld_impl_linux-64-2.40-h41732ed_0|
+|libexpat|conda-forge/linux-64::libexpat-2.5.0-hcb278e6_1|
+|libffi|conda-forge/linux-64::libffi-3.4.2-h7f98852_5|
+|libgcc-ng|conda-forge/linux-64::libgcc-ng-13.2.0-h807b86a_3|
+|libgomp|conda-forge/linux-64::libgomp-13.2.0-h807b86a_3|
+|libnsl|conda-forge/linux-64::libnsl-2.0.1-hd590300_0|
+|libsqlite|conda-forge/linux-64::libsqlite-3.44.2-h2797004_0|
+|libuuid|conda-forge/linux-64::libuuid-2.38.1-h0b41bf4_0|
+|libxcrypt|conda-forge/linux-64::libxcrypt-4.4.36-hd590300_1|
+|libzlib|conda-forge/linux-64::libzlib-1.2.13-hd590300_5|
+|matplotlib-inline|conda-forge/noarch::matplotlib-inline-0.1.6-pyhd8ed1ab_0|
+|ncurses|conda-forge/linux-64::ncurses-6.4-h59595ed_2|
+|openssl|conda-forge/linux-64::openssl-3.2.0-hd590300_1|
+|parso|conda-forge/noarch::parso-0.8.3-pyhd8ed1ab_0|
+|pexpect|conda-forge/noarch::pexpect-4.8.0-pyh1a96a4e_2|
+|pickleshare|conda-forge/noarch::pickleshare-0.7.5-py_1003|
+|pip|conda-forge/noarch::pip-23.3.2-pyhd8ed1ab_0|
+|prompt-toolkit|conda-forge/noarch::prompt-toolkit-3.0.42-pyha770c72_0|
+|ptyprocess|conda-forge/noarch::ptyprocess-0.7.0-pyhd3deb0d_0|
+|pure_eval|conda-forge/noarch::pure_eval-0.2.2-pyhd8ed1ab_0|
+|pygments|conda-forge/noarch::pygments-2.17.2-pyhd8ed1ab_0|
+|python|conda-forge/linux-64::python-3.12.1-hab00c5b_1_cpython|
+|readline|conda-forge/linux-64::readline-8.2-h8228510_1|
+|setuptools|conda-forge/noarch::setuptools-69.0.3-pyhd8ed1ab_0|
+|six|conda-forge/noarch::six-1.16.0-pyh6c4a22f_0|
+|stack_data|conda-forge/noarch::stack_data-0.6.2-pyhd8ed1ab_0|
+|tk|conda-forge/linux-64::tk-8.6.13-noxft_h4845f30_101|
+|traitlets|conda-forge/noarch::traitlets-5.14.1-pyhd8ed1ab_0|
+|typing_extensions|conda-forge/noarch::typing_extensions-4.9.0-pyha770c72_0|
+|tzdata|conda-forge/noarch::tzdata-2023d-h0c530f3_0|
+|wcwidth|conda-forge/noarch::wcwidth-0.2.13-pyhd8ed1ab_0|
+|wheel|conda-forge/noarch::wheel-0.42.0-pyhd8ed1ab_0|
+|xz|conda-forge/linux-64::xz-5.2.6-h166bdaf_0|
+```bash
+Proceed ([y]/n)?
 ```
 
-<img src='images_conda/img_031.png' alt='img_031' width='450'/>
+Input ```y``` in order to proceed. This outputs:
 
-Details about the packages to be installed are listed:
+```
+Downloading and Extracting Packages:
 
-<img src='images_conda/img_032.png' alt='img_032' width='450'/>
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+(notbase) username@pc:~$
+```
 
-Input ```y``` in order to proceed:
+A new prompt is available when the operation is finished.
 
-<img src='images_conda/img_033.png' alt='img_033' width='450'/>
-<img src='images_conda/img_034.png' alt='img_034' width='450'/>
+
+
+
+jupyter-console can be used from this Python environment. Notice when the standard modules are imported, the modules from the perspective Python environment are used:
+
+```
+(base) username@pc:~$ conda activate notbase
+(notbase) username@pc:~$ ipython
+Python 3.12.1 | packaged by conda-forge | (main, Dec 23 2023, 08:03:24) [GCC 12.3.0]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 8.20.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: import datetime
+   ...: import email
+   ...:
+   ...: print(datetime.__file__)
+   ...: print(email.__file__)
+~/anaconda3/envs/notbase/lib/python3.12/datetime.py
+~/anaconda3/envs/notbase/lib/python3.12/email/__init__.py
+
+In [2]: import numpy as np
+   ...: import pandas as pd
+   ...: import matplotlib.pyplot as plt
+---------------------------------------------------------------------------
+ModuleNotFoundError                       Traceback (most recent call last)
+Cell In[2], line 1
+----> 1 import numpy as np
+      2 import pandas as pd
+      3 import matplotlib.pyplot as plt
+
+ModuleNotFoundError: No module named 'numpy'
+
+In [3]:
+```
+
+Note attempting to import numpy, pandas and matplotlib gives a ```ModuleNotFoundError``` as they are not installed in this Python environment.
+
+### Remove
+
+The ```remove``` subcommand can be used to remove an installed package:
+
+```bash
+conda remove package_name1 package_name2
+```
+
+For example the package python can be removed using:
+
+```bash
+conda remove python
+```
+
+This outputs:
+
+```
+(notbase) username@pc:~$ conda remove python
+Channels:
+ - defaults
+ - conda-forge
+Platform: linux-64
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: ~/anaconda3/envs/notbase
+
+  removed specs:
+    - python
+
+
+The following packages will be REMOVED:
+```
+|details|
+|---|
+|asttokens-2.4.1-pyhd8ed1ab_0|
+|bzip2-1.0.8-hd590300_5|
+|decorator-5.1.1-pyhd8ed1ab_0|
+|exceptiongroup-1.2.0-pyhd8ed1ab_2|
+|executing-2.0.1-pyhd8ed1ab_0|
+|ipython-8.20.0-pyh707e725_0|
+|jedi-0.19.1-pyhd8ed1ab_0|
+|ld_impl_linux-64-2.40-h41732ed_0|
+|libexpat-2.5.0-hcb278e6_1|
+|libffi-3.4.2-h7f98852_5|
+|libnsl-2.0.1-hd590300_0|
+|libsqlite-3.44.2-h2797004_0|
+|libuuid-2.38.1-h0b41bf4_0|
+|libxcrypt-4.4.36-hd590300_1|
+|libzlib-1.2.13-hd590300_5|
+|matplotlib-inline-0.1.6-pyhd8ed1ab_0|
+|ncurses-6.4-h59595ed_2|
+|parso-0.8.3-pyhd8ed1ab_0|
+|pexpect-4.8.0-pyh1a96a4e_2|
+|pickleshare-0.7.5-py_1003|
+|pip-23.3.2-pyhd8ed1ab_0|
+|prompt-toolkit-3.0.42-pyha770c72_0|
+|ptyprocess-0.7.0-pyhd3deb0d_0|
+|pure_eval-0.2.2-pyhd8ed1ab_0|
+|pygments-2.17.2-pyhd8ed1ab_0|
+|python-3.12.1-hab00c5b_1_cpython|
+|readline-8.2-h8228510_1|
+|setuptools-69.0.3-pyhd8ed1ab_0|
+|six-1.16.0-pyh6c4a22f_0|
+|stack_data-0.6.2-pyhd8ed1ab_0|
+|tk-8.6.13-noxft_h4845f30_101|
+|traitlets-5.14.1-pyhd8ed1ab_0|
+|typing_extensions-4.9.0-pyha770c72_0|
+|tzdata-2023d-h0c530f3_0|
+|wcwidth-0.2.13-pyhd8ed1ab_0|
+|wheel-0.42.0-pyhd8ed1ab_0|
+|xz-5.2.6-h166bdaf_0|
+```
+Proceed ([y]/n)?
+```
+
+Because Python is being removed which is a dependency for everything else, everything else is also removed. To proceed with the changes input ```y```. This outputs:
+
+```
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+(notbase) PS ~>
+```
+
+A new prompt is available when the operation is finished.
+
+
+
+
+
+
+
+
 
 Notice the Python environment notbase, now has its own bin and lib subfolder:
 
 <img src='images_conda/img_035.png' alt='img_035' width='450'/>
 
-Which contains its own python3.11 application:
+Which contains its own python application:
 
 <img src='images_conda/img_036.png' alt='img_036' width='450'/>
 
-And python3.11 folder respectively:
+And python 3.12 folder respectively:
 
 <img src='images_conda/img_037.png' alt='img_037' width='450'/>
 
-All the Python standard modules are included in the python3.11 subfolder:
+All the Python standard modules are included in the python3.12 subfolder:
 
 <img src='images_conda/img_038.png' alt='img_038' width='450'/>
 
 <img src='images_conda/img_039.png' alt='img_039' width='450'/>
 
-And third-partylibraries are included in the site-packages subfolder:
+And third-party libraries are included in the site-packages subfolder:
 
 <img src='images_conda/img_040.png' alt='img_040' width='450'/>
 
@@ -426,7 +634,7 @@ This has ipython and some of its dependencies such as the matplotlib backend mat
 
 <img src='images_conda/img_041.png' alt='img_041' width='450'/>
 
-The data science libraries numpy, pandas and matplotlib (the full library) as they are not installed as they are not dependencies.
+The data science libraries numpy, pandas and matplotlib (the full library) are not installed as they are not dependencies.
 
 ### Remove
 

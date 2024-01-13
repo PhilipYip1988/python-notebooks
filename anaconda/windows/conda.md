@@ -334,25 +334,25 @@ Loading channels: done
 
 The subcommand ```install``` can be used to install a package:
 
-```
+```ps
 conda install package_name
 ```
 
 Multiple packages can be installed using the syntax:
 
-```
+```ps
 conda install package_name1 package_name2
 ```
 
 Once again the channel to install from should be specified:
 
-```
+```ps
 conda install -c conda-forge package_name1 package_name2
 ```
 
 The packages python and ipython can be installed from the community channel using:
 
-```
+```ps
 conda install -c conda-forge python ipython
 ```
 
@@ -477,7 +477,7 @@ conda remove package_name1 package_name2
 
 For example the package python can be removed using:
 
-```
+```powershell
 conda remove python
 ```
 
