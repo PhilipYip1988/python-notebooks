@@ -378,10 +378,40 @@ The notebook can also be exported to HTML and viewed as a static document in a w
 
 <img src='images_vscode/img_067.png' alt='img_067' width='450'/>
 
+## TeX
+
 The notebook can also be exported to pdf so it can later be printed:
 
 <img src='images_vscode/img_068.png' alt='img_068' width='450'/>
 <img src='images_vscode/img_069.png' alt='img_069' width='450'/>
+
+Create a new notebook file and add the three cells:
+
+```python
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+%matplotlib qt5
+
+x = np.array([0, 1, 2, 3, 4, 5])
+y = np.array([0.001, 2.001, 3.999, 5.999, 8.002, 10.001])
+
+fig, ax = plt.subplots(num=1)
+ax.plot(x, y, color='tomato')
+ax.set_xlabel(r'$\dot{\alpha}$', usetex=True)
+ax.set_ylabel(r'$\ddot{\beta}$', usetex=True)
+ax.set_title(r'$\ddot{\beta}$=f$(\frac{\dot{\alpha}}{1})$', usetex=True);
+```
+
+The first TeX plot will take a while to create and the window will display not responding.
+
+Behind the scenes a number of cached text files will be copied to:
+
+```powershell
+%USERPROFILE%\.matplotlib
+```
+
+Subsequent plots with TeX should render quicker.
 
 [Return to Anaconda Tutorial](./readme.md)
 

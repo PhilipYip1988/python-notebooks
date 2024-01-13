@@ -394,10 +394,6 @@ The notebook can also be exported to HTML and viewed as a static document in a w
 
 <img src='images_vscode/img_058.png' alt='img_058' width='450'/>
 
-The notebook can also be exported to pdf so it can later be printed:
-
-<img src='images_vscode/img_059.png' alt='img_059' width='450'/>
-
 ## TeX
 
 MikTeX was installed in the vs-code Python environment and is essentially the TeX package manager for Windows. To update MikTeX launch the MikTex console by opening up the Anaconda PowerShell Prompt and activating the vscode-env Python environment:
@@ -414,7 +410,13 @@ miktex-console
 
 Select the Updates tab to the left, then select Check for Updates and Update Now.
 
-Create a new notebook file and add the three cells:
+<img src='images_vscode/img_061.png' alt='img_061' width='450'/>
+
+The notebook can also be exported to pdf so it can later be printed:
+
+<img src='images_vscode/img_059.png' alt='img_059' width='450'/>
+
+TeX can be added to matplotlib plots. To test it is working create a new notebook file and add the three cells:
 
 ```python
 import numpy as np
@@ -432,13 +434,14 @@ ax.set_ylabel(r'$\ddot{\beta}$', usetex=True)
 ax.set_title(r'$\ddot{\beta}$=f$(\frac{\dot{\alpha}}{1})$', usetex=True);
 ```
 
-The first TeX plot will take a while to create and the window will display not responding.
+The first TeX plot may take a while to create and the window will display not responding.
 
 Behind the scenes a number of cached text files will be copied to:
 
 ```powershell
-%USERPROFILE%\.matplotlib
+%USERPROFILE%/.matplotlib
 ```
 
+Subsequent plots with TeX should render quicker.
 
 [Return to Anaconda Tutorial](./readme.md)
