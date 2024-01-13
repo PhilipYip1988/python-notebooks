@@ -62,7 +62,7 @@ This folder contains third-party modules also known as libraries. Common librari
 
 These modules can be imported and the datamodel attribute ```__file__``` can be printed to view the location of the file:
 
-```ps
+```powershell
 (base) PS ~> jupyter-console
 
 Python 3.11.5 | packaged by Anaconda, Inc. | (main, Sep 11 2023, 13:26:23) [MSC v.1916 64 bit (AMD64)]
@@ -121,20 +121,20 @@ The use of Python environments for example allows installation of the latest ver
 
 An overview about the conda package manager can be seen by opening up the Anaconda PowerShell Prompt and inputting the PowerShell command:
 
-```ps
+```powershell
 conda
 ```
 
 This gives the following output:
 
-```ps
+```powershell
 (base) PS ~> conda
 usage: conda-script.py [-h] [-v] [--no-plugins] [-V] COMMAND ...
 
 conda is a tool for managing and deploying applications, environments and packages.
 
 options:
-```ps
+```powershell
 |flag or option|purpose|
 |---|---|
 |-h, --help|Show this help message and exit.|
@@ -181,7 +181,7 @@ commands:
 |skeleton|See conda skeleton --help.|
 |token|See conda token --help.|
 |verify|See conda verify --help.|
-```ps
+```powershell
 (base) PS ~>
 ```
 
@@ -189,7 +189,7 @@ commands:
 
 A Python environment can be created using the syntax:
 
-```ps
+```powershell
 conda create -n notbase
 ```
 
@@ -197,7 +197,7 @@ where "notbase" is the environment name. The longer ```--name``` can also be use
 
 The following will be output:
 
-```ps
+```powershell
 (base) PS ~> conda create -n notbase
 Channels:
  - defaults
@@ -216,7 +216,7 @@ Proceed ([y]/n)?
 
 Input ```y``` to proceed. The Python environment is now created:
 
-```ps
+```powershell
 Preparing transaction: done
 Verifying transaction: done
 Executing transaction: done
@@ -251,13 +251,13 @@ Note activation will only work in the Anaconda PowerShell Prompt by default unle
 
 The notbase Python environment can be activated using:
 
-```ps
+```powershell
 conda activate notbase
 ```
 
 The output now looks like:
 
-```ps
+```powershell
 (base) PS ~> conda activate notbase
 (notbase) PS ~>
 ```
@@ -270,7 +270,7 @@ When the Anaconda PowerShell Prompt is closed and reopened, the default Python e
 
 A package can be searched for using the ```search``` subcommand followed by the package name:
 
-```ps
+```powershell
 conda search package_name
 ```
 
@@ -298,7 +298,7 @@ Loading channels: done
 |python|3.12.0|h2628c8c_0_cpython|conda-forge|
 |python|3.12.1|h2628c8c_0_cpython|conda-forge|
 |python|3.12.1|h2628c8c_1_cpython|conda-forge|
-```ps
+```powershell
 (notbase) PS ~>
 ```
 
@@ -306,13 +306,13 @@ Notice each Python has a version number of the format X.Y.Z where X is the major
 
 The package ipython can be searched for using:
 
-```ps
+```powershell
 conda search -c conda-forge ipython
 ```
 
 This outputs:
 
-```ps
+```powershell
 (notbase) PS ~> conda search -c conda-forge ipython
 Loading channels: done
 ```
@@ -334,25 +334,25 @@ Loading channels: done
 
 The subcommand ```install``` can be used to install a package:
 
-```ps
+```powershell
 conda install package_name
 ```
 
 Multiple packages can be installed using the syntax:
 
-```ps
+```powershell
 conda install package_name1 package_name2
 ```
 
 Once again the channel to install from should be specified:
 
-```ps
+```powershell
 conda install -c conda-forge package_name1 package_name2
 ```
 
 The packages python and ipython can be installed from the community channel using:
 
-```ps
+```powershell
 conda install -c conda-forge python ipython
 ```
 
@@ -471,7 +471,7 @@ Note attempting to import numpy, pandas and matplotlib gives a ```ModuleNotFound
 
 The ```remove``` subcommand can be used to remove an installed package:
 
-```
+```powershell
 conda remove package_name1 package_name2
 ```
 
@@ -559,19 +559,19 @@ A new prompt is available when the operation is finished.
 
 During installation version numbers can be specified using assignment:
 
-```
+```powershell
 conda install -c conda-forge package_name=X.Y.Z
 ```
 
 The build number can also be specified in some cases, although is more rare to specify this:
 
-```
+```powershell
 conda install -c conda-forge package_name=X.Y.Z=build_number
 ```
 
 For example a specific version of ipython can be installed:
 
-```
+```powershell
 conda install -c conda-forge ipython=8.18.1=pyh7428d3b_3
 ```
 
@@ -648,19 +648,19 @@ A new prompt is available when the operation is finished.
 
 The ```update``` subcommand can be used to update a package to the latest compatible version using the update subcommand:
 
-```
+```powershell
 conda update package_name
 ```
 
 Once again the channel to update the package from should be specified:
 
-```
+```powershell
 conda update -c conda-forge package_name
 ```
 
 The package ipython for example can be updated:
 
-```
+```powershell
 conda update -c conda-forge ipython
 ```
 
@@ -700,7 +700,7 @@ CondaSystemExit: Exiting.
 
 It is common to use the option ```--all``` instead of specifying a package, this will attempt to update all the packages in the Python environment to their latest versions:
 
-```
+```powershell
 conda update -c conda-forge --all
 ```
 
@@ -748,8 +748,8 @@ A new prompt is available when the operation is finished.
 
 Recall to update the base Python environment use:
 
-```
-conda activate base
+```powershell
+conda deactivate
 conda update conda
 conda update anaconda-navigator
 ```
@@ -760,7 +760,7 @@ This was seen when Anaconda was initially installed.
 
 The ```list``` subcommand can be used to list the packages in the Python environment:
 
-```
+```powershell
 conda list
 ```
 
@@ -814,7 +814,7 @@ This outputs:
 
 The subcommand option ```--revision``` can be used to list each revision of the Python environment:
 
-```
+```powershell
 conda list --revision
 ```
 
@@ -941,7 +941,7 @@ Notice revision 0 has no packages in it. Revision 1 installs ipython, revision 2
 
 The ```install``` subcommand can be used with the option ```--revision``` that can be assigned to a revision number. For example a reversion to revision 3 can be made:
 
-```
+```powershell
 conda install -c conda-forge --revision=3
 ```
 
@@ -983,7 +983,7 @@ Executing transaction: done
 
 The currently activated Python environment can be exported to a **y**et another **m**arkdown **l**anguage yaml file using the ```env``` subcommand grouping followed by the subcommand ```export```. The Python environment can be exported to a yml file in the Documents folder using either:
 
-```
+```powershell
 conda env export > OneDrive\Documents\notbase.yml
 conda env export > Documents\notbase.yml
 ```
@@ -1053,25 +1053,25 @@ This is a very small file which can be shared on GitHub or emailed.
 
 The ```rename``` subcommand can be used to rename a Python environment. 
 
-```
+```powershell
 conda rename -n oldname newname
 ```
 
 This effectively renames the folder:
 
 ```
-~/anaconda3/envs/oldname
+~\anaconda3\envs\oldname
 ```
 
 To:
 
 ```
-~/anaconda3/envs/newname
+~\anaconda3\envs\newname
 ```
 
 The notbase Python environment can be renamed to reallynotbase using:
 
-```
+```powershell
 conda deactivate
 conda rename -n notbase reallynotbase
 ```
@@ -1103,7 +1103,7 @@ An environment can be created from a yml file using the ```env``` subcommand gro
 
 For example the notbase.yml Python environment in the Documents folder can be recreated using:
 
-```
+```powershell
 conda env create -f OneDrive\Documents\notbase.yml
 ```
 
@@ -1139,7 +1139,7 @@ Executing transaction: done
 
 Python environments can be listed using the ```env``` subcommand grouping followed by the subcommand ```list```. Note that this differs from the subcommand ```list``` used directly from ```conda``` which lists Python environments instead.
 
-```
+```powershell
 conda env list
 ```
 
@@ -1149,16 +1149,14 @@ This outputs:
 (base) PS ~> conda env list
 # conda environments:
 ```
-|Environment Name|Location|
-|---|---|
-|base*|~\anaconda3|
-|notbase|~\anaconda3\envs\notbase|
-|reallynotbase|~\anaconda3\envs\reallynotbase|
+|Environment Name|Selected|Location|
+|---|---|---|
+|base|*|~\anaconda3|
+|notbase||~\anaconda3\envs\notbase|
+|reallynotbase||~\anaconda3\envs\reallynotbase|
 ```
 (base) PS C:\Users\phili>
 ```
-
-The * indicates that base is the currently activated Python environment.
 
 ### Env Remove
 
@@ -1166,13 +1164,13 @@ A Python environment can be removed using the ```env``` subcommand grouping and 
 
 An environment can be removed using the command:
 
-```
+```powershell
 conda env remove -n envname
 ```
 
 For example the Python environment notbase can be removed using:
 
-```
+```powershell
 conda deactivate
 conda env remove -n notbase
 ```
@@ -1193,7 +1191,7 @@ When a Python environment is regularly updated, there will be multiple tarballs 
 
 The ```clean``` subcommand can be used to clean these:
 
-```
+```powershell
 conda clean --all
 ```
 
@@ -1216,84 +1214,96 @@ There are no logfile(s) to remove.
 
 ## Python Environments for IDEs
 
-Previously the commands create and install were used seperately and when the list of revision was examined revision 0 had no packages. The conda create command can be used to list a series of packages to be installed when creating a Python Environment. This command will be used to create a Python Environment suitable for the latest version of each Python IDE discussed.
+Previously the subcommands ```create``` and ```install``` were used seperately and when the list of revisions was examined revision 0 had no packages. The ```create``` subcommand can be used to list a series of packages to be installed when creating a Python Environment. This command will be used to create a Python Environment suitable for the latest version of each Python IDE discussed.
 
 ### Jupyter
 
 For Jupyter it is recommended to create a Python environment called jupyter-env with the following packages:
 
-```
-conda create -n jupyter-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly jupyterlab-variableinspector ipympl pyqt ruff
+```powershell
+conda create -n jupyter-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly jupyterlab-variableinspector ipympl pyqt ruff ghostscript miktex nbconvert
 ```
 
 Installing seaborn will install numpy, pandas and matplotlib as these are dependencies for seaborn.
 
 openpyxl, xlrd, xlsxwriter, lxml, sqlalchemy and tabulate are file format convertors used for pandas.
 
-nodejs allows installaiton of JupyterLab extensions.ipywidgets and plotly can be used to create widgets and plots using Python code, under the hood JavaScript is used to display these in the browser. The variableinspector gives a variable inspector.
+nodejs allows installation of JupyterLab extensions.ipywidgets and plotly can be used to create widgets and plots using Python code, under the hood JavaScript is used to display these in the browser. The variableinspector gives a variable inspector.
 
 pyqt and ipympl are required for an interactive matplotlib plotting backends.
 
+nbconvert is used for exporting notebooks to Python script files, html or pdf (which requires TeX).
+
+miktex and ghostscript are required to use TeX for nbconvert or matplotlib with TeX rendering. Installation of miktek includes the ```miktex-console``` which is essentially the TeX package manager for Windows, it should be updated before TeX functionality is sued:
+
 Once the Python environment is created it can be activated using:
 
-```
+```powershell
 conda activate jupyter-env
 ```
 
 And one of the jupyter applications can be launched using:
 
-```
+```powershell
 jupyter-console
 jupyter-qtconsole
 jupyter-notebook
 jupyter-lab
 ```
 
+To open the MikTex console input:
+
+```powershell
+miktex-console
+```
+
+Use the MikTex console to search for updates (MikTex should be individually updated for each Python environment).
+
 ### Spyder
 
-For Spyder it is recommended to create a Python environment called spyder-env with the following packages:
+For Spyder it is recommended to create a Python environment called ```spyder-env``` with the following packages:
 
-```
-conda create -n spyder-env -c conda-forge python spyder cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate pyqt ruff
+```powershell
+conda create -n spyder-env -c conda-forge python spyder cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate pyqt ruff ghostscript miktex
 ```
 
 Once the Python environment is created it can be activated using:
 
-```
+```powershell
 conda activate spyder-env
 ```
 
 And spyder can be launched using:
 
-```
+```powershell
 spyder
 ```
 
 ### JupyterLab with R
 
-R can be used with JupyterLab. It is recommended to create a Python environment called r-env with the following packages:
+R can be used with JupyterLab. It is recommended to create a Python environment called ```r-env``` with the following packages:
 
-```
-conda create -n r-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly jupyterlab-variableinspector ipympl pyqt ruff r-irkernel jupyter-lsp-r r-tidyverse r-ggthemes r-palmerpenguins r-writexl
+```powershell
+conda create -n r-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly jupyterlab-variableinspector ipympl pyqt ruff nbconvert ghostscript miktex r-irkernel jupyter-lsp-r r-tidyverse r-ggthemes r-palmerpenguins r-writexl
 ```
 
-This Python environment has the same packages as the jupyter-env but has the addition of the R Jernel and R Jupyter Language Server Protocol in addition to commonly used R packages.
+This Python environment has the same packages as the ```jupyter-env``` but has the addition of the R Jernel and R Jupyter Language Server Protocol in addition to commonly used R packages.
 
 Once the Python environment is created it can be activated using:
 
-```
+```powershell
 conda activate r-env
 ```
 
-The kernels for the r-env Python environment can be listed using:
+The kernels for the ```r-env``` Python environment can be listed using:
 
-```
+```powershell
 jupyter kernelspec list
 ```
 
 This outputs:
 
-```
+```powershell
 (r-env) username@pc:~$ jupyter kernelspec list                                                                                                  
 Available kernels:                                                                                                                                        
   ir         /home/username/anaconda3/envs/r-env/share/jupyter/kernels/ir                                                                                       
@@ -1303,7 +1313,7 @@ Available kernels:
 
 One of the jupyter applications can be launched using the R kernel:
 
-```
+```poweshell
 jupyter-console --kernel=ir
 jupyter-qtconsole --kernel=ir
 jupyter-notebook --kernel=ir
@@ -1314,7 +1324,7 @@ jupyter-lab --kernel=ir
 
 Spyder is available as an alpha version. A Python environment with Python 3.11 from the conda-forge channel should be used:
 
-```
+```powershell
 conda create -n spyder-rc-env -c conda-forge python=3.11
 ```
 
@@ -1326,25 +1336,25 @@ conda activate spyder-rc-env
 
 Spyder 6 RC should then be installed from its own channel:
 
-```
+```powershell
 conda install -c conda-forge/label/spyder_dev -c conda-forge/label/spyder_kernels_rc -c conda-forge spyder=6.0.0a3
 ```
 
-The data science libraries commonly used with Spyder should be installed:
+The datascience libraries commonly used with Spyder should be installed:
 
-```
-conda install -c conda-forge cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate pyqt ruff
+```powershell
+conda install -c conda-forge cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate pyqt ruff ghostscript miktex
 ```
 
 Once the Python environment is created it can be activated using:
 
-```
+```powershell
 conda activate spyder-rc-env
 ```
 
 And spyder can be launched using:
 
-```
+```powershell
 spyder
 ```
 

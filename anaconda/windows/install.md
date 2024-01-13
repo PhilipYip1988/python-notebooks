@@ -438,158 +438,16 @@ The (base) Python environment can be reactivated using:
 conda activate base
 ```
 
+## MikTeX Installation
+
+A number of the datascience packages such as nbcovert and matplotlib can use TeX. Unfortunately the installation of TeX differs significantly for Windows and Linux and therefore the installation of TeX isn't included with Anaconda. On Windows the MikTeX distribution contains the MikTeX console which is essentially the TeX package manager. The installer for it can be found on its home page [MikTeX](https://miktex.org/). Default installation will add it to th Windows Environmental Variables path so it can be found in the base Python environment. After installation, the MikTeX console should be used to check for and install updates.
+
+MikTeX is available as a third-party package on the community channel conda-forge. If it is installed this way in a separate Python environment, the MikTeX console from the specific Python environment should be updated.
+
 ## Python Environments
 
 The conda package manager can be used to create Python environments for the latest version of Jupyter and Spyder from the community channel conda-forge or from the spyder developers release candidate channel. A custom Jupyter environment can also be equipped with R allowing use of the R kernel.
 
-The commands to create the Python environments are listed below. Use of the conda package manager is covered in more detail in the following [conda](./conda.md) tutorial.
-
-### Jupyter
-
-For Jupyter it is recommended to create a Python environment called jupyter-env with the following packages:
-
-```
-conda create -n jupyter-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly jupyterlab-variableinspector ipympl pyqt ruff miktex
-```
-
-Once the Python environment is created it can be activated using:
-
-```
-conda activate jupyter-env
-```
-
-And one of the jupyter applications can be launched using:
-
-```
-jupyter-console
-jupyter-qtconsole
-jupyter-notebook
-jupyter-lab
-```
-
-This will launch the respective jupyter binary from either:
-
-```
-~/anaconda3/envs/jupyter-env/bin
-~/miniconda3/envs/jupyter-env/bin
-```
-
-### Spyder
-
-For Spyder it is recommended to create a Python environment called spyder-env with the following packages:
-
-```
-conda create -n spyder-env -c conda-forge python spyder cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate pyqt ruff
-```
-
-Once the Python environment is created it can be activated using:
-
-```
-conda activate spyder-env
-```
-
-And spyder can be launched using:
-
-```
-spyder
-```
-
-This will launch the spyder binary from either:
-
-```
-~/anaconda3/envs/spyder-env/bin
-~/miniconda3/envs/spyder-env/bin
-```
-
-### JupyterLab with R
-
-R can be used with JupyterLab. It is recommended to create a Python environment called r-env with the following packages:
-
-```
-conda create -n r-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly jupyterlab-variableinspector ipympl pyqt ruff miktex r-irkernel jupyter-lsp-r r-tidyverse r-ggthemes r-palmerpenguins r-writexl
-```
-
-Once the Python environment is created it can be activated using:
-
-```
-conda activate r-env
-```
-
-The kernels for the r-env Python environment can be listed using:
-
-```
-jupyter kernelspec list
-```
-
-This outputs:
-
-```
-(r-env) username@pc:~$ jupyter kernelspec list                                                                                                  
-Available kernels:                                                                                                                                        
-  ir         /home/username/anaconda3/envs/r-env/share/jupyter/kernels/ir                                                                                       
-  python3    /home/username/anaconda3/envs/r-env/share/jupyter/kernels/python3                                                                                  
-(r-env) username@pc:~$  
-```
-
-One of the jupyter applications can be launched using the R kernel:
-
-```
-jupyter-console --kernel=ir
-jupyter-qtconsole --kernel=ir
-jupyter-notebook --kernel=ir
-jupyter-lab --kernel=ir
-```
-
-This will launch the respective jupyter binary from either:
-
-```
-~/anaconda3/envs/r-env/bin
-~/miniconda3/envs/r-env/bin
-```
-
-### Spyder RC
-
-Spyder is available as an alpha version. A Python environment with Python 3.11 from the conda-forge channel should be used:
-
-```
-conda create -n spyder-rc-env -c conda-forge python=3.11
-```
-
-This Python environment should be activated:
-
-```
-conda activate spyder-rc-env
-```
-
-Spyder 6 RC should then be installed from its own channel:
-
-```
-conda install -c conda-forge/label/spyder_dev -c conda-forge/label/spyder_kernels_rc -c conda-forge spyder=6.0.0a3
-```
-
-The datascience libraries commonly used with Spyder should be installed:
-
-```
-conda install -c conda-forge cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate pyqt ruff
-```
-
-Once the Python environment is created it can be activated using:
-
-```
-conda activate spyder-rc-env
-```
-
-And spyder can be launched using:
-
-```
-spyder
-```
-
-This will launch the spyder binary from either:
-
-```
-~/anaconda3/envs/spyder-rc-env/bin
-~/miniconda3/envs/spyder-rc-env/bin
-```
+Use of the conda package manager is covered in more detail in the following [conda](./conda.md) tutorial.
 
 [Return to Anaconda Tutorial](./readme.md)
