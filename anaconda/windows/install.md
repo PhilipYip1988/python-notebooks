@@ -46,7 +46,7 @@ Before using WinGet, the Microsoft Store, App Installer and Windows Terminal sho
 
 Note: When WinGet is used with Terminal (Non-Admin) it will install a Program for the Current User. When WinGet is used with Terminal (Admin) it will install a Program for All Users.
 
-Unfortunately the version of Miniconda3 available from WinGet is old and the latest installer should be downloaded. 
+Unfortunately the version of Miniconda3 available from WinGet is old. Better results will occur when using the latest installer which can be obtained from the Miniconda website [Miniconda](https://docs.conda.io/projects/miniconda/en/latest/).
 
 Right click the Start Menu and select Terminal (Non-Admin):
 
