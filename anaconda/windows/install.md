@@ -15,7 +15,7 @@ The Anaconda Python distribution comes with its own base (otherwise known as an 
 * JupyterLab
 * Formatters such as autopep8, isort and black
 
-Python has its own package manager Python Install Package (pip) which is strictly for Python packages. For datascience projects the more powerful conda package manager is prefered as it can be used to install the Python packages used for datascience projects in addition to their non-Python dependencies. These include example codecs, LaTeX as well as dependencies for hardware acceleration. conda can also be used to install packages from other programming languages which are often user in conjunction with Python. The popular Jupyter project for example is an abbreviation for Julia Python et (Latin for and) R.
+Python has its own package manager Python Install Package (pip) which is strictly for Python packages. For datascience projects the more powerful conda package manager is prefered as it can be used to install the Python packages used for datascience projects in addition to their non-Python dependencies. These include example codecs as well as dependencies for hardware acceleration. conda can also be used to install packages from other programming languages which are often user in conjunction with Python. The popular Jupyter project for example is an abbreviation for Julia Python et (Latin for and) R.
 
 ```conda install package``` should be used instead of ```pip install package``` where possible.
 

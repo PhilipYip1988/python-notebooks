@@ -10,9 +10,9 @@ Anaconda can be installed on Windows and Linux/Mac for more details see:
 
 ## Markdown
 
-Markdown uses simple syntax to format text and is commonly used on GitHub and within Interactive Python Notebooks:
+Markdown uses simple syntax to format text and is commonly used on GitHub and within Interactive Python Notebooks. For mathematical equations it is supplemented using TeX:
 
-* [Markdown syntax Markdown File](./markdown/readme.md)
+* [Markdown and TeX Syntax Markdown File](./markdown/readme.md)
 
 ## Viewing Markdown Files and Notebooks
 
@@ -22,13 +22,13 @@ The notebooks can also be viewed from GitHub in the browser however GitHub has s
 
 ## IPython Magics
 
-Interactive Python has a number of enhancements over Python. It can be used to run Python code and commonly used Shell commands that have been reimplemented as IPython magics. IPython magics are prefixed with a %. Shell commands that haven't been reimplemented as IPython magics can be run directly by prefixing with a !. The Shell used for these commands will depend on the Operating System, Windows will use PowerShell or CMD and Linux/Mac will use bash.
+The Interactive Python Shell has a number of enhancements over the regular Python Shell. It can be used to run Python code and commonly used Shell commands that have been reimplemented as IPython magics. IPython magics are prefixed with a %. Shell commands that haven't been reimplemented as IPython magics can be run directly by prefixing with a !. The Shell used for these commands will differ depending on the Operating System, Windows will use PowerShell or CMD and Linux/Mac will use bash.
 
 * [IPython Module](./ipython_magics/notebook.ipynb)
 
 ## Python Formatters
 
-This tutorial gives an example of using the Python formatters using IPython magic commands. The VSCode installation tutorial instead demonstrates how to use these via VSCode extensions.
+This tutorial gives an example of using the Python formatters using IPython magic commands. The VSCode installation tutorial demonstrated how to use these via VSCode extensions however it is useful to know how to run these tools using the command line and this tutorial shows an example of using IPython magics previously discussed.
 
 The Automatic Python Enhanced Protocol 8 module is used to process a Python script or interactive Python notebook to autoformat a file to make sure its spacing is compliant with PEP8. 
 
