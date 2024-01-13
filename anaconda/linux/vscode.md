@@ -380,12 +380,12 @@ The notebook can also be exported to HTML and viewed as a static document in a w
 
 ## TeX
 
-The notebook can also be exported to pdf so it can later be printed:
+The notebook can also be exported to pdf (which uses TeX) so it can later be printed:
 
 <img src='images_vscode/img_068.png' alt='img_068' width='450'/>
 <img src='images_vscode/img_069.png' alt='img_069' width='450'/>
 
-Create a new notebook file and add the three cells:
+TeX can also be added to matplotlib plots. To test it is working create a new notebook file and add the three cells:
 
 ```python
 import numpy as np
@@ -408,11 +408,11 @@ The first TeX plot will take a while to create and the window will display not r
 Behind the scenes a number of cached text files will be copied to:
 
 ```powershell
-%USERPROFILE%\.matplotlib
+%USERPROFILE%/.matplotlib
 ```
 
 Subsequent plots with TeX should render quicker.
 
-[Return to Anaconda Tutorial](./readme.md)
+A detailed overview of Markdown and TeX syntax is given in the next tutorial.
 
-
+[Return to Anaconda Tutorial](../readme.md)

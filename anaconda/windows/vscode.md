@@ -412,11 +412,11 @@ Select the Updates tab to the left, then select Check for Updates and Update Now
 
 <img src='images_vscode/img_061.png' alt='img_061' width='450'/>
 
-The notebook can also be exported to pdf so it can later be printed:
+The notebook can also be exported to pdf (which uses TeX) so it can later be printed:
 
 <img src='images_vscode/img_059.png' alt='img_059' width='450'/>
 
-TeX can be added to matplotlib plots. To test it is working create a new notebook file and add the three cells:
+TeX can also be added to matplotlib plots. To test it is working create a new notebook file and add the three cells:
 
 ```python
 import numpy as np
@@ -436,12 +436,16 @@ ax.set_title(r'$\ddot{\beta}$=f$(\frac{\dot{\alpha}}{1})$', usetex=True);
 
 The first TeX plot may take a while to create and the window will display not responding.
 
+<img src='images_vscode/img_060.png' alt='img_060' width='450'/>
+
 Behind the scenes a number of cached text files will be copied to:
 
 ```powershell
-%USERPROFILE%/.matplotlib
+%USERPROFILE%\.matplotlib
 ```
 
 Subsequent plots with TeX should render quicker.
 
-[Return to Anaconda Tutorial](./readme.md)
+A detailed overview of Markdown and TeX syntax is given in the next tutorial.
+
+[Return to Anaconda Tutorial](../readme.md)
