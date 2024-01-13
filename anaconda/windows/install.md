@@ -157,14 +157,20 @@ The Windows Terminal can be initialised directly by using a modified PowerShell 
 
 To initialise Anaconda in PowerShell open up the Windows Terminal (Admin) and change the execution policy:
 
-```
+```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 ```
 
 Then initialise Anaconda:
 
-```
+```powershell
 Anaconda3\Scripts\conda init powershell
+```
+
+To initialise Miniconda instead use:
+
+```powershell
+Miniconda3\Scripts\conda init powershell
 ```
 
 This will output:
@@ -200,6 +206,70 @@ modified      ~\OneDrive\Documents\WindowsPowerShell\profile.ps1
 
 Close the Windows Terminal (Admin) and open up a new Windows Terminal (Non-Admin). The Windows Terminal will now use the new PowerShell profile profile.ps1 found in Documents. It will show the prefix (base) indicating that the (base) Python environment is selected and use of the Windows Terminal and Anaconda PowerShell Prompt will be equivalent. 
 
+
+## Updating Anaconda
+
+Open the Anaconda PowerShell Prompt or Windows Terminal. If using the Anaconda PowerShell Prompt input:
+
+```powershell
+conda deactivate
+```
+
+This will deactivate the ```base``` Python environment:
+
+<img src='images_install/img_027.png' alt='img_027' width='350'/>
+
+Then update the ```conda``` package manager using:
+
+```powershell
+conda update conda
+```
+
+For Anaconda updating the ```conda``` package manager will update the entire Anaconda Python distribution. For Miniconda, updating the ```conda``` package manger will update the bootstrap Python distribution:
+
+<img src='images_install/img_028.png' alt='img_028' width='350'/>
+
+A small number of packages will be removed, a small number of packages will be added and a large number of packages will be updated. Input:
+
+```
+y
+```
+
+in order to proceed:
+
+<img src='images_install/img_029.png' alt='img_029' width='350'/>
+
+The Anaconda Navigator can be checked for an update using:
+
+```powershell
+conda update anaconda-navigator
+```
+
+Note the Anaconda-Navigator is not installed in Miniconda and therefore should not be updated.
+
+Anaconda should now be updated:
+
+<img src='images_install/img_030.png' alt='img_030' width='350'/>
+
+The (base) Python environment can be reactivated using:
+
+```
+conda activate base
+```
+
+## MikTeX Installation
+
+A number of the datascience packages such as nbcovert and matplotlib can use TeX. Unfortunately the installation of TeX differs significantly for Windows and Linux and therefore the installation of TeX isn't included with Anaconda. On Windows the MikTeX distribution contains the MikTeX console which is essentially the TeX package manager. The installer for it can be found on its home page [MikTeX](https://miktex.org/). Default installation will add it to th Windows Environmental Variables path so it can be found in the base Python environment. After installation, the MikTeX console should be used to check for and install updates.
+
+MikTeX is available as a third-party package on the community channel conda-forge. If it is installed this way in a separate Python environment, the MikTeX console from the specific Python environment should be updated.
+
+## Python Environments
+
+The conda package manager can be used to create Python environments for the latest version of Jupyter and Spyder from the community channel conda-forge or from the spyder developers release candidate channel. A custom Jupyter environment can also be equipped with R allowing use of the R kernel.
+
+Use of the conda package manager is covered in more detail in the following [conda](./conda.md) tutorial.
+
+
 ### The (base) Python Environment
 
 The Windows Terminal is configured to look at the entries in the Windows Environmental Variables path (an initialised Windows Terminal defaults to base and also uses these locations) when looking for a command.
@@ -214,6 +284,12 @@ Then the following application is run, i.e. the base python:
 
 ```
 ~\Anaconda3\python.exe
+```
+
+For Miniconda the folder is instead:
+
+```
+~\Miniconda3\python.exe
 ```
 
 <img src='images_install/img_011.png' alt='img_011' width='350'/>
@@ -389,65 +465,5 @@ However are normally implemented in IDEs such as Spyder which has Autoformatters
 AutoPEP8 addresses the spacing making it PEP8 compliant. The opinionated fomratter black can also be used to make quotation consistent (but inconsistent with the default single quotations used by the Python kernel):
 
 <img src='images_install/img_040.png' alt='img_040' width='450'/>
-
-## Updating Anaconda
-
-Open the Anaconda PowerShell Prompt or Windows Terminal. If using the Anaconda PowerShell Prompt input:
-
-```
-conda deactivate
-```
-
-This will deactivate the ```base``` Python environment:
-
-<img src='images_install/img_027.png' alt='img_027' width='350'/>
-
-Then update the ```conda``` package manager using:
-
-```
-conda update conda
-```
-
-For Anaconda updating the ```conda``` package manager will update the entire Anaconda Python distribution:
-
-<img src='images_install/img_028.png' alt='img_028' width='350'/>
-
-A small number of packages will be removed, a small number of packages will be added and a large number of packages will be updated. Input:
-
-```
-y
-```
-
-in order to proceed:
-
-<img src='images_install/img_029.png' alt='img_029' width='350'/>
-
-The Anaconda Navigator can be checked for an update using:
-
-```
-conda update anaconda-navigator
-```
-
-Anaconda should now be updated:
-
-<img src='images_install/img_030.png' alt='img_030' width='350'/>
-
-The (base) Python environment can be reactivated using:
-
-```
-conda activate base
-```
-
-## MikTeX Installation
-
-A number of the datascience packages such as nbcovert and matplotlib can use TeX. Unfortunately the installation of TeX differs significantly for Windows and Linux and therefore the installation of TeX isn't included with Anaconda. On Windows the MikTeX distribution contains the MikTeX console which is essentially the TeX package manager. The installer for it can be found on its home page [MikTeX](https://miktex.org/). Default installation will add it to th Windows Environmental Variables path so it can be found in the base Python environment. After installation, the MikTeX console should be used to check for and install updates.
-
-MikTeX is available as a third-party package on the community channel conda-forge. If it is installed this way in a separate Python environment, the MikTeX console from the specific Python environment should be updated.
-
-## Python Environments
-
-The conda package manager can be used to create Python environments for the latest version of Jupyter and Spyder from the community channel conda-forge or from the spyder developers release candidate channel. A custom Jupyter environment can also be equipped with R allowing use of the R kernel.
-
-Use of the conda package manager is covered in more detail in the following [conda](./conda.md) tutorial.
 
 [Return to Anaconda Tutorial](./readme.md)

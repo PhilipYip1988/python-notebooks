@@ -134,7 +134,7 @@ usage: conda-script.py [-h] [-v] [--no-plugins] [-V] COMMAND ...
 conda is a tool for managing and deploying applications, environments and packages.
 
 options:
-```powershell
+```
 |flag or option|purpose|
 |---|---|
 |-h, --help|Show this help message and exit.|
