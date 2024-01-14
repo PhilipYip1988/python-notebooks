@@ -298,7 +298,7 @@ Or the email module found as a subfolder:
 
 <img src='images_install/img_021.png' alt='img_021' width='450'/>
 
-This subfolder cotnains multiple Python script files with the ```__init__.py``` datamodel initialisation file:
+This subfolder contains multiple Python script files with the ```__init__.py``` datamodel initialisation file:
 
 <img src='images_install/img_022.png' alt='img_022' width='450'/>
 
@@ -314,7 +314,7 @@ Note that the site-packages for Miniconda will not have a numpy, pandas or matpl
 
 This folder contains multiple Python script files and subfolders which in turn contain multiple Python script files. One of these is the ```__init__.py``` datamodel file which is the file imported when:
 
-```
+```python
 import numpy as np
 ```
 
@@ -328,8 +328,8 @@ The random module of the numpy library is found in the random subfolder:
 
 Notice that it has its own datamodel initialisation file ```__init__.py``` which is imported when the module is imported using:
 
-```
-import numpy.random as random
+```python
+np.random.__file__
 ```
 
 <img src='images_install/img_027.png' alt='img_027' width='450'/>
@@ -354,8 +354,8 @@ The Matrix Plotting library is found in the matplotlib subfolder:
 
 This folder contains multiple Python script files and subfolders which in turn contain multiple Python script files. One of these is the ```__init__.py``` datamodel file which is the file imported when:
 
-```
-import matplotlib
+```python
+import matplotlib as mpl
 ```
 
 is used.
@@ -364,7 +364,7 @@ is used.
 
 Normally only the ```pyplot.py``` module is imported:
 
-```
+```python
 import matplotlib.pyplot as plt
 ```
 
@@ -458,13 +458,13 @@ This means the conda (base) Python environment is selected.
 
 Because the default option for initialisation is no, many new users to Anaconda install it without initialising it. If this has happened open up the Terminal and input:
 
-```
+```bash
 ~/anaconda3/bin/conda init bash
 ```
 
 Or for Miniconda:
 
-```
+```bash
 ~/miniconda3/bin/conda init bash
 ```
 
@@ -495,11 +495,11 @@ When the Terminal is closed and opened the bash prompt should now display:
 
 Initialisation can be reversed using:
 
-```
+```bash
 ~/anaconda3/bin/conda init bash --reverse
 ```
 
-```
+```bash
 ~/miniconda3/bin/conda init bash --reverse
 ```
 
@@ -507,13 +507,13 @@ Initialisation can be reversed using:
 
 To update Anaconda or Miniconda, the (base) Python environment should be deactivated using:
 
-```
+```bash
 conda deactivate
 ```
 
 This displays a normal bash prompt without the (base) prefix. The conda package manager can be updated using:
 
-```
+```bash
 conda update conda
 ```
 
@@ -917,7 +917,7 @@ The (base) prefix should now display in the bash prompt.
 
 ### Installing TeX
 
-A number of the datascience packages such as nbcovert and matplotlib can use TeX. Unfortunately the installation of TeX differs significantly for Windows and Linux and installation of TeX isn't included with Anaconda. TeX should be installed system wide, using the Ubuntu (Debian-based) package manager apt:
+A number of the datascience packages such as nbcovert and matplotlib can use TeX. Unfortunately the installation of TeX differs significantly for Windows and Linux and therefore installation of TeX isn't included with Anaconda. TeX should be installed system wide, using the Ubuntu (Debian-based) package manager apt:
 
 ```bash
 sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-plain-generic cm-super dvipng
@@ -927,7 +927,7 @@ sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-plain-gener
 
 Binaries associated with the Anaconda base Python environment are found in ```~/anaconda3/bin``` folder or the ```~/miniconda3/bin``` folder. 
 
-As Miniconda is a bootstrap version of Anaconda most of the binaries are not preinstalled in the Miniconda base Python environment. Typically these only become available when they are installed, however this is usually in another custom Python environment (see next section).
+As Miniconda is a bootstrap version of Anaconda most of the binaries are not preinstalled in the Miniconda base Python environment. Typically these only become available when they are installed, however this is usually in another custom Python environment. The conda package manager can be used to create Python environments for the latest version of Jupyter and Spyder from the community channel conda-forge or from the spyder developers release candidate channel. A custom Jupyter environment can also be equipped with R allowing use of the R kernel. Use of the conda package manager is covered in more detail in the next tutorial [conda](./conda.md).
 
 If a search for python is made, notice that there is:
 
@@ -1102,11 +1102,5 @@ However are normally implemented in IDEs such as Spyder which has Autoformatters
 AutoPEP8 addresses the spacing making it PEP8 compliant. The opinionated fomratter black can also be used to make quotation consistent (but inconsistent with the default single quotations used by the Python kernel):
 
 <img src='images_install/img_048.png' alt='img_048' width='450'/>
-
-## Python Environments
-
-The conda package manager can be used to create Python environments for the latest version of Jupyter and Spyder from the community channel conda-forge or from the spyder developers release candidate channel. A custom Jupyter environment can also be equipped with R allowing use of the R kernel.
-
-Use of the conda package manager is covered in more detail in the following [conda](./conda.md) tutorial.
 
 [Return to Anaconda Tutorial](./readme.md)

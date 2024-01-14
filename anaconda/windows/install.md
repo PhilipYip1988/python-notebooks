@@ -56,7 +56,7 @@ The Terminal uses the PowerShell programming language by default.
 
 <img src='images_install/img_003.png' alt='img_003' width='350'/>
 
-```
+```powershell
 WinGet install Anaconda.Anaconda3
 ```
 
@@ -108,7 +108,7 @@ Select Path and then Edit:
 
 For Anaconda installed using WinGet the following 5 entries are automatically added. These can optionally be manually added if not present, although a better option is to initialise the Windows Terminal (see below):
 
-```
+```powershell
 %USERPROFILE%\Anaconda3
 %USERPROFILE%\Anaconda3\Library\mingw-w64\bin
 %USERPROFILE%\Anaconda3\Libraryusr\bin
@@ -118,7 +118,7 @@ For Anaconda installed using WinGet the following 5 entries are automatically ad
 
 For Miniconda:
 
-```
+```powershell
 %USERPROFILE%\Miniconda3
 %USERPROFILE%\Miniconda3\Library\mingw-w64\bin
 %USERPROFILE%\Miniconda3\Libraryusr\bin
@@ -145,7 +145,7 @@ The subtle difference is the ```(base)``` prefix in the Anaconda PowerShell Prom
 
 Under the hood the Anaconda PowerShell Prompt essentially launches the Windows Terminal with a conda activation script. Note in order to run the script it bypasses a PowerShell Execution Policy:
 
-```
+```powershell
 %windir%\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy ByPass -NoExit -Command "& '~\anaconda3\shell\condabin\conda-hook.ps1' ; conda activate '~\anaconda3' "
 ```
 
@@ -253,22 +253,15 @@ Anaconda should now be updated:
 
 The (base) Python environment can be reactivated using:
 
-```
+```powershell
 conda activate base
 ```
 
 ## MikTeX Installation
 
-A number of the datascience packages such as nbcovert and matplotlib can use TeX. Unfortunately the installation of TeX differs significantly for Windows and Linux and therefore the installation of TeX isn't included with Anaconda. On Windows the MikTeX distribution contains the MikTeX console which is essentially the TeX package manager. The installer for it can be found on its home page [MikTeX](https://miktex.org/). Default installation will add it to th Windows Environmental Variables path so it can be found in the base Python environment. After installation, the MikTeX console should be used to check for and install updates.
+A number of the datascience packages such as nbcovert and matplotlib can use TeX. Unfortunately the installation of TeX differs significantly for Windows and Linux and therefore the installation of TeX isn't included with Anaconda. On Windows the MikTeX distribution contains the MikTeX console which is essentially the TeX package manager. The installer for it can be found on its home page [MikTeX](https://miktex.org/). Default installation will add it to th Windows Environmental Variables path so it can be found in the base Python environment (and any other Python environment). After installation, the MikTeX console should be used to check for and install updates.
 
-MikTeX is available as a third-party package on the community channel conda-forge. If it is installed this way in a separate Python environment, the MikTeX console from the specific Python environment should be updated.
-
-## Python Environments
-
-The conda package manager can be used to create Python environments for the latest version of Jupyter and Spyder from the community channel conda-forge or from the spyder developers release candidate channel. A custom Jupyter environment can also be equipped with R allowing use of the R kernel.
-
-Use of the conda package manager is covered in more detail in the following [conda](./conda.md) tutorial.
-
+The ```conda``` package manager can be used to create Python environments for the latest version of Jupyter and Spyder from the community channel ```conda-forge``` or from the spyder developers release candidate channel. A custom Jupyter environment can also be equipped with R allowing use of the R kernel. MikTeX is also available as a third-party package on the community channel ```conda-forge```. If it is installed using the ```conda``` package manager and separate Python environment, the MikTeX console will be preferentially selected from the specific Python environment when that environment is activated and it should be launched and updated before using TeX. Use of the ```conda``` package manager is covered in the next tutorial [conda](./conda.md).
 
 ### The (base) Python Environment
 
@@ -276,19 +269,19 @@ The Windows Terminal is configured to look at the entries in the Windows Environ
 
 For example if the command
 
-```
+```powershell
 python
 ```
 
 Then the following application is run, i.e. the base python:
 
-```
+```powershell
 ~\Anaconda3\python.exe
 ```
 
 For Miniconda the folder is instead:
 
-```
+```powershell
 ~\Miniconda3\python.exe
 ```
 
@@ -296,7 +289,7 @@ For Miniconda the folder is instead:
 
 In Windows Explorer, this is:
 
-```
+```powershell
 %USERPROFILE%\Anaconda3\python.exe
 ```
 
@@ -304,13 +297,13 @@ In Windows Explorer, this is:
 
 Note because the Windows Terminal opens in ```%USERPROFILE%``` by default. The application can also be accessed from the relative path:
 
-```
+```powershell
 Anaconda3\python.exe
 ```
 
 In the Windows Terminal the ```%USERPROFILE%``` environmental variable can be accessed using ```~``` and therefore the application can also be accessed from the full path:
 
-```
+```powershell
 ~\Anaconda3\python.exe
 ```
 
@@ -328,7 +321,7 @@ As Miniconda is a bootstrap version of Anaconda most of the applications are not
 
 There is also Interactive Python (IPython) which can be launched using:
 
-```
+```powershell
 ipython
 ```
 
@@ -372,7 +365,7 @@ In [1]:
 
 The available kernels can be viewed by using:
 
-```
+```powershell
 jupyter kernelspec list
 ```
 
@@ -427,7 +420,7 @@ The visual elements can be closed in the browser, however the server will contin
 
 Another important binary is the Scientific Python Development Environment (spyder) which can be launched using:
 
-```
+```powershell
 spyder
 ```
 
@@ -444,7 +437,7 @@ fromIccProfile: failed minimal tag size sanity
 
 The Anaconda Navigator is a program that contains shortcuts to most of Python applications. It can be launched using:
 
-```
+```powershell
 anaconda-navigator
 ```
 
@@ -462,7 +455,7 @@ However are normally implemented in IDEs such as Spyder which has Autoformatters
 
 <img src='images_install/img_039.png' alt='img_039' width='450'/>
 
-AutoPEP8 addresses the spacing making it PEP8 compliant. The opinionated fomratter black can also be used to make quotation consistent (but inconsistent with the default single quotations used by the Python kernel):
+AutoPEP8 addresses the spacing making it PEP8 compliant. The opinionated formatter black can also be used to make quotation consistent (but inconsistent with the default single quotations used by the Python kernel):
 
 <img src='images_install/img_040.png' alt='img_040' width='450'/>
 
