@@ -1,3 +1,6 @@
+"""dir gives a list of identifiers. This module has the function categorize_identifiers_dict which categorizes these identifiers 
+into groups within a dict and the function categorize_identifiers_dict which pretty prints this dict."""
+
 import inspect
 import pprint
 
@@ -19,7 +22,7 @@ def categorize_identifiers_dict(obj='default', second=object, unique_only=False,
     - A dictionary with categories as keys and lists of identifiers as values.
     """
     
-    if obj is 'default':
+    if obj == 'default':
         frame = inspect.currentframe().f_back
         obj = frame.f_globals.copy()
         del frame
@@ -133,7 +136,7 @@ def categorize_identifiers_print(obj='default', second=object, unique_only=False
     - A dictionary with categories as keys and lists of identifiers as values.
     """
     
-    if obj is 'default':
+    if obj == 'default':
         frame = inspect.currentframe().f_back
         obj = frame.f_globals.copy()
         del frame
