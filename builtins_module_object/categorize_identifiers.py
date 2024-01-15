@@ -233,5 +233,3 @@ def categorize_identifiers_print(obj='default', second=object, unique_only=False
         grouping_dict['method'] = function_with_parameter
 
     pprint.pprint(grouping_dict, sort_dicts=False)
-
-
