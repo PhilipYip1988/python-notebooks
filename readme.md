@@ -20,26 +20,6 @@ It is recommended to download this repository as a zip file. Select Code and dow
 
 The notebooks can also be viewed from GitHub in the browser however GitHub has some limitations for displaying some of the content in the notebook. Markdown files and notebooks with lots of images may render better because a local version of each image is used. The browser may time out and not load images properly on slow connections.
 
-## IPython Magics
-
-The Interactive Python Shell has a number of enhancements over the regular Python Shell. It can be used to run Python code and commonly used Shell commands that have been reimplemented as IPython magics. IPython magics are prefixed with a %. Shell commands that haven't been reimplemented as IPython magics can be run directly by prefixing with a !. The Shell used for these commands will differ depending on the Operating System, Windows will use PowerShell or CMD and Linux/Mac will use bash.
-
-* [IPython Module](./ipython_magics/notebook.ipynb)
-
-## Python Formatters
-
-This tutorial gives an example of using the Python formatters using IPython magic commands. The VSCode installation tutorial demonstrated how to use these via VSCode extensions however it is useful to know how to run these tools using the command line and this tutorial shows an example of using IPython magics previously discussed.
-
-The Automatic Python Enhanced Protocol 8 module is used to process a Python script or interactive Python notebook to autoformat a file to make sure its spacing is compliant with PEP8. 
-
-The import sort module is an additional formatter used to make sure library imports are grouped by standard libraries, third-party libraries and sorted alphabetically in these two categories. 
-
-The black formatter is an opinionated formatter used to standardise other formatting such as string quotations style. Unfortunately, its opinionated choices deviate from the style used in the Python language itself. 
-
-The Rust Fast Formatter is similar to black but can be easily configured for a single quotation option. Ruff is in the early stages of development and is not yet preinstalled with Anaconda.
-
-* [AutoPEP8, Import Sort, Black and Rust Fast Formatter Modules](./formatters/notebook.ipynb)
-
 ## Builtins Module
 
 The builtins module is automatically imported. It contains Pythons fundamental classes. These classes are based around the object class and the builtins module contains the functions which are used to invoke object based datamodel methods:
@@ -62,6 +42,26 @@ The builtins module is automatically imported. It contains Pythons fundamental c
 A Python code block can be used to direct Python code in response to a condition, loop a series of operations again and again, perform error handling and to create custom functions:
 
 * [Code Blocks Notebook](./programming_constructs/notebook.ipynb)
+
+## IPython Magics
+
+The Interactive Python Shell has a number of enhancements over the regular Python Shell. It can be used to run Python code and commonly used Shell commands that have been reimplemented as IPython magics. IPython magics are prefixed with a %. Shell commands that haven't been reimplemented as IPython magics can be run directly by prefixing with a !. The Shell used for these commands will differ depending on the Operating System, Windows will use PowerShell or CMD and Linux/Mac will use bash.
+
+* [IPython Module](./ipython_magics/notebook.ipynb)
+
+## Python Formatters
+
+This tutorial gives an example of using the Python formatters using IPython magic commands. The VSCode installation tutorial demonstrated how to use these via VSCode extensions however it is useful to know how to run these tools using the command line and this tutorial shows an example of using IPython magics previously discussed.
+
+The Automatic Python Enhanced Protocol 8 module is used to process a Python script or interactive Python notebook to autoformat a file to make sure its spacing is compliant with PEP8. 
+
+The import sort module is an additional formatter used to make sure library imports are grouped by standard libraries, third-party libraries and sorted alphabetically in these two categories. 
+
+The black formatter is an opinionated formatter used to standardise other formatting such as string quotations style. Unfortunately, its opinionated choices deviate from the style used in the Python language itself. 
+
+The Rust Fast Formatter is similar to black but can be easily configured for a single quotation option. Ruff is in the early stages of development and is not yet preinstalled with Anaconda.
+
+* [AutoPEP8, Import Sort, Black and Rust Fast Formatter Modules](./formatters/notebook.ipynb)
 
 ## Collections Module
 
