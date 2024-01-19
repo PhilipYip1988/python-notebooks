@@ -71,7 +71,7 @@ Produces:
 
 #### Heading Level 4
 
-Each heading will display on the Table of Contents in JupyterLab.
+Each heading will display on the Table of Contents in VSCode or JupyterLab.
 
 ---
 
