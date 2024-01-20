@@ -2,6 +2,7 @@ import inspect
 import pprint
 import numpy as np
 import pandas as pd
+from fractions import Fraction
 
 __version__ = '1.0.1'
 
@@ -283,7 +284,7 @@ def variables(show_id=False):
         variables_df = pd.DataFrame(columns=['Instance Name', 'Type', 'Size/Shape', 'Value', 'ID'])
     else:
         variables_df = pd.DataFrame(columns=['Instance Name', 'Type', 'Size/Shape', 'Value'])       
-    supported_datatypes = [str, bytes, bytearray, int, float, bool, complex, tuple, list, dict, frozenset, set, np.ndarray, pd.Index, pd.Series, pd.DataFrame]
+    supported_datatypes = [str, bytes, bytearray, int, float, bool, complex, tuple, list, dict, frozenset, set, np.ndarray, pd.Index, pd.Series, pd.DataFrame, Fraction]
 
     for index, key in enumerate(variable_dict):
         datatype = type(variable_dict[key])
