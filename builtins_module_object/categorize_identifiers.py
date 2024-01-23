@@ -2,6 +2,7 @@ import inspect
 import pprint
 import numpy as np
 import pandas as pd
+from fractions import Fraction
 
 __version__ = '1.0.1'
 
@@ -275,12 +276,15 @@ def variables2(obj='default', second=object, unique_only=False, consistent_only=
     return obj['a']
         
 
-def variables():
+def variables(show_id=False):
     standard_keys = ['In', 'Out', 'get_ipython', 'exit', 'quit', 'open', 'dir2', 'variables_df']
     frame = inspect.currentframe().f_back
     variable_dict = frame.f_globals.copy()
-    variables_df = pd.DataFrame(columns=['Instance Name', 'Type', 'Size/Shape', 'Value'])    
-    supported_datatypes = [str, bytes, bytearray, int, float, bool, complex, tuple, list, dict, frozenset, set, np.ndarray, pd.Index, pd.Series, pd.DataFrame]
+    if show_id == True:
+        variables_df = pd.DataFrame(columns=['Instance Name', 'Type', 'Size/Shape', 'Value', 'ID'])
+    else:
+        variables_df = pd.DataFrame(columns=['Instance Name', 'Type', 'Size/Shape', 'Value'])       
+    supported_datatypes = [str, bytes, bytearray, int, float, bool, complex, tuple, list, dict, frozenset, set, np.ndarray, pd.Index, pd.Series, pd.DataFrame, Fraction]
 
     for index, key in enumerate(variable_dict):
         datatype = type(variable_dict[key])
@@ -309,26 +313,51 @@ def variables():
                 datatype = datatype.rsplit(".")[-1].removesuffix("'>")
             else:
                 datatype = datatype.removeprefix("<class '").removesuffix("'>")
-                
-            variables_df.loc[index] = {'Instance Name': key, 'Type': datatype, 'Size/Shape': size, 'Value': value}
+
+            variable_id = id(variable_dict[key])
+
+            if show_id == True:
+                variables_df.loc[index] = {'Instance Name': key, 'Type': datatype, 'Size/Shape': size, 'Value': value, 'ID': variable_id}
+            else:
+                variables_df.loc[index] = {'Instance Name': key, 'Type': datatype, 'Size/Shape': size, 'Value': value}
+
+           
     
     variables_df.set_index('Instance Name', inplace=True)
     return variables_df
 
 def view(collection, neg_index=False):
-    print('Index', '\t', 'Type'.ljust(20), '\t', 'Size'.ljust(6), '\t', 'Value'.ljust(30))
-    if neg_index==False:
-        for idx, obj in enumerate(collection):
-            if '__len__' in dir(obj):
-                size = len(obj)
-            else:
-                size = 1
-            print(idx, '\t', str(type(obj)).removeprefix("<class '").removesuffix("'>").ljust(20), '\t', str(size).ljust(6), '\t', str(obj).ljust(30), '\t',)
-    else:
-        for idx, obj in enumerate(collection):
-            idx = idx - len(collection)
-            if '__len__' in dir(obj):
-                size = len(obj)
-            else:
-                size = 1
-            print(idx, '\t', str(type(obj)).removeprefix("<class '").removesuffix("'>").ljust(20), '\t', str(size).ljust(6), '\t', str(obj).ljust(30), '\t',)
+    if (type(collection) == set) or (type(collection) == frozenset):
+        print('Type'.ljust(20), '\t', 'Size'.ljust(6), '\t', 'Value'.ljust(30))
+        if neg_index==False:
+            for idx, obj in enumerate(collection):
+                if '__len__' in dir(obj):
+                    size = len(obj)
+                else:
+                    size = 1
+                print(str(type(obj)).removeprefix("<class '").removesuffix("'>").ljust(20), '\t', str(size).ljust(6), '\t', str(obj).ljust(30), '\t',)
+        else:
+            for idx, obj in enumerate(collection):
+                idx = idx - len(collection)
+                if '__len__' in dir(obj):
+                    size = len(obj)
+                else:
+                    size = 1
+                print(str(type(obj)).removeprefix("<class '").removesuffix("'>").ljust(20), '\t', str(size).ljust(6), '\t', str(obj).ljust(30), '\t',)
+    else:    
+        print('Index', '\t', 'Type'.ljust(20), '\t', 'Size'.ljust(6), '\t', 'Value'.ljust(30))
+        if neg_index==False:
+            for idx, obj in enumerate(collection):
+                if '__len__' in dir(obj):
+                    size = len(obj)
+                else:
+                    size = 1
+                print(idx, '\t', str(type(obj)).removeprefix("<class '").removesuffix("'>").ljust(20), '\t', str(size).ljust(6), '\t', str(obj).ljust(30), '\t',)
+        else:
+            for idx, obj in enumerate(collection):
+                idx = idx - len(collection)
+                if '__len__' in dir(obj):
+                    size = len(obj)
+                else:
+                    size = 1
+                print(idx, '\t', str(type(obj)).removeprefix("<class '").removesuffix("'>").ljust(20), '\t', str(size).ljust(6), '\t', str(obj).ljust(30), '\t',)
