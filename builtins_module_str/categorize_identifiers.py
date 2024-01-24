@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from fractions import Fraction
 
-__version__ = '1.0.1'
+__version__ = '1.0.3'
 
 def dir2(obj='default', second=object, unique_only=False, consistent_only=False, parameter='', print_output=True, show='all'):
     """ 
@@ -327,7 +327,16 @@ def variables(show_id=False):
     return variables_df
 
 def view(collection, neg_index=False):
-    if (type(collection) == set) or (type(collection) == frozenset):
+    if (type(collection) == dict):
+        print('Key'.ljust(30), '\t', 'Value'.ljust(30), '\t', 'Value Type'.ljust(20), '\t', 'Value Size'.ljust(6))
+        if neg_index==False:
+            for key, obj in collection.items():
+                if '__len__' in dir(obj):
+                    size = len(obj)
+                else:
+                    size = 1
+                print(str(key).ljust(30), '\t', str(obj).ljust(30), '\t', str(type(obj)).removeprefix("<class '").removesuffix("'>").ljust(20), '\t', str(size).ljust(6), '\t')
+    elif (type(collection) == set) or (type(collection) == frozenset):
         print('Type'.ljust(20), '\t', 'Size'.ljust(6), '\t', 'Value'.ljust(30))
         if neg_index==False:
             for idx, obj in enumerate(collection):
