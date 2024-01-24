@@ -6,7 +6,7 @@ The markdown file is similar to a text file, however allows text to be formatted
 
 ![img_001](./images/img_001.png)
 
-This document itself for example is a Markdown file hosted on GitHub. When it is viewed on GitHub the preview is seen. When it is editted, the raw content of the file itself is displayed:
+This document itself for example is a Markdown file hosted on GitHub. When it is viewed on GitHub the preview is seen. When it is edited, the raw content of the file itself is displayed:
 
 The Markdown syntax is used for markdown cells in Interactive Python Notebooks. Markdown cells are used essentially to create documentation around code, in a similar form to a scientific paper:
 
@@ -16,11 +16,11 @@ The Markdown syntax is used for markdown cells in Interactive Python Notebooks. 
 
 ## Formatted Text
 
-Text can be enclosed in stars ```*``` or tildas ```~``` to format it. One set of stars ```*``` makes text italic, two sets of stars ```*``` makes it bold and three sets of stars ```*``` makes it bold-italic. Two sets of tildas ```~``` make it strike-through. 
+Text can be enclosed in stars ```*``` or tildes ```~``` to format it. One set of stars ```*``` makes text italic, two sets of stars ```*``` makes it bold and three sets of stars ```*``` makes it bold-italic. Two sets of tildes ```~``` make it strike-through. 
 
 The following markdown:
 
-```
+```markdown
 Let's make a sentence with *italic text*, **bold text**, ***bold-italic*** and ~~strike-through~~ text.
 ```
 
@@ -34,7 +34,7 @@ Let's make a sentence with *italic text*, **bold text**, ***bold-italic*** and ~
 
 When one of the formatting characters is required in the text, it needs to be prepended with the left slash ```\``` to insert an escape character. For example to insert the left slash itself, ```\``` two left slashes are used ```\\``` where the first left slash ```\``` denotes insertion of an escape character and the second left slash ```\``` denotes the escape character to be inserted is the left slash itself```\```. The following markdown:
 
-```
+```markdown
 Let's make a sentence with \*italic text\*, \*\*bold text\*\*, \*\*\*bold-italic\*\*\* and \~\~strike-through\~\~ text.
 \\
 ```
@@ -50,7 +50,7 @@ Let's make a sentence with \*italic text\*, \*\*bold text\*\*, \*\*\*bold-italic
 
 Headings can be created by prefixing the text of a heading with a ```#```. Increasing the number of ```#``` increases the Heading Level. The following markdown:
 
-```
+```markdown
 # Heading 1
 
 ## Heading 2
@@ -79,7 +79,7 @@ Each heading will display on the Table of Contents in VSCode or JupyterLab.
 
 For convenience a long sentence written over multiple lines is formatted as a single sentence. The following markdown:
 
-```
+```markdown
 She sells
 seashells
 on the
@@ -93,9 +93,9 @@ seashells
 on the
 seashore
 
-If instead the sentance is to be deliberately separated out over different lines, doubly space it. The following markdown:
+If instead the sentence is to be deliberately separated out over different lines, doubly space it. The following markdown:
 
-```
+```markdown
 She sells
 
 seashells
@@ -124,7 +124,7 @@ Bullet points can be created by prepending each line with a star```*``` (but not
 
 The following markdown:
 
-```
+```markdown
 Bullet Point List
 * one
 * two
@@ -185,7 +185,7 @@ The pipe ```|``` is used to seperate columns out in a table. The table is constr
 
 The following markdown:
 
-```
+```markdown
 |num|number|
 |---|---|
 |1|one|
@@ -245,7 +245,7 @@ An empty line with ```---``` will produce a separator.
 
 The following code:
 
-```
+```markdown
 ---
 ```
 
@@ -308,7 +308,21 @@ print('Hello World!')
 print('Goodbye World!')
 ```
 
-Other programming languages can be specified using cmd:
+Other programming languages can be specified using markdown:
+
+````
+```markdown
+Let's make a sentence with \*italic text\*, \*\*bold text\*\*, \*\*\*bold-italic\*\*\* and \~\~strike-through\~\~ text.
+\\
+```
+````
+
+```markdown
+Let's make a sentence with \*italic text\*, \*\*bold text\*\*, \*\*\*bold-italic\*\*\* and \~\~strike-through\~\~ text.
+\\
+```
+
+cmd:
 
 ````
 ```cmd
@@ -393,7 +407,7 @@ Produces:
 
 The following markdown:
 
-```
+```markdown
 ![Anaconda](https://upload.wikimedia.org/wikipedia/en/c/cd/Anaconda_Logo.png)
 ```
 
@@ -403,7 +417,7 @@ Produces:
 
 If the Image can't be found, the information provided in the square brackets displays:
 
-```
+```markdown
 ![This is supposed to be an Anaconda Logo Image](https://upload.wikimedia.org/wikipedia/en/c/cd/Anaconda_Logo2.png)
 ```
 
@@ -413,7 +427,7 @@ If the image is in the same folder as the markdown file. The file name can be sp
 
 In the file path ```./``` can be used to specify a subfolder and ```../``` can be used to go up a level. The ```img_001.png``` in the subfolder ```images``` can be selected for example using the following markdown:
 
-```
+```markdown
 ![img_001](./images/img_001.png)
 ![img_001](./images/img_001a.png)
 ```
@@ -431,6 +445,22 @@ Producing:
 GitHub for example seems to be sensitive regarding the case of the file extension and won't render properly if the file has a file extension that uses a different case. By enabling the file extension you will be able to see what case each file extension is using and can update them all to be lower case for the sake of being consistent. 
 
 JupyterLab and VSCode on the other hand are insensitive regarding the case of the file extension therefore an image may display in these IDEs and fail to render properly when a repository is uploaded to GitHub. 
+
+To specify the width of an image, HTML can instead be used:
+
+```markdown
+<img src='./images/img_001.png' alt='img_001' width='400'/>
+
+<img src='./images/img_001.png' alt='img_001' width='300'/>
+
+<img src='./images/img_001.png' alt='img_001' width='200'/>
+```
+
+<img src='./images/img_001.png' alt='img_001' width='400'/>
+
+<img src='./images/img_001.png' alt='img_001' width='300'/>
+
+<img src='./images/img_001.png' alt='img_001' width='200'/>
 
 ## TeX
 
@@ -480,9 +510,13 @@ There is a subtle difference between TeX and LaTeX. LaTeX is essentially an exte
 
 For the purpose of inserting an equation TeX and LaTeX are usually equivalent... However there are sometimes some issues when the equation editor outputs code in LaTeX that is not recognised by TeX and therefore fails to render. For example the following column vector:
 
-$$\left[\begin{matrix}a\\b\\c\end{matrix}\right]$$
+$$ \begin{bmatrix}
+   a \\
+   b \\
+   c \\
+   \end{bmatrix} $$
 
-In Only Office Desktop Editors is output using LaTeX:
+In OnlyOffice Desktop Editors is output using LaTeX:
 
 ```tex
 $$\left[\matrix{a&b&c}\right$$
@@ -494,7 +528,17 @@ And is output in Word using TeX:
 $$\left[\begin{matrix}a\\b\\c\end{matrix}\right]$$
 ```
 
-The same issue occurs with matrices.
+TeX should be insensitive with spacing and newlines however the TeX renderer on GitHub has bugs and this does not render unless it is spaced out over multiple lines:
+
+```tex
+$$ \begin{bmatrix}
+   a \\
+   b \\
+   c \\
+   \end{bmatrix} $$
+```
+
+The same issue occurs with matrices:
 
 $$ \begin{bmatrix} 
    a & b & c \\
@@ -503,13 +547,13 @@ $$ \begin{bmatrix}
    \end{bmatrix} $$
 
 
-Note GitHub does not render matrices properly provided in linear format:
+GitHub does not render matrices properly provided in linear format:
 
 ```tex
 $$\begin{bmatrix}a&b&c\\d&e&f\\g&h&i\\\end{bmatrix}$$
 ```
 
-However if the separate commands are provided over multiple lines it renders properly:
+However when input with spacing and newlines it renders properly:
 
 ```tex
 $$ \begin{bmatrix} 
@@ -580,9 +624,9 @@ Sometimes the formatting characters need to be incorporated into the equation. T
 |hash|```$\#$```|$\#$|
 |ampersand|```$\&$```|$\&$|
 
-However there are often slightly different results depending on the TeX renderer. On GitHub for example escaping the above formatting characters does not work well. 
+However the TeX renderer on GitHub does not process these correctly. The above display correctly in VSCode and JupyterLab.
 
-Using verbose works better however cannot be used for the dollar sign itself:
+Using verbose can often yield better results however cannot be used for the dollar sign itself:
 
 ```tex
 $\verb|%|$
@@ -801,7 +845,7 @@ $$ \begin{bmatrix}
    a & b &       c
    \end{bmatrix} $$
 
-Column Vectors use the symbol ```\``` as a delimiter to move onto the next row. However in TeX ```\``` is an instruction to insert an escape character, therefore to insert the escape character ```\``` itself ```\\``` must be used:
+Column Vectors use the symbol ```\``` as a delimiter to move onto the next row. However in TeX ```\``` is an instruction to insert an escape character, therefore to insert the escape character ```\``` itself ```\\``` must be used. The TeX for a column vector and matrix should be insensitive to spacing however does not render properly on GitHub without spacing and newlines:
 
 ```tex
 $$ \begin{bmatrix}
