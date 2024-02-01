@@ -28,9 +28,9 @@ sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-plain-gener
 
 ## Launching VSCode
 
-VSCode can be launched using its Start Menu shortcut or using the PowerShell command in the Anaconda PowerShell Prompt:
+VSCode can be launched using its Start Menu shortcut or using the bash command in the Linux Terminal:
 
-```ps
+```bash
 code
 ```
 

@@ -25,7 +25,7 @@ In order to use VSCode with Python a Python environment needs to be setup.
 The Anaconda (base) Python environment can be used. Alternatively a Python environment can be setup for VSCode using the latest packages from the community channel conda-forge by opening up the Anaconda PowerShell Prompt and inputting:
 
 ```powershell
-conda create -n vscode-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly ipympl pyqt autopep8 isort black pylint flake8 ruff miktex postscript
+conda create -n vscode-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly ipympl pyqt autopep8 isort black pylint flake8 ruff miktex ghostscript
 ```
 
 ## conda Initialisation

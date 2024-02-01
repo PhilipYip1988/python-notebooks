@@ -1221,7 +1221,7 @@ Previously the subcommands ```create``` and ```install``` were used seperately a
 For Jupyter it is recommended to create a Python environment called jupyter-env with the following packages:
 
 ```powershell
-conda create -n jupyter-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly jupyterlab-variableinspector ipympl pyqt ruff ghostscript miktex nbconvert
+conda create -n jupyter-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly jupyterlab-variableinspector ipympl pyqt ruff ghostscript miktex nbconvert jupyterlab-spellchecker
 ```
 
 Installing seaborn will install numpy, pandas and matplotlib as these are dependencies for seaborn.
@@ -1284,7 +1284,7 @@ spyder
 R can be used with JupyterLab. It is recommended to create a Python environment called ```r-env``` with the following packages:
 
 ```powershell
-conda create -n r-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly jupyterlab-variableinspector ipympl pyqt ruff nbconvert ghostscript miktex r-irkernel jupyter-lsp-r r-tidyverse r-ggthemes r-palmerpenguins r-writexl
+conda create -n r-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly jupyterlab-variableinspector ipympl pyqt ruff nbconvert ghostscript miktex jupyterlab-spellchecker r-irkernel jupyter-lsp-r r-tidyverse r-ggthemes r-palmerpenguins r-writexl
 ```
 
 This Python environment has the same packages as the ```jupyter-env``` but has the addition of the R Jernel and R Jupyter Language Server Protocol in addition to commonly used R packages.
