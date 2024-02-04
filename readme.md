@@ -12,36 +12,36 @@ Anaconda can be installed on Windows and Linux/Mac for more details see:
 
 Markdown uses simple syntax to format text and is commonly used on GitHub and within Interactive Python Notebooks. For mathematical equations it is supplemented using TeX:
 
-* [Markdown and TeX Syntax Markdown File](./markdown/readme.md)
+* [Markdown and TeX Syntax](./markdown/readme.md)
 
-## Viewing Markdown Files and Notebooks
+## Viewing Markdown Files and Notebook Files
 
-It is recommended to download this repository as a zip file. Select Code and download zip, then extract the zip and open the extracted folder in VSCode or JupyterLab. For the notebook files, it is recommended to clear all outputs and run each cell individually as you examine the notebook. 
+These tutorials use markdown and notebook files and can be viewed in the browser or in an IDE or code editor such as JupyterLab or VSCode:
 
-The notebooks can also be viewed from GitHub in the browser however GitHub has some limitations for displaying some of the content in the notebook. Markdown files and notebooks with lots of images may render better because a local version of each image is used. The browser may time out and not load images properly on slow connections.
+* [Viewing and Running Files](./viewing.md)
 
 ## Builtins Module
 
 The builtins module is automatically imported. It contains Pythons fundamental classes. These classes are based around the object class and the builtins module contains the functions which are used to invoke object based datamodel methods:
 
-* [Object Notebook](./builtins_module_object/notebook.ipynb)
-* [Immutable Strings Notebook](./builtins_module_str/notebook.ipynb)
-* [Immutable Bytes Notebook](./builtins_module_bytes/notebook.ipynb)
-* [Mutable ByteArray Notebook](./builtins_module_bytearray/notebook.ipynb)
-* [Immutable Integer Notebook](./builtins_module_int/notebook.ipynb)
-* [Immutable Floating Point Notebook](./builtins_module_float/notebook.ipynb)
-* [Immutable Boolean Notebook](./builtins_module_bool/notebook.ipynb)
-* [Immutable Tuple Notebook](./builtins_module_tuple/notebook.ipynb)
-* [Mutable List Notebook](./builtins_module_list/notebook.ipynb)
-* [Immutable FrozenSet Notebook](./builtins_module_frozenset/notebook.ipynb)
-* [Mutable Set Notebook](./builtins_module_set/notebook.ipynb)
-* [Mutable Dictionary Notebook](./builtins_module_dict/notebook.ipynb)
+* [Object Class](./builtins_module_object/notebook.ipynb)
+* [Immutable Strings Class](./builtins_module_str/notebook.ipynb)
+* [Immutable Bytes Class](./builtins_module_bytes/notebook.ipynb)
+* [Mutable ByteArray Class](./builtins_module_bytearray/notebook.ipynb)
+* [Immutable Integer Class](./builtins_module_int/notebook.ipynb)
+* [Immutable Floating Point Class](./builtins_module_float/notebook.ipynb)
+* [Immutable Boolean Class](./builtins_module_bool/notebook.ipynb)
+* [Immutable Tuple Class](./builtins_module_tuple/notebook.ipynb)
+* [Mutable List Class](./builtins_module_list/notebook.ipynb)
+* [Immutable FrozenSet Class](./builtins_module_frozenset/notebook.ipynb)
+* [Mutable Set Class](./builtins_module_set/notebook.ipynb)
+* [Mutable Dictionary Class](./builtins_module_dict/notebook.ipynb)
 
-## Programming Constructs
+## Collections and Code Blocks
 
 A Python code block can be used to direct Python code in response to a condition, loop a series of operations again and again, perform error handling and to create custom functions:
 
-* [Code Blocks Notebook](./programming_constructs/notebook.ipynb)
+* [Code Blocks](./programming_constructs/notebook.ipynb)
 
 ## IPython Magics
 
@@ -67,98 +67,98 @@ The Rust Fast Formatter is similar to black but can be easily configured for a s
 
 The collections module contains a number of supplementary collections based around the collections seen in Python builtins module. This includes the ```namedtuple```, ```deque```, ```Counter``` and ```defaultdict``` classes:
 
-* [Collections Module Notebook](./collections_module/notebook.ipynb)
+* [Collections Module](./collections_module/notebook.ipynb)
 
 ## Itertools Module
 
 The itertools module contains supplementary iterators that are closely related to and extend those found in Python builtins:
 
-* [Itertools Module Notebook](./itertools_module/notebook.ipynb)
+* [Itertools Module](./itertools_module/notebook.ipynb)
 
 ## Math and Complex Math Modules
 
 The math and complex math modules contain commonly used mathematical functions typically returning scalar values:
 
-* [Math and Complex Math Modules Notebook](./math_module/notebook.ipynb)
+* [Math and Complex Math Modules](./math_module/notebook.ipynb)
 
 ## Random Module
 
 The random module is used to generate a random scalar number, often from a distribution:
 
-* [Random Module Notebook](./random_module/notebook.ipynb)
+* [Random Module](./random_module/notebook.ipynb)
 
 ## Datetime Module
 
 The datetime module is used to generate scalar date, times, datetimes and timedeltas (time differences):
 
-* [Datetime Module Notebook](./datetime_module/notebook.ipynb)
+* [Datetime Module](./datetime_module/notebook.ipynb)
 
 ## Statistics Module
 
 The statistics module is a functional module covering basic statistics normally returning a scalar from a list:
 
-* [Statistics Module Notebook](./statistics_module/notebook.ipynb)
+* [Statistics Module](./statistics_module/notebook.ipynb)
 
 ## Input Output Module
 
 The Input and Output module is used for reading and writing text files .txt and binary files .bin. It can also be used for a Python Script file .py or Markdown file .py as these are fundamentally text files with a different file extension:
 
-* [Input and Output Module Notebook](./io_module/notebook.ipynb)
+* [Input and Output Module](./io_module/notebook.ipynb)
 
 ## Comma Separated Values Module
 
 The Comma Separated Values module expands the functionality of the io module allowing manipulation of files which have rows and columns opposed to just rows. It can be used with .csv, .txt and .prn files for example:
 
-* [Comma Separated Values Notebook](./csv_module/notebook.ipynb)
+* [Comma Separated Values](./csv_module/notebook.ipynb)
 
 ## Operating System Module
 
 The Operating System module is a Python implementation of the bash or Powershell programming languages and contains commands to navigate around the Operating System. Functions in the Operating System module typically return a file path in the form of a Unicode string:
 
-* [Operating System Module Notebook](./os_module/notebook.ipynb)
+* [Operating System Module](./os_module/notebook.ipynb)
 
 ## Path Library Module
 
 The Path and Library module is similar to the Operating System Module however uses an Object Orientated Programming (OOP) approach to file paths and libraries within the user profile or home directory. File paths are returned as instances of the Path class which have a number of useful attributes and the datamodel method ```__truediv__``` (*dunder truediv*) is defined so the ```/``` operator can be used for folder and file concatenation:
 
-* [Path and Library Module](./pathlib_module/notebook.ipynb)
+* [Path and Library](./pathlib_module/notebook.ipynb)
 
 ## System Module
 
 The System module provides access to some variables used or maintained by the Python interpreter and to functions that interact strongly with the interpreter:
 
-* [System Module Notebook](./sys_module/notebook.ipynb)
+* [System Module](./sys_module/notebook.ipynb)
 
 ## The Numeric Python Library
 
 The Numeric Python library is based upon the data structure of the NDArray. This is a datastructure that is a collection however unlike ```builtins``` collections, all the datamodel methods are configured for numeric operations. numpy also scales the functions found in the math, datetime and random modules to ndarrays:
 
-* [NDArray Notebook](./numpy_library/notebook.ipynb)
+* [NDArray Class](./numpy_library/notebook.ipynb)
 
 ## The Python and Data Analysis Library
 
 The Python and Data Analysis library builds upon the data structure of the ndarray, creating a Series which is a NDArray (1D) with a column name and a DataFrame which is a grouping of Series analogous in form to an Excel SpreadSheet. The Python and Data analysis library can be used to programically manipulate the data stored in the DataFrame analogous to any data operations that would be carried out manually in Excel:
 
-* [Series and DataFrame Notebook](./pandas_library/notebook.ipynb)
+* [Index, Series and DataFrame Classes](./pandas_library/notebook.ipynb)
 
 ## The Matrix Plotting Library
 
 The matrix plotting library encompasses a large group of modules compartmentalising objects used for visual elements in a plot. As a user generally only the Python Plot Module is used which allows manipulation of the above objects using a simplified functional and object-orientated programming syntax:
 
-* [The Python Plot Module Introduction Notebook](./matplotlib_library/notebook_introduction.ipynb)
-* [The Python Plot Module Backends Notebook](./matplotlib_library/notebook_backends.ipynb)
+* [Python Plot Module](./matplotlib_library/notebook.ipynb)
+* [Plot Backends Comparison](./matplotlib_library/notebook_backends.ipynb)
 
 ## The Data Visualisation Library
 
 seaborn is a wrapper library for matplotlib which greatly simplifies the code required to create plots that are commonly used for data visualisation of data stored in a DataFrame:
 
-* [Data Visualisation Notebook](./seaborn_library/notebook.ipynb)
+* [Data Visualisation Library](./seaborn_library/notebook.ipynb)
 
 ## The Plotly Library
 
 plotly is a Python plotting library that creates plots using nodejs. This allows plots to be displayed interactively in the cell output of an interactive Python notebook. The plotly express module use syntax similar to seaborn:
 
-* [Plotly Notebook](./plotly_library/notebook.ipynb)
+* [Plotly Library](./plotly_library/notebook.ipynb)
 
 ## The Python Imaging Library
 
