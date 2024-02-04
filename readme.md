@@ -18,7 +18,7 @@ Markdown uses simple syntax to format text and is commonly used on GitHub and wi
 
 These tutorials use markdown and notebook files and can be viewed in the browser or in an IDE or code editor such as JupyterLab or VSCode:
 
-* [Viewing and Running Files](./viewing.md)
+* [Viewing and Running Files](./viewing_notebooks/viewing.md)
 
 ## Builtins Module
 
