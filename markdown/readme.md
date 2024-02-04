@@ -1,16 +1,30 @@
 # Markdown
 
-A text file can only be used to store unformatted text. 
+A text file can only be used to store unformatted text. The markdown file is similar to a text file, however allows text to be formatted using very simple markdown syntax. The Markdown syntax is also used for markdown cells in Interactive Python Notebooks. Markdown cells are commonly used to create documentation around code, in a similar form to a scientific paper.
 
-The markdown file is similar to a text file, however allows text to be formatted using very simple markdown syntax. The raw file itself is edited (left) using a text editor however typically read using the preview (right):
+In JupyterLab opening a markdown file opens up the markdown editor:
+
+![img_011](./images/img_011.png)
+
+To view the formatted Markdown. Right click blank space on the Markdown preview and select Markdown Preview:
+
+![img_012](./images/img_012.png)
+
+The table of contents can be viewed:
+
+![img_013](./images/img_013.png)
+
+Unfortunately in JupyterLab the markdown editor and markdown preview panes are not linked and using a link in the table of contents will only navigate to the heading in the currently select pane. This makes it more difficult to modify the markdown file.
+
+In VSCode the markdown file can be opened:
 
 ![img_001](./images/img_001.png)
 
-This document itself for example is a Markdown file hosted on GitHub. When it is viewed on GitHub the preview is seen. When it is edited, the raw content of the file itself is displayed:
-
-The Markdown syntax is used for markdown cells in Interactive Python Notebooks. Markdown cells are used essentially to create documentation around code, in a similar form to a scientific paper:
+The file can be right clicked to view the markdown preview:
 
 ![img_002](./images/img_002.png)
+
+In VSCode the markdown editor and markdown preview panes are linked and the table of contents in the markdown editor will navigate to the heading in both panes. Having both panes linked makes it easier to modify the markdown file and view the output:
 
 ![img_003](./images/img_003.png)
 
@@ -1065,4 +1079,4 @@ $$\bigwedge_{\text{lower}}^{\text{upper}}{x}$$
 
 ---
 
-[Return to Anaconda Tutorial](./readme.md)
+[Return to Anaconda Tutorial](../readme.md)

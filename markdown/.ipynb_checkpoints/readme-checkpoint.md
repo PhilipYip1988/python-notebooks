@@ -1065,4 +1065,4 @@ $$\bigwedge_{\text{lower}}^{\text{upper}}{x}$$
 
 ---
 
-[Return to Anaconda Tutorial](./readme.md)
+[Return to Anaconda Tutorial](../readme.md)
