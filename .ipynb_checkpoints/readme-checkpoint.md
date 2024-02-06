@@ -4,9 +4,10 @@ The Anaconda 2023-09 Data Science Python Distribution contains Python and Python
 
 ## Python Installation
 
-Anaconda can be installed on Windows and Linux/Mac for more details see:
+Anaconda can be installed on Windows and Linux. The Mac Terminal and File System are Linux Based and Installation on Mac should therefore be more or less identical to Linux:
 
-* [Anaconda Installation](./anaconda/readme.md)
+* [Anaconda Installation on Windows 11](./anaconda/windows/readme.md)
+* [Anaconda Installation on Linux Ubuntu 23.10](./anaconda/linux/readme.md)
 
 ## Markdown
 
@@ -16,7 +17,7 @@ Markdown uses simple syntax to format text and is commonly used on GitHub and wi
 
 ## Viewing Markdown Files and Notebook Files
 
-These tutorials use markdown and notebook files and can be viewed in the browser or in an IDE or code editor such as JupyterLab or VSCode:
+These tutorials use markdown and notebook files and can be viewed in the browser or in an IDE such as JupyterLab or VSCode:
 
 * [Viewing and Running Files](./viewing_notebooks/viewing.md)
 
@@ -41,7 +42,7 @@ The builtins module is automatically imported. It contains Pythons fundamental c
 
 The Interactive Python Shell has a number of enhancements over the regular Python Shell. It can be used to run Python code and commonly used Shell commands that have been reimplemented as IPython magics. The Shell used for these commands will differ depending on the Operating System:
 
-* [IPython Magics on Windows](./ipython_magics/notebook_windows.ipynb)
+* [IPython Magics on Windows 11](./ipython_magics/notebook_windows.ipynb)
 
 ## Formatters
 
