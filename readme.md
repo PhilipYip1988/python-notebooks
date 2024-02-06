@@ -66,21 +66,27 @@ A Python code block can be used to direct Python code in response to a condition
 
 * [Code Blocks](./programming_constructs/notebook.ipynb)
 
-## Input Output Module
+## Input Output Module and Comma Separated Values Module
 
-The Input and Output module is used for reading and writing text files .txt and binary files .bin. It can also be used for a Python Script file .py or Markdown file .py as these are fundamentally text files with a different file extension:
+The Input Output module is used for reading and writing text files .txt and binary files .bin. The Input Output module is commonly used with the Comma Separated Values Module for reading and writing comma separated files .csv, printed format files .prn and text delimited files .tab. The Input Output Module is also commonly used with the JavaScript Object Notation for reading and writing JavaScript object notation files .json:
 
-* [Input and Output Module](./io_module/notebook.ipynb)
+* [File Formats (IO, CSV and JSON Modules)](./io_module/notebook.ipynb)
 
-## Comma Separated Values Module
+## Collections Module
 
-The Comma Separated Values module expands the functionality of the io module allowing manipulation of files which have rows and columns opposed to just rows. It can be used with .csv, .txt and .prn files for example:
+The collections module contains a number of supplementary collections based around the collections seen in the Python builtins module. This includes the ```namedtuple```, ```deque```, ```Counter``` and ```defaultdict``` classes:
 
-* [Comma Separated Values](./csv_module/notebook.ipynb)
+* [Collections Module](./collections_module/notebook.ipynb)
+
+## Itertools Module
+
+The itertools module contains supplementary iterators that are closely related to and extend those found in Python builtins:
+
+* [Itertools Module](./itertools_module/notebook.ipynb)
 
 ## Operating System Module
 
-The Operating System module is a Python implementation of the bash or Powershell programming languages and contains commands to navigate around the Operating System. Functions in the Operating System module typically return a file path in the form of a Unicode string:
+The Operating System module is essentially a Python implementation of the Shell programming languages and contains commands to navigate around the Operating System:
 
 * [Operating System Module](./os_module/notebook.ipynb)
 
@@ -95,18 +101,6 @@ The Path and Library module is similar to the Operating System Module however us
 The System module provides access to some variables used or maintained by the Python interpreter and to functions that interact strongly with the interpreter:
 
 * [System Module](./sys_module/notebook.ipynb)
-
-## Collections Module
-
-The collections module contains a number of supplementary collections based around the collections seen in Python builtins module. This includes the ```namedtuple```, ```deque```, ```Counter``` and ```defaultdict``` classes:
-
-* [Collections Module](./collections_module/notebook.ipynb)
-
-## Itertools Module
-
-The itertools module contains supplementary iterators that are closely related to and extend those found in Python builtins:
-
-* [Itertools Module](./itertools_module/notebook.ipynb)
 
 ## Math and Complex Math Modules
 
@@ -165,6 +159,6 @@ plotly is a Python plotting library that creates plots using nodejs. This allows
 
 ## The Python Imaging Library
 
-The Python Imaging Library contains the Image module which contains the Image data structure. This module is used for Image construction from an ndarray or an image file taken from another image manipulation program or camera. Note that the modern version of the Python Imaging Library is called PILLOW. PILLOW was originally a fork from PIL. PIL was Python 2 based and has been discontinued:
+The Python Imaging Library contains the Image module which contains the Image data structure. This module is used for Image construction from an ndarray or an image file taken from another image manipulation program or camera:
 
 * [The Python Imaging Library](./pillow_library/notebook.ipynb)

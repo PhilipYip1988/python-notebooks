@@ -322,7 +322,9 @@ print('Hello World!')
 print('Goodbye World!')
 ```
 
-Other programming languages can be specified using markdown:
+Other programming languages can be specified using markdown. Such as 
+
+markdown:
 
 ````
 ```markdown
@@ -363,7 +365,7 @@ cd "~\Anaconda3"
 There is the abbreviation ps1 (ps is another programming language postscript) however ps1 is not as widely recognised as powershell by markdown renderers.
 
 
-Or bash:
+bash:
 
 ````
 ```bash
@@ -375,7 +377,7 @@ cd "~/Anaconda3"
 cd "~/Anaconda3"
 ```
 
-Or tex:
+tex:
 
 ````
 ```tex
@@ -385,6 +387,32 @@ $\sin{\alpha}\pm\sin{\beta}=2\sin{\frac{1}{2}\left(\alpha\pm\beta\right)}\cos{\f
 
 ```tex
 $\sin{\alpha}\pm\sin{\beta}=2\sin{\frac{1}{2}\left(\alpha\pm\beta\right)}\cos{\frac{1}{2}\left(\alpha\mp\beta\right)}$
+```
+
+json:
+
+````
+```json
+{
+    "preferences": {
+        "default_formatter": {
+            "python": ["autopep8", "isort", "black"],
+            "R": ["styler", "formatR"],
+        }
+    }
+}
+```
+````
+
+```json
+{
+    "preferences": {
+        "default_formatter": {
+            "python": ["autopep8", "isort", "black"],
+            "R": ["styler", "formatR"],
+        }
+    }
+}
 ```
 
 To include the ```` ``` ```` themselves as part of the markdown text. Enclose the three back quotes ```` ``` ```` in four backquotes ````` ```` `````. To get 4 backquotes (enclose in 5 backquotes). The following markdown:
