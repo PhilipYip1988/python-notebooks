@@ -1425,6 +1425,8 @@ ghostscript is required as a TeX dependency for nbconvert or matplotlib with TeX
 sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-plain-generic cm-super dvipng
 ```
 
+jupyterlab-spreadsheet-editor and jupyterlab-drawio are additional extensions that aren't yet updated to support the latest version of jupyterlab yet. For more details see [Extension Compatibility with JupyterLab 4.0](https://github.com/jupyterlab/jupyterlab/issues/14590).
+
 Once the Python environment is created it can be activated using:
 
 ```bash

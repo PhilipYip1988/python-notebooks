@@ -1221,22 +1221,24 @@ Previously the subcommands ```create``` and ```install``` were used seperately a
 For Jupyter it is recommended to create a Python environment called jupyter-env with the following packages:
 
 ```powershell
-conda create -n jupyter-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn pyarrow sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly pyqt isort autopep8 ruff black ipympl jupyterlab-variableinspector jupyterlab_code_formatter jupyterlab-spellchecker ghostscript miktex nbconvert 
+conda create -n jupyter-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn pyarrow sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly pyqt isort autopep8 ruff black ipympl jupyterlab-variableinspector jupyterlab_code_formatter jupyterlab-spellchecker jupyterlab-spreadsheet-editor jupyterlab-drawio ghostscript miktex nbconvert 
 ```
 
 Installing seaborn will install numpy, pandas and matplotlib as these are dependencies for seaborn. pandas needs pyarrow as a dependency.
 
 openpyxl, xlrd, xlsxwriter, lxml, sqlalchemy and tabulate are file format convertors used for pandas.
 
-nodejs allows installation of JupyterLab extensions. ipywidgets and plotly can be used to create widgets and plots using Python code, under the hood JavaScript is used to display these in the browser. The variableinspector gives a variable inspector.
+nodejs allows installation of JupyterLab extensions. ipywidgets and plotly can be used to create widgets and plots using Python code, under the hood JavaScript is used to display these in the browser. The variableinspector gives a variable inspector. The spreadsheet editor is used to quickly manipulate spreadsheets and the drawio extension is used for diagrams.
 
-jupyterlab_code_formatter can be used with the formatters isort, autopep8 and black, ruff is not supported with this extension yet.
+jupyterlab code formatter can be used with the formatters isort, autopep8 and black, ruff is not supported with this extension yet. The spell checker is used for markdown files.
 
 pyqt and ipympl are required for an interactive matplotlib plotting backends.
 
 nbconvert is used for exporting notebooks to Python script files, html or pdf (which requires TeX).
 
-miktex and ghostscript are required to use TeX for nbconvert or matplotlib with TeX rendering. Installation of miktek includes the ```miktex-console``` which is essentially the TeX package manager for Windows, it should be updated before TeX functionality is used:
+miktex and ghostscript are required to use TeX for nbconvert or matplotlib with TeX rendering. Installation of miktek includes the ```miktex-console``` which is essentially the TeX package manager for Windows, it should be updated before TeX functionality is used.
+
+jupyterlab-spreadsheet-editor and jupyterlab-drawio are additional extensions that aren't yet updated to support the latest version of jupyterlab yet. For more details see [Extension Compatibility with JupyterLab 4.0](https://github.com/jupyterlab/jupyterlab/issues/14590).
 
 Once the Python environment is created it can be activated using:
 
@@ -1286,7 +1288,7 @@ spyder
 R can be used with JupyterLab. It is recommended to create a Python environment called ```r-env``` with the following packages:
 
 ```powershell
-conda create -n r-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn pyarrow sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly pyqt isort autopep8 ruff black ipympl jupyterlab-variableinspector jupyterlab_code_formatter jupyterlab-spellchecker ghostscript miktex nbconvert r-irkernel jupyter-lsp-r r-tidyverse r-ggthemes r-palmerpenguins r-writexl
+conda create -n r-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn pyarrow sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly pyqt isort autopep8 ruff black ipympl jupyterlab-variableinspector jupyterlab-variableinspector jupyterlab_code_formatter jupyterlab-spellchecker r-irkernel jupyter-lsp-r r-tidyverse r-ggthemes r-palmerpenguins r-writexl
 ```
 
 This Python environment has the same packages as the ```jupyter-env``` but has the addition of the R Jernel and R Jupyter Language Server Protocol in addition to commonly used R packages.

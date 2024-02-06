@@ -14,7 +14,7 @@ And on Linux/Mac:
 
 * [Installing Anaconda](./anaconda/linux/install.md)
 * [Using the Conda Package Manager and Managing Conda Python Environments to Install the Latest Version of Spyder and JupyterLab](./anaconda/linux/conda.md)
-* [Installing VSCode, Selecting a Python Encvironment and Configuring Extensions](./anaconda/linux/vscode.md)
+* [Installing VSCode, Selecting a Python Environment and Configuring Extensions](./anaconda/linux/vscode.md)
 
 For Linux Ubuntu will be used as an example but the procedure is the same on most other distros. The Mac Terminal and File System are Linux Based and therefore installation on Mac should therefore be more or less identical to Linux.
 
@@ -35,7 +35,7 @@ These tutorials use markdown and notebook files and can be viewed in the browser
 The builtins module is automatically imported. It contains Pythons fundamental classes. These classes are based around the object class and the builtins module contains the functions which are used to invoke object based datamodel methods:
 
 * [Object Class](./builtins_module_object/notebook.ipynb)
-* [Immutable Strings Class](./builtins_module_str/notebook.ipynb)
+* [Immutable String Class](./builtins_module_str/notebook.ipynb)
 * [Immutable Bytes Class](./builtins_module_bytes/notebook.ipynb)
 * [Mutable ByteArray Class](./builtins_module_bytearray/notebook.ipynb)
 * [Immutable Integer Class](./builtins_module_int/notebook.ipynb)

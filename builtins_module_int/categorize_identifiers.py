@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from fractions import Fraction
 
-__version__ = '1.0.3'
+__version__ = '1.0.4'
 
 def dir2(obj='default', second=object, unique_only=False, consistent_only=False, parameter='', print_output=True, show='all'):
     """ 
@@ -276,7 +276,7 @@ def variables2(obj='default', second=object, unique_only=False, consistent_only=
     return obj['a']
         
 
-def variables(show_id=False):
+def variables(show_identifiers='all', show_id=False):
     standard_keys = ['In', 'Out', 'get_ipython', 'exit', 'quit', 'open', 'dir2', 'variables_df']
     frame = inspect.currentframe().f_back
     variable_dict = frame.f_globals.copy()
@@ -320,10 +320,11 @@ def variables(show_id=False):
                 variables_df.loc[index] = {'Instance Name': key, 'Type': datatype, 'Size/Shape': size, 'Value': value, 'ID': variable_id}
             else:
                 variables_df.loc[index] = {'Instance Name': key, 'Type': datatype, 'Size/Shape': size, 'Value': value}
-
-           
     
     variables_df.set_index('Instance Name', inplace=True)
+
+    if show_identifiers != 'all':
+        variables_df = variables_df.loc[show_identifiers]
     return variables_df
 
 def view(collection, neg_index=False):
