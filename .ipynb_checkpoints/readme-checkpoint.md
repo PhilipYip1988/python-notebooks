@@ -4,10 +4,19 @@ The Anaconda 2023-09 Data Science Python Distribution contains Python and Python
 
 ## Python Installation
 
-Anaconda can be installed on Windows and Linux. The Mac Terminal and File System are Linux Based and Installation on Mac should therefore be more or less identical to Linux:
+Anaconda can be installed on Windows:
 
-* [Anaconda Installation on Windows 11](./anaconda/windows/readme.md)
-* [Anaconda Installation on Linux Ubuntu 23.10](./anaconda/linux/readme.md)
+* [Installing Anaconda](./anaconda/windows/install.md)
+* [Using the Conda Package Manager and Managing Conda Python Environments to Install the Latest Version of Spyder and JupyterLab](./anaconda/windows/conda.md)
+* [Installing VSCode, Selecting a Python Environment and Configuring Extensions](./anaconda/windows/vscode.md)
+
+And on Linux/Mac:
+
+* [Installing Anaconda](./anaconda/linux/install.md)
+* [Using the Conda Package Manager and Managing Conda Python Environments to Install the Latest Version of Spyder and JupyterLab](./anaconda/linux/conda.md)
+* [Installing VSCode, Selecting a Python Encvironment and Configuring Extensions](./anaconda/linux/vscode.md)
+
+For Linux Ubuntu will be used as an example but the procedure is the same on most other distros. The Mac Terminal and File System are Linux Based and therefore installation on Mac should therefore be more or less identical to Linux.
 
 ## Markdown
 
