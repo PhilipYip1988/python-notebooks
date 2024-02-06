@@ -66,6 +66,36 @@ A Python code block can be used to direct Python code in response to a condition
 
 * [Code Blocks](./programming_constructs/notebook.ipynb)
 
+## Input Output Module
+
+The Input and Output module is used for reading and writing text files .txt and binary files .bin. It can also be used for a Python Script file .py or Markdown file .py as these are fundamentally text files with a different file extension:
+
+* [Input and Output Module](./io_module/notebook.ipynb)
+
+## Comma Separated Values Module
+
+The Comma Separated Values module expands the functionality of the io module allowing manipulation of files which have rows and columns opposed to just rows. It can be used with .csv, .txt and .prn files for example:
+
+* [Comma Separated Values](./csv_module/notebook.ipynb)
+
+## Operating System Module
+
+The Operating System module is a Python implementation of the bash or Powershell programming languages and contains commands to navigate around the Operating System. Functions in the Operating System module typically return a file path in the form of a Unicode string:
+
+* [Operating System Module](./os_module/notebook.ipynb)
+
+## Path Library Module
+
+The Path and Library module is similar to the Operating System Module however uses an Object Orientated Programming (OOP) approach to file paths and libraries within the user profile or home directory. File paths are returned as instances of the Path class which have a number of useful attributes and the datamodel method ```__truediv__``` (*dunder truediv*) is defined so the ```/``` operator can be used for folder and file concatenation:
+
+* [Path and Library](./pathlib_module/notebook.ipynb)
+
+## System Module
+
+The System module provides access to some variables used or maintained by the Python interpreter and to functions that interact strongly with the interpreter:
+
+* [System Module](./sys_module/notebook.ipynb)
+
 ## Collections Module
 
 The collections module contains a number of supplementary collections based around the collections seen in Python builtins module. This includes the ```namedtuple```, ```deque```, ```Counter``` and ```defaultdict``` classes:
@@ -101,36 +131,6 @@ The datetime module is used to generate scalar date, times, datetimes and timede
 The statistics module is a functional module covering basic statistics normally returning a scalar from a list:
 
 * [Statistics Module](./statistics_module/notebook.ipynb)
-
-## Input Output Module
-
-The Input and Output module is used for reading and writing text files .txt and binary files .bin. It can also be used for a Python Script file .py or Markdown file .py as these are fundamentally text files with a different file extension:
-
-* [Input and Output Module](./io_module/notebook.ipynb)
-
-## Comma Separated Values Module
-
-The Comma Separated Values module expands the functionality of the io module allowing manipulation of files which have rows and columns opposed to just rows. It can be used with .csv, .txt and .prn files for example:
-
-* [Comma Separated Values](./csv_module/notebook.ipynb)
-
-## Operating System Module
-
-The Operating System module is a Python implementation of the bash or Powershell programming languages and contains commands to navigate around the Operating System. Functions in the Operating System module typically return a file path in the form of a Unicode string:
-
-* [Operating System Module](./os_module/notebook.ipynb)
-
-## Path Library Module
-
-The Path and Library module is similar to the Operating System Module however uses an Object Orientated Programming (OOP) approach to file paths and libraries within the user profile or home directory. File paths are returned as instances of the Path class which have a number of useful attributes and the datamodel method ```__truediv__``` (*dunder truediv*) is defined so the ```/``` operator can be used for folder and file concatenation:
-
-* [Path and Library](./pathlib_module/notebook.ipynb)
-
-## System Module
-
-The System module provides access to some variables used or maintained by the Python interpreter and to functions that interact strongly with the interpreter:
-
-* [System Module](./sys_module/notebook.ipynb)
 
 ## The Numeric Python Library
 
