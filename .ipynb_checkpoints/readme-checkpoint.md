@@ -37,6 +37,19 @@ The builtins module is automatically imported. It contains Pythons fundamental c
 * [Mutable Set Class](./builtins_module_set/notebook.ipynb)
 * [Mutable Dictionary Class](./builtins_module_dict/notebook.ipynb)
 
+## IPython Magics
+
+The Interactive Python Shell has a number of enhancements over the regular Python Shell. It can be used to run Python code and commonly used Shell commands that have been reimplemented as IPython magics. The Shell used for these commands will differ depending on the Operating System:
+
+* [IPython Magics on Windows](./ipython_magics/notebook_windows.ipynb)
+
+## Formatters
+
+Python has a number of formatters that can be used to format code:
+
+* [Code Formatters (AutoPEP8, ISort, Black and Ruff)](./formatters/notebook.ipynb)
+* [JupyterLab Code Formatter Extension (AutoPEP8, ISort and Black)](./formatters/notebook_jupyterlab_code_formatter_extension.ipynb)
+
 ## Collections and Code Blocks
 
 A Python code block can be used to direct Python code in response to a condition, loop a series of operations again and again, perform error handling and to create custom functions:
@@ -108,26 +121,6 @@ The Path and Library module is similar to the Operating System Module however us
 The System module provides access to some variables used or maintained by the Python interpreter and to functions that interact strongly with the interpreter:
 
 * [System Module](./sys_module/notebook.ipynb)
-
-## IPython Magics
-
-The Interactive Python Shell has a number of enhancements over the regular Python Shell. It can be used to run Python code and commonly used Shell commands that have been reimplemented as IPython magics. IPython magics are prefixed with a %. Shell commands that haven't been reimplemented as IPython magics can be run directly by prefixing with a !. The Shell used for these commands will differ depending on the Operating System, Windows will use PowerShell or CMD and Linux/Mac will use bash.
-
-* [IPython Module](./ipython_magics/notebook.ipynb)
-
-## Python Formatters
-
-This tutorial gives an example of using the Python formatters using IPython magic commands. The VSCode installation tutorial demonstrated how to use these via VSCode extensions however it is useful to know how to run these tools using the command line and this tutorial shows an example of using IPython magics previously discussed.
-
-The Automatic Python Enhanced Protocol 8 module is used to process a Python script or interactive Python notebook to autoformat a file to make sure its spacing is compliant with PEP8. 
-
-The import sort module is an additional formatter used to make sure library imports are grouped by standard libraries, third-party libraries and sorted alphabetically in these two categories. 
-
-The black formatter is an opinionated formatter used to standardise other formatting such as string quotations style. Unfortunately, its opinionated choices deviate from the style used in the Python language itself. 
-
-The Rust Fast Formatter is similar to black but can be easily configured for a single quotation option. Ruff is in the early stages of development and is not yet preinstalled with Anaconda.
-
-* [AutoPEP8, Import Sort, Black and Rust Fast Formatter Modules](./formatters/notebook.ipynb)
 
 ## The Numeric Python Library
 
