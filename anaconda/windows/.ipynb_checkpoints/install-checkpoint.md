@@ -28,7 +28,7 @@ The main channel is maintained by the Anaconda company and the conda-forge chann
 
 Miniconda is a stripped down version of Anaconda which has an empty base Python environment with only the dependencies required for the conda package manager.
 
-Note WinGet and conda should not be confused with one another. Both are package managers however WinGet is a general purpose Windows Package Manager that is Windows only. conda is a cross-platform package manager specialised for datascience packages.
+Note winget and conda should not be confused with one another. Both are package managers however WinGet is a general purpose Windows Package Manager that is Windows only. conda is a cross-platform package manager specialised for datascience packages.
 
 ## Removing Old Installations
 
@@ -44,9 +44,7 @@ Before using WinGet, the Microsoft Store, App Installer and Windows Terminal sho
 
 <img src='images_install/img_001.png' alt='img_001' width='450'/>
 
-Note: When WinGet is used with Terminal (Non-Admin) it will install a Program for the Current User. When WinGet is used with Terminal (Admin) it will install a Program for All Users.
-
-Unfortunately the version of Miniconda3 available from WinGet is old. Better results will occur when using the latest installer which can be obtained from the Miniconda website [Miniconda](https://docs.conda.io/projects/miniconda/en/latest/).
+Note: When WinGet is used with Terminal (Non-Admin) it will install a Program for the Current User. When WinGet is used with Terminal (Admin) it will install a Program for All Users which is not recommended for Anaconda.
 
 Right click the Start Menu and select Terminal (Non-Admin):
 
@@ -56,11 +54,58 @@ The Terminal uses the PowerShell programming language by default.
 
 <img src='images_install/img_003.png' alt='img_003' width='350'/>
 
+The Prompt gives details about the programming language and current working directory:
+
 ```powershell
-WinGet install Anaconda.Anaconda3
+PS ~>
 ```
 
+The environmental variable %USERPROFILE% (used within file explorer) maps to the location of your User Profile, in this case C:\\Users\\Phili and this is often represented using ```~``` in PowerShell.
+
+Enter the command:
+
+```powershell
+WinGet search Anaconda
+```
+
+This should return:
+
 <img src='images_install/img_004.png' alt='img_004' width='350'/>
+
+This gives details about the programs available from Anaconda that can be installed on WinGet.
+
+```
+PS ~> winget search anaconda
+Name       Id                  Version     Source
+--------------------------------------------------
+Miniconda3 Anaconda.Miniconda3 py39_4.10.3 winget
+Anaconda3  Anaconda.Anaconda3  2023.09     winget
+PS ~>
+```
+
+Anaconda is up to date. Unfortunately the version of Miniconda3 available from WinGet is outdated and an updated version should be added soon. [Add version: Anaconda.Miniconda3 version py311_23.11.0-2 #138230](https://github.com/microsoft/winget-pkgs/pull/138230). 
+
+In the meantime better results will occur when using the latest installer which can be obtained from the Miniconda website [Miniconda](https://docs.conda.io/projects/miniconda/en/latest/).
+
+Anaconda can be installed using:
+
+```powershell
+winget install Anaconda.Anaconda3
+```
+
+This will install Anaconda. The operation is only complete when a new prompt displays. This will display:
+
+```
+PS ~> winget install Anaconda.Anaconda3
+Found Anaconda3 [Anaconda.Anaconda3] Version 2023.09
+This application is licensed to you by its owner.
+Microsoft is not resposible for, nor does it grant any licenses
+to, third-party packages.
+Successfully verified installer hash
+Starting package install...
+Successfully installed
+PS ~>
+```
 
 The default install location will be in:
 
@@ -70,7 +115,7 @@ The default install location will be in:
 
 <img src='images_install/img_005.png' alt='img_005' width='450'/>
 
-The environmental variable %USERPROFILE% maps to the location of your User Profile, in this case C:\\Users\\Phili
+
 Other Windows Environmental Variables include:
 
 |Environmental Variable|Location
@@ -106,7 +151,7 @@ Select Path and then Edit:
 
 <img src='images_install/img_009.png' alt='img_009' width='350'/>
 
-For Anaconda installed using WinGet the following 5 entries are automatically added. These can optionally be manually added if not present, although a better option is to initialise the Windows Terminal (see below):
+For Anaconda installed using winget the following 5 entries are automatically added. These can optionally be manually added if not present, although a better option is to initialise the Windows Terminal (see below):
 
 ```powershell
 %USERPROFILE%\Anaconda3
@@ -141,9 +186,9 @@ Notice that the Anaconda PowerShell Prompt and Windows Terminal look almost iden
 
 <img src='images_install/img_026.png' alt='img_026' width='350'/>
 
-The subtle difference is the ```(base)``` prefix in the Anaconda PowerShell Prompt which is an indicator meaning the base Python environment is selected. 
+The subtle difference is the title indicated in red. The prompt in orange is almost the same. However the Anaconda PowerShell Prompt prefixes ```(base)``` which is an indicator meaning the base Python environment is selected. 
 
-Under the hood the Anaconda PowerShell Prompt essentially launches the Windows Terminal with a conda activation script. Note in order to run the script it bypasses a PowerShell Execution Policy:
+Under the hood the Anaconda PowerShell Prompt essentially launches the Windows Terminal with a conda activation script. Note in order to run the script it bypasses a PowerShell Execution Policy. This can be seen if the shortcut location to the Anaconda PowerShell Prompt is examined:
 
 ```powershell
 %windir%\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy ByPass -NoExit -Command "& '~\anaconda3\shell\condabin\conda-hook.ps1' ; conda activate '~\anaconda3' "
@@ -155,7 +200,7 @@ Initialisation is often required for some IDEs that use the Windows Terminal to 
 
 The Windows Terminal can be initialised directly by using a modified PowerShell Profile that runs the conda activation script. To use this modified profile, the PowerShell Script Execution Policy needs to be set to RemoteSigned which require use of the Anaconda PowerShell Prompt.
 
-To initialise Anaconda in PowerShell open up the Windows Terminal (Admin) and change the execution policy:
+To initialise Anaconda in PowerShell. Right click the Windows 11 Start button and open up the Windows Terminal (Admin) and change the execution policy:
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
@@ -204,11 +249,11 @@ modified      ~\OneDrive\Documents\WindowsPowerShell\profile.ps1
 ==> For changes to take effect, close and re-open your current shell. <==
 ```
 
-Close the Windows Terminal (Admin) and open up a new Windows Terminal (Non-Admin). The Windows Terminal will now use the new PowerShell profile profile.ps1 found in Documents. It will show the prefix (base) indicating that the (base) Python environment is selected and use of the Windows Terminal and Anaconda PowerShell Prompt will be equivalent. 
+Close the Windows Terminal (Admin) and open up a new Windows Terminal (Non-Admin). The Windows Terminal will now use the new PowerShell profile profile.ps1 found in Documents. It will show the prefix (base) indicating that the (base) Python environment is selected and use of the Windows Terminal and Anaconda PowerShell Prompt will now be equivalent. 
 
 ## Updating Anaconda
 
-Open the Anaconda PowerShell Prompt or Windows Terminal. If using the Anaconda PowerShell Prompt input:
+Open the Anaconda PowerShell Prompt or Windows Terminal. Input:
 
 ```powershell
 conda deactivate
