@@ -3,6 +3,7 @@ import pprint
 import numpy as np
 import pandas as pd
 from fractions import Fraction
+from collections import namedtuple  # Import namedtuple
 
 __version__ = '1.0.4'
 
@@ -284,11 +285,11 @@ def variables(show_identifiers='all', show_id=False):
         variables_df = pd.DataFrame(columns=['Instance Name', 'Type', 'Size/Shape', 'Value', 'ID'])
     else:
         variables_df = pd.DataFrame(columns=['Instance Name', 'Type', 'Size/Shape', 'Value'])       
-    supported_datatypes = [str, bytes, bytearray, int, float, bool, complex, tuple, list, dict, frozenset, set, np.ndarray, pd.Index, pd.Series, pd.DataFrame, Fraction]
+    supported_datatypes = [str, bytes, bytearray, int, float, bool, complex, tuple, list, dict, frozenset, set, np.ndarray, pd.Index, pd.Series, pd.DataFrame, Fraction, namedtuple]
 
     for index, key in enumerate(variable_dict):
         datatype = type(variable_dict[key])
-        if (not key.startswith('_') and (key not in standard_keys) and ((datatype in supported_datatypes) or variable_dict[key] == None)) or (if isinstance(variable_dict[key], tuple) and hasattr(variable_dict[key], '_fields')):
+        if (not key.startswith('_') and (key not in standard_keys) and ((datatype in supported_datatypes) or variable_dict[key] == None)) or (isinstance(key, tuple) and hasattr(key, '_fields')):
             datatypes_with_shape = [np.ndarray, pd.DataFrame, pd.Series, pd.Index]
             if datatype in datatypes_with_shape:
                 size = (variable_dict[key]).shape
@@ -371,3 +372,4 @@ def view(collection, neg_index=False):
                 else:
                     size = 1
                 print(idx, '\t', str(type(obj)).removeprefix("<class '").removesuffix("'>").ljust(20), '\t', str(size).ljust(6), '\t', str(obj).ljust(30), '\t',)
+
