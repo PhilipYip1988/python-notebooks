@@ -84,6 +84,30 @@ The itertools module contains supplementary iterators that are closely related t
 
 * [Itertools Module](./itertools_module/notebook.ipynb)
 
+## Datetime Module
+
+The datetime module is used to generate scalar date, times, datetimes and timedeltas (time differences):
+
+* [Datetime Module](./datetime_module/notebook.ipynb)
+
+## Math and Complex Math Modules
+
+The math and complex math modules contain commonly used mathematical functions typically returning scalar values:
+
+* [Math and Complex Math Modules](./math_module/notebook.ipynb)
+
+## Random Module
+
+The random module is used to generate a random scalar number, often from a distribution:
+
+* [Random Module](./random_module/notebook.ipynb)
+
+## Statistics Module
+
+The statistics module is a functional module covering basic statistics normally returning a scalar from a list:
+
+* [Statistics Module](./statistics_module/notebook.ipynb)
+
 ## Operating System Module
 
 The Operating System module is essentially a Python implementation of the Shell programming languages and contains commands to navigate around the Operating System:
@@ -101,30 +125,6 @@ The Path and Library module is similar to the Operating System Module however us
 The System module provides access to some variables used or maintained by the Python interpreter and to functions that interact strongly with the interpreter:
 
 * [System Module](./sys_module/notebook.ipynb)
-
-## Math and Complex Math Modules
-
-The math and complex math modules contain commonly used mathematical functions typically returning scalar values:
-
-* [Math and Complex Math Modules](./math_module/notebook.ipynb)
-
-## Random Module
-
-The random module is used to generate a random scalar number, often from a distribution:
-
-* [Random Module](./random_module/notebook.ipynb)
-
-## Datetime Module
-
-The datetime module is used to generate scalar date, times, datetimes and timedeltas (time differences):
-
-* [Datetime Module](./datetime_module/notebook.ipynb)
-
-## Statistics Module
-
-The statistics module is a functional module covering basic statistics normally returning a scalar from a list:
-
-* [Statistics Module](./statistics_module/notebook.ipynb)
 
 ## The Numeric Python Library
 
