@@ -176,8 +176,6 @@ def variables(show_identifiers='all', show_id=False):
                 value = value.columns.tolist()
             elif isinstance(value, np.ndarray):
                 value = value.tolist()
-            elif isinstance(value, ChainMap):
-                value = dict(value.maps)
             else:
                 value = str(value)
 
