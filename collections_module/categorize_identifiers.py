@@ -288,7 +288,7 @@ def variables(show_identifiers='all', show_id=False):
 
     for index, key in enumerate(variable_dict):
         datatype = type(variable_dict[key])
-        if (not key.startswith('_') and (key not in standard_keys) and ((datatype in supported_datatypes) or variable_dict[key] == None)) or (if isinstance(variable_dict[key], tuple) and hasattr(variable_dict[key], '_fields')):
+        if not key.startswith('_') and (key not in standard_keys) and ((datatype in supported_datatypes) or variable_dict[key] == None):
             datatypes_with_shape = [np.ndarray, pd.DataFrame, pd.Series, pd.Index]
             if datatype in datatypes_with_shape:
                 size = (variable_dict[key]).shape

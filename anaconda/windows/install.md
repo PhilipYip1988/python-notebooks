@@ -325,20 +325,6 @@ For Anaconda updating the ```conda``` package manager will update the entire Ana
 (base) PS ~> conda update -c conda --solver=libmamba conda
 Collecting package metadata (current_repodata.json): done
 Solving environment: done
-
-
-==> WARNING: A newer version of conda exists. <==
-  current version: 23.7.4
-  latest version: 24.1.0
-
-Please update conda by running
-
-    $ conda update -n base -c defaults conda
-
-Or to minimize the number of packages updated during conda update use
-
-     conda install conda=24.1.0
-
 ```
 
 Details about proposed packages to be downloaded will then show:
@@ -776,7 +762,7 @@ conda activate base
 
 ## MikTeX Installation
 
-A number of the datascience packages such as nbcovert and matplotlib can use TeX. Unfortunately the installation of TeX differs significantly for Windows and Linux and therefore the installation of TeX isn't included with the Anaconda Python Distribution. On Windows the MikTeX distribution contains the MikTeX console which is essentially the TeX package manager. The installer for it can be found on its home page [MikTeX](https://miktex.org/). 
+A number of the datascience packages such as nbconvert and matplotlib can use TeX. Unfortunately the installation of TeX differs significantly for Windows and Linux and therefore the installation of TeX isn't included with the Anaconda Python Distribution. On Windows the MikTeX distribution contains the MikTeX console which is essentially the TeX package manager. The installer for it can be found on its home page [MikTeX](https://miktex.org/). 
 
 winget can be used to search for MitTeX:
 
@@ -934,7 +920,7 @@ Contains a number of additional applications:
 
 As Miniconda is a bootstrap version of Anaconda most of the applications are not preinstalled in the Miniconda base Python environment. Typically these applications only become available when they are installed, however this is usually in another custom Python environment (see next section).
 
-TInteractive Python (IPython) can be launched using:
+Interactive Python (IPython) can be launched using:
 
 ```powershell
 ipython

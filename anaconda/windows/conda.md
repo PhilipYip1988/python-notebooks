@@ -1221,7 +1221,7 @@ Previously the subcommands ```create``` and ```install``` were used seperately a
 For Jupyter it is recommended to create a Python environment called jupyter-env with the following packages:
 
 ```powershell
-conda create -n jupyter-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn pyarrow sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly pyqt isort autopep8 ruff black ipympl jupyterlab-variableinspector jupyterlab_code_formatter jupyterlab-spellchecker jupyterlab-spreadsheet-editor jupyterlab-drawio ghostscript miktex nbconvert 
+conda create -n jupyter-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn pyarrow sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly pyqt isort autopep8 ruff black ipympl jupyterlab-variableinspector jupyterlab_code_formatter jupyterlab-spellchecker jupyterlab-spreadsheet-editor jupyterlab-drawio ghostscript nbconvert 
 ```
 
 Installing seaborn will install numpy, pandas and matplotlib as these are dependencies for seaborn. pandas needs pyarrow as a dependency.
@@ -1235,8 +1235,6 @@ jupyterlab code formatter can be used with the formatters isort, autopep8 and bl
 pyqt and ipympl are required for an interactive matplotlib plotting backends.
 
 nbconvert is used for exporting notebooks to Python script files, html or pdf (which requires TeX).
-
-miktex and ghostscript are required to use TeX for nbconvert or matplotlib with TeX rendering. Installation of miktek includes the ```miktex-console``` which is essentially the TeX package manager for Windows, it should be updated before TeX functionality is used.
 
 jupyterlab-spreadsheet-editor and jupyterlab-drawio are additional extensions that aren't yet updated to support the latest version of jupyterlab yet. For more details see [Extension Compatibility with JupyterLab 4.0](https://github.com/jupyterlab/jupyterlab/issues/14590).
 
@@ -1255,20 +1253,12 @@ jupyter-notebook
 jupyter-lab
 ```
 
-To open the MikTex console input:
-
-```powershell
-miktex-console
-```
-
-Use the MikTex console to search for updates (MikTex should be individually updated for each Python environment).
-
 ### Spyder
 
 For Spyder it is recommended to create a Python environment called ```spyder-env``` with the following packages:
 
 ```powershell
-conda create -n spyder-env -c conda-forge python spyder cython seaborn scikit-learn pyarrow sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate pyqt ruff ghostscript miktex
+conda create -n spyder-env -c conda-forge python spyder cython seaborn scikit-learn pyarrow sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate pyqt ruff ghostscript
 ```
 
 Once the Python environment is created it can be activated using:
@@ -1347,7 +1337,7 @@ conda install -c conda-forge/label/spyder_dev -c conda-forge/label/spyder_kernel
 The datascience libraries commonly used with Spyder should be installed:
 
 ```powershell
-conda install -c conda-forge cython seaborn scikit-learn pyarrow sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate pyqt ruff ghostscript miktex
+conda install -c conda-forge cython seaborn scikit-learn pyarrow sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate pyqt ruff ghostscript
 ```
 
 Once the Python environment is created it can be activated using:
