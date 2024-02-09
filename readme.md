@@ -66,17 +66,17 @@ A Python code block can be used to direct Python code in response to a condition
 
 * [Code Blocks](./programming_constructs/notebook.ipynb)
 
-## File Formats
-
-The Input Output (IO) module is used for reading and writing text files .txt and binary files .bin. The IO module is commonly used with the Comma Separated Values (CSV) Module for reading and writing comma separated files .csv, printed format files .prn and text delimited files .tab. The IO module is also commonly used with the JavaScript Object Notation (JSON) module for reading and writing JavaScript object notation files .json. The above are all examples of high level human-readable formats. Data can also be serialised using the pickle module which uses pickle files .pkl and serialised data can be stored in a database using the shelve module:
-
-* [File Formats](./io_module/notebook.ipynb)
-
 ## Collections Module
 
 The collections module contains a number of supplementary collections based around the collections seen in the Python builtins module. This includes the ```namedtuple```, ```deque```, ```Counter``` and ```defaultdict``` classes:
 
 * [Collections Module](./collections_module/notebook.ipynb)
+
+## File Formats
+
+The Input Output (IO) module is used for reading and writing text files .txt and binary files .bin. The IO module is commonly used with the Comma Separated Values (CSV) Module for reading and writing comma separated files .csv, printed format files .prn and text delimited files .tab. The IO module is also commonly used with the JavaScript Object Notation (JSON) module for reading and writing JavaScript object notation files .json. The above are all examples of high level human-readable formats. Data can also be serialised using the pickle module which uses pickle files .pkl and serialised data can be stored in a database using the shelve module:
+
+* [File Formats](./io_module/notebook.ipynb)
 
 ## Itertools Module
 
