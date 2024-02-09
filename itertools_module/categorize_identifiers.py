@@ -6,7 +6,7 @@ from fractions import Fraction
 from collections import namedtuple, defaultdict, deque, Counter, OrderedDict, ChainMap
 pd.set_option('display.max_colwidth', 200)
 
-__version__ = '1.0.6' # Support for collections
+__version__ = '1.0.7' # Support for collections
 
 def dir2(obj='default', second=object, unique_only=False, consistent_only=False, parameter='', print_output=True, show='all'):
     """ 
@@ -149,7 +149,8 @@ def variables(show_identifiers='all', show_id=False):
 
     supported_datatypes = [
         str, bytes, bytearray, int, float, bool, complex, tuple, list, dict, frozenset, set, np.ndarray, 
-        pd.Index, pd.Series, pd.DataFrame, Fraction, defaultdict, deque, Counter, OrderedDict, ChainMap
+        pd.Index, pd.Series, pd.DataFrame, Fraction, defaultdict, deque, Counter, OrderedDict, ChainMap,
+        range
     ]
 
     for key, value in variable_dict.items():

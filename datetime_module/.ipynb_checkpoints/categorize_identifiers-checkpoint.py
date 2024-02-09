@@ -4,9 +4,10 @@ import numpy as np
 import pandas as pd
 from fractions import Fraction
 from collections import namedtuple, defaultdict, deque, Counter, OrderedDict, ChainMap
+from datetime import time, date, datetime, timedelta
 pd.set_option('display.max_colwidth', 200)
 
-__version__ = '1.0.7' # Support for collections
+__version__ = '1.0.8' # Support for collections and datetime
 
 def dir2(obj='default', second=object, unique_only=False, consistent_only=False, parameter='', print_output=True, show='all'):
     """ 
@@ -150,7 +151,7 @@ def variables(show_identifiers='all', show_id=False):
     supported_datatypes = [
         str, bytes, bytearray, int, float, bool, complex, tuple, list, dict, frozenset, set, np.ndarray, 
         pd.Index, pd.Series, pd.DataFrame, Fraction, defaultdict, deque, Counter, OrderedDict, ChainMap,
-        range
+        range, time, date, datetime, timedelta
     ]
 
     for key, value in variable_dict.items():
