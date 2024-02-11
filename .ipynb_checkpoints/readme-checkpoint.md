@@ -1,8 +1,10 @@
 # Python Tutorials
 
-The Anaconda 2023-09 Data Science Python Distribution contains Python and Python Standard Modules, the conda package manager, relatively modern versions of the datascience libraries such as numpy, pandas and matplotlib, Python IDEs such as Spyder and JupyterLab. It also includes Python linters such as pylint, flake8 and pyflakes and Python formatters such as autopep8, isort and black which can greatly help improve code quality. Miniconda is a bootstrap version of Anaconda and allows the use of the conda package manager to create Python Environments. The instructions below will equally apply to Miniconda.
+This is a repository of Python tutorials that give an overview of the Python programming language, commonly used Python standard libraries, commonly used datascience libraries numpy, pandas and matplotlib as well as Anaconda/Miniconda and the conda package manager. The tutorials will also cover IPython and the Jupyter ecosystem, particularly focusing on the JupyterLab 4 IDE. The tutorials are in the form of markdown files or interactive Python notebooks. Please feel free to star, share and fork this repository.
 
 ## Python Installation
+
+The Anaconda 2023-09 Data Science Python Distribution contains Python and Python Standard Modules, the conda package manager, relatively modern versions of the datascience libraries such as numpy, pandas and matplotlib, Python IDEs such as Spyder and JupyterLab. It also includes Python linters such as pylint, flake8 and pyflakes and Python formatters such as autopep8, isort and black which can greatly help improve code quality. Miniconda is a bootstrap version of Anaconda and allows the use of the conda package manager to create Python Environments. The instructions below will equally apply to Miniconda.
 
 Anaconda can be installed on Windows:
 
@@ -134,7 +136,7 @@ The Numeric Python library is based upon the data structure of the NDArray. This
 
 ## The Python and Data Analysis Library
 
-The Python and Data Analysis library builds upon the data structure of the ndarray, creating a Series which is a NDArray (1D) with a column name and a DataFrame which is a grouping of Series analogous in form to an Excel SpreadSheet. The Python and Data analysis library can be used to programically manipulate the data stored in the DataFrame analogous to any data operations that would be carried out manually in Excel:
+The Python and Data Analysis library builds upon the data structure of the ndarray, creating a Series which is a NDArray (1D) with a column name and a DataFrame which is a grouping of Series analogous in form to an Excel SpreadSheet. The Python and Data analysis library can be used to programmatically manipulate the data stored in the DataFrame analogous to any data operations that would be carried out manually in Excel:
 
 * [Index, Series and DataFrame Classes](./pandas_library/notebook.ipynb)
 
