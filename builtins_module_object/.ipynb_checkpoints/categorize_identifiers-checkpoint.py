@@ -9,7 +9,7 @@ from datetime import time, date, datetime, timedelta
 import os
 pd.set_option('display.max_colwidth', 200)
 
-__version__ = '1.1.5' 
+__version__ = '1.1.1' 
 
 
 def dir2(obj='default', second=object, unique_only=False, consistent_only=False, parameter='', print_output=True, show='all', exclude_external_modules=False):
@@ -33,6 +33,7 @@ def dir2(obj='default', second=object, unique_only=False, consistent_only=False,
         obj2 = frame.f_globals.copy()
         identifiers = list(obj2.keys())
         del frame
+
     else:
         try: 
             obj.__dict__.keys()
@@ -102,25 +103,23 @@ def dir2(obj='default', second=object, unique_only=False, consistent_only=False,
         if not is_method and is_upper and not is_datamodel and not is_internal:
             grouping_dict['constant'].append(identifier)
         if not is_method and not is_upper and not is_class and not is_datamodel and not is_internal:
-            if obj == 'default':
-                grouping_dict['attribute'].append(identifier)
-            else:
-                datatype = str(type(getattr(obj, identifier)))
-                if not exclude_external_modules:
-                    if ('module' in datatype):
+            if not exclude_external_modules and hasattr(getattr(obj, identifier), '__file__') and identifier != 'sys':
+                grouping_dict['module'].append(identifier)
+            elif exclude_external_modules and hasattr(getattr(obj, identifier), '__file__') and identifier != 'sys':
+                if hasattr(obj, '__file__'):
+                    objfilename = obj.__file__
+                    filename = getattr(obj, identifier).__file__
+                    objfilename = objfilename.removesuffix(r'\__init__.py').removesuffix(r'/__init__.py')
+                    if objfilename in filename:
                         grouping_dict['module'].append(identifier)
-                    else:
-                        grouping_dict['attribute'].append(identifier)
-                else:
-                    if ('module' in datatype):
-                        if hasattr(getattr(obj, identifier), '__file__'):
-                            objfilename = obj.__file__
-                            filename = getattr(obj, identifier).__file__
-                            objfilename = objfilename.removesuffix(r'\__init__.py').removesuffix(r'/__init__.py')
-                            if objfilename in filename:
-                                grouping_dict['module'].append(identifier)
-                    else:
-                        grouping_dict['attribute'].append(identifier)
+            elif not exclude_external_modules and identifier in {'sys', 'time'}:
+                grouping_dict['module'].append(identifier)
+            elif exclude_external_modules and identifier in {'sys', 'time'}:
+                pass    
+            elif not exclude_external_modules:
+                grouping_dict['module'].append(identifier)
+            else:
+                grouping_dict['attribute'].append(identifier)
         if is_method and is_internal:
             grouping_dict['internal_method'].append(identifier)
         if not is_method and is_internal:
@@ -154,10 +153,11 @@ def dir2(obj='default', second=object, unique_only=False, consistent_only=False,
         grouping_dict = {key: value for key, value in grouping_dict.items() if key in show}
 
     grouping_dict = {key: value for key, value in grouping_dict.items() if len(value) > 0}
-    if print_output:
+    if print_output == True:
         pprint.pprint(grouping_dict, sort_dicts=False)
     else:
         return grouping_dict
+        
 
 def variables(show_identifiers='all', show_id=False):
     standard_keys = ['In', 'Out', 'get_ipython', 'exit', 'quit', 'open', 'dir2', 'variables_df']

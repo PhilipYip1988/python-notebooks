@@ -2,7 +2,7 @@ import inspect
 __version__ = '0.1.2'
 
 
-def identifier_group(obj, kind='all', second=object, show_unique_identifiers=False, show_only_intersection_identifiers=False, has_parameter=''):
+def identifier_group(obj, kind='all', second=object, show_unique_identifiers=False, show_only_intersection_identifiers=False, has_parameter='', exclude_external_modules=False):
     
     """ Group identifiers from an obj into categories defined by the parameter kind. kind can have the possible values: 
     'all', 'datamodel_method, 'datamodel_attribute', 'upper_class', 'lower_class', 'function', 'constant', 'attribute', 'internal_attribute' or 'internal_method'.

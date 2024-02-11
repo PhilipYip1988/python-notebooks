@@ -2,14 +2,17 @@ import inspect
 import pprint
 import numpy as np
 import pandas as pd
+import sys
 from fractions import Fraction
 from collections import namedtuple, defaultdict, deque, Counter, OrderedDict, ChainMap
 from datetime import time, date, datetime, timedelta
+import os
 pd.set_option('display.max_colwidth', 200)
 
-__version__ = '1.0.8' # Support for collections and datetime
+__version__ = '1.1.5' 
 
-def dir2(obj='default', second=object, unique_only=False, consistent_only=False, parameter='', print_output=True, show='all'):
+
+def dir2(obj='default', second=object, unique_only=False, consistent_only=False, parameter='', print_output=True, show='all', exclude_external_modules=False):
     """ 
     Categorize identifiers from an object into different groups.
 
@@ -20,7 +23,8 @@ def dir2(obj='default', second=object, unique_only=False, consistent_only=False,
     - consistent_only: Show identifiers in the first class that also occur in the second class.
                      These are inherited from the second class when the second class is a parent class.
     - parameter: Filter functions by whether they have a specific parameter.
-
+    - exclude_external_modules: Exclude identifiers in modules that do not have a __file__ attribute.
+    
     Prints:
     - A dictionary with categories as keys and lists of identifiers as values.
     """
@@ -29,7 +33,6 @@ def dir2(obj='default', second=object, unique_only=False, consistent_only=False,
         obj2 = frame.f_globals.copy()
         identifiers = list(obj2.keys())
         del frame
-
     else:
         try: 
             obj.__dict__.keys()
@@ -71,7 +74,7 @@ def dir2(obj='default', second=object, unique_only=False, consistent_only=False,
         'internal_method': [],
     }
 
-    for identifier in identifiers_to_examine:
+    for identifier in identifiers_to_examine:        
         if id(obj) == id('default'):
             is_method = callable(obj2[identifier])
             is_class = type(obj2[identifier]) == type
@@ -99,7 +102,25 @@ def dir2(obj='default', second=object, unique_only=False, consistent_only=False,
         if not is_method and is_upper and not is_datamodel and not is_internal:
             grouping_dict['constant'].append(identifier)
         if not is_method and not is_upper and not is_class and not is_datamodel and not is_internal:
-            grouping_dict['attribute'].append(identifier)
+            if obj == 'default':
+                grouping_dict['attribute'].append(identifier)
+            else:
+                datatype = str(type(getattr(obj, identifier)))
+                if not exclude_external_modules:
+                    if ('module' in datatype):
+                        grouping_dict['module'].append(identifier)
+                    else:
+                        grouping_dict['attribute'].append(identifier)
+                else:
+                    if ('module' in datatype):
+                        if hasattr(getattr(obj, identifier), '__file__'):
+                            objfilename = obj.__file__
+                            filename = getattr(obj, identifier).__file__
+                            objfilename = objfilename.removesuffix(r'\__init__.py').removesuffix(r'/__init__.py')
+                            if objfilename in filename:
+                                grouping_dict['module'].append(identifier)
+                    else:
+                        grouping_dict['attribute'].append(identifier)
         if is_method and is_internal:
             grouping_dict['internal_method'].append(identifier)
         if not is_method and is_internal:
@@ -133,7 +154,7 @@ def dir2(obj='default', second=object, unique_only=False, consistent_only=False,
         grouping_dict = {key: value for key, value in grouping_dict.items() if key in show}
 
     grouping_dict = {key: value for key, value in grouping_dict.items() if len(value) > 0}
-    if print_output == True:
+    if print_output:
         pprint.pprint(grouping_dict, sort_dicts=False)
     else:
         return grouping_dict
