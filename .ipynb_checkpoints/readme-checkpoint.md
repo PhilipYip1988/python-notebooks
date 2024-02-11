@@ -8,13 +8,13 @@ The Anaconda 2023-09 Data Science Python Distribution contains Python and Python
 
 Anaconda can be installed on Windows:
 
-* [Installing Anaconda](./anaconda/windows/install.md)
+* [Installing Anaconda or Miniconda](./anaconda/windows/install.md)
 * [Using the Conda Package Manager and Managing Conda Python Environments to Install the Latest Version of Spyder and JupyterLab](./anaconda/windows/conda.md)
 * [Installing VSCode, Selecting a Python Environment and Configuring Extensions](./anaconda/windows/vscode.md)
 
 And on Linux/Mac:
 
-* [Installing Anaconda](./anaconda/linux/install.md)
+* [Installing Anaconda or Miniconda](./anaconda/linux/install.md)
 * [Using the Conda Package Manager and Managing Conda Python Environments to Install the Latest Version of Spyder and JupyterLab](./anaconda/linux/conda.md)
 * [Installing VSCode, Selecting a Python Environment and Configuring Extensions](./anaconda/linux/vscode.md)
 
