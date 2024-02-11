@@ -78,6 +78,24 @@ The itertools module contains supplementary iterators that are closely related t
 
 * [Itertools Module](./itertools_module/notebook.ipynb)
 
+## Math and Complex Math Modules
+
+The math and complex math modules contain commonly used mathematical functions typically returning scalar values:
+
+* [Math and Complex Math Modules](./math_module/notebook.ipynb)
+
+## Statistics Module
+
+The statistics module is a functional module covering basic statistics:
+
+* [Statistics Module](./statistics_module/notebook.ipynb)
+
+## Random Module
+
+The random module is used to generate a random scalar number, often from a distribution:
+
+* [Random Module](./random_module/notebook.ipynb)
+
 ## Datetime Module
 
 The datetime module is used to generate scalar date, times, datetimes and timedeltas (time differences):
@@ -89,24 +107,6 @@ The datetime module is used to generate scalar date, times, datetimes and timede
 The Input Output (IO) module is used for reading and writing text files .txt and binary files .bin. The IO module is commonly used with the Comma Separated Values (CSV) Module for reading and writing comma separated files .csv, printed format files .prn and text delimited files .tab. The IO module is also commonly used with the JavaScript Object Notation (JSON) module for reading and writing JavaScript object notation files .json. The above are all examples of high level human-readable formats. Data can also be serialised using the pickle module which uses pickle files .pkl and serialised data can be stored in a database using the shelve module:
 
 * [File Formats](./io_module/notebook.ipynb)
-
-## Math and Complex Math Modules
-
-The math and complex math modules contain commonly used mathematical functions typically returning scalar values:
-
-* [Math and Complex Math Modules](./math_module/notebook.ipynb)
-
-## Random Module
-
-The random module is used to generate a random scalar number, often from a distribution:
-
-* [Random Module](./random_module/notebook.ipynb)
-
-## Statistics Module
-
-The statistics module is a functional module covering basic statistics normally returning a scalar from a list:
-
-* [Statistics Module](./statistics_module/notebook.ipynb)
 
 ## Operating System Module
 
