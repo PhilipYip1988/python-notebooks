@@ -118,7 +118,7 @@ The Operating System module is essentially a Python implementation of the Shell 
 
 ## Path Library Module
 
-The Path and Library module is similar to the Operating System Module however uses an Object Orientated Programming (OOP) approach to file paths and libraries within the user profile or home directory. File paths are returned as instances of the Path class which have a number of useful attributes and the datamodel method ```__truediv__``` (*dunder truediv*) is defined so the ```/``` operator can be used for folder and file concatenation:
+The Path and Library module is similar to the Operating System Module however uses an Object Orientated Programming (OOP) approach to file paths and libraries within the user profile or home directory. File paths are returned as instances of the Path class which have a number of useful attributes and the ```/``` operator can be used for folder and file concatenation:
 
 * [Path and Library](./pathlib_module/notebook.ipynb)
 
