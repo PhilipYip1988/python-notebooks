@@ -7,7 +7,9 @@ from fractions import Fraction
 from collections import namedtuple, defaultdict, deque, Counter, OrderedDict, ChainMap
 from datetime import time, date, datetime, timedelta
 import os
-from pathlib import Path, WindowsPath, PosixPath, PurePath, PurePosixPath, PureWindowsPath
+from pathlib import Path, WindowsPath, Path, PosixPath, PurePath, PurePosixPath, PureWindowsPath
+
+
 pd.set_option('display.max_colwidth', 200)
 
 __version__ = '1.1.6' 
@@ -161,7 +163,23 @@ def dir2(obj='default', second=object, unique_only=False, consistent_only=False,
         return grouping_dict
 
 
+It seems there's still an issue despite the adjustments. Let's refine the function further to ensure that pathlib objects are properly handled. One approach is to explicitly convert Path objects to strings before adding them to the DataFrame.
+
+Here's the updated function:
+
+python
+Copy code
+from pathlib import Path  # Import Path from pathlib
+
 def variables(show_identifiers='all', show_id=False):
+    import inspect
+    import pandas as pd
+    import numpy as np
+    from fractions import Fraction
+    from collections import defaultdict, deque, Counter, OrderedDict, ChainMap
+    from datetime import time, date, datetime, timedelta
+    from pathlib import Path, WindowsPath, PosixPath, PurePath, PurePosixPath, PureWindowsPath
+    
     standard_keys = ['In', 'Out', 'get_ipython', 'exit', 'quit', 'open', 'dir2', 'variables_df']
     frame = inspect.currentframe().f_back
     variable_dict = frame.f_globals.copy()
@@ -224,7 +242,7 @@ def variables(show_identifiers='all', show_id=False):
         variables_df = variables_df.loc[show_identifiers]
     
     return variables_df
-
+    
 
 def view(collection, neg_index=False):
     if (type(collection) == dict):

@@ -4,6 +4,7 @@ import seaborn as sns
 
 print(f'type: {type(sys.modules)}')
 print(f'len: {len(sys.modules)}')
+print(sys.modules)
 print(sys.modules.keys())
 
 print(f"'numpy' in sys.modules: {'numpy' in sys.modules}")
