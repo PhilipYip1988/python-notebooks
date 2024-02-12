@@ -7,9 +7,10 @@ from fractions import Fraction
 from collections import namedtuple, defaultdict, deque, Counter, OrderedDict, ChainMap
 from datetime import time, date, datetime, timedelta
 import os
+from pathlib import Path, WindowsPath, PosixPath, PurePath, PurePosixPath, PureWindowsPath
 pd.set_option('display.max_colwidth', 200)
 
-__version__ = '1.1.5' 
+__version__ = '1.1.6' 
 
 
 def dir2(obj='default', second=object, unique_only=False, consistent_only=False, parameter='', print_output=True, show='all', exclude_external_modules=False):
@@ -159,6 +160,7 @@ def dir2(obj='default', second=object, unique_only=False, consistent_only=False,
     else:
         return grouping_dict
 
+
 def variables(show_identifiers='all', show_id=False):
     standard_keys = ['In', 'Out', 'get_ipython', 'exit', 'quit', 'open', 'dir2', 'variables_df']
     frame = inspect.currentframe().f_back
@@ -172,7 +174,8 @@ def variables(show_identifiers='all', show_id=False):
     supported_datatypes = [
         str, bytes, bytearray, int, float, bool, complex, tuple, list, dict, frozenset, set, np.ndarray, 
         pd.Index, pd.Series, pd.DataFrame, Fraction, defaultdict, deque, Counter, OrderedDict, ChainMap,
-        range, time, date, datetime, timedelta
+        range, time, date, datetime, timedelta, 
+        Path, WindowsPath, PosixPath, PurePath, PurePosixPath, PureWindowsPath  # Include Path and its variants
     ]
 
     for key, value in variable_dict.items():
@@ -199,6 +202,8 @@ def variables(show_identifiers='all', show_id=False):
                 value = value.columns.tolist()
             elif isinstance(value, np.ndarray):
                 value = value.tolist()
+            elif isinstance(value, Path):  # Handle Path objects
+                value = str(value)  # Convert Path to string
             else:
                 value = str(value)
 
@@ -219,6 +224,7 @@ def variables(show_identifiers='all', show_id=False):
         variables_df = variables_df.loc[show_identifiers]
     
     return variables_df
+
 
 def view(collection, neg_index=False):
     if (type(collection) == dict):
