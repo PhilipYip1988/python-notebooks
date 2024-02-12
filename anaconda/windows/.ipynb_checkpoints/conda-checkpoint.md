@@ -7,9 +7,9 @@ The conda package manager has two main channels:
 |channel name|channel description|
 |---|---|
 |conda-forge|community channel maintained by developers|
-|main|channel maintained by the Anaconda company|
+|anaconda|channel maintained by the Anaconda company|
 
-The main channel also known as conda or anaconda is the channel maintained by the Anaconda company. These packages are tested by the Anaconda company for compatibility with the Anaconda Python distribution. As the Anaconda company only test commonly used datascience libraries and it takes time for testing, there are less packages available in the main channel and the package that they have may not be the latest version.
+The anaconda channel (previously known as conda) or main is the channel maintained by the Anaconda company. These packages are tested by the Anaconda company for compatibility with the Anaconda Python distribution. As the Anaconda company only test commonly used datascience libraries and it takes time for testing, there are less packages available in the anaconda channel and the latest packages available of that channel are usually a few versions behind.
 
 ## The base Python Environment
 
