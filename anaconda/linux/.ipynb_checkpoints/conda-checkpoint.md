@@ -1543,4 +1543,4 @@ spyder
 
 Details about the latest Spyder version is outlined in [Spyders release notes](https://github.com/spyder-ide/spyder/releases). It is recommended to remove the old environment and create a new Python environment with the latest version of Spyder when a new pre-release is issued as updating packages using mixed channels may be problematic.
 
-[Return to Anaconda Tutorial](../../readme.md)
+[Return to Python Tutorials](../../readme.md)

@@ -36,6 +36,7 @@ pending_depreciation = ['add_docstring',
                         'PINF',
                         'PZERO',
                         'recfromcsv',
+                        'recfromtxt',
                         'round_',
                         'safe_eval',
                         'sctype2char',
@@ -66,7 +67,10 @@ pending_depreciation = ['add_docstring',
                         'MAY_SHARE_BOUNDS',
                         'in1d',
                         'row_stack',
-                        'trapez']
+                        'trapez',
+                        'compare_chararrays',
+                        'charrarray',
+                        'format_parser']
                         
                         
                         

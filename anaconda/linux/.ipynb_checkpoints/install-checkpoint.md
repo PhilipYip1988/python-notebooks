@@ -1103,4 +1103,4 @@ AutoPEP8 addresses the spacing making it PEP8 compliant. The opinionated fomratt
 
 <img src='images_install/img_048.png' alt='img_048' width='450'/>
 
-[Return to Anaconda Tutorial](../../readme.md)
+[Return to Python Tutorials](../../readme.md)

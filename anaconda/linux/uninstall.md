@@ -102,4 +102,4 @@ In the share folder, the following can be deleted:
 
 <img src='images_uninstall/img_013.png' alt='img_013' width='350'/>
 
-[Return to Anaconda Tutorial](./readme.md)
+[Return to Python Tutorials](../../readme.md)

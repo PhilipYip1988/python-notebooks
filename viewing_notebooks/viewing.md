@@ -131,3 +131,5 @@ It will take a very long time to run a notebook and the warning ```The Window is
 ![img_028](./images/img_028.png)
 
 VSCode does not remember the cell output setting and all the cells will revert to a truncated output by default. For long docstrings, this can be changed to a scrolling output.
+
+[Return to Python Tutorials](../readme.md)

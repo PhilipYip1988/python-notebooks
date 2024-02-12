@@ -415,4 +415,4 @@ Subsequent plots with TeX should render quicker.
 
 A detailed overview of Markdown and TeX syntax is given in the next tutorial.
 
-[Return to Anaconda Tutorial](../../readme.md)
+[Return to Python Tutorials](../../readme.md)
