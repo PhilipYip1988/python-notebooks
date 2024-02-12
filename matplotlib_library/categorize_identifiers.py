@@ -7,9 +7,10 @@ from fractions import Fraction
 from collections import namedtuple, defaultdict, deque, Counter, OrderedDict, ChainMap
 from datetime import time, date, datetime, timedelta
 import os
+import array.array
 pd.set_option('display.max_colwidth', 200)
 
-__version__ = '1.1.6' 
+__version__ = '1.2.0' 
 
 
 def dir2(obj='default', second=object, unique_only=False, consistent_only=False, parameter='', print_output=True, show='all', exclude_external_modules=False, exclude_identifier_list=False):
@@ -177,7 +178,7 @@ def variables(show_identifiers='all', show_id=False):
     supported_datatypes = [
         str, bytes, bytearray, int, float, bool, complex, tuple, list, dict, frozenset, set, np.ndarray, 
         pd.Index, pd.Series, pd.DataFrame, Fraction, defaultdict, deque, Counter, OrderedDict, ChainMap,
-        range, time, date, datetime, timedelta
+        range, time, date, datetime, timedelta, array.array
     ]
 
     for key, value in variable_dict.items():

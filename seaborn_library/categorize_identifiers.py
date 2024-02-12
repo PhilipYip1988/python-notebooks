@@ -7,13 +7,13 @@ from fractions import Fraction
 from collections import namedtuple, defaultdict, deque, Counter, OrderedDict, ChainMap
 from datetime import time, date, datetime, timedelta
 import os
-from pathlib import Path, WindowsPath, PosixPath, PurePath, PurePosixPath, PureWindowsPath
+import array.array
 pd.set_option('display.max_colwidth', 200)
 
-__version__ = '1.1.6' 
+__version__ = '1.2.0' 
 
 
-def dir2(obj='default', second=object, unique_only=False, consistent_only=False, parameter='', print_output=True, show='all', exclude_external_modules=False):
+def dir2(obj='default', second=object, unique_only=False, consistent_only=False, parameter='', print_output=True, show='all', exclude_external_modules=False, exclude_identifier_list=False):
     """ 
     Categorize identifiers from an object into different groups.
 
@@ -155,11 +155,15 @@ def dir2(obj='default', second=object, unique_only=False, consistent_only=False,
         grouping_dict = {key: value for key, value in grouping_dict.items() if key in show}
 
     grouping_dict = {key: value for key, value in grouping_dict.items() if len(value) > 0}
+
+    if exclude_identifier_list != False:
+        grouping_dict['method'] = [identifier for identifier in grouping_dict['method'] if identifier not in exclude_identifier_list]
+        grouping_dict['attribute'] = [identifier for identifier in grouping_dict['attribute'] if identifier not in exclude_identifier_list]
+
     if print_output:
         pprint.pprint(grouping_dict, sort_dicts=False)
     else:
         return grouping_dict
-
 
 def variables(show_identifiers='all', show_id=False):
     standard_keys = ['In', 'Out', 'get_ipython', 'exit', 'quit', 'open', 'dir2', 'variables_df']
@@ -174,8 +178,7 @@ def variables(show_identifiers='all', show_id=False):
     supported_datatypes = [
         str, bytes, bytearray, int, float, bool, complex, tuple, list, dict, frozenset, set, np.ndarray, 
         pd.Index, pd.Series, pd.DataFrame, Fraction, defaultdict, deque, Counter, OrderedDict, ChainMap,
-        range, time, date, datetime, timedelta, 
-        Path, WindowsPath, PosixPath, PurePath, PurePosixPath, PureWindowsPath  # Include Path and its variants
+        range, time, date, datetime, timedelta, array.array
     ]
 
     for key, value in variable_dict.items():
@@ -202,8 +205,6 @@ def variables(show_identifiers='all', show_id=False):
                 value = value.columns.tolist()
             elif isinstance(value, np.ndarray):
                 value = value.tolist()
-            elif isinstance(value, Path):  # Handle Path objects
-                value = str(value)  # Convert Path to string
             else:
                 value = str(value)
 
@@ -222,9 +223,8 @@ def variables(show_identifiers='all', show_id=False):
 
     if show_identifiers != 'all':
         variables_df = variables_df.loc[show_identifiers]
-    
+        
     return variables_df
-
 
 def view(collection, neg_index=False):
     if (type(collection) == dict):
