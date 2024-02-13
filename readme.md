@@ -135,13 +135,13 @@ The System module provides access to some variables used or maintained by the Py
 
 ## The Numeric Python Library
 
-The Numeric Python library is based upon the data structure of the NDArray. This is a datastructure that is a collection however unlike ```builtins``` collections, all the datamodel methods are configured for numeric operations. numpy also scales the functions found in the math, datetime and random modules to ndarrays:
+The Numeric Python library is based upon the data structure of the NDimensional Array. This is a datastructure that is a collection however unlike ```builtins``` collections, all the datamodel methods are configured for numeric operations. numpy also broadcasts the functions found in the math, datetime and random modules to an ndarray:
 
-* [NDArray Class](./numpy_library/notebook.ipynb)
+* [NDimensional Array Class](./numpy_library/notebook.ipynb)
 
 ## The Python and Data Analysis Library
 
-The Python and Data Analysis library builds upon the data structure of the ndarray, creating a Series which is a NDArray (1D) with a column name and a DataFrame which is a grouping of Series analogous in form to an Excel SpreadSheet. The Python and Data analysis library can be used to programmatically manipulate the data stored in the DataFrame analogous to any data operations that would be carried out manually in Excel:
+The Python and Data Analysis library builds upon the data structure of the ndarray, creating a Series which is a 1D Array (1D) with a column name and a DataFrame which is a grouping of Series analogous in form to an Excel SpreadSheet. The Python and Data analysis library can be used to programmatically manipulate the data stored in the DataFrame analogous to any data operations that would be carried out manually in Excel:
 
 * [Index, Series and DataFrame Classes](./pandas_library/notebook.ipynb)
 
