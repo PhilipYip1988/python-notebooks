@@ -110,7 +110,8 @@ The datetime module is used to generate scalar date, times, datetimes and timede
 
 The Input Output (IO) module is used for reading and writing text files .txt and binary files .bin. The IO module is commonly used with the Comma Separated Values (CSV) Module for reading and writing comma separated files .csv, printed format files .prn and text delimited files .tab. The IO module is also commonly used with the JavaScript Object Notation (JSON) module for reading and writing JavaScript object notation files .json. The above are all examples of high level human-readable formats. Data can also be serialised using the pickle module which uses pickle files .pkl and serialised data can be stored in a database using the shelve module:
 
-* [File Formats](./io_module/notebook.ipynb)
+* [File Formats Windows](./io_module/notebook_windows.ipynb)
+* [File Formats Linux](./io_module/notebook_linux.ipynb)
 
 ## Operating System Module
 
@@ -123,7 +124,8 @@ The Operating System module is essentially a Python implementation of the Shell 
 
 The Path and Library module is similar to the Operating System Module however uses an Object Orientated Programming (OOP) approach to file paths and libraries within the user profile or home directory. File paths are returned as instances of the Path class which have a number of useful attributes and the ```/``` operator can be used for folder and file concatenation:
 
-* [Path and Library](./pathlib_module/notebook.ipynb)
+* [Path and Library Windows](./pathlib_module/notebook_windows.ipynb)
+* [Path and Library Linux](./pathlib_module/notebook_linux.ipynb)
 
 ## System Module
 
