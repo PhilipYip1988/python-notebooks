@@ -4,15 +4,27 @@ This is a repository of Python tutorials that give an overview of the Python pro
 
 ## Python Installation
 
-The Anaconda 2023-09 Data Science Python Distribution contains Python and Python Standard Modules, the conda package manager, relatively modern versions of the datascience libraries such as numpy, pandas and matplotlib, Python IDEs such as Spyder and JupyterLab. It also includes Python linters such as pylint, flake8 and pyflakes and Python formatters such as autopep8, isort and black which can greatly help improve code quality. Miniconda is a bootstrap version of Anaconda and allows the use of the conda package manager to create Python Environments. The instructions below will equally apply to Miniconda.
+The Anaconda 2023-09 Data Science Python Distribution contains Python and Python Standard Modules, the conda package manager, relatively modern versions of the datascience libraries such as numpy, pandas and matplotlib, Python IDEs such as Spyder and JupyterLab. It also includes Python linters such as pylint, flake8 and pyflakes and Python formatters such as autopep8, isort and black which can greatly help improve code quality. 
 
-Anaconda can be installed on Windows:
+Miniconda is a bootstrap version of Anaconda and allows the use of the conda package manager to create Python Environments. The instructions below will equally apply to Miniconda.
+
+### Concise Installation Instructions:
+
+Anaconda or Miniconda should be installed, updated and initialised for the Windows or Linux Terminal. A conda environment should be created for the newest version of JupyterLab:
+
+```powershell
+conda create -n jupyter-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn pyarrow sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly pyqt isort autopep8 ruff black ipympl jupyterlab-variableinspector jupyterlab_code_formatter jupyterlab-spellchecker ghostscript nbconvert 
+```
+
+Follow the detailed installation instructions if unfamiliar with Anaconda/Miniconda.
+
+### Windows Installation (Detailed)
 
 * [Installing Anaconda or Miniconda](./anaconda/windows/install.md)
 * [Using the Conda Package Manager and Managing Conda Python Environments to Install the Latest Version of Spyder and JupyterLab](./anaconda/windows/conda.md)
 * [Installing VSCode, Selecting a Python Environment and Configuring Extensions](./anaconda/windows/vscode.md)
 
-And on Linux/Mac:
+### Linux/Mac (Detailed)
 
 * [Installing Anaconda or Miniconda](./anaconda/linux/install.md)
 * [Using the Conda Package Manager and Managing Conda Python Environments to Install the Latest Version of Spyder and JupyterLab](./anaconda/linux/conda.md)

@@ -1221,7 +1221,7 @@ Previously the subcommands ```create``` and ```install``` were used seperately a
 For Jupyter it is recommended to create a Python environment called jupyter-env with the following packages:
 
 ```powershell
-conda create -n jupyter-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn pyarrow sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly pyqt isort autopep8 ruff black ipympl jupyterlab-variableinspector jupyterlab_code_formatter jupyterlab-spellchecker jupyterlab-spreadsheet-editor jupyterlab-drawio ghostscript nbconvert 
+conda create -n jupyter-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn pyarrow sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly pyqt isort autopep8 ruff black ipympl jupyterlab-variableinspector jupyterlab_code_formatter jupyterlab-spellchecker ghostscript nbconvert 
 ```
 
 Installing seaborn will install numpy, pandas and matplotlib as these are dependencies for seaborn. pandas needs pyarrow as a dependency.
