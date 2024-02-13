@@ -53,13 +53,15 @@ The builtins module is automatically imported. It contains Pythons fundamental c
 
 The Interactive Python Shell has a number of enhancements over the regular Python Shell. It can be used to run Python code and commonly used Shell commands that have been reimplemented as IPython magics. The Shell used for these commands will differ depending on the Operating System:
 
-* [IPython Magics on Windows 11](./ipython_magics/notebook_windows.ipynb)
+* [IPython Magics on Windows](./ipython_magics/notebook_windows.ipynb)
+* [IPython Magics on Linux/Mac](./ipython_magics/notebook_linux.ipynb)
 
 ## Formatters
 
 Python has a number of formatters that can be used to format code:
 
-* [Code Formatters (AutoPEP8, ISort, Black and Ruff)](./formatters/notebook.ipynb)
+* [Code Formatters on Windows (AutoPEP8, ISort, Black and Ruff)](./formatters/notebook_windows.ipynb)
+* [Code Formatters on Linux/Mac (AutoPEP8, ISort, Black and Ruff)](./formatters/notebook_linux.ipynb)
 * [JupyterLab Code Formatter Extension (AutoPEP8, ISort and Black)](./formatters/notebook_jupyterlab_code_formatter_extension.ipynb)
 
 ## Collections and Code Blocks
@@ -114,7 +116,8 @@ The Input Output (IO) module is used for reading and writing text files .txt and
 
 The Operating System module is essentially a Python implementation of the Shell programming languages and contains commands to navigate around the Operating System:
 
-* [Operating System Module](./os_module/notebook.ipynb)
+* [Operating System Module Windows](./os_module/notebook_windows.ipynb)
+* [Operating System Module Linux](./os_module/notebook_linux.ipynb)
 
 ## Path Library Module
 
