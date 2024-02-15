@@ -1520,7 +1520,7 @@ conda activate spyder-rc-env
 Spyder 6 RC should then be installed from its own channel:
 
 ```bash
-conda install -c conda-forge/label/spyder_dev -c conda-forge/label/spyder_kernels_rc -c conda-forge spyder=6.0.0a3
+conda install -c conda-forge/label/spyder_dev -c conda-forge/label/spyder_kernels_rc -c conda-forge spyder=6.0.0a4
 ```
 
 The datascience libraries commonly used with Spyder should be installed:
