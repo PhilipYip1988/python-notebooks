@@ -172,7 +172,7 @@ seaborn is a wrapper library for matplotlib which greatly simplifies the code re
 
 ## The Plotly Library
 
-plotly is a Python plotting library that creates plots using nodejs. This allows plots to be displayed interactively in the cell output of an interactive Python notebook. The plotly express module use syntax similar to seaborn:
+plotly is a Python plotting library that creates plots using nodejs. This allows plots to be displayed interactively in the cell output of an interactive Python notebook:
 
 * [Plotly Library](./plotly_library/notebook.ipynb)
 
