@@ -12,10 +12,10 @@ from pathlib import Path, PosixPath, PurePath, PurePosixPath, PureWindowsPath, W
 
 pd.set_option('display.max_colwidth', 200)
 
-__version__ = '1.2.3' 
+__version__ = '1.2.6' 
 
 
-def dir2(obj='default', second=object, unique_only=False, consistent_only=False, parameter='', print_output=True, show='all', exclude_external_modules=False, exclude_identifier_list=False):
+def dir2(obj='default', second=object, unique_only=False, consistent_only=False, parameter='', print_output=True, show='all', exclude_external_modules=False, exclude_identifier_list=False, drop_internal=False):
     """ 
     Categorize identifiers from an object into different groups.
 
@@ -105,7 +105,7 @@ def dir2(obj='default', second=object, unique_only=False, consistent_only=False,
         if not is_method and is_upper and not is_datamodel and not is_internal:
             grouping_dict['constant'].append(identifier)
         if not is_method and not is_upper and not is_class and not is_datamodel and not is_internal:
-            if obj == 'default':
+            if id(obj) == id('default'):
                 grouping_dict['attribute'].append(identifier)
             else:
                 datatype = str(type(getattr(obj, identifier)))
@@ -136,6 +136,26 @@ def dir2(obj='default', second=object, unique_only=False, consistent_only=False,
             except AttributeError:
                 pass
 
+    if exclude_identifier_list != False:
+        grouping_dict['method'] = [identifier for identifier in grouping_dict['method'] if identifier not in exclude_identifier_list]
+        grouping_dict['attribute'] = [identifier for identifier in grouping_dict['attribute'] if identifier not in exclude_identifier_list]
+        grouping_dict['constant'] = [identifier for identifier in grouping_dict['constant'] if identifier not in exclude_identifier_list]
+        grouping_dict['module'] = [identifier for identifier in grouping_dict['module'] if identifier not in exclude_identifier_list]
+        grouping_dict['lower_class'] = [identifier for identifier in grouping_dict['lower_class'] if identifier not in exclude_identifier_list]
+        grouping_dict['upper_class'] = [identifier for identifier in grouping_dict['upper_class'] if identifier not in exclude_identifier_list]
+
+    if show != 'all':
+        if type(show) == str:
+            show2 = []
+            show2.append(show)
+            show = show2
+        grouping_dict = {key: value for key, value in grouping_dict.items() if key in show}
+
+    grouping_dict = {key: value for key, value in grouping_dict.items() if len(value) > 0}
+
+    if drop_internal == True:
+        grouping_dict = {key: value for key, value in grouping_dict.items() if key not in ['internal_attribute', 'internal_method']}
+
     if parameter != '':
         function_with_parameter = []
         for identifier in grouping_dict['method']:
@@ -148,23 +168,6 @@ def dir2(obj='default', second=object, unique_only=False, consistent_only=False,
         
         grouping_dict.clear()
         grouping_dict['method'] = function_with_parameter
-
-    if exclude_identifier_list != False:
-        grouping_dict['method'] = [identifier for identifier in grouping_dict['method'] if identifier not in exclude_identifier_list]
-        grouping_dict['attribute'] = [identifier for identifier in grouping_dict['attribute'] if identifier not in exclude_identifier_list]
-        grouping_dict['constant'] = [identifier for identifier in grouping_dict['constant'] if identifier not in exclude_identifier_list]
-        grouping_dict['module'] = [identifier for identifier in grouping_dict['module'] if identifier not in exclude_identifier_list]
-        grouping_dict['lower_class'] = [identifier for identifier in grouping_dict['lower_class'] if identifier not in exclude_identifier_list]
-        grouping_dict['upper_class'] = [identifier for identifier in grouping_dict['upper_class'] if identifier not in exclude_identifier_list]
-    
-    if show != 'all':
-        if type(show) == str:
-            show2 = []
-            show2.append(show)
-            show = show2
-        grouping_dict = {key: value for key, value in grouping_dict.items() if key in show}
-
-    grouping_dict = {key: value for key, value in grouping_dict.items() if len(value) > 0}
     
     if print_output:
         pprint.pprint(grouping_dict, sort_dicts=False)
