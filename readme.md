@@ -8,7 +8,7 @@ The Anaconda 2023-09 Data Science Python Distribution contains Python and Python
 
 Miniconda is a bootstrap version of Anaconda and allows the use of the conda package manager to create Python Environments. The instructions below will equally apply to Miniconda.
 
-### Concise Installation Instructions:
+### Concise Installation
 
 Anaconda or Miniconda should be installed, updated and initialised for the Windows or Linux Terminal. A conda environment should be created for the newest version of JupyterLab:
 
@@ -16,15 +16,15 @@ Anaconda or Miniconda should be installed, updated and initialised for the Windo
 conda create -n jupyter-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn pyarrow sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly pyqt isort autopep8 ruff black ipympl jupyterlab-variableinspector jupyterlab_code_formatter jupyterlab-spellchecker ghostscript nbconvert 
 ```
 
-Follow the detailed installation instructions if unfamiliar with Anaconda/Miniconda.
+Follow the detailed installation instructions below if unfamiliar with Anaconda/Miniconda.
 
-### Windows Installation (Detailed)
+### Windows Installation
 
 * [Installing Anaconda or Miniconda](./anaconda/windows/install.md)
 * [Using the Conda Package Manager and Managing Conda Python Environments to Install the Latest Version of Spyder and JupyterLab](./anaconda/windows/conda.md)
 * [Installing VSCode, Selecting a Python Environment and Configuring Extensions](./anaconda/windows/vscode.md)
 
-### Linux/Mac (Detailed)
+### Linux/Mac Installation
 
 * [Installing Anaconda or Miniconda](./anaconda/linux/install.md)
 * [Using the Conda Package Manager and Managing Conda Python Environments to Install the Latest Version of Spyder and JupyterLab](./anaconda/linux/conda.md)
