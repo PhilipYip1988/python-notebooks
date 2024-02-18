@@ -32,6 +32,12 @@ Follow the detailed installation instructions below if unfamiliar with Anaconda/
 
 For Linux, Ubuntu will be used as an example distro but the procedure is the same on most other distros. The Mac Terminal and File System are Linux Based and therefore installation on Mac should therefore be more or less identical to Linux.
 
+## GitHub Desktop Installation
+
+GitHub Desktop may be used to download this repository of Python notebooks and create a local fork which you can work on.
+
+* [Installing GitHub Desktop](./github_desktop/readme.md)
+
 ## Markdown
 
 Markdown uses simple syntax to format text and is commonly used on GitHub and within Interactive Python Notebooks. For mathematical equations it is supplemented using TeX:
@@ -40,7 +46,7 @@ Markdown uses simple syntax to format text and is commonly used on GitHub and wi
 
 ## Viewing Markdown Files and Notebook Files
 
-These tutorials use markdown and notebook files and can be viewed in the browser or in an IDE such as JupyterLab or VSCode:
+These tutorials use markdown and notebook files and can be viewed in the browser (using Notebook Viewer) or in an IDE such as JupyterLab or VSCode:
 
 * [Viewing and Running Files](./viewing_notebooks/viewing.md)
 

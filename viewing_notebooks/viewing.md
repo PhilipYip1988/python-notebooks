@@ -2,15 +2,42 @@
 
 ### GitHub
 
-These markdown and notebook files are stored on GitHub. 
+These markdown and notebook files are stored on GitHub. When a markdown file or notebook file is opened in GitHub, the markdown preview should show in the browser. However GitHub has limitations...
 
-When a markdown file is opened in GitHub, the markdown preview should show. Unfortunately GitHub is case sensitive to the file extension of an image file .png vs .PNG and images may not render correctly unless the correct file extension is used. On slow connections with lots of images, the browser may time out and not render the image correctly.
+* Unfortunately GitHub is case sensitive to the file extension of an image file .png vs .PNG and images may not render correctly unless the correct file extension is used.Lowercase .png is used for each in this GitHub repository.
+* On markdown files or notebooks with lots of images, the browser may time out and not render the image correctly.
+* Only part of a large notebooks, may display.
+* Scrolling cell outputs display as non-scrolling outputs. These notebooks often look up docstrings for a reference and use the scrolling output to take the emphasis away from the docstring. Unfortunately when the cell output is set to scrolling this is ignored by GitHub and the output of a docstring for example therefore takes more of an emphasis than it does nested as a code block.
 
-These notebooks often look up docstrings for a reference and use the scrolling output to take the emphasis away from the docstring. Unfortunately when the cell output is set to scrolling this is ignored by GitHub. 
+![img_035](./images/img_035.png)
+
+### NBViewer
+
+nbviewer should be used:
+
+```html
+https://nbviewer.org/
+```
+
+![img_037](./images/img_037.png)
+
+Copy and paste the URL of a Notebook File into the search box. For example:
+
+```html
+https://github.com/PhilipYip1988/python-notebooks/blob/main/plotly_library/notebook.ipynb
+```
+
+![img_038](./images/img_038.png)
+
+nbviewer should display the notebook properly in the browser, addressing ,ost of the issues mentioned above opening the notebook using GitHub.com directly however scrolling cell outputs display as non-scrolling outputs:
+
+![img_039](./images/img_039.png)
 
 ## Downloading and Running Notebook Files
 
-It is recommended to select Code and then Download Zip:
+It is recommended to download the repository using GitHub Desktop as seen in the previous tutorial.
+
+Alternatively to download via the browser, select Code and then Download Zip:
 
 ![img_001](./images/img_001.png)
 
