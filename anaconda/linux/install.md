@@ -4,7 +4,7 @@
 
 Anaconda should be installed on a Linux PC that has no previous Python installations outwith the system Python. The system Python is preinstalled as part of the Linux Operating system and should be considered as part of the Operating System and not modified by the user.
 
-If an old Anaconda Installation or an Anaconda based installation such as Miniconda or Miniforge is present these should be removed by deleting their perspective folders. Note that deletion of these folders leaves behind a large number of configuration files and often results in problematic settings persisting after a reinstall. For best results it is recommended to delete all these configuration files. For more details see [Uninstall](./uninstall.md).
+If an old Anaconda Installation or an Anaconda based installation such as Miniconda or is present these should be removed by deleting their perspective folders. Note that deletion of these folders leaves behind a large number of configuration files and often results in problematic settings persisting after a reinstall. For best results it is recommended to delete all these configuration files. For more details see [Uninstall](./uninstall.md).
 
 ## System Python
 
@@ -98,43 +98,101 @@ ModuleNotFoundError: No module named 'numpy'
 
 This system Python is used by the Linux Operating System and modifying it or installing packages may result in instability. Instead it is recommended to install the Anaconda Python Distribution.
 
-## Anaconda Python Distribution
+## Anaconda vs Miniconda 
 
-The Anaconda Python distribution comes with its own base (otherwise known as an alternative root) Python environment that contains:
+Anaconda is a Python distribution that has a base Python environment that is designed to be used *as is*. The base Python environment has the conda package manager that can be used to create a separate Python environment (subinstallation of Python) for a custom configuration of packages. 
 
-* The conda Package Manager
+Miniconda is a bootstrap version of Anaconda, that only contains the conda package manager and can likewise be used to create Python environments.
+
+When only custom Python environments are being used, Miniconda should be used in preference to Anaconda.
+
+### Anaconda Python Distribution
+
+The Anaconda Python distribution comes with its own base Python environment that contains:
+
 * Python
 * Python Standard Libraries
-* numpy
-* pandas
-* matplotlib
-* seaborn
-* Spyder
-* JupyterLab
-* Formatters such as autopep8, isort and black
+* The conda Package Manager
+* The Anaconda Navigator
+* Third Party Libraries:
+  * numpy
+  * pandas
+  * matplotlib
+  * seaborn
+  * plotly
+  * pillow
+  * scikit-learn
+  * scikit-image
+  * ⁝
+* Third-party IDEs:
+  * Spyder
+  * Jupyter
+    * JupyterLab
+    * Jupyter Notebook
+    * Jupyter QTConsole
+    * Jupyter Console
+* Third-party formatters:
+  * autopep8
+  * isort
+  * black
 
-Python has its own package manager Python Install Package (pip) which is strictly for Python packages. For data science projects the more powerful conda package manager is prefered as it can be used to install the Python packages used for datascience projects in addition to their non-Python dependencies. These include example codecs, as well as dependencies for hardware acceleration. conda can also be used to install packages from other programming languages which are often user in conjunction with Python. The popular Jupyter project for example is an abbreviation for Julia Python et (Latin for and) R.
+### Miniconda
 
-```conda install package``` should be used instead of ```pip install package``` where possible.
+Miniconda is a stripped down version of Anaconda containing only:
 
-The ```conda``` package manager has two channels:
+* Python
+* Python Standard Libraries
+* The conda Package Manager
 
-* main (also called conda or anaconda)
-* conda-forge (community)
+## conda
 
-The main channel is maintained by the Anaconda company and the conda-forge channel is maintained directly by developers from the Python community. The Anaconda company only test a subset of the more commonly used Python packages for stability with the Anaconda Python Distribution and because these packages are further tested they may be older than the latest versions on the conda-forge channel. Therefore the base Anaconda Python distribution contains only packages from the base Python environment. The base environment can become unstable when packages from the community channel are used and it is recommended to use the conda package manager to create a Python environment for custom configurations.
+Anaconda and Miniconda have the conda package manager which should be used in preference to the native Python package manager pip. 
 
-Miniconda is a stripped down version of Anaconda which has an empty base Python environment with only the dependencies required for the conda package manager.
+* conda
+* ~~pip~~
 
-### Download
+pip is strictly a package manager for Python packages. However many datascience projects under the hood, use code that is written in C++ for performance gains. The conda package manager manages both the Python and non-Python dependencies. The conda package manager has also been written in C++ for increased performance and reliability. This was separately developed as mamba and the conda package manager uses the libmamba (C++) solver by default.
 
-The download link for Anaconda can be found on the [Anaconda](https://www.anaconda.com/download) home page. The Linux installer is a shelll script and has a ```.sh``` file extension:
+The conda package manager uses two channels:
+
+* conda-forge
+* anaconda
+
+The first channel community forge is the community channel and has the largest number of packages available.
+
+The second channel is the channel maintained by Anaconda Inc. Anaconda Inc test packages for compatibility with the Anaconda Python Distribution. 
+
+As a consequence the latest version of a package available on the anaconda channel may be dated with respect to the package on the conda-forge channel as it takes Anaconda Inc some time to test packages. Moreover Anaconda Inc only test the most commonly used datascience libraries and therefore more niche packages will only be available on conda-forge.
+
+In the Anaconda base environment the following commands should never be used:
+
+* ~~pip install package~~
+* ~~conda install conda-forge::package~~
+* ~~conda install -c conda-forge package~~
+
+This is because use of multiple package managers and use of multiple channels will make the Anaconda base Python environment unstable.
+
+Only packages available from the anaconda channel should be installed in base:
+
+* conda install anaconda::package
+* conda install -c anaconda package
+
+The base Python environment is normally used *as is* and instead a custom Python environment is used to install a subinstallation of Python and custom packages from the conda-forge community channel.
+
+## Download Links
+
+The latest Anaconda and Miniconda installer can be downloaded from:
+
+* [Anaconda](https://www.anaconda.com/download)
+* [Miniconda](https://docs.anaconda.com/free/miniconda/miniconda-install/)
+
+The installer for Linux is a command line based and is a shell script with a ```.sh``` file extension:
 
 <img src='images_install/img_010.png' alt='img_010' width='450'/>
 
 <img src='images_install/img_011.png' alt='img_011' width='450'/>
 
-### Install
+## Install
 
 To run a shell script the command ```bash``` is used and the .sh file is supplied as a command line argument.
 
@@ -172,16 +230,23 @@ Alternatively open the Downloads folder in files and right click empty space in 
 
 <img src='images_install/img_014.png' alt='img_014' width='450'/>
 
-To begin executing the shell script input:
+To begin executing the shell script for Anaconda input:
 
 ```bash
-bash Anaconda3-2023.09-0-Linux-x86_64.sh
+bash Anaconda3-2024.02-1-Linux-x86_64.sh
 ```
+
+Or for Miniconda input:
+
+```bash
+bash Miniconda3-latest-Linux-x86_64.sh
+```
+
 
 Note because the Terminals working directory is Downloads, the directory will not have to be provided as part of the command line argument to the file. Otherwise the following would have to be used:
 
 ```bash
-bash ~/Downloads/Anaconda3-2023.09-0-Linux-x86_64.sh
+bash ~/Downloads/Anaconda3-2024.02-1-Linux-x86_64.sh
 ```
 
 Note that the Terminal uses the shortcut key ```Ctrl``` + ```c``` to cancel the current running operation. The shortcut keys for Copy and Paste are therefore ```Ctrl```, ```⇧``` + ```c``` and ```Ctrl```, ```⇧``` + ```v``` respectively.
@@ -189,7 +254,7 @@ Note that the Terminal uses the shortcut key ```Ctrl``` + ```c``` to cancel the 
 The following output will display:
 
 ```
-Welcome to Anaconda3 2023.09-0
+Welcome to Anaconda3 2024.02-1
 
 In order to continue the installation process, please review the license
 agreement.
@@ -266,7 +331,7 @@ done
 installation finished.
 ```
 
-### Initialisation
+## Initialisation
 
 The root Anaconda Python Environment known as base is found in the anaconda3 folder:
 
@@ -503,7 +568,7 @@ Initialisation can be reversed using:
 ~/miniconda3/bin/conda init bash --reverse
 ```
 
-### Updating Anaconda
+## Updating Anaconda
 
 To update Anaconda or Miniconda, the (base) Python environment should be deactivated using:
 
@@ -915,7 +980,7 @@ conda activate base
 
 The (base) prefix should now display in the bash prompt.
 
-### Installing TeX
+## Installing TeX
 
 A number of the datascience packages such as nbcovert and matplotlib can use TeX. Unfortunately the installation of TeX differs significantly for Windows and Linux and therefore installation of TeX isn't included with Anaconda. TeX should be installed system wide, using the Ubuntu (Debian-based) package manager apt:
 
@@ -923,7 +988,7 @@ A number of the datascience packages such as nbcovert and matplotlib can use TeX
 sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-plain-generic cm-super dvipng
 ```
 
-### The Bin Folder
+## The Bin Folder
 
 Binaries associated with the Anaconda base Python environment are found in ```~/anaconda3/bin``` folder or the ```~/miniconda3/bin``` folder. 
 
