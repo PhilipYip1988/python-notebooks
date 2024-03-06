@@ -526,6 +526,8 @@ The Anaconda Navigator displays additional shortcuts to IDEs installed in the An
 
 ### IPython
 
+The Anaconda Python distribution has ipython preinstalled.
+
 Interactive Python is an improved Python shell:
 
 ```powershell
@@ -535,6 +537,27 @@ ipython
 ```
 
 <img src='images_install/img_052.png' alt='img_052' width='450'/>
+
+for Miniconda, a custom Python environment with ipython can be created. This can be done using the following command in the Anaconda PowerShell Prompt by using:
+
+```powershell
+conda create -n ipython-env ipython
+```
+
+This will create an ipython.exe in the following location:
+
+```powershell
+~\miniconda3\envs\ipython-env\scripts\ipython.exe
+```
+
+Typically the Python environment is activated and ipython is launched from the activated Python environment:
+
+```powershell
+conda activate ipython-env
+ipython
+```
+
+The next tutorial gives a more detailed overview of the conda package manager and Python environments.
 
 Pressing ↹ after a prefix will display a list of identifiers:
 
@@ -574,6 +597,25 @@ The main programs are:
 jupyter-console
 jupyter-qtconsole
 jupyter-notebook
+jupyter-lab
+```
+
+for Miniconda, a custom Python environment with jupyter can be created. This can be done using the following command in the Anaconda PowerShell Prompt by using:
+
+```powershell
+conda create -n jupyter-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn pyarrow sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly pyqt isort autopep8 ruff black ipympl jupyterlab-variableinspector jupyterlab_code_formatter jupyterlab-spellchecker ghostscript nbconvert 
+```
+
+This will create the .exes for the Jupyter related programs in the following location:
+
+```powershell
+~\miniconda3\envs\jupyter-env\scripts\
+```
+
+Typically the Python environment is activated and the jupyter related program for example jupyter-lab.exe is launched from the activated Python environment:
+
+```powershell
+conda activate jupyter-env
 jupyter-lab
 ```
 
@@ -620,7 +662,7 @@ Note when JupyterLab is closed in the browser, the server will still be running 
 
 <img src='images_install/img_066.png' alt='img_066' width='450'/>
 
-The program jupyter-notebook.exe is a simplified version of jupyter-lab.exe and works in a similar manner for a notebook.
+The program jupyter-notebook.exe is a simplified version of jupyter-lab.exe and works in a similar manner focusing only on an interactive notebook file.
 
 ### Spyder
 
@@ -633,6 +675,25 @@ spyder
 ```
 
 <img src='images_install/img_067.png' alt='img_067' width='450'/>
+
+for Miniconda, a custom Python environment with spyder can be created. This can be done using the following command in the Anaconda PowerShell Prompt (Miniconda) by using:
+
+```powershell
+conda create -n spyder-env -c conda-forge python spyder cython seaborn scikit-learn pyarrow sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate pyqt ruff ghostscript
+```
+
+This will create an ipython.exe in the following location:
+
+```powershell
+~\miniconda3\envs\spyder-env\scripts\spyder.exe
+```
+
+Typically the Python environment is activated and spyder is launched from the activated Python environment:
+
+```powershell
+conda activate spyder-env
+spyder
+```
 
 Spyder has a user interface similar to Matlab or RStudio and has a script editor, ipython console and variable explorer:
 
