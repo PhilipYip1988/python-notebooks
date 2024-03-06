@@ -495,19 +495,30 @@ The settings box appears offscreen and therefore the settings cannot be applied:
 
 <img src='images_install/img_047.png' alt='img_047' width='450'/>
 
-Right click the start button and select Settings:
+Since the GUI cannot be used correctly to change the settings. The file anaconda-navigator.ini in the location:
 
-<img src='images_install/img_048.png' alt='img_048' width='200'/>
+```
+%APPDATA%\.anaconda\navigator
+```
 
-Change the display to 100 % and the box should now display correctly:
+can be modified in notepad:
 
 <img src='images_install/img_049.png' alt='img_049' width='450'/>
 
-Enable High DPI Scaling can now be disabled and apply selected:
+The line:
 
+```python
+enable_high_dpi_scaling = False
+```
+
+Can be changed to:
+
+```python
+enable_high_dpi_scaling = True
+```
 <img src='images_install/img_050.png' alt='img_050' width='450'/>
 
-The display can then be changed back to default and the Anaconda Navigator should display correctly:
+The Anaconda Navigator should now display correctly:
 
 <img src='images_install/img_051.png' alt='img_051' width='450'/>
 
