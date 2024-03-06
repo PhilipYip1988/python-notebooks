@@ -501,7 +501,7 @@ It can be opened in Text Editor:
 
 <img src='images_install/img_036.png' alt='img_036' width='450'/>
 
-It has this additional conda initialisaiton block:
+It has this additional conda initialisation block:
 
 <img src='images_install/img_037.png' alt='img_037' width='450'/>
 
