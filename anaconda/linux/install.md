@@ -988,11 +988,13 @@ A number of the datascience packages such as nbcovert and matplotlib can use TeX
 sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-plain-generic cm-super dvipng
 ```
 
-## The Bin Folder
+## Binaries
 
 Binaries associated with the Anaconda base Python environment are found in ```~/anaconda3/bin``` folder or the ```~/miniconda3/bin``` folder. 
 
 As Miniconda is a bootstrap version of Anaconda most of the binaries are not preinstalled in the Miniconda base Python environment. Typically these only become available when they are installed, however this is usually in another custom Python environment. The conda package manager can be used to create Python environments for the latest version of Jupyter and Spyder from the community channel conda-forge or from the spyder developers release candidate channel. A custom Jupyter environment can also be equipped with R allowing use of the R kernel. Use of the conda package manager is covered in more detail in the next tutorial [conda](./conda.md).
+
+### Python
 
 If a search for python is made, notice that there is:
 
@@ -1031,6 +1033,8 @@ exit()
 
 A new bash prompt will display.
 
+### IPython
+
 There is also Interactive Python (IPython) which can be launched using:
 
 ```
@@ -1050,6 +1054,8 @@ In [1]:
 IPython is similar to Python but has enhancements such as the application of Python syntax highlighting and the addition of the ```?``` operator which can be used to examine a Python objects docstring or ```??``` which can be used to output the file of a module. 
 
 IPython also has IPython magics which begin with ```%``` and are equivalent to commonly ```bash``` commands. 
+
+### Jupyter
 
 The popular Jupyter project for example is an abbreviation for Julia Python et (Latin for and) R.
 
@@ -1129,6 +1135,8 @@ To view the docstring popup, input ⇧ + ↹:
 <img src='images_install/img_043.png' alt='img_043' width='450'/>
 
 The visual elements can be closed in the browser, however the server will continue to run in the Terminal until Ctrl + c is pressed to close the current operation.
+
+### Spyder
 
 Another important binary is the Scientific Python Development Environment (spyder) which can be launched using:
 
