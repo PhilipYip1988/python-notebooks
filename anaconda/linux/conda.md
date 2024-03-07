@@ -1503,6 +1503,79 @@ jupyter-notebook --kernel=ir
 jupyter-lab --kernel=ir
 ```
 
+### Bioconda
+
+For bioinformatics tools, that are more niche, you need Python and the datascience libraries as perquisites however generally you require a specific (older) version of them. There are a limited set of developers and as a consequence these libraries are generally not tested for the latest version of Python or the numpy stack. Instead they are tested for the latest version of Python that is deemed "stable" i.e. the version of Python that is only being issued bugfixes, which is currently 3.10. For more details see [Python Versions](https://devguide.python.org/versions/).
+
+When attempting to install such niche libraries you are better to specify these libraries during creation of a Python environment so that the conda package manager can look at the latest version of the niche library and examine its requirements and therefore determine the latest version of Python and numpy to install. This is more reliable than attempting to downgrade versions of Python and numpy from a currently existing environment which usually results in an unstable Python environment.
+
+Many of the bioinformatics tools are only developed for Linux/Mac and are on the separate bioconda channel. Details about these are given in the [bioconda documentation](https://bioconda.github.io/).
+
+If we take the most popular package for example samtools and search from it we need to specify the bioconda channel in our search. The following command will search the bioconda channel and then conda-forge channel for the package samtools:
+
+```bash
+conda search -c bioconda -c conda-forge samtools
+```
+
+```
+# Name                       Version           Build  Channel
+samtools                      1.19.1      h50ea8bc_0  bioconda
+samtools                      1.19.2      h50ea8bc_0  bioconda
+samtools                      1.19.2      h50ea8bc_1  bioconda
+```
+
+Therefore if the command is used:
+
+```bash
+conda create -n bioinformatics-env -c conda-forge -c bioconda python jupyterlab cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly jupyterlab-variableinspector ipympl pyqt r-irkernel jupyter-lsp-r r-tidyverse r-ggthemes r-palmerpenguins r-writexl samtools htslib pysam bcftools bedtools libdeflate blast bioconductor-iranges bioconductor-s4vectors bioconductor-biocgenerics bowtie2 bioconductor-biobase bioconductor-biostrings bioconductor-genomeinfodb bioconductor-genomicranges bioconductor-zlibbioc bioconductor-xvector bioconductor-biocparallel bwa bioconductor-summarizedexperiment
+```
+
+It will search the conda-forge and bioconda channels for the packages. I'm not experienced with these packages as they are more niche and just grabbed the names from the graphic of most popular libraries. The output will display something like:
+
+```
+Channels:
+ - conda-forge
+ - bioconda
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): \
+```
+
+In the past, the legacy solver for conda took forever and a day to solve such a Python environment but it should be relatively quick with the new conda, that uses the libmamba solver by default.
+
+You will get something like the following. Notice the channel specified for each package. Notice also that a specific version of Python 3.10 and numpy 1.26.4 are required:
+
+```
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    alsa-lib-1.2.11            |       hd590300_1         542 KB  conda-forge
+    anyio-4.3.0                |     pyhd8ed1ab_0         100 KB  conda-forge
+    argcomplete-3.2.2          |     pyhd8ed1ab_0          39 KB  conda-forge
+    argon2-cffi-bindings-21.2.0|  py310h2372a71_4          34 KB  conda-forge
+    bcftools-1.19              |       h8b25389_1         946 KB  bioconda
+    bedtools-2.31.1            |       hf5e1c6e_1         1.5 MB  bioconda
+    bioconductor-biobase-2.62.0|    r43ha9d7317_1         2.4 MB  bioconda
+⁝
+    jupyterlab-4.1.3           |     pyhd8ed1ab_0         7.0 MB  conda-forge
+⁝
+    numpy-1.26.4               |  py310hb13e2d6_0         6.7 MB  conda-forge
+⁝
+    pandas-2.2.1               |  py310hcc13569_0        12.4 MB  conda-forge
+⁝
+    python-3.10.13             |hd12c33a_1_cpython        24.5 MB  conda-forge
+⁝
+```
+
+If updating etc you will need to specify both channels. 
+
+```bash
+conda update -c conda-forge -c bioconda --all 
+```
+
+Some lecturers, if taking a bioinformatics class will instruct you to create a Python environment using yet another markdown language (yml) file. This should also be created for backup purposes once you get such a Python environment to work.
+
 ### Spyder RC
 
 Spyder is available as an alpha version. A Python environment with Python 3.11 from the conda-forge channel should be used:
