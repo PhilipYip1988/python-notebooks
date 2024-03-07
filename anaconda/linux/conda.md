@@ -1,6 +1,6 @@
 # The conda Package Manager
 
-The purpose of the conda package manager is to allow cross-platform installation of Python packages and non-Python dependences related to a datascience project in a Python environment. This can include other programming languages such as R.
+The purpose of the conda package manager is to allow cross-platform installation of Python packages and non-Python dependencies related to a datascience project in a Python environment. This can include other programming languages such as R.
 
 The conda package manager has two main channels:
 
