@@ -269,7 +269,7 @@ Press ```↵``` to begin scrolling through the license agreement:
 End User License Agreement - Anaconda Distribution
 ==================================================
 
-Copyright 2015-2023, Anaconda, Inc.
+Copyright 2015-2024, Anaconda, Inc.
 
 All rights reserved under the 3-clause BSD License:
 
@@ -570,354 +570,27 @@ Initialisation can be reversed using:
 
 ## Updating Anaconda
 
-To update Anaconda or Miniconda, the (base) Python environment should be deactivated using:
-
-```bash
-conda deactivate
-```
-
-This displays a normal bash prompt without the (base) prefix. The conda package manager can be updated using:
+To update Anaconda or Miniconda, use:
 
 ```bash
 conda update conda
 ```
 
-This will look for updates to the conda package manager and for Anaconda in turn update the entire Anaconda Python distribution. The output will display:
+This will look for updates to the conda package manager and for Anaconda in turn update the entire Anaconda Python distribution. In this case, conda is already up to date:
 
 ```
-Collecting package metadata (current_repodata.json): done
+Channels:
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): done
 Solving environment: done
 
-## Package Plan ##
+# All requested packages already installed.
 
-  environment location: /home/user/anaconda3
-
-  added / updated specs:
-    - conda
+(base) username@pc:~$
 ```
 
-Followed by details about the number of packages to be downloaded:
-
-```
-The following packages will be downloaded:
-
-    package                    |            build
-    ---------------------------|-----------------
-    aiobotocore-2.7.0          |  py311h06a4308_0         149 KB
-    aiohttp-3.9.0              |  py311h5eee18b_0         824 KB
-    anaconda-cloud-auth-0.1.4  |  py311h06a4308_0          38 KB
-    archspec-0.2.1             |     pyhd3eb1b0_0          39 KB
-    astropy-5.3.4              |  py311hf4808d0_0         9.9 MB
-    async-lru-2.0.4            |  py311h06a4308_0          20 KB
-    attrs-23.1.0               |  py311h06a4308_0         161 KB
-    black-23.11.0              |  py311h06a4308_0         356 KB
-    bokeh-3.3.0                |  py311h92b7b1e_0         5.7 MB
-    boost-cpp-1.82.0           |       hdb19cb5_2          11 KB
-    botocore-1.31.64           |  py311h06a4308_0         6.9 MB
-    brotli-python-1.0.9        |  py311h6a678d5_7         318 KB
-    c-blosc2-2.10.5            |       h80c7b02_0         322 KB
-    certifi-2023.11.17         |  py311h06a4308_0         159 KB
-    cffi-1.16.0                |  py311h5eee18b_0         314 KB
-    click-8.1.7                |  py311h06a4308_0         221 KB
-    conda-23.11.0              |  py311h06a4308_0         1.3 MB
-    conda-build-3.28.1         |  py311h06a4308_0         834 KB
-    conda-libmamba-solver-23.11.1|  py311h06a4308_0         104 KB
-    contourpy-1.2.0            |  py311hdb19cb5_0         263 KB
-    cookiecutter-2.5.0         |  py311h06a4308_0         140 KB
-    curl-8.4.0                 |       hdbd6064_1          85 KB
-    cytoolz-0.12.2             |  py311h5eee18b_0         417 KB
-    dal-2023.1.1               |   hdb19cb5_48680        36.9 MB
-    dask-2023.11.0             |  py311h06a4308_0           5 KB
-    dask-core-2023.11.0        |  py311h06a4308_0         2.9 MB
-    datashader-0.16.0          |  py311h06a4308_0        17.1 MB
-    distributed-2023.11.0      |  py311h06a4308_0         1.6 MB
-    distro-1.8.0               |  py311h06a4308_0          37 KB
-    filelock-3.13.1            |  py311h06a4308_0          24 KB
-    frozenlist-1.4.0           |  py311h5eee18b_0          52 KB
-    fsspec-2023.10.0           |  py311h06a4308_0         364 KB
-    holoviews-1.18.1           |  py311h06a4308_0         5.1 MB
-    huggingface_hub-0.17.3     |  py311h06a4308_0         451 KB
-    hvplot-0.9.0               |  py311h06a4308_0         3.2 MB
-    icu-73.1                   |       h6a678d5_0        25.9 MB
-    imageio-2.31.4             |  py311h06a4308_0         625 KB
-    imbalanced-learn-0.11.0    |  py311h06a4308_1         376 KB
-    intel-openmp-2023.1.0      |   hdb19cb5_46306        17.2 MB
-    jmespath-1.0.1             |  py311h06a4308_0          48 KB
-    jsonschema-4.19.2          |  py311h06a4308_0         190 KB
-    jsonschema-specifications-2023.7.1|  py311h06a4308_0          15 KB
-    jupyter-lsp-2.2.0          |  py311h06a4308_0         107 KB
-    jupyter_client-8.6.0       |  py311h06a4308_0         233 KB
-    jupyter_core-5.5.0         |  py311h06a4308_0          91 KB
-    jupyter_events-0.8.0       |  py311h06a4308_0          41 KB
-    jupyter_server-2.10.0      |  py311h06a4308_0         577 KB
-    jupyter_server_terminals-0.4.4|  py311h06a4308_1          27 KB
-    jupyterlab-4.0.8           |  py311h06a4308_0         4.5 MB
-    jupyterlab_server-2.25.1   |  py311h06a4308_0         113 KB
-    jupyterlab_widgets-3.0.9   |  py311h06a4308_0         194 KB
-    lazy_loader-0.3            |  py311h06a4308_0          20 KB
-    libboost-1.82.0            |       h109eef0_2        19.5 MB
-    libcurl-8.4.0              |       h251f7ec_1         411 KB
-    libdeflate-1.17            |       h5eee18b_1          64 KB
-    libmamba-1.5.3             |       haf1ee3a_0         1.9 MB
-    libmambapy-1.5.3           |  py311h2dafd23_0         314 KB
-    libnghttp2-1.57.0          |       h2d74bed_0         674 KB
-    libxml2-2.10.4             |       hf1b16e4_1         753 KB
-    libxslt-1.1.37             |       h5eee18b_1         266 KB
-    llvmlite-0.41.0            |  py311he621ea3_0         3.6 MB
-    matplotlib-3.8.0           |  py311h06a4308_0           8 KB
-    matplotlib-base-3.8.0      |  py311ha02d727_0         7.7 MB
-    menuinst-2.0.0             |  py311h06a4308_0         167 KB
-    mistune-2.0.4              |  py311h06a4308_0         107 KB
-    mkl-2023.1.0               |   h213fc3f_46344       171.5 MB
-    more-itertools-10.1.0      |  py311h06a4308_0         103 KB
-    multidict-6.0.4            |  py311h5eee18b_0          59 KB
-    nbclient-0.8.0             |  py311h06a4308_0         120 KB
-    nbconvert-7.10.0           |  py311h06a4308_0         513 KB
-    notebook-7.0.6             |  py311h06a4308_0         3.1 MB
-    notebook-shim-0.2.3        |  py311h06a4308_0          26 KB
-    numba-0.58.1               |  py311ha02d727_0         5.8 MB
-    numexpr-2.8.7              |  py311h65dcdc2_0         167 KB
-    numpy-1.26.2               |  py311h08b1b3b_0          10 KB
-    numpy-base-1.26.2          |  py311hf175353_0         8.2 MB
-    openssl-3.0.12             |       h7f8727e_0         5.2 MB
-    overrides-7.4.0            |  py311h06a4308_0          36 KB
-    pandas-2.1.1               |  py311ha02d727_0        14.9 MB
-    panel-1.3.1                |  py311h06a4308_0        14.7 MB
-    param-2.0.1                |  py311h06a4308_0         259 KB
-    partd-1.4.1                |  py311h06a4308_0          48 KB
-    pillow-10.0.1              |  py311ha6cbd5a_0         896 KB
-    py-cpuinfo-9.0.0           |  py311h06a4308_0          64 KB
-    pycosat-0.6.6              |  py311h5eee18b_0          90 KB
-    pydantic-1.10.12           |  py311h5eee18b_1         2.4 MB
-    pyodbc-4.0.39              |  py311h6a678d5_0          78 KB
-    pyqt-5.15.10               |  py311h6a678d5_0         5.7 MB
-    pyqt5-sip-12.13.0          |  py311h5eee18b_0          95 KB
-    pyqtwebengine-5.15.10      |  py311h6a678d5_0         171 KB
-    pytoolconfig-1.2.6         |  py311h06a4308_0          35 KB
-    pyviz_comms-3.0.0          |  py311h06a4308_0          56 KB
-    pyyaml-6.0.1               |  py311h5eee18b_0         210 KB
-    pyzmq-25.1.0               |  py311h6a678d5_0         538 KB
-    qt-main-5.15.2             |      h53bd1ea_10        53.7 MB
-    qtpy-2.4.1                 |  py311h06a4308_0         129 KB
-    queuelib-1.6.2             |  py311h06a4308_0          34 KB
-    referencing-0.30.2         |  py311h06a4308_0          77 KB
-    regex-2023.10.3            |  py311h5eee18b_0         427 KB
-    rich-13.3.5                |  py311h06a4308_0         560 KB
-    rpds-py-0.10.6             |  py311hb02cf49_0        1007 KB
-    s3fs-2023.10.0             |  py311h06a4308_0          78 KB
-    safetensors-0.4.0          |  py311h24d97f6_0         1.1 MB
-    scikit-learn-1.2.2         |  py311h6a678d5_1         8.8 MB
-    scipy-1.11.4               |  py311h08b1b3b_0        22.0 MB
-    semver-2.13.0              |     pyhd3eb1b0_0          16 KB
-    send2trash-1.8.2           |  py311h06a4308_0          32 KB
-    sip-6.7.12                 |  py311h6a678d5_0         603 KB
-    soupsieve-2.5              |  py311h06a4308_0          92 KB
-    sqlalchemy-2.0.21          |  py311h5eee18b_0         3.8 MB
-    sympy-1.12                 |  py311h06a4308_0        14.4 MB
-    tabulate-0.9.0             |  py311h06a4308_0          70 KB
-    tokenizers-0.13.3          |  py311h22610ee_0         4.4 MB
-    tornado-6.3.3              |  py311h5eee18b_0         852 KB
-    truststore-0.8.0           |  py311h06a4308_0          43 KB
-    urllib3-1.26.18            |  py311h06a4308_0         251 KB
-    xz-5.4.5                   |       h5eee18b_0         646 KB
-    yaml-cpp-0.8.0             |       h6a678d5_0         607 KB
-    yarl-1.9.3                 |  py311h5eee18b_0         127 KB
-    zict-3.0.0                 |  py311h06a4308_0         119 KB
-    ------------------------------------------------------------
-                                           Total:       530.6 MB
-```
-
-Followed by details about the number of packages to be installed:
-
-```
-The following NEW packages will be INSTALLED:
-
-  archspec           pkgs/main/noarch::archspec-0.2.1-pyhd3eb1b0_0 
-  async-lru          pkgs/main/linux-64::async-lru-2.0.4-py311h06a4308_0 
-  brotli-python      pkgs/main/linux-64::brotli-python-1.0.9-py311h6a678d5_7 
-  distro             pkgs/main/linux-64::distro-1.8.0-py311h06a4308_0 
-  jsonschema-specif~ pkgs/main/linux-64::jsonschema-specifications-2023.7.1-py311h06a4308_0 
-  jupyter-lsp        pkgs/main/linux-64::jupyter-lsp-2.2.0-py311h06a4308_0 
-  jupyter_server_te~ pkgs/main/linux-64::jupyter_server_terminals-0.4.4-py311h06a4308_1 
-  menuinst           pkgs/main/linux-64::menuinst-2.0.0-py311h06a4308_0 
-  overrides          pkgs/main/linux-64::overrides-7.4.0-py311h06a4308_0 
-  referencing        pkgs/main/linux-64::referencing-0.30.2-py311h06a4308_0 
-  rich               pkgs/main/linux-64::rich-13.3.5-py311h06a4308_0 
-  rpds-py            pkgs/main/linux-64::rpds-py-0.10.6-py311hb02cf49_0 
-  semver             pkgs/main/noarch::semver-2.13.0-pyhd3eb1b0_0 
-  truststore         pkgs/main/linux-64::truststore-0.8.0-py311h06a4308_0 
-```
-
-Followed by details about packages to be removed. Note that this should only be a small number of packages that have become obsolete:
-
-```
-The following packages will be REMOVED:
-
-  aiofiles-22.1.0-py311h06a4308_0
-  aiosqlite-0.18.0-py311h06a4308_0
-  async-timeout-4.0.2-py311h06a4308_0
-  brotlipy-0.7.0-py311h5eee18b_1002
-  datashape-0.5.4-py311h06a4308_1
-  glob2-0.7-pyhd3eb1b0_0
-  jinja2-time-0.2.0-pyhd3eb1b0_3
-  jupyter_server_fileid-0.9.0-py311h06a4308_0
-  jupyter_server_ydoc-0.8.0-py311h06a4308_1
-  jupyter_ydoc-0.2.4-py311h06a4308_0
-  nbclassic-0.5.5-py311h06a4308_0
-  poyo-0.5.0-pyhd3eb1b0_0
-  pyrsistent-0.18.0-py311h5eee18b_0
-  qtwebkit-5.212-h3fafdc1_5
-  y-py-0.5.9-py311h52d8a92_0
-  ypy-websocket-0.8.2-py311h06a4308_0
-```
-
-Followed by details about packages to be updated:
-
-```
-The following packages will be UPDATED:
-
-  aiobotocore                         2.5.0-py311h06a4308_0 --> 2.7.0-py311h06a4308_0 
-  aiohttp                             3.8.5-py311h5eee18b_0 --> 3.9.0-py311h5eee18b_0 
-  anaconda-cloud-au~                  0.1.3-py311h06a4308_0 --> 0.1.4-py311h06a4308_0 
-  astropy                               5.1-py311hbed6279_0 --> 5.3.4-py311hf4808d0_0 
-  attrs                              22.1.0-py311h06a4308_0 --> 23.1.0-py311h06a4308_0 
-  black                              23.3.0-py311h06a4308_0 --> 23.11.0-py311h06a4308_0 
-  bokeh                               3.2.1-py311h92b7b1e_0 --> 3.3.0-py311h92b7b1e_0 
-  boost-cpp                              1.73.0-h7f8727e_12 --> 1.82.0-hdb19cb5_2 
-  botocore                          1.29.76-py311h06a4308_0 --> 1.31.64-py311h06a4308_0 
-  c-blosc2                                 2.8.0-h6a678d5_0 --> 2.10.5-h80c7b02_0 
-  certifi                         2023.7.22-py311h06a4308_0 --> 2023.11.17-py311h06a4308_0 
-  cffi                               1.15.1-py311h5eee18b_3 --> 1.16.0-py311h5eee18b_0 
-  click                               8.0.4-py311h06a4308_0 --> 8.1.7-py311h06a4308_0 
-  conda                              23.7.4-py311h06a4308_0 --> 23.11.0-py311h06a4308_0 
-  conda-build                        3.26.1-py311h06a4308_0 --> 3.28.1-py311h06a4308_0 
-  conda-libmamba-so~                 23.7.0-py311h06a4308_0 --> 23.11.1-py311h06a4308_0 
-  contourpy                           1.0.5-py311hdb19cb5_0 --> 1.2.0-py311hdb19cb5_0 
-  cookiecutter       pkgs/main/noarch::cookiecutter-1.7.3-~ --> pkgs/main/linux-64::cookiecutter-2.5.0-py311h06a4308_0 
-  curl                                     8.2.1-hdbd6064_0 --> 8.4.0-hdbd6064_1 
-  cytoolz                            0.12.0-py311h5eee18b_0 --> 0.12.2-py311h5eee18b_0 
-  dal                               2023.1.1-hdb19cb5_48679 --> 2023.1.1-hdb19cb5_48680 
-  dask                             2023.6.0-py311h06a4308_0 --> 2023.11.0-py311h06a4308_0 
-  dask-core                        2023.6.0-py311h06a4308_0 --> 2023.11.0-py311h06a4308_0 
-  datashader                         0.15.2-py311h06a4308_0 --> 0.16.0-py311h06a4308_0 
-  distributed                      2023.6.0-py311h06a4308_0 --> 2023.11.0-py311h06a4308_0 
-  filelock                            3.9.0-py311h06a4308_0 --> 3.13.1-py311h06a4308_0 
-  frozenlist                          1.3.3-py311h5eee18b_0 --> 1.4.0-py311h5eee18b_0 
-  fsspec                           2023.4.0-py311h06a4308_0 --> 2023.10.0-py311h06a4308_0 
-  holoviews                          1.17.1-py311h06a4308_0 --> 1.18.1-py311h06a4308_0 
-  huggingface_hub                    0.15.1-py311h06a4308_0 --> 0.17.3-py311h06a4308_0 
-  hvplot                              0.8.4-py311h06a4308_0 --> 0.9.0-py311h06a4308_0 
-  icu                                       58.2-he6710b0_3 --> 73.1-h6a678d5_0 
-  imageio                            2.31.1-py311h06a4308_0 --> 2.31.4-py311h06a4308_0 
-  imbalanced-learn                   0.10.1-py311h06a4308_1 --> 0.11.0-py311h06a4308_1 
-  intel-openmp                      2023.1.0-hdb19cb5_46305 --> 2023.1.0-hdb19cb5_46306 
-  jmespath           pkgs/main/noarch::jmespath-0.10.0-pyh~ --> pkgs/main/linux-64::jmespath-1.0.1-py311h06a4308_0 
-  jsonschema                         4.17.3-py311h06a4308_0 --> 4.19.2-py311h06a4308_0 
-  jupyter_client                      7.4.9-py311h06a4308_0 --> 8.6.0-py311h06a4308_0 
-  jupyter_core                        5.3.0-py311h06a4308_0 --> 5.5.0-py311h06a4308_0 
-  jupyter_events                      0.6.3-py311h06a4308_0 --> 0.8.0-py311h06a4308_0 
-  jupyter_server                     1.23.4-py311h06a4308_0 --> 2.10.0-py311h06a4308_0 
-  jupyterlab                          3.6.3-py311h06a4308_0 --> 4.0.8-py311h06a4308_0 
-  jupyterlab_server                  2.22.0-py311h06a4308_0 --> 2.25.1-py311h06a4308_0 
-  jupyterlab_widgets                  3.0.5-py311h06a4308_0 --> 3.0.9-py311h06a4308_0 
-  lazy_loader                           0.2-py311h06a4308_0 --> 0.3-py311h06a4308_0 
-  libboost                               1.73.0-h28710b8_12 --> 1.82.0-h109eef0_2 
-  libcurl                                  8.2.1-h251f7ec_0 --> 8.4.0-h251f7ec_1 
-  libdeflate                                1.17-h5eee18b_0 --> 1.17-h5eee18b_1 
-  libmamba                                 1.5.1-haf1ee3a_0 --> 1.5.3-haf1ee3a_0 
-  libmambapy                          1.5.1-py311h2dafd23_0 --> 1.5.3-py311h2dafd23_0 
-  libnghttp2                              1.52.0-h2d74bed_1 --> 1.57.0-h2d74bed_0 
-  libxml2                                 2.10.4-hcbfbd50_0 --> 2.10.4-hf1b16e4_1 
-  libxslt                                 1.1.37-h2085143_0 --> 1.1.37-h5eee18b_1 
-  llvmlite                           0.40.0-py311he621ea3_0 --> 0.41.0-py311he621ea3_0 
-  matplotlib                          3.7.2-py311h06a4308_0 --> 3.8.0-py311h06a4308_0 
-  matplotlib-base                     3.7.2-py311ha02d727_0 --> 3.8.0-py311ha02d727_0 
-  mistune                          0.8.4-py311h5eee18b_1000 --> 2.0.4-py311h06a4308_0 
-  mkl                               2023.1.0-h213fc3f_46343 --> 2023.1.0-h213fc3f_46344 
-  more-itertools     pkgs/main/noarch::more-itertools-8.12~ --> pkgs/main/linux-64::more-itertools-10.1.0-py311h06a4308_0 
-  multidict                           6.0.2-py311h5eee18b_0 --> 6.0.4-py311h5eee18b_0 
-  nbclient                           0.5.13-py311h06a4308_0 --> 0.8.0-py311h06a4308_0 
-  nbconvert                           6.5.4-py311h06a4308_0 --> 7.10.0-py311h06a4308_0 
-  notebook                            6.5.4-py311h06a4308_1 --> 7.0.6-py311h06a4308_0 
-  notebook-shim                       0.2.2-py311h06a4308_0 --> 0.2.3-py311h06a4308_0 
-  numba                              0.57.1-py311ha02d727_0 --> 0.58.1-py311ha02d727_0 
-  numexpr                             2.8.4-py311h65dcdc2_1 --> 2.8.7-py311h65dcdc2_0 
-  numpy                              1.24.3-py311h08b1b3b_1 --> 1.26.2-py311h08b1b3b_0 
-  numpy-base                         1.24.3-py311hf175353_1 --> 1.26.2-py311hf175353_0 
-  openssl                                 3.0.10-h7f8727e_2 --> 3.0.12-h7f8727e_0 
-  pandas                              2.0.3-py311ha02d727_0 --> 2.1.1-py311ha02d727_0 
-  panel                               1.2.3-py311h06a4308_0 --> 1.3.1-py311h06a4308_0 
-  param                              1.13.0-py311h06a4308_0 --> 2.0.1-py311h06a4308_0 
-  partd                               1.4.0-py311h06a4308_0 --> 1.4.1-py311h06a4308_0 
-  pillow                              9.4.0-py311h6a678d5_1 --> 10.0.1-py311ha6cbd5a_0 
-  py-cpuinfo         pkgs/main/noarch::py-cpuinfo-8.0.0-py~ --> pkgs/main/linux-64::py-cpuinfo-9.0.0-py311h06a4308_0 
-  pycosat                             0.6.4-py311h5eee18b_0 --> 0.6.6-py311h5eee18b_0 
-  pydantic                           1.10.8-py311h5eee18b_0 --> 1.10.12-py311h5eee18b_1 
-  pyodbc                             4.0.34-py311h6a678d5_0 --> 4.0.39-py311h6a678d5_0 
-  pyqt                               5.15.7-py311h6a678d5_0 --> 5.15.10-py311h6a678d5_0 
-  pyqt5-sip                         12.11.0-py311h6a678d5_0 --> 12.13.0-py311h5eee18b_0 
-  pyqtwebengine                      5.15.7-py311h6a678d5_0 --> 5.15.10-py311h6a678d5_0 
-  pytoolconfig                        1.2.5-py311h06a4308_1 --> 1.2.6-py311h06a4308_0 
-  pyviz_comms                         2.3.0-py311h06a4308_0 --> 3.0.0-py311h06a4308_0 
-  pyyaml                                6.0-py311h5eee18b_1 --> 6.0.1-py311h5eee18b_0 
-  pyzmq                              23.2.0-py311h6a678d5_0 --> 25.1.0-py311h6a678d5_0 
-  qt-main                                 5.15.2-h7358343_9 --> 5.15.2-h53bd1ea_10 
-  qtpy                                2.2.0-py311h06a4308_0 --> 2.4.1-py311h06a4308_0 
-  queuelib                            1.5.0-py311h06a4308_0 --> 1.6.2-py311h06a4308_0 
-  regex                            2022.7.9-py311h5eee18b_0 --> 2023.10.3-py311h5eee18b_0 
-  s3fs                             2023.4.0-py311h06a4308_0 --> 2023.10.0-py311h06a4308_0 
-  safetensors                         0.3.2-py311hb02cf49_0 --> 0.4.0-py311h24d97f6_0 
-  scipy                              1.11.1-py311h08b1b3b_0 --> 1.11.4-py311h08b1b3b_0 
-  send2trash         pkgs/main/noarch::send2trash-1.8.0-py~ --> pkgs/main/linux-64::send2trash-1.8.2-py311h06a4308_0 
-  sip                                 6.6.2-py311h6a678d5_0 --> 6.7.12-py311h6a678d5_0 
-  soupsieve                             2.4-py311h06a4308_0 --> 2.5-py311h06a4308_0 
-  sqlalchemy                         1.4.39-py311h5eee18b_0 --> 2.0.21-py311h5eee18b_0 
-  sympy                              1.11.1-py311h06a4308_0 --> 1.12-py311h06a4308_0 
-  tabulate                           0.8.10-py311h06a4308_0 --> 0.9.0-py311h06a4308_0 
-  tokenizers                         0.13.2-py311h22610ee_1 --> 0.13.3-py311h22610ee_0 
-  tornado                             6.3.2-py311h5eee18b_0 --> 6.3.3-py311h5eee18b_0 
-  urllib3                           1.26.16-py311h06a4308_0 --> 1.26.18-py311h06a4308_0 
-  xz                                       5.4.2-h5eee18b_0 --> 5.4.5-h5eee18b_0 
-  yaml-cpp                                 0.7.0-h295c915_1 --> 0.8.0-h6a678d5_0 
-  yarl                                1.8.1-py311h5eee18b_0 --> 1.9.3-py311h5eee18b_0 
-  zict                                2.2.0-py311h06a4308_0 --> 3.0.0-py311h06a4308_0 
-```
-
-Followed by details about packages to be downgraded. A small number of packages will be downgraded, normally to a more stable version:
-
-```
-The following packages will be DOWNGRADED:
-
-  scikit-learn                        1.3.0-py311ha02d727_0 --> 1.2.2-py311h6a678d5_1 
-```
-
-The output will then prompt to proceed:
-
-```
-Proceed ([y]/n)? 
-```
-
-Input ```y```. The output will now display:
-
-```
-Downloading and Extracting Packages
-                                                                                                                              
-Preparing transaction: done                                                                                                   
-Verifying transaction: done                                                                                                   
-Executing transaction: -                                                                                                      
-                                                                                                                              
-    Installed package of scikit-learn can be accelerated using scikit-learn-intelex.                                          
-    More details are available here: https://intel.github.io/scikit-learn-intelex                                             
-                                                                                                                              
-    For example:                                                                                                              
-                                                                                                                              
-        $ conda install scikit-learn-intelex                                                                                  
-        $ python -m sklearnex my_application.py                                                                               
-                                                                                                                              
-                                                                                                                              
-                                                                                                                              
-done    
-```
+If updates are listed in your case, review the changes and press ```y``` to proceed.
 
 The conda package manager will now be updated alongside most of the other packages in the (base) Python environment. A new prompt will display once the update has finished.
 
@@ -938,7 +611,7 @@ Solving environment: done
 
 ## Package Plan ##
 
-  environment location: /home/user/anaconda3
+  environment location: /home/philip/anaconda3
 
   added / updated specs:
     - anaconda-navigator
@@ -948,16 +621,16 @@ The following packages will be downloaded:
 
     package                    |            build
     ---------------------------|-----------------
-    anaconda-navigator-2.5.1   |  py311h06a4308_0         5.6 MB
+    anaconda-navigator-2.5.3   |  py311h06a4308_0         5.6 MB
     ------------------------------------------------------------
                                            Total:         5.6 MB
 
 The following packages will be UPDATED:
 
-  anaconda-navigator                  2.5.0-py311h06a4308_0 --> 2.5.1-py311h06a4308_0 
+  anaconda-navigator                  2.5.2-py311h06a4308_0 --> 2.5.3-py311h06a4308_0
 
 
-Proceed ([y]/n)?
+Proceed ([y]/n)? 
 ```
 
 To proceed input ```y```. The output will now display:
@@ -972,17 +645,9 @@ Executing transaction: done
 
 The Anaconda Python distribution is now up to date. It is recommended to periodically check for updates.
 
-To reactivate the (base) conda Python environment use:
-
-```
-conda activate base
-```
-
-The (base) prefix should now display in the bash prompt.
-
 ## Installing TeX
 
-A number of the datascience packages such as nbcovert and matplotlib can use TeX. Unfortunately the installation of TeX differs significantly for Windows and Linux and therefore installation of TeX isn't included with Anaconda. TeX should be installed system wide, using the Ubuntu (Debian-based) package manager apt:
+A number of the datascience packages such as nbcovert and matplotlib can use TeX. On Ubuntu TeX should be installed system wide, using the Ubuntu (Debian-based) package manager apt:
 
 ```bash
 sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-plain-generic cm-super dvipng
