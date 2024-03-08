@@ -852,7 +852,7 @@ When a package becomes more specialised, there are normally only a smaller numbe
 
 When attempting to install such niche libraries, these libraries should be specified during creation of a Python environment so that the ```conda``` package manager can look at the latest version of the niche library and examine its requirements and therefore determine the latest version of Python and numpy to install. This is more reliable than attempting to downgrade versions of Python and numpy from a currently existing environment which usually results in an unstable Python environment.
 
-Many of the bioinformatics tools are only developed for Linux/Mac and are on the separate channel:
+Many of the bioinformatics tools are only developed for Posix systems (Linux/Mac) and are on the separate channel:
 
 * ```bioconda``` 
 
@@ -871,17 +871,111 @@ The channels are specified using:
 
 Which is an instruction to look for a package on the community channel first and the bioconda channel second.
 
+Note that packages on the ```bioconda``` channel are not typically configured to work with packages on the ```anaconda``` channel. Attempting to mix these channels will result in an unstable Python environment which cannot be solved.
+
 Therefore if the command is used, it will install packages from both channels:
 
 ```bash
 conda create -n bioinformatics-env -c conda-forge -c bioconda python jupyterlab cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly jupyterlab-variableinspector ipympl pyqt r-irkernel jupyter-lsp-r r-tidyverse r-ggthemes r-palmerpenguins r-writexl samtools htslib pysam bcftools bedtools libdeflate blast bioconductor-iranges bioconductor-s4vectors bioconductor-biocgenerics bowtie2 bioconductor-biobase bioconductor-biostrings bioconductor-genomeinfodb bioconductor-genomicranges bioconductor-zlibbioc bioconductor-xvector bioconductor-biocparallel bwa bioconductor-summarizedexperiment
 ```
 
-Because the ```bioconda``` packages require an older stable version of Python, this will be installed.
+<img src='./images_install/img_142.png' alt='img_142' width='450'/>
 
+The ```conda``` package manager will search each channel for each package specified and as well as the package dependencies. It will solve the environment until the latest compatible set is found:
 
+<img src='./images_install/img_143.png' alt='img_143' width='450'/>
 
+Details about each package will be specified:
 
+<img src='./images_install/img_144.png' alt='img_144' width='450'/>
 
+The latest "stable" version of Python:
+
+<img src='./images_install/img_145.png' alt='img_145' width='450'/>
+
+and ```numpy``` will be used:
+
+<img src='./images_install/img_146.png' alt='img_146' width='450'/>
+
+Input ```y``` in order to proceed:
+
+<img src='./images_install/img_147.png' alt='img_147' width='450'/>
+
+The Python environment is now created:
+
+<img src='./images_install/img_148.png' alt='img_148' width='450'/>
+
+## Exporting an Environment to a YML File
+
+The currently activate environment can be exported to a yml (yet another markdown file) file:
+
+```bash
+conda activae bioinformatics-env
+conda env export > Documents/bioinformatic.yml
+```
+
+<img src='./images_install/img_149.png' alt='img_149' width='450'/>
+
+If this file is opened in text editor:
+
+<img src='./images_install/img_150.png' alt='img_150' width='450'/>
+
+The channels and dependencies are shown. Note that a specific version of each package is specified:
+
+<img src='./images_install/img_151.png' alt='img_151' width='450'/>
+
+The environment can be removed by using:
+
+```python
+conda deactivate
+conda env remove -n bioinformatics-env
+```
+
+<img src='./images_install/img_152.png' alt='img_152' width='450'/>
+
+In academic settings, an academic may issue a yml file which will reduce the liklihood of students encountering errors due to changes in newer versions of the libraries used.
+
+The ```bioinformatics-env``` specified in the ```bioinformatic.yml``` file can be recreated using:
+
+```bash
+conda env create -f Documents/bioinformatic.yml
+```
+
+<img src='./images_install/img_153.png' alt='img_153' width='450'/>
+
+Because all the packages are specified, they will be downloaded. Quite often, the yml files are platform agnostic, however because this yml uses the ```bioconda``` channel which only has packages for Posix systems (Linux/Mac) it won't work on Windows unless WSL is used:
+
+<img src='./images_install/img_154.png' alt='img_154' width='450'/>
+
+## Updating an Environment
+
+The ```conda``` package manager can be used to update ```--all``` packages to the latest version.
+
+**--all should never be used with base**, instead the ```conda``` package manager should be used to update ```conda``` which will collectively update the distribution.
+
+**-c conda-forge or -c bioconda should never be used with base**, instead only the ```anaconda``` channel (also known as the default channel) should be used.
+
+The ```bioinformatics-env``` can be updated using:
+
+```bash
+conda active bioinformatics-env
+conda update -c conda-forge bioconda --all
+```
+
+<img src='./images_install/img_155.png' alt='img_155' width='450'/>
+
+A complicated Python environment using multiple channels is more difficult to solve:
+
+<img src='./images_install/img_156.png' alt='img_156' width='450'/>
+
+In this case, a small number of packages are found which can be upgraded but a package is downgraded. 
+
+<img src='./images_install/img_157.png' alt='img_157' width='450'/>
+
+Press ```n``` to cancel:
+
+<img src='./images_install/img_158.png' alt='img_158' width='450'/>
+
+Often with such complicated Python environments, better results are achieved by deleted the Python environment and recreating it with all packages specified during the time of creation.
 
 [Return to Python Tutorials](../../readme.md)
