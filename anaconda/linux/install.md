@@ -839,4 +839,49 @@ The Spyder IDE has a similar user interface to Matlab or RStudio and contains a 
 
 <img src='./images_install/img_141.png' alt='img_141' width='450'/>
 
+## bioconda
+
+So far two Python channels have been examined:
+
+* ```conda-forge``` (community)
+* ```anaconda``` (maintained by the Anaconda company and tested for the Anaconda Python distribution)
+
+The packages installed have been limited to popular packages that are widely used and actively maintained. In essence the following packages are normally tested when a Python version is in an alpha or beta stage and therefore updated for a RTM release of Python.
+
+When a package becomes more specialised, there are normally only a smaller number of developers. These developers do not have the time to test for the current version of Python but instead release packages for a stable version of Python. i.e. the version of Python that is only being issued bugfixes, which is currently 3.10. For more details see [Python Versions](https://devguide.python.org/versions/).
+
+When attempting to install such niche libraries, these libraries should be specified during creation of a Python environment so that the ```conda``` package manager can look at the latest version of the niche library and examine its requirements and therefore determine the latest version of Python and numpy to install. This is more reliable than attempting to downgrade versions of Python and numpy from a currently existing environment which usually results in an unstable Python environment.
+
+Many of the bioinformatics tools are only developed for Linux/Mac and are on the separate channel:
+
+* ```bioconda``` 
+
+Details about the packages available for this channel are given in the [bioconda documentation](https://bioconda.github.io/).
+
+The two channels are generally used together:
+
+* ```conda-forge```
+* ```bioconda```
+
+The channels are specified using:
+
+```bash
+-c conda-forge -c bioconda
+```
+
+Which is an instruction to look for a package on the community channel first and the bioconda channel second.
+
+Therefore if the command is used, it will install packages from both channels:
+
+```bash
+conda create -n bioinformatics-env -c conda-forge -c bioconda python jupyterlab cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly jupyterlab-variableinspector ipympl pyqt r-irkernel jupyter-lsp-r r-tidyverse r-ggthemes r-palmerpenguins r-writexl samtools htslib pysam bcftools bedtools libdeflate blast bioconductor-iranges bioconductor-s4vectors bioconductor-biocgenerics bowtie2 bioconductor-biobase bioconductor-biostrings bioconductor-genomeinfodb bioconductor-genomicranges bioconductor-zlibbioc bioconductor-xvector bioconductor-biocparallel bwa bioconductor-summarizedexperiment
+```
+
+Because the ```bioconda``` packages require an older stable version of Python, this will be installed.
+
+
+
+
+
+
 [Return to Python Tutorials](../../readme.md)
