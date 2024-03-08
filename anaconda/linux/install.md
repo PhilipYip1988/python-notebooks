@@ -905,12 +905,12 @@ The Python environment is now created:
 
 <img src='./images_install/img_148.png' alt='img_148' width='450'/>
 
-## Exporting an Environment to a YML File
+## Environment File
 
 The currently activate environment can be exported to a yml (yet another markdown file) file:
 
 ```bash
-conda activae bioinformatics-env
+conda activate bioinformatics-env
 conda env export > Documents/bioinformatic.yml
 ```
 
