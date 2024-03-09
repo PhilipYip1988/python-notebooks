@@ -26,9 +26,7 @@ Follow the detailed installation instructions below if unfamiliar with Anaconda/
 
 ### Linux/Mac Installation
 
-* [Installing Anaconda or Miniconda](./anaconda/linux/install.md)
-* [Using the Conda Package Manager and Managing Conda Python Environments](./anaconda/linux/conda.md)
-* [Installing VSCode, Selecting a Python Environment and Configuring Extensions](./anaconda/linux/vscode.md)
+* [Installing Anaconda or Miniconda](./anaconda/linux/install/readme.md)
 
 For Linux, Ubuntu will be used as an example distro but the procedure is the same on most other distros. The Mac Terminal and File System are Linux Based and therefore installation on Mac should therefore be more or less identical to Linux.
 
