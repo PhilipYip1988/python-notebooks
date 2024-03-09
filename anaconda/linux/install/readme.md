@@ -6,7 +6,7 @@ This guide looks at installing Anaconda 2024-02.1 on Ubuntu 24.04.
 
 Anaconda should be installed on a Linux PC that has no previous Python installations outwith the system Python. The system Python is preinstalled as part of the Linux Operating system and should be considered as part of the Operating System and not modified by the user.
 
-If an old Anaconda Installation or an Anaconda based installation such as Miniconda or is present these should be removed by deleting their perspective folders. Note that deletion of these folders leaves behind a large number of configuration files and often results in problematic settings persisting after a reinstall. For best results it is recommended to delete all these configuration files. For more details see [Uninstall](./uninstall/readme.md).
+If an old Anaconda Installation or an Anaconda based installation such as Miniconda or is present these should be removed by deleting their perspective folders. Note that deletion of these folders leaves behind a large number of configuration files and the presence of these files often results in problematic settings persisting after a reinstall. For best results it is recommended to delete all these configuration files. For more details see [Uninstallation Instructions](./uninstall/readme.md).
 
 ## System Python
 
@@ -96,7 +96,7 @@ Anaconda is a Python distribution that has a base Python environment that is des
 
 Miniconda is a bootstrap version of Anaconda, that only contains the conda package manager and can likewise be used to create Python environments.
 
-When only custom Python environments are being used, Miniconda should be used in preference to Anaconda.
+Anaconda should be preferenced when, the user required a preconfigured (base) Python environment to be used *as is*. When the user plans to only create custom Python environments, Miniconda should be preferenced.
 
 ### Anaconda Python Distribution
 
@@ -169,7 +169,7 @@ Only packages available from the anaconda channel should be installed in base:
 * conda install anaconda::package
 * conda install -c anaconda package
 
-The base Python environment is normally used *as is* and instead a custom Python environment is used to install a subinstallation of Python and custom packages from the conda-forge community channel.
+The base Python environment is normally used *as is* and instead a custom Python environment is used to install a subinstallation of Python with custom packages, usually from the conda-forge community channel. More details about channels will be given later.
 
 ## Download Links
 
@@ -441,6 +441,7 @@ conda update anaconda-navigator
 In this case, there is an update that can be installed:
 
 <img src='./images/img_064.png' alt='img_064' width='450'/>
+
 <img src='./images/img_065.png' alt='img_065' width='450'/>
 
 ```conda``` is a cross-platform package manager used for installing packages related to datascience.
@@ -672,6 +673,13 @@ conda activate jupyter-env
 Notice the ```(base)``` prefix is now replaced by ```(jupyter-env)```. This means changes to packages will occur in this environment when ```conda``` is used and ```-n``` isn't specified. In addition binaries will be preferentially searched for in the ```jupyter-env``` Python environment before looking in the ```base``` Python environment or the system Python environment:
 
 <img src='./images/img_105.png' alt='img_105' width='450'/>
+
+Python environments are found in the subfolder:
+
+```bash
+~/anaconda3/envs
+~/miniconda3/envs
+```
 
 Now the three programming languages can be used:
 
