@@ -938,7 +938,7 @@ The channels and dependencies are shown. Note that a specific version of each pa
 
 The environment can be removed by using:
 
-```python
+```bash
 conda deactivate
 conda env remove -n bioinformatics-env
 ```
@@ -989,5 +989,25 @@ Press ```n``` to cancel:
 <img src='./images/img_158.png' alt='img_158' width='450'/>
 
 Often with such complicated Python environments, better results are achieved by deleted the Python environment and recreating it with all packages specified during the time of creation.
+
+## Revision
+
+The packages in a conda environment can be listed using the ```list``` command:
+
+```powershell
+conda list
+```
+
+The ```--revision``` option can be used to list packages for each revision:
+
+```powershell
+conda list --revision
+```
+
+The ```install``` command can use the ```--reverse``` option to revert to a previous revision:
+
+```powershell
+conda install -c conda-forge --revision=0
+```
 
 [Return to Python Tutorials](../../../readme.md)

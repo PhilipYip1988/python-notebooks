@@ -2,27 +2,15 @@
 
 This is a repository of Python tutorials that give an overview of the Python programming language, commonly used Python standard libraries, commonly used datascience libraries numpy, pandas and matplotlib as well as Anaconda/Miniconda and the conda package manager. The tutorials will also cover IPython and the Jupyter ecosystem, particularly focusing on the JupyterLab 4 IDE. The tutorials are in the form of markdown files or interactive Python notebooks. Please feel free to star, share and fork this repository.
 
-## Python Installation
+## Anaconda or Miniconda Installation
 
 The Anaconda 2024-02 Data Science Python Distribution contains Python and Python Standard Modules, the conda package manager, relatively modern versions of the datascience libraries such as numpy, pandas and matplotlib, Python IDEs such as Spyder and JupyterLab. It also includes Python linters such as pylint, flake8 and pyflakes and Python formatters such as autopep8, isort and black which can greatly help improve code quality. 
 
 Miniconda is a bootstrap version of Anaconda and allows the use of the conda package manager to create Python Environments. The instructions below will equally apply to Miniconda.
 
-### Concise Installation
-
-Anaconda or Miniconda should be installed, updated and initialised for the Windows or Linux Terminal. A conda environment should be created for the newest version of JupyterLab:
-
-```powershell
-conda create -n jupyter-env -c conda-forge python jupyterlab jupyter cython seaborn scikit-learn pyarrow sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly pyqt isort autopep8 ruff black ipympl jupyterlab-variableinspector jupyterlab_code_formatter jupyterlab-spellchecker ghostscript nbconvert 
-```
-
-Follow the detailed installation instructions below if unfamiliar with Anaconda/Miniconda.
-
 ### Windows Installation
 
-* [Installing Anaconda or Miniconda](./anaconda/windows/install.md)
-* [Using the Conda Package Manager and Managing Conda Python Environments](./anaconda/windows/conda.md)
-* [Installing VSCode, Selecting a Python Environment and Configuring Extensions](./anaconda/windows/vscode.md)
+* [Installing Anaconda or Miniconda](./anaconda/windows/install/readme.md)
 
 ### Linux/Mac Installation
 
@@ -30,9 +18,15 @@ Follow the detailed installation instructions below if unfamiliar with Anaconda/
 
 For Linux, Ubuntu will be used as an example distro but the procedure is the same on most other distros. The Mac Terminal and File System are Linux Based and therefore installation on Mac should therefore be more or less identical to Linux.
 
+## VSCode Installation
+
+A popular IDE not preinstalled with Anaconda, but commonly used with Anaconda is VSCode and is available for Windows/Linux and Mac. The installation process is similar for each Operating System. VSCode is a general purpose code editor and a number of extensions need to be installed for Python Development:
+
+* [Installing VSCode](./vscode/readme.md)
+
 ## GitHub Desktop Installation
 
-GitHub Desktop may be used to download this repository of Python notebooks and create a local fork which you can work on.
+GitHub Desktop may be used to download this repository of Python notebooks and create a local fork which you can work on:
 
 * [Installing GitHub Desktop](./github_desktop/readme.md)
 
@@ -46,7 +40,7 @@ Markdown uses simple syntax to format text and is commonly used on GitHub and wi
 
 These tutorials use markdown and notebook files and can be viewed in the browser (using Notebook Viewer) or in an IDE such as JupyterLab or VSCode:
 
-* [Viewing and Running Files](./viewing_notebooks/viewing.md)
+* [Viewing and Running Files](./viewing_notebooks/readme.md)
 
 ## Builtins Module
 
