@@ -1212,6 +1212,8 @@ conda active jupyter-env
 conda update -c conda-forge --all
 ```
 
+Input ```y``` in order to proceed:
+
 <img src='./images/img_193.png' alt='img_193' width='450'/>
 
 Often with a complicated Python environments, better results are achieved by deleted the Python environment and recreating it with all packages specified during the time of creation.
@@ -1224,16 +1226,30 @@ The packages in a conda environment can be listed using the ```list``` command:
 conda list
 ```
 
+<img src='./images/img_194.png' alt='img_194' width='450'/>
+
+<img src='./images/img_195.png' alt='img_195' width='450'/>
+
 The ```--revision``` option can be used to list packages for each revision:
 
 ```powershell
 conda list --revision
 ```
 
-The ```install``` command can use the ```--reverse``` option to revert to a previous revision:
+<img src='./images/img_196.png' alt='img_196' width='450'/>
+
+<img src='./images/img_197.png' alt='img_197' width='450'/>
+
+<img src='./images/img_198.png' alt='img_198' width='450'/>
+
+The ```install``` command can theoerically be used with the ```--revision``` option to revert to a previous revision:
 
 ```powershell
 conda install -c conda-forge --revision=0
 ```
+
+<img src='./images/img_199.png' alt='img_199' width='450'/>
+
+However the conda package manager, seems to hang for an extremely long time here for such a simple change. This command option will likely be optimized in a later version of conda.Unfortunately the conda env export command isn't configured to recognize ```--revision``` as an option so it is recommended to export an environment out to a yml files before updating it.
 
 [Return to Python Tutorials](../../../readme.md)
