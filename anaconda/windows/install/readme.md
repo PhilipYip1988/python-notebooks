@@ -1068,7 +1068,7 @@ These options use the ```autopep``` and ```black``` applications found in the:
 ~\anaconda3\Scripts
 ```
 
-folder. Spyder does not yet support ```isort``` which is used to sort the imports alphabetically in two grpupings (by standard module and third-party modules).
+folder. Spyder does not yet support ```isort``` which is used to sort the imports alphabetically in two groupings (by standard module and third-party modules).
 
 Unfortunately, blacks opinionated formatting differs from Pythons default representation and therefore many Python developers dislike black. A new project ruff is a faster implementation of black which can be configured to match Pythons default representation. Ruff is not yet integrated in Anaconda or Spyder.
 
@@ -1250,6 +1250,6 @@ conda install -c conda-forge --revision=0
 
 <img src='./images/img_199.png' alt='img_199' width='450'/>
 
-However the conda package manager, seems to hang for an extremely long time here for such a simple change. This command option will likely be optimized in a later version of conda.Unfortunately the conda env export command isn't configured to recognize ```--revision``` as an option so it is recommended to export an environment out to a yml files before updating it.
+However the conda package manager, seems to hang for an extremely long time here for such a simple change. This command option will likely be optimized in a later version of conda. Unfortunately the conda env export command isn't configured to recognize ```--revision``` as an option so it is recommended to export an environment out to a yml files before updating it.
 
 [Return to Python Tutorials](../../../readme.md)

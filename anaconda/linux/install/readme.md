@@ -496,7 +496,6 @@ Going back to
 
 <img src='./images/img_074.png' alt='img_074' width='450'/>
 
-
 Is the ```anaconda-navigator``` binary, notice the ```-``` which needs to be supplied.
 
 <img src='./images/img_075.png' alt='img_075' width='450'/>
@@ -847,9 +846,111 @@ spyder
 
 <img src='./images/img_140.png' alt='img_140' width='450'/>
 
-The Spyder IDE has a similar user interface to Matlab or RStudio and contains a powerful Variable Explorer which can be used to visualise data:
+This IDE has a script editor, that applies syntax highlighting, highlights syntax errors and has a number of tools to help improve code quality:
 
 <img src='./images/img_141.png' alt='img_141' width='450'/>
+
+The Source menu has the Format File or Selection with AutoPEP8 option:
+
+<img src='./images/img_142.png' alt='img_142' width='450'/>
+
+This will move imports to the top and address spacing issues:
+
+<img src='./images/img_143.png' alt='img_143' width='450'/>
+
+The autoformatter can be changed using Tools → Preferences:
+
+<img src='./images/img_144.png' alt='img_1444' width='450'/>
+
+Selecting the Code and Linting tab to the left and then switching to black:
+
+<img src='./images/img_145.png' alt='img_145' width='450'/>
+
+Now the Source menu has the Format File or Selection with Black option:
+
+<img src='./images/img_146.png' alt='img_146' width='450'/>
+
+This applies blacks opinionated formatting. At current there are some limitations as black won't organise the imports correctly before applying opinionated formatting and so black does not work unless autopep8 has previously been used:
+
+<img src='./images/img_147.png' alt='img_147' width='450'/>
+
+These options use the ```autopep``` and ```black``` applications found in the:
+
+```bash
+~\anaconda3\bin
+```
+
+folder. Spyder does not yet support ```isort``` which is used to sort the imports alphabetically in two groupings (by standard module and third-party modules).
+
+Unfortunately, blacks opinionated formatting differs from Pythons default representation and therefore many Python developers dislike black. A new project ruff is a faster implementation of black which can be configured to match Pythons default representation. Ruff is not yet integrated in Anaconda or Spyder.
+
+Spyder has a very powerful Variable Explorer which can be used to visualise variables:
+
+<img src='./images/img_148.png' alt='img_148' width='450'/>
+
+A variable that is a ```Collection``` can be expanded. By default GNOM will display the currently selected window on top, meaning if the Spyder IDE is selected, the Variable will be behind it. This can be prevented by right clicking the Variable and selecting Always on Top:
+
+<img src='./images/img_149.png' alt='img_149' width='450'/>
+
+Identifiers corresponding to a prefix will display as a popup, alongside the associated docstring for a function:
+
+<img src='./images/img_150.png' alt='img_150' width='450'/>
+
+The docstring can also be accessed by right clicking an object and selecting Inspect current object:
+
+<img src='./images/img_151.png' alt='img_151' width='450'/>
+
+This will open up the documentation in the Help pane:
+
+<img src='./images/img_152.png' alt='img_152' width='450'/>
+
+Plots are by default displayed as static images in the plots pane:
+
+<img src='./images/img_153.png' alt='img_153' width='450'/>
+
+The plot preferences can be changed by going to Tools → Preferences:
+
+<img src='./images/img_154.png' alt='img_154' width='450'/>
+
+Selecting the IPython Console tab to the left, the Graphics tab to the top right and changing the backend to Qt5 (Automatic is an alias for Qt5):
+
+<img src='./images/img_155.png' alt='img_155' width='450'/>
+
+To apply the new preferences select Consoles → Restart Kernel:
+
+<img src='./images/img_156.png' alt='img_156' width='450'/>
+
+Running the script will now display the plot in its own interactive window:
+
+<img src='./images/img_157.png' alt='img_157' width='450'/>
+
+A comment can be added to a Python script file using ```#```. If ```#%%``` is used, a new cell is created:
+
+<img src='./images/img_158.png' alt='img_158' width='450'/>
+
+The script file can be saved using File → Save As...:
+
+<img src='./images/img_159.png' alt='img_159' width='450'/>
+
+It can then be saved to the Documents folder:
+
+<img src='./images/img_160.png' alt='img_160' width='450'/>
+
+When this script is now rerun, the current working directory of the script file displays in the files tab:
+
+<img src='./images/img_161.png' alt='img_161' width='450'/>
+
+The script file can be viewed in file explorer:
+
+<img src='./images/img_162.png' alt='img_162' width='450'/>
+
+And opened in text editor. This applies syntax highlight but lacks other capabilities such as the ability to quickly look up identifiers or view a docstring:
+
+<img src='./images/img_163.png' alt='img_163' width='450'/>
+
+When Spyder is closed, a new prompt will display. If it doesn't, press ```Ctrl``` + ```c``` to close the currently running operation:
+
+<img src='./images/img_164.png' alt='img_164' width='450'/>
 
 ## bioconda
 
@@ -891,31 +992,31 @@ Therefore if the command is used, it will install packages from both channels:
 conda create -n bioinformatics-env -c conda-forge -c bioconda python jupyterlab cython seaborn scikit-learn sympy openpyxl xlrd xlsxwriter lxml sqlalchemy tabulate nodejs ipywidgets plotly jupyterlab-variableinspector ipympl pyqt r-irkernel jupyter-lsp-r r-tidyverse r-ggthemes r-palmerpenguins r-writexl samtools htslib pysam bcftools bedtools libdeflate blast bioconductor-iranges bioconductor-s4vectors bioconductor-biocgenerics bowtie2 bioconductor-biobase bioconductor-biostrings bioconductor-genomeinfodb bioconductor-genomicranges bioconductor-zlibbioc bioconductor-xvector bioconductor-biocparallel bwa bioconductor-summarizedexperiment
 ```
 
-<img src='./images/img_142.png' alt='img_142' width='450'/>
+<img src='./images/img_165.png' alt='img_165' width='450'/>
 
 The ```conda``` package manager will search each channel for each package specified and as well as the package dependencies. It will solve the environment until the latest compatible set is found:
 
-<img src='./images/img_143.png' alt='img_143' width='450'/>
+<img src='./images/img_166.png' alt='img_166' width='450'/>
 
 Details about each package will be specified:
 
-<img src='./images/img_144.png' alt='img_144' width='450'/>
+<img src='./images/img_167.png' alt='img_167' width='450'/>
 
 The latest "stable" version of Python:
 
-<img src='./images/img_145.png' alt='img_145' width='450'/>
+<img src='./images/img_168.png' alt='img_168' width='450'/>
 
 and ```numpy``` will be used:
 
-<img src='./images/img_146.png' alt='img_146' width='450'/>
+<img src='./images/img_169.png' alt='img_169' width='450'/>
 
 Input ```y``` in order to proceed:
 
-<img src='./images/img_147.png' alt='img_147' width='450'/>
+<img src='./images/img_170.png' alt='img_170' width='450'/>
 
 The Python environment is now created:
 
-<img src='./images/img_148.png' alt='img_148' width='450'/>
+<img src='./images/img_171.png' alt='img_171' width='450'/>
 
 ## Environment File
 
@@ -926,15 +1027,15 @@ conda activate bioinformatics-env
 conda env export > Documents/bioinformatic.yml
 ```
 
-<img src='./images/img_149.png' alt='img_149' width='450'/>
+<img src='./images/img_172.png' alt='img_172' width='450'/>
 
 If this file is opened in text editor:
 
-<img src='./images/img_150.png' alt='img_150' width='450'/>
+<img src='./images/img_173.png' alt='img_173' width='450'/>
 
 The channels and dependencies are shown. Note that a specific version of each package is specified:
 
-<img src='./images/img_151.png' alt='img_151' width='450'/>
+<img src='./images/img_174.png' alt='img_174' width='450'/>
 
 The environment can be removed by using:
 
@@ -943,7 +1044,7 @@ conda deactivate
 conda env remove -n bioinformatics-env
 ```
 
-<img src='./images/img_152.png' alt='img_152' width='450'/>
+<img src='./images/img_175.png' alt='img_175' width='450'/>
 
 In academic settings, an academic may issue a yml file which will reduce the liklihood of students encountering errors due to changes in newer versions of the libraries used.
 
@@ -953,11 +1054,11 @@ The ```bioinformatics-env``` specified in the ```bioinformatic.yml``` file can b
 conda env create -f Documents/bioinformatic.yml
 ```
 
-<img src='./images/img_153.png' alt='img_153' width='450'/>
+<img src='./images/img_176.png' alt='img_176' width='450'/>
 
 Because all the packages are specified, they will be downloaded. Quite often, the yml files are platform agnostic, however because this yml uses the ```bioconda``` channel which only has packages for Posix systems (Linux/Mac) it won't work on Windows unless WSL is used:
 
-<img src='./images/img_154.png' alt='img_154' width='450'/>
+<img src='./images/img_177.png' alt='img_177' width='450'/>
 
 ## Updating an Environment
 
@@ -967,47 +1068,53 @@ The ```conda``` package manager can be used to update ```--all``` packages to th
 
 **-c conda-forge or -c bioconda should never be used with base**, instead only the ```anaconda``` channel (also known as the default channel) should be used.
 
-The ```bioinformatics-env``` can be updated using:
+The ```hupyter-env``` can be updated using:
 
 ```bash
-conda active bioinformatics-env
-conda update -c conda-forge bioconda --all
+conda active jupyter-env
+conda update -c conda-forge --all
 ```
 
-<img src='./images/img_155.png' alt='img_155' width='450'/>
+<img src='./images/img_178.png' alt='img_178' width='450'/>
 
-A complicated Python environment using multiple channels is more difficult to solve:
+In this case, a small number of packages are found which can be upgraded but a package is substantially downgraded:
 
-<img src='./images/img_156.png' alt='img_156' width='450'/>
+<img src='./images/img_179.png' alt='img_179' width='450'/>
 
-In this case, a small number of packages are found which can be upgraded but a package is downgraded. 
+Press ```y``` to proceed:
 
-<img src='./images/img_157.png' alt='img_157' width='450'/>
+<img src='./images/img_180.png' alt='img_180' width='450'/>
 
-Press ```n``` to cancel:
-
-<img src='./images/img_158.png' alt='img_158' width='450'/>
-
-Often with such complicated Python environments, better results are achieved by deleted the Python environment and recreating it with all packages specified during the time of creation.
+Often with large Python environments, better results are achieved by deleted the Python environment and recreating it with all packages specified during the time of creation opposed to attempting to update an existing Python environment.
 
 ## Revision
 
 The packages in a conda environment can be listed using the ```list``` command:
 
-```powershell
+```bash
 conda list
 ```
 
+<img src='./images/img_181.png' alt='img_181' width='450'/>
+
 The ```--revision``` option can be used to list packages for each revision:
 
-```powershell
+```bash
 conda list --revision
 ```
 
-The ```install``` command can use the ```--reverse``` option to revert to a previous revision:
+<img src='./images/img_182.png' alt='img_182' width='450'/>
 
-```powershell
+<img src='./images/img_183.png' alt='img_183' width='450'/>
+
+The ```install``` command can use the ```--revision``` option to revert to a previous revision:
+
+```bash
 conda install -c conda-forge --revision=0
 ```
+
+<img src='./images/img_184.png' alt='img_184' width='450'/>
+
+However the conda package manager, seems to hang for an extremely long time here for such a simple change. This command option will likely be optimized in a later version of conda. Unfortunately the conda env export command isn't configured to recognize ```--revision``` as an option so it is recommended to export an environment out to a yml files before updating it.
 
 [Return to Python Tutorials](../../../readme.md)
