@@ -2,6 +2,8 @@
 
 This is a repository of Python tutorials that give an overview of the Python programming language, commonly used Python standard libraries, commonly used datascience libraries numpy, pandas and matplotlib as well as Anaconda/Miniconda and the conda package manager. The tutorials will also cover IPython and the Jupyter ecosystem, particularly focusing on the JupyterLab 4 IDE. The tutorials are in the form of markdown files or interactive Python notebooks. Please feel free to star, share and fork this repository.
 
+Note the markdown tutorials are image heavy. Unfortunately GitHub may timeout when it comes to downloading the images and they may not display properly on a slow connection. You may get better results by downloading the repository locally and opening the markdown preview in a general purpose code editor like VSCode, VSCode does not need any extensions to view markdown files.
+
 ## Anaconda or Miniconda Installation
 
 For datascience it is recommended to install Python in a conda environment. This can be done using the Anaconda 2024-02.1 Data Science Python Distribution or bootstrap Miniconda.
