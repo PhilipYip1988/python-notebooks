@@ -175,4 +175,4 @@ Delete any Anaconda3 folders and names of old Python Environments:
 
 <img src='./images/img_022.png' alt='img_022' width='350'/>
 
-[Return to Python Tutorials](../../readme.md)
+[Return to Anaconda Install](../install/readme.md)

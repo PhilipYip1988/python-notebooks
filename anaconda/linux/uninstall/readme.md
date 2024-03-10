@@ -102,4 +102,4 @@ In the share folder, the following can be deleted:
 
 <img src='./images/img_013.png' alt='img_013' width='350'/>
 
-[Return to Install](../install/readme.md)
+[Return to Anaconda Install](../install/readme.md)
