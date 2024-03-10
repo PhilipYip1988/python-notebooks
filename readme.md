@@ -18,7 +18,7 @@ For Linux, Ubuntu will be used as an example distro but the procedure is the sam
 
 ## VSCode Installation
 
-A popular IDE not preinstalled with Anaconda, but commonly used with Anaconda is VSCode and is available for Windows/Linux and Mac. The installation process is similar for each Operating System. VSCode is a general purpose code editor and a number of extensions need to be installed for Python Development:
+A popular IDE not preinstalled with Anaconda, but commonly used with Anaconda is VSCode. These guides will primarily focus on using the JupyterLab (which has better performance for lager notebooks) but VSCode can be used in its place if preferred. VSCode is available for Windows/Linux and Mac. The installation process is similar for each Operating System because VSCode is a general purpose code editor and a number of extensions need to be installed for each programming language:
 
 * [Installing VSCode](./vscode/readme.md)
 
